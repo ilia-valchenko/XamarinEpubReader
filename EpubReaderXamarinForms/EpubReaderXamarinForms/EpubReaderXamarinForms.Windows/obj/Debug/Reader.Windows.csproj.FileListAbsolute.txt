@@ -1,0 +1,11 @@
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\Reader.Windows.csprojResolveAssemblyReference.cache
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\App.g.i.cs
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\App.g.cs
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\MainPage.g.i.cs
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\MainPage.g.cs
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\App.xaml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\MainPage.xaml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\App.xbf
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\MainPage.xbf
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Windows\obj\Debug\XamlSaveStateFile.xml

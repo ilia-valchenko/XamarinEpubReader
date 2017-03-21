@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C561933-CBC6-41A2-94B9-48505119CF00}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EpubReaderXamarinForms</RootNamespace>
+    <AssemblyName>EpubReaderXamarinForms</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="EpubReader\Entities\EpubBook.cs" />
+    <Compile Include="EpubReader\Entities\EpubByteContentFile.cs" />
+    <Compile Include="EpubReader\Entities\EpubChapter.cs" />
+    <Compile Include="EpubReader\Entities\EpubContent.cs" />
+    <Compile Include="EpubReader\Entities\EpubContentFile.cs" />
+    <Compile Include="EpubReader\Entities\EpubContentType.cs" />
+    <Compile Include="EpubReader\Entities\EpubSchema.cs" />
+    <Compile Include="EpubReader\Entities\EpubTextContentFile.cs" />
+    <Compile Include="EpubReader\EpubReader.cs" />
+    <Compile Include="EpubReader\Interfaces\IFiler.cs" />
+    <Compile Include="EpubReader\Interfaces\IXPather.cs" />
+    <Compile Include="EpubReader\Interfaces\IZipper.cs" />
+    <Compile Include="EpubReader\Readers\ChapterReader.cs" />
+    <Compile Include="EpubReader\Readers\ContentReader.cs" />
+    <Compile Include="EpubReader\Readers\NavigationReader.cs" />
+    <Compile Include="EpubReader\Readers\PackageReader.cs" />
+    <Compile Include="EpubReader\Readers\RootFilePathReader.cs" />
+    <Compile Include="EpubReader\Readers\SchemaReader.cs" />
+    <Compile Include="EpubReader\RefEntities\EpubBookRef.cs" />
+    <Compile Include="EpubReader\RefEntities\EpubByteContentFileRef.cs" />
+    <Compile Include="EpubReader\RefEntities\EpubChapterRef.cs" />
+    <Compile Include="EpubReader\RefEntities\EpubContentFileRef.cs" />
+    <Compile Include="EpubReader\RefEntities\EpubContentRef.cs" />
+    <Compile Include="EpubReader\RefEntities\EpubTextContentFileRef.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigation.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationContent.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationDocAuthor.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationDocTitle.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationHead.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationHeadMeta.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationLabel.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationList.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationMap.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationPageList.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationPageTarget.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationPageTargetType.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationPoint.cs" />
+    <Compile Include="EpubReader\Schema\Navigation\EpubNavigationTarget.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubGuide.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubGuideReference.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubManifest.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubManifestItem.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubMetadata.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubMetadataContributor.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubMetadataCreator.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubMetadataDate.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubMetadataIdentifier.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubMetadataMeta.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubPackage.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubSpine.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubSpineItemRef.cs" />
+    <Compile Include="EpubReader\Schema\Opf\EpubVersion.cs" />
+    <Compile Include="EpubReader\Utils\XmlUtils.cs" />
+    <Compile Include="EpubReader\Utils\ZipPathUtils.cs" />
+    <Compile Include="MainPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+  </Target>
+</Project>

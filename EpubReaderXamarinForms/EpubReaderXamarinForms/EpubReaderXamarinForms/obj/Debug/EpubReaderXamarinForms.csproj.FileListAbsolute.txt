@@ -1,0 +1,14 @@
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\EpubReaderXamarinForms.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\EpubReaderXamarinForms.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\obj\Debug\EpubReaderXamarinForms.dll
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\obj\Debug\EpubReaderXamarinForms.pdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\obj\Debug\EpubReaderXamarinForms.dll.mdb
+C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms\bin\Debug\EpubReaderXamarinForms.dll.mdb
