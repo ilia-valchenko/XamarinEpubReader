@@ -74,5 +74,5 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Dro
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
-C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
-C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb
+C:\Users\Ilya_Valchanka\documents\visual studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
+C:\Users\Ilya_Valchanka\documents\visual studio 2015\Projects\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb
