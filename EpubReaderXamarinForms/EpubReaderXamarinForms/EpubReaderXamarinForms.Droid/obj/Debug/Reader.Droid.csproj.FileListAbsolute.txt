@@ -1,1 +1,0 @@
-C:\Users\iValc\Documents\Visual Studio 2015\Projects\EpubReaderXamarinForms\EpubReaderXamarinForms\EpubReaderXamarinForms.Droid\obj\Debug\Reader.Droid.csprojResolveAssemblyReference.cache
