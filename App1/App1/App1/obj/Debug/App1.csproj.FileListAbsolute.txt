@@ -11,7 +11,7 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\bin
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.dll
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.pdb
 C:\Users\Ilya_Valchanka\documents\visual studio 2015\Projects\App1\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
-C:\Users\Ilya_Valchanka\documents\visual studio 2015\Projects\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Ilya_Valchanka\documents\visual studio 2015\Projects\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Ilya_Valchanka\documents\visual studio 2015\Projects\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Ilya_Valchanka\documents\visual studio 2015\Projects\App1\App1\App1\bin\Debug\App1.dll.mdb
+C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.dll.mdb
+C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\bin\Debug\App1.dll.mdb
+C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.dll.mdb
+C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\bin\Debug\App1.dll.mdb

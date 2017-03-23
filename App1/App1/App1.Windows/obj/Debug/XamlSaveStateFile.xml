@@ -1,7 +1,7 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
     <LocalAssembly PathName="c:\users\ilya_valchanka\documents\visual studio 2015\projects\app1\app1\app1.windows\obj\debug\intermediatexaml\app1.windows.exe" HashGuid="b93365f7-8c22-1864-16f5-0f0a8f210158" />
-    <ReferenceAssembly PathName="c:\users\ilya_valchanka\documents\visual studio 2015\projects\app1\app1\app1\bin\debug\app1.dll" HashGuid="0b685999-5f0a-5f6c-08ff-dae370ba30dc" />
+    <ReferenceAssembly PathName="c:\users\ilya_valchanka\documents\visual studio 2015\projects\app1\app1\app1\bin\debug\app1.dll" HashGuid="4b797f8b-1ed7-e5e0-09dc-66ea099523e2" />
     <ReferenceAssembly PathName="c:\users\ilya_valchanka\documents\visual studio 2015\projects\app1\packages\xamarin.forms.2.2.0.45\lib\win81\xamarin.forms.core.dll" HashGuid="2a418b72-55c1-19a8-a363-4b8c348fbee0" />
     <ReferenceAssembly PathName="c:\users\ilya_valchanka\documents\visual studio 2015\projects\app1\packages\xamarin.forms.2.2.0.45\lib\win81\xamarin.forms.platform.dll" HashGuid="bb4040f4-26bb-5883-795e-627e39855666" />
     <ReferenceAssembly PathName="c:\users\ilya_valchanka\documents\visual studio 2015\projects\app1\packages\xamarin.forms.2.2.0.45\lib\win81\xamarin.forms.platform.winrt.dll" HashGuid="068a3578-03d9-2580-f12e-c531e1d2d71c" />

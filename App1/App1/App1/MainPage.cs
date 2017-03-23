@@ -1,5 +1,6 @@
-﻿using System.Linq;
-using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using App1.EpubReader.Entities;
 using Xamarin.Forms;
 
@@ -7,11 +8,13 @@ namespace App1
 {
     public class MainPage : ContentPage
     {
-        public MainPage(EpubBook book)
+        private readonly StackLayout panel;
+
+        public MainPage(List<EpubBook> books)
         {
             this.Padding = new Thickness(20, 20, 20, 20);
 
-            StackLayout panel = new StackLayout
+            this.panel = new StackLayout
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -19,79 +22,58 @@ namespace App1
                 Spacing = 15
             };
 
-            panel.Children.Add(new Label
+            foreach (EpubBook book in books)
             {
-                Text = $"Title: {book.Title}"
-            });
-
-            panel.Children.Add(new Label
-            {
-                Text = $"Author: {book.Author}",
-            });
-
-            // Get all autors
-            if (book.Author != null && book.AuthorList.Count > 0)
-            {
-                StringBuilder builder = new StringBuilder();
-                builder.Append("Autors: ");
-
-                foreach (string autor in book.AuthorList)
+                Button openBookButton = new Button
                 {
-                    builder.Append(autor + "; ");
-                }
+                    Text = $"Title: {book.Title}"
+                };
 
-                panel.Children.Add(new Label
-                {
-                    Text = builder.ToString()
-                });
+                openBookButton.Clicked += OnClickOpenBook;
+
+                this.panel.Children.Add(openBookButton);
             }
 
-            foreach (EpubChapter chapter in book.Chapters)
-            {
-                //panel.Children.Add(new Label
-                //{
-                //    Text = chapter.Title,
-                    
-                //});
+            //panel.Children.Add(new Label
+            //{
+            //    Text = $"Author: {book.Author}",
+            //});
 
-                WriteChapter(chapter, panel);
-            }
+            //// Get all autors
+
+            //if (book.Author != null && book.AuthorList.Count > 0)
+            //{
+            //    StringBuilder builder = new StringBuilder();
+            //    builder.Append("Autors: ");
+
+            //    foreach (string autor in book.AuthorList)
+            //    {
+            //        builder.Append(autor + "; ");
+            //    }
+
+            //    panel.Children.Add(new Label
+            //    {
+            //        Text = builder.ToString()
+            //    });
+            //}
 
             //this.Content = panel;
-
-            byte[] b = new byte[5];
-            book.Chapters.First().SubChapters.First()
-
-            panel.Children.Add(new );
 
             this.Content = new ScrollView
             {
                 Content = panel,
                 Orientation = ScrollOrientation.Vertical
             };
+
+            //this.Content = new WebView
+            //{
+            //    Source = source
+            //};
         }
 
-        private void WriteChapter(EpubChapter epubChapter, Layout<View> layout)
+        private async void OnClickOpenBook(object sender, EventArgs e)
         {
-            if (epubChapter.SubChapters != null && epubChapter.SubChapters.Count > 0)
-            {
-                layout.Children.Add(new Label
-                {
-                    Text = epubChapter.Title
-                });
-
-                foreach (EpubChapter chapter in epubChapter.SubChapters)
-                {
-                    WriteChapter(chapter, layout);
-                }
-            }
-            else
-            {
-                layout.Children.Add(new Label
-                {
-                    Text = epubChapter.Title
-                });
-            }
+            await this.Navigation.PushAsync(BookContentPage(()));
         }
     }
 }

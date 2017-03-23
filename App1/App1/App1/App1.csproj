@@ -36,6 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="BookContentPage.cs" />
+    <Compile Include="BookTextPage.cs" />
     <Compile Include="EpubReader\Entities\EpubBook.cs" />
     <Compile Include="EpubReader\Entities\EpubByteContentFile.cs" />
     <Compile Include="EpubReader\Entities\EpubChapter.cs" />

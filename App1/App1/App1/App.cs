@@ -13,13 +13,9 @@ namespace App1
         public App()
         {
             string filename = "obitaemij-ostrov.epub";
+            //string bookPath = "alice-in-wonderland.epub";
             IFiler filer = DependencyService.Get<IFiler>();
             string filepath = filer.GetFilePath(filename);
-            //string bookPath = "alice-in-wonderland.epub";
-            //string archivePath = "doc.zip";
-
-            //IEpubReader epubReader = DependencyService.Get<IEpubReader>();
-            //Book book = epubReader.ReadEpub(/*bookPath*/);
 
             EpubBook book = EpubReader.EpubReader.ReadBook(filepath);
 
