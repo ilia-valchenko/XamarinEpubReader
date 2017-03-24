@@ -31,8 +31,8 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Dro
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\System.Xml.XDocument.dll
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\System.IO.dll
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
-C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\System.Linq.dll
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\System.Globalization.dll
+C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\System.Linq.dll
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\System.ObjectModel.dll
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\System.ComponentModel.dll
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\System.Reflection.dll

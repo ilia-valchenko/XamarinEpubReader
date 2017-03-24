@@ -5,6 +5,7 @@ using System.Text;
 using App1.EpubReader.Entities;
 using App1.EpubReader.Interfaces;
 using Xamarin.Forms;
+using App1.Pages;
 
 namespace App1
 {
@@ -17,9 +18,15 @@ namespace App1
             IFiler filer = DependencyService.Get<IFiler>();
             string filepath = filer.GetFilePath(filename);
 
-            EpubBook book = EpubReader.EpubReader.ReadBook(filepath);
+            List<EpubBook> books = new List<EpubBook>
+            {
+                EpubReader.EpubReader.ReadBook(filepath)
+            };
 
-            MainPage = new MainPage(book);
+            MainPage mainPage = new MainPage(books);
+            NavigationPage rootPage = new NavigationPage(mainPage);
+            //MainPage = new MainPage(books);
+            this.MainPage = rootPage;
         }
 
         protected override void OnStart()
