@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>App1</name>
+    </assembly>
+    <members>
+        <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
+            <summary>
+            Opens the book synchronously without reading its content. Holds the handle to the EPUB file.
+            </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.EpubReader.EpubReader.OpenBookAsync(System.String)">
+            <summary>
+            Opens the book asynchronously without reading its content. Holds the handle to the EPUB file.
+            </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.EpubReader.EpubReader.ReadBook(System.String)">
+            <summary>
+            Opens the book synchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
+            </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.EpubReader.EpubReader.ReadBookAsync(System.String)">
+            <summary>
+            Opens the book asynchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
+            </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
+        </member>
+        <member name="T:App1.EpubReader.Interfaces.IFiler">
+            <summary>
+            This interface represent the level of abstraction which provides basic file operations. 
+            </summary>
+        </member>
+        <member name="M:App1.EpubReader.Interfaces.IFiler.DoesFileExist(System.String)">
+            <summary>
+            This method checks if the file exists.
+            </summary>
+            <param name="filepath">The path for a file.</param>
+            <returns>Returns true is a file exists.</returns>
+        </member>
+        <member name="M:App1.EpubReader.Interfaces.IFiler.GetFilePath(System.String)">
+            <summary>
+            This method returns the full path of the file.
+            </summary>
+            <param name="filename">The name of the file with extension.</param>
+            <returns>Returns string which represents the full path of the file.</returns>
+        </member>
+        <member name="M:App1.EpubReader.Interfaces.IFiler.GetFilesPaths(App1.Infrastructure.FileExtension)">
+            <summary>
+            This method returns names of the files which have a given extension.
+            </summary>
+            <param name="fileExtensions">The extension of the file.</param>
+            <returns>Returns names of the files with their extensions.</returns>
+        </member>
+    </members>
+</doc>

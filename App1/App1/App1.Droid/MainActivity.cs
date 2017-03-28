@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using AlertDialog = Android.Support.V7.App.AlertDialog;
 
 namespace App1.Droid
 {
@@ -21,6 +22,12 @@ namespace App1.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            
+            //AlertDialog dialog = new AlertDialog.Builder(this).Create();
+            //dialog.SetTitle("Android OnCreate method.");
+            //dialog.SetMessage("Close this popup.");
+            //dialog.Show();
         }
     }
 }

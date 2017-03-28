@@ -622,4 +622,3 @@ namespace App1.WinPhone.App1_WinPhone_XamlTypeInfo
 }
 
 
-

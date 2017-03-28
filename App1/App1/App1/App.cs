@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using App1.EpubReader.Entities;
 using App1.EpubReader.Interfaces;
 using Xamarin.Forms;
 using App1.Pages;
+using App1.Infrastructure;
 
 namespace App1
 {
@@ -13,19 +15,23 @@ namespace App1
     {
         public App()
         {
-            string filename = "obitaemij-ostrov.epub";
+            //string filename = "obitaemij-ostrov.epub";
             //string bookPath = "alice-in-wonderland.epub";
             IFiler filer = DependencyService.Get<IFiler>();
-            string filepath = filer.GetFilePath(filename);
+            //string filepath = filer.GetFilePath(filename);
 
-            List<EpubBook> books = new List<EpubBook>
-            {
-                EpubReader.EpubReader.ReadBook(filepath)
-            };
+            IEnumerable<string> filesPath = filer.GetFilesPaths(FileExtension.EPUB);
+                
+            //List<EpubBook> books = new List<EpubBook>
+            //{
+            //    EpubReader.EpubReader.ReadBook(filepath)
+            //};
+
+            IEnumerable<EpubBook> books = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f));
 
             MainPage mainPage = new MainPage(books);
             NavigationPage rootPage = new NavigationPage(mainPage);
-            //MainPage = new MainPage(books);
+            ////MainPage = new MainPage(books);
             this.MainPage = rootPage;
         }
 

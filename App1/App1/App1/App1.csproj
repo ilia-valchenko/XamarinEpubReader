@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\App1.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +38,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Infrastructure\Buttons\OpenBookChapterButton.cs" />
+    <Compile Include="Infrastructure\FileExtension.cs" />
     <Compile Include="Pages\Book\BookContentPage.cs" />
     <Compile Include="Pages\Book\BookTextPage.cs" />
     <Compile Include="EpubReader\Entities\EpubBook.cs" />

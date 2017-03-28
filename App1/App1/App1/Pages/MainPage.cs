@@ -13,9 +13,9 @@ namespace App1.Pages
     public class MainPage : ContentPage
     {
         private readonly StackLayout panel;
-        private List<EpubBook> books;
+        private IEnumerable<EpubBook> books;
 
-        public MainPage(List<EpubBook> books)
+        public MainPage(IEnumerable<EpubBook> books)
         {
             this.books = books;
             this.Padding = new Thickness(20, 20, 20, 20);
