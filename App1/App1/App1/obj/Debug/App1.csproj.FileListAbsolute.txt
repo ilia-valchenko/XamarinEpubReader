@@ -13,6 +13,7 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.dll.mdb
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\bin\Debug\App1.dll.mdb
+D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\App1.XML
 D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll
 D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\App1.pdb
 D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Core.dll
@@ -23,10 +24,10 @@ D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Core.xml
 D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Platform.pdb
 D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Xaml.pdb
 D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Xaml.xml
-D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll
 D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.pdb
-D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\App1.XML
+D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll.mdb
+D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll.mdb

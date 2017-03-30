@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Xamarin.Forms;
+
 //using System.Drawing;
 
 namespace App1.EpubReader.Entities
@@ -11,7 +13,7 @@ namespace App1.EpubReader.Entities
         public List<string> AuthorList { get; set; }
         public EpubSchema Schema { get; set; }
         public EpubContent Content { get; set; }
-        //public Image CoverImage { get; set; }
+        public Image CoverImage { get; set; }
         public List<EpubChapter> Chapters { get; set; }
     }
 }

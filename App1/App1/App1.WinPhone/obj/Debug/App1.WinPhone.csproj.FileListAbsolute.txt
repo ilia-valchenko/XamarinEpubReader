@@ -60,6 +60,7 @@ D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Platform.W
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.Phone.dll
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Xaml.dll
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App1.pdb
+D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App1.xml
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Core.xml
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.pri
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.Phone.pri
@@ -92,4 +93,3 @@ D:\Git\xamarin-reader\App1\App1\App1.WinPhone\obj\Debug\MultipleQualifiersPerDim
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\obj\Debug\Xamarin.Forms.Platform.WinRT.pri.xml
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\obj\Debug\Xamarin.Forms.Platform.WinRT.Phone.pri.xml
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\obj\Debug\ProjectArchitectures.txt
-D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App1.xml

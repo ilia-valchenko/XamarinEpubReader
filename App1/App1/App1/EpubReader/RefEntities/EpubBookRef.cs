@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using App1.EpubReader.Entities;
 using App1.EpubReader.Interfaces;
 using App1.EpubReader.Readers;
+using Xamarin.Forms;
 
 namespace App1.EpubReader.RefEntities
 {
@@ -38,15 +39,15 @@ namespace App1.EpubReader.RefEntities
             }
         }
 
-        //public Image ReadCover()
-        //{
-        //    return ReadCoverAsync().Result;
-        //}
+        public Image ReadCover()
+        {
+            return ReadCoverAsync().Result;
+        }
 
-        //public async Task<Image> ReadCoverAsync()
-        //{
-        //    return await BookCoverReader.ReadBookCoverAsync(this).ConfigureAwait(false);
-        //}
+        public async Task<Image> ReadCoverAsync()
+        {
+            return await BookCoverReader.ReadBookCoverAsync(this).ConfigureAwait(false);
+        }
 
         public List<EpubChapterRef> GetChapters()
         {

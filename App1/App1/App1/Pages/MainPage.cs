@@ -30,6 +30,22 @@ namespace App1.Pages
 
             foreach (EpubBook book in books)
             {
+                ImageSource imageSource;
+
+                try
+                {
+                    imageSource = book.CoverImage.Source;
+                }
+                catch (Exception exception)
+                {
+                    throw exception;
+                }
+
+                ImageCell imageCell = new ImageCell
+                {
+                    ImageSource = imageSource
+                };
+
                 OpenBookButton openBookButton = new OpenBookButton(book)
                 {
                     Text = $"Title: {book.Title}"

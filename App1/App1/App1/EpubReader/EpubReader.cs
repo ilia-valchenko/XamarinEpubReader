@@ -30,8 +30,6 @@ namespace App1.EpubReader
         /// <returns></returns>
         public static async Task<EpubBookRef> OpenBookAsync(string filePath)
         {
-            //if (!File.Exists(filePath))
-            //    throw new FileNotFoundException("Specified epub file not found.", filePath);
             IFiler filer = DependencyService.Get<IFiler>();
             IZipFile zipFile = DependencyService.Get<IZipFile>();
 
@@ -40,8 +38,6 @@ namespace App1.EpubReader
                 throw new FileNotFoundException("Specified epub file not found.", filePath);
             }
 
-            //ZipArchive epubArchive = ZipFile.OpenRead(filePath);
-            //EpubBookRef bookRef = new EpubBookRef(epubArchive);
             IZipArchive epubArchive = zipFile.OpenRead(filePath);
             EpubBookRef bookRef = new EpubBookRef(epubArchive);
 
@@ -49,7 +45,7 @@ namespace App1.EpubReader
             bookRef.Schema = await SchemaReader.ReadSchemaAsync(epubArchive).ConfigureAwait(false);
             bookRef.Title = bookRef.Schema.Package.Metadata.Titles.FirstOrDefault() ?? String.Empty;
             bookRef.AuthorList = bookRef.Schema.Package.Metadata.Creators.Select(creator => creator.Creator).ToList();
-            bookRef.Author = String.Join(", ", bookRef.AuthorList);
+            bookRef.Author = string.Join(", ", bookRef.AuthorList);
             bookRef.Content = await Task.Run(() => ContentReader.ParseContentMap(bookRef)).ConfigureAwait(false);
             return bookRef;
         }
@@ -61,7 +57,18 @@ namespace App1.EpubReader
         /// <returns></returns>
         public static EpubBook ReadBook(string filePath)
         {
-            return ReadBookAsync(filePath).Result;
+            Task<EpubBook> taskBook;
+
+            try
+            {
+                taskBook = ReadBookAsync(filePath);
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
+
+            return taskBook.Result;
         }
 
         /// <summary>
@@ -72,6 +79,7 @@ namespace App1.EpubReader
         public static async Task<EpubBook> ReadBookAsync(string filePath)
         {
             EpubBook result = new EpubBook();
+
             using (EpubBookRef epubBookRef = await OpenBookAsync(filePath).ConfigureAwait(false))
             {
                 result.FilePath = epubBookRef.FilePath;
@@ -80,7 +88,7 @@ namespace App1.EpubReader
                 result.AuthorList = epubBookRef.AuthorList;
                 result.Author = epubBookRef.Author;
                 result.Content = await ReadContent(epubBookRef.Content).ConfigureAwait(false);
-                //result.CoverImage = await epubBookRef.ReadCoverAsync().ConfigureAwait(false);
+                result.CoverImage = await epubBookRef.ReadCoverAsync().ConfigureAwait(false);
                 List<EpubChapterRef> chapterRefs = await epubBookRef.GetChaptersAsync().ConfigureAwait(false);
                 result.Chapters = await ReadChapters(chapterRefs).ConfigureAwait(false);
             }
