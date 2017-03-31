@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using App1.EpubReader.Entities;
+using App1.EpubReader.Schema.Opf;
 using App1.Infrastructure;
 using App1.Infrastructure.Buttons;
 using Xamarin.Forms;
@@ -30,25 +31,52 @@ namespace App1.Pages
 
             foreach (EpubBook book in books)
             {
-                ImageSource imageSource;
+                EpubGuideReference coverPageReference = book.Schema.Package.Guide.FirstOrDefault(reference => String.Compare(reference.Type, "cover", StringComparison.OrdinalIgnoreCase) == 0);
+                if (coverPageReference != null)
+                {
+                    EpubTextContentFile coverPage;
+                    if (book.Content.Html.TryGetValue(coverPageReference.Href, out coverPage))
+                    {
+                        // coverPage.Content has XHTML version of the cover page
 
-                try
-                {
-                    imageSource = book.CoverImage.Source;
-                }
-                catch (Exception exception)
-                {
-                    throw exception;
+                        //string htmlText = chapter.HtmlContent.Replace(@"\", string.Empty);
+                        HtmlWebViewSource webViewSource = new HtmlWebViewSource
+                        {
+                            Html = coverPage.Content.Replace(@"\", string.Empty)
+                        };
+
+                        this.panel.Children.Add(new WebView
+                        {
+                            Source = webViewSource
+                        });
+                    }
                 }
 
-                ImageCell imageCell = new ImageCell
-                {
-                    ImageSource = imageSource
-                };
+                //ImageSource imageSource;
+
+                //try
+                //{
+                //    imageSource = book.CoverImage.Source;
+                //}
+                //catch (Exception exception)
+                //{
+                //    throw exception;
+                //}
+
+                //ImageCell imageCell = new ImageCell
+                //{
+                //    ImageSource = imageSource
+                //};
+
+                FileImageSource fileImageSource = new FileImageSource();
+              
+
+                byte[] bytesImage = book.Content.Images.FirstOrDefault().Value.Content;
 
                 OpenBookButton openBookButton = new OpenBookButton(book)
                 {
-                    Text = $"Title: {book.Title}"
+                    //Text = $"Title: {book.Title}"
+                    
                 };
 
                 openBookButton.Clicked += OnClickOpenBookButton;
