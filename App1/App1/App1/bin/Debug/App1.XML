@@ -4,6 +4,59 @@
         <name>App1</name>
     </assembly>
     <members>
+        <member name="F:App1.App.bookDirectoryName">
+            <summary>
+            This string represents the name of the directory which contains electronic books.
+            </summary>
+        </member>
+        <member name="F:App1.App.filer">
+            <summary>
+            The filer class. 
+            </summary>
+        </member>
+        <member name="F:App1.App.directory">
+            <summary>
+            The directory class.
+            </summary>
+        </member>
+        <member name="T:App1.Infrastructure.Directory.IDirectory">
+            <summary>
+            This interface exposes methods for creating, moving, and enumerating through directories and subdirectories.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Directory.IDirectory.CreateRootFolder(System.String)">
+            <summary>
+            This method creates a folder in a root directory.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Directory.IDirectory.DoesDirectoryExist(System.String)">
+            <summary>
+            This method determines does the directory exist.
+            </summary>
+            <returns>Returns true is directory exists.</returns>
+        </member>
+        <member name="M:App1.Pages.Book.BookTextPage.#ctor(App1.EpubReader.Entities.EpubChapter)">
+            <summary>
+            Initialize an instance of <see cref="T:App1.Pages.Book.BookTextPage"/>
+            </summary>
+            <param name="chapter">The book's chapter.</param>
+        </member>
+        <member name="T:App1.Pages.MainPage">
+            <summary>
+            The home page of the application.
+            </summary>
+        </member>
+        <member name="F:App1.Pages.MainPage.books">
+            <summary>
+            The collection of books.
+            </summary>
+        </member>
+        <member name="M:App1.Pages.MainPage.#ctor(System.Collections.Generic.IEnumerable{App1.EpubReader.Entities.EpubBook})">
+            <summary>
+            Initialize an instance of the <see cref="T:App1.Pages.MainPage"/>
+            </summary>
+            <param name="books">The collection of books.</param>
+        </member>
         <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
             <summary>
             Opens the book synchronously without reading its content. Holds the handle to the EPUB file.

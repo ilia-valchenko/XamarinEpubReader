@@ -1,43 +1,47 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using App1.EpubReader.Entities;
 using App1.EpubReader.Interfaces;
-using Xamarin.Forms;
 using App1.Pages;
 using App1.Infrastructure;
+using App1.Infrastructure.Directory;
+using Xamarin.Forms;
 
 namespace App1
 {
     public class App : Application
     {
+        /// <summary>
+        /// This string represents the name of the directory which contains electronic books.
+        /// </summary>
+        private const string bookDirectoryName = "Xamarin eBooks";
+
+        /// <summary>
+        /// The filer class. 
+        /// </summary>
+        private readonly IFiler filer;
+
+        /// <summary>
+        /// The directory class.
+        /// </summary>
+        private readonly IDirectory directory;
+
         public App()
         {
-            //string filename = "obitaemij-ostrov.epub";
-            //string bookPath = "alice-in-wonderland.epub";
-            IFiler filer = DependencyService.Get<IFiler>();
-            //string filepath = filer.GetFilePath(filename);
+            this.filer = DependencyService.Get<IFiler>();
+            this.directory = DependencyService.Get<IDirectory>();
 
-            IEnumerable<string> filesPath = filer.GetFilesPaths(FileExtension.EPUB);
-                
-            //List<EpubBook> books = new List<EpubBook>
-            //{
-            //    EpubReader.EpubReader.ReadBook(filepath)
-            //};
-
+            IEnumerable<string> filesPath = this.filer.GetFilesPaths(FileExtension.EPUB);
             IEnumerable<EpubBook> books = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f));
 
             MainPage mainPage = new MainPage(books);
             NavigationPage rootPage = new NavigationPage(mainPage);
-            ////MainPage = new MainPage(books);
             this.MainPage = rootPage;
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            this.directory.CreateRootFolder(bookDirectoryName);
         }
 
         protected override void OnSleep()

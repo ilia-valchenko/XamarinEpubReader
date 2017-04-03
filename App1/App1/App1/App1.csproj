@@ -39,6 +39,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Infrastructure\Buttons\OpenBookChapterButton.cs" />
     <Compile Include="Infrastructure\FileExtension.cs" />
+    <Compile Include="Infrastructure\Directory\IDirectory.cs" />
     <Compile Include="Pages\Book\BookContentPage.cs" />
     <Compile Include="Pages\Book\BookTextPage.cs" />
     <Compile Include="EpubReader\Entities\EpubBook.cs" />

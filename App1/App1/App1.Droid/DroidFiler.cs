@@ -58,7 +58,7 @@ namespace App1.Droid
                 throw;
             }
 
-            string applicationFolderDirectory = "/storage/sdcard0/Android/data/App1.Droid/files";
+            string applicationFolderDirectory = "/storage/sdcard0/Xamarin eBooks";
 
             DirectoryInfo directoryInfo;
 

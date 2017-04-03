@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using App1.EpubReader.Entities;
 using App1.EpubReader.Schema.Opf;
@@ -11,13 +12,25 @@ using App1.Pages.Error;
 
 namespace App1.Pages
 {
+    /// <summary>
+    /// The home page of the application.
+    /// </summary>
     public class MainPage : ContentPage
     {
         private readonly StackLayout panel;
+
+        /// <summary>
+        /// The collection of books.
+        /// </summary>
         private IEnumerable<EpubBook> books;
 
+        /// <summary>
+        /// Initialize an instance of the <see cref="MainPage"/>
+        /// </summary>
+        /// <param name="books">The collection of books.</param>
         public MainPage(IEnumerable<EpubBook> books)
         {
+            this.Title = "Main page";
             this.books = books;
             this.Padding = new Thickness(20, 20, 20, 20);
 
@@ -29,102 +42,30 @@ namespace App1.Pages
                 Spacing = 15
             };
 
-            foreach (EpubBook book in books)
+            foreach (EpubBook book in this.books)
             {
-                EpubGuideReference coverPageReference = book.Schema.Package.Guide.FirstOrDefault(reference => String.Compare(reference.Type, "cover", StringComparison.OrdinalIgnoreCase) == 0);
-                if (coverPageReference != null)
-                {
-                    EpubTextContentFile coverPage;
-                    if (book.Content.Html.TryGetValue(coverPageReference.Href, out coverPage))
-                    {
-                        // coverPage.Content has XHTML version of the cover page
+                byte[] byteImage = book.Content.Images.FirstOrDefault().Value.Content;
 
-                        //string htmlText = chapter.HtmlContent.Replace(@"\", string.Empty);
-                        HtmlWebViewSource webViewSource = new HtmlWebViewSource
-                        {
-                            Html = coverPage.Content.Replace(@"\", string.Empty)
-                        };
+                Image img = new Image();
+                ImageSource imageSource = ImageSource.FromStream(() => new MemoryStream(byteImage));
+                img.Source = imageSource;
 
-                        this.panel.Children.Add(new WebView
-                        {
-                            Source = webViewSource
-                        });
-                    }
-                }
-
-                //ImageSource imageSource;
-
-                //try
-                //{
-                //    imageSource = book.CoverImage.Source;
-                //}
-                //catch (Exception exception)
-                //{
-                //    throw exception;
-                //}
-
-                //ImageCell imageCell = new ImageCell
-                //{
-                //    ImageSource = imageSource
-                //};
-
-                FileImageSource fileImageSource = new FileImageSource();
-              
-
-                byte[] bytesImage = book.Content.Images.FirstOrDefault().Value.Content;
+                this.panel.Children.Add(img);
 
                 OpenBookButton openBookButton = new OpenBookButton(book)
                 {
-                    //Text = $"Title: {book.Title}"
-                    
+                    Text = $"Title: {book.Title}"
                 };
 
                 openBookButton.Clicked += OnClickOpenBookButton;
                 this.panel.Children.Add(openBookButton);
             }
 
-            Button backButton = new Button
-            {
-                Text = "Go Back"
-            };
-            backButton.Clicked += OnBackButtonClick;
-            panel.Children.Add(backButton);
-
-            //panel.Children.Add(new Label
-            //{
-            //    Text = $"Author: {book.Author}",
-            //});
-
-            //// Get all autors
-
-            //if (book.Author != null && book.AuthorList.Count > 0)
-            //{
-            //    StringBuilder builder = new StringBuilder();
-            //    builder.Append("Autors: ");
-
-            //    foreach (string autor in book.AuthorList)
-            //    {
-            //        builder.Append(autor + "; ");
-            //    }
-
-            //    panel.Children.Add(new Label
-            //    {
-            //        Text = builder.ToString()
-            //    });
-            //}
-
-            //this.Content = panel;
-
             this.Content = new ScrollView
             {
-                Content = panel,
+                Content = this.panel,
                 Orientation = ScrollOrientation.Vertical
             };
-
-            //this.Content = new WebView
-            //{
-            //    Source = source
-            //};
         }
 
         private async void OnClickOpenBookButton(object sender, EventArgs e)
@@ -152,11 +93,6 @@ namespace App1.Pages
                 await this.Navigation.PushAsync(errorPage);
                 // rethrow
             }
-        }
-
-        private async void OnBackButtonClick(object sender, EventArgs e)
-        {
-            await this.Navigation.PopAsync();
         }
     }
 }

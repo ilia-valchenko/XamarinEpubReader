@@ -4,5 +4,23 @@
         <name>App1.Droid</name>
     </assembly>
     <members>
+        <member name="T:App1.Droid.DroidDirectory">
+            <summary>
+            This class represents an implementation of IDirectory interface by using methods from System.IO.Directory class.
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidDirectory.CreateRootFolder(System.String)">
+            <summary>
+            Creates a folder in a root directory.
+            </summary>
+            <param name="folderName">The name of a new folder.</param>
+        </member>
+        <member name="M:App1.Droid.DroidDirectory.DoesDirectoryExist(System.String)">
+            <summary>
+            Gets a value indicating whether the directory exists.
+            </summary>
+            <param name="path">The full path of a directory.</param>
+            <returns>Returns true if directory exists.</returns>
+        </member>
     </members>
 </doc>

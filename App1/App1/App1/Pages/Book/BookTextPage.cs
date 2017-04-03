@@ -12,8 +12,13 @@ namespace App1.Pages.Book
     {
         private readonly StackLayout panel;
 
+        /// <summary>
+        /// Initialize an instance of <see cref="BookTextPage"/>
+        /// </summary>
+        /// <param name="chapter">The book's chapter.</param>
         public BookTextPage(EpubChapter chapter)
         {
+            this.Title = "Text page";
             panel = new StackLayout();
 
             string htmlText = chapter.HtmlContent.Replace(@"\", string.Empty);

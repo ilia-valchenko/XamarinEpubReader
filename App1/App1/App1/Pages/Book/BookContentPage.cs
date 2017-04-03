@@ -13,6 +13,7 @@ namespace App1.Pages.Book
 
         public BookContentPage(List<EpubChapter> chapters)
         {
+            this.Title = "Content page";
             this.panel = new StackLayout();
 
             foreach (EpubChapter chapter in chapters)
