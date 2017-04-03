@@ -36,6 +36,7 @@ namespace App1
 
             MainPage mainPage = new MainPage(books);
             NavigationPage rootPage = new NavigationPage(mainPage);
+
             this.MainPage = rootPage;
         }
 

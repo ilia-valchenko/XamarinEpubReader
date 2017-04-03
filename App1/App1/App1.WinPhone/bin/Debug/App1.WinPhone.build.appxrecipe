@@ -25,6 +25,9 @@
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App1.WinPhone.exe">
       <PackagePath>App1.WinPhone.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App1.WinPhone.exe.config">
+      <PackagePath>App1.WinPhone.exe.config</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll">
       <PackagePath>App1.dll</PackagePath>
     </AppxPackagedFile>
@@ -42,6 +45,18 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\packages\Xamarin.Forms.2.2.0.45\lib\wpa81\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Platform.dll">
+      <PackagePath>XLabs.Platform.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Ioc.dll">
+      <PackagePath>XLabs.Ioc.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Core.dll">
+      <PackagePath>XLabs.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\ExifLib.dll">
+      <PackagePath>ExifLib.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1.WinPhone\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>

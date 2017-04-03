@@ -45,6 +45,7 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Win
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.WinPhone\obj\Debug\Xamarin.Forms.Platform.WinRT.pri.xml
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.WinPhone\obj\Debug\Xamarin.Forms.Platform.WinRT.Phone.pri.xml
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.WinPhone\obj\Debug\ProjectArchitectures.txt
+D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App1.WinPhone.exe.config
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App.xbf
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\MainPage.xbf
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App1.WinPhone.xr.xml
@@ -59,12 +60,19 @@ D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Platform.d
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.dll
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.Phone.dll
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\XLabs.Platform.dll
+D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\XLabs.Ioc.dll
+D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\XLabs.Core.dll
+D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\ExifLib.dll
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App1.pdb
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\App1.xml
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Core.xml
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.pri
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Platform.WinRT.Phone.pri
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\XLabs.Platform.xml
+D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\XLabs.Ioc.xml
+D:\Git\xamarin-reader\App1\App1\App1.WinPhone\bin\Debug\XLabs.Core.xml
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\obj\Debug\App1.WinPhone.csprojResolveAssemblyReference.cache
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\obj\Debug\App.g.i.cs
 D:\Git\xamarin-reader\App1\App1\App1.WinPhone\obj\Debug\App.g.cs

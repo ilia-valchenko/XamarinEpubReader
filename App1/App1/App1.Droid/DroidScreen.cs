@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using App1.Infrastructure.Screen;
@@ -18,6 +19,11 @@ namespace App1.Droid
     {
         public double GetWidthOfDeviceScreen()
         {
+           DisplayMetrics displayMetrics = new DisplayMetrics();
+          
+          
+            //int height = this.Application.Resources.DisplayMetrics.HeightPixels;
+
             return default(double);
         }
 

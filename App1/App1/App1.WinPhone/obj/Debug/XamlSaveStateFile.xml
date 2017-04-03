@@ -1,7 +1,7 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="d:\git\xamarin-reader\app1\app1\app1.winphone\obj\debug\intermediatexaml\app1.winphone.exe" HashGuid="96fd1655-5b61-8efd-66eb-a2aa8a0447ee" />
-    <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\app1\app1\bin\debug\app1.dll" HashGuid="0b00d070-c452-59bb-f6d5-618ac6d96691" />
+    <LocalAssembly PathName="d:\git\xamarin-reader\app1\app1\app1.winphone\obj\debug\intermediatexaml\app1.winphone.exe" HashGuid="31c495c9-d330-b70b-b6b9-490b4893c769" />
+    <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\app1\app1\bin\debug\app1.dll" HashGuid="c80b0492-9ac5-6ce5-54ca-deb1d2f25993" />
     <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\packages\xamarin.forms.2.2.0.45\lib\wpa81\xamarin.forms.core.dll" HashGuid="2a418b72-55c1-19a8-a363-4b8c348fbee0" />
     <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\packages\xamarin.forms.2.2.0.45\lib\wpa81\xamarin.forms.platform.dll" HashGuid="bb4040f4-26bb-5883-795e-627e39855666" />
     <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\packages\xamarin.forms.2.2.0.45\lib\wpa81\xamarin.forms.platform.winrt.dll" HashGuid="068a3578-03d9-2580-f12e-c531e1d2d71c" />
