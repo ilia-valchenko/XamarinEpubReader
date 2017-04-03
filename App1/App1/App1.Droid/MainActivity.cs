@@ -23,7 +23,6 @@ namespace App1.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
 
-            
             //AlertDialog dialog = new AlertDialog.Builder(this).Create();
             //dialog.SetTitle("Android OnCreate method.");
             //dialog.SetMessage("Close this popup.");

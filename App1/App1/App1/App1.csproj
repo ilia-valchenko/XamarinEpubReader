@@ -40,6 +40,8 @@
     <Compile Include="Infrastructure\Buttons\OpenBookChapterButton.cs" />
     <Compile Include="Infrastructure\FileExtension.cs" />
     <Compile Include="Infrastructure\Directory\IDirectory.cs" />
+    <Compile Include="Infrastructure\PageSplitter.cs" />
+    <Compile Include="Infrastructure\Screen\IDeviceScreen.cs" />
     <Compile Include="Pages\Book\BookContentPage.cs" />
     <Compile Include="Pages\Book\BookTextPage.cs" />
     <Compile Include="EpubReader\Entities\EpubBook.cs" />
@@ -102,12 +104,18 @@
     <Compile Include="Infrastructure\Buttons\OpenBookButton.cs" />
     <Compile Include="Pages\Error\ErrorPage.cs" />
     <Compile Include="Pages\MainPage.cs" />
+    <Compile Include="Pages\TestBookTextPage.cs" />
+    <Compile Include="Pages\TestPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
@@ -118,6 +126,14 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Core, Version=2.0.5782.12218, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Core.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Platform, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Platform.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

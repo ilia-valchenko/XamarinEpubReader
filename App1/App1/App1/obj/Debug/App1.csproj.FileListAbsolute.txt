@@ -27,5 +27,10 @@ D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll
 D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.pdb
 D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
+D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\ExifLib.dll
+D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Core.dll
+D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Platform.dll
+D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Core.xml
+D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Platform.xml
 D:\Git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.mdb

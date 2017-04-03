@@ -114,6 +114,7 @@
   <ItemGroup>
     <Compile Include="DroidDirectory.cs" />
     <Compile Include="DroidFiler.cs" />
+    <Compile Include="DroidScreen.cs" />
     <Compile Include="DroidXPather.cs" />
     <Compile Include="DroidZipArchive.cs" />
     <Compile Include="DroidZipArchiveEntry.cs" />

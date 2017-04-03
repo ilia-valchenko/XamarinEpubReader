@@ -60,9 +60,25 @@ namespace App1.Pages.Book
 
         private void OnClickOpenBookChapterButton(object sender, EventArgs args)
         {
-            OpenBookChapterButton button = (OpenBookChapterButton) sender;
-            BookTextPage bookTextPage = new BookTextPage(button.Chapter);
-            this.Navigation.PushAsync(bookTextPage);
+            CarouselPage carouselPage = new CarouselPage();
+            StackLayout panel = new StackLayout
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Orientation = StackOrientation.Vertical,
+                Spacing = 15
+            };
+
+            for (int i = 0; i < 10; i++)
+            {
+                carouselPage.Children.Add(new TestPage());
+            }
+
+            //OpenBookChapterButton button = (OpenBookChapterButton) sender;
+            //BookTextPage bookTextPage = new BookTextPage(button.Chapter);
+            //this.Navigation.PushAsync(bookTextPage);
+
+            this.Navigation.PushAsync(carouselPage);
         }
     }
 }
