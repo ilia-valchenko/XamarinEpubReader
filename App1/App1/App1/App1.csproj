@@ -41,8 +41,10 @@
     <Compile Include="Infrastructure\FileExtension.cs" />
     <Compile Include="Infrastructure\Directory\IDirectory.cs" />
     <Compile Include="Infrastructure\PageSplitter.cs" />
-    <Compile Include="Pages\Book\BookContentPage.cs" />
-    <Compile Include="Pages\Book\BookTextPage.cs" />
+    <Compile Include="Models\BookViewModel.cs" />
+    <Compile Include="Models\ApplicationPages\BookPages\BookContentPageViewModel.cs" />
+    <Compile Include="Models\ApplicationPages\BookPages\BookPage.cs" />
+    <Compile Include="Models\ApplicationPages\BookPages\BookTextPageViewModel.cs" />
     <Compile Include="EpubReader\Entities\EpubBook.cs" />
     <Compile Include="EpubReader\Entities\EpubByteContentFile.cs" />
     <Compile Include="EpubReader\Entities\EpubChapter.cs" />
@@ -100,11 +102,9 @@
     <Compile Include="EpubReader\Schema\Opf\EpubVersion.cs" />
     <Compile Include="EpubReader\Utils\XmlUtils.cs" />
     <Compile Include="EpubReader\Utils\ZipPathUtils.cs" />
-    <Compile Include="Infrastructure\Buttons\OpenBookButton.cs" />
-    <Compile Include="Pages\Error\ErrorPage.cs" />
-    <Compile Include="Pages\MainPage.cs" />
-    <Compile Include="Pages\TestBookTextPage.cs" />
-    <Compile Include="Pages\TestPage.cs" />
+    <Compile Include="Models\ApplicationPages\ErrorPages\ErrorPage.cs" />
+    <Compile Include="Models\ApplicationPages\MainPageViewModel.cs" />
+    <Compile Include="Models\ApplicationPages\TestPageDeviceMeasurementViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,9 +129,7 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\Screen\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

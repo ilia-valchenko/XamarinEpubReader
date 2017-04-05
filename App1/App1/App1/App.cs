@@ -2,10 +2,10 @@
 using System.Linq;
 using App1.EpubReader.Entities;
 using App1.EpubReader.Interfaces;
-using App1.Pages;
 using App1.Infrastructure;
 using App1.Infrastructure.Directory;
 using Xamarin.Forms;
+using App1.Models.ApplicationPages;
 
 namespace App1
 {
@@ -34,7 +34,7 @@ namespace App1
             IEnumerable<string> filesPath = this.filer.GetFilesPaths(FileExtension.EPUB);
             IEnumerable<EpubBook> books = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f));
 
-            MainPage mainPage = new MainPage(books);
+            MainPageViewModel mainPage = new MainPageViewModel(books);
             NavigationPage rootPage = new NavigationPage(mainPage);
 
             this.MainPage = rootPage;

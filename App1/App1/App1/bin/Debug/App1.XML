@@ -35,25 +35,40 @@
             </summary>
             <returns>Returns true is directory exists.</returns>
         </member>
-        <member name="M:App1.Pages.Book.BookTextPage.#ctor(App1.EpubReader.Entities.EpubChapter)">
+        <member name="M:App1.Models.BookViewModel.#ctor(App1.EpubReader.Entities.EpubBook)">
             <summary>
-            Initialize an instance of <see cref="T:App1.Pages.Book.BookTextPage"/>
+            Initializes the instance of <see cref="T:App1.Models.BookViewModel"/>
+            </summary>
+        </member>
+        <member name="T:App1.Models.ApplicationPages.BookPages.BookPage">
+            <summary>
+            This class represents a default book page. 
+            </summary>
+        </member>
+        <member name="T:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel">
+            <summary>
+            This class represents a default book page which contains text content.
+            </summary>
+        </member>
+        <member name="M:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.#ctor(App1.EpubReader.Entities.EpubChapter)">
+            <summary>
+            Initialize an instance of <see cref="T:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel"/>
             </summary>
             <param name="chapter">The book's chapter.</param>
         </member>
-        <member name="T:App1.Pages.MainPage">
+        <member name="T:App1.Models.ApplicationPages.MainPageViewModel">
             <summary>
             The home page of the application.
             </summary>
         </member>
-        <member name="F:App1.Pages.MainPage.books">
+        <member name="F:App1.Models.ApplicationPages.MainPageViewModel.books">
             <summary>
             The collection of books.
             </summary>
         </member>
-        <member name="M:App1.Pages.MainPage.#ctor(System.Collections.Generic.IEnumerable{App1.EpubReader.Entities.EpubBook})">
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.#ctor(System.Collections.Generic.IEnumerable{App1.EpubReader.Entities.EpubBook})">
             <summary>
-            Initialize an instance of the <see cref="T:App1.Pages.MainPage"/>
+            Initialize an instance of the <see cref="T:App1.Models.ApplicationPages.MainPageViewModel"/>
             </summary>
             <param name="books">The collection of books.</param>
         </member>
