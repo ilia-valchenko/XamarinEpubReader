@@ -9,4 +9,4 @@ This application is the simple ePUB reader based on Xamarin.Forms.
 
 You can find the android package file into solution and install it by using your Android device. Also there is another way. You can debug it in Microsoft Visual Studio by using Android emulator.
 
-If you run this application by using USB bedugging or just install it on your device you should put your eBooks into special foolder which is called **Xamarin eBooks**. It is situated in root storage directory. 
+If you run this application by using USB bedugging or just install it on your device you should put your eBooks into special folder which is called **Xamarin eBooks**. It is situated in root storage directory. 
