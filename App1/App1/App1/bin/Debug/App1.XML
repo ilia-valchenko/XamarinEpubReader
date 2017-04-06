@@ -4,9 +4,14 @@
         <name>App1</name>
     </assembly>
     <members>
+        <member name="T:App1.App">
+            <summary>
+            The application class.
+            </summary>
+        </member>
         <member name="F:App1.App.bookDirectoryName">
             <summary>
-            This string represents the name of the directory which contains electronic books.
+            The name of the directory which will contain eBooks.
             </summary>
         </member>
         <member name="F:App1.App.filer">
@@ -17,6 +22,16 @@
         <member name="F:App1.App.directory">
             <summary>
             The directory class.
+            </summary>
+        </member>
+        <member name="M:App1.App.#ctor">
+            <summary>
+            Initialize the instance of <see cref="T:App1.App"/> class.
+            </summary>
+        </member>
+        <member name="M:App1.App.OnStart">
+            <summary>
+            This method calls when the application starts. 
             </summary>
         </member>
         <member name="T:App1.Infrastructure.Directory.IDirectory">
@@ -61,12 +76,17 @@
             The home page of the application.
             </summary>
         </member>
+        <member name="F:App1.Models.ApplicationPages.MainPageViewModel.panel">
+            <summary>
+            The grid layout panel.
+            </summary>
+        </member>
         <member name="F:App1.Models.ApplicationPages.MainPageViewModel.books">
             <summary>
             The collection of books.
             </summary>
         </member>
-        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.#ctor(System.Collections.Generic.IEnumerable{App1.EpubReader.Entities.EpubBook})">
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.#ctor(System.Collections.Generic.IList{App1.Models.BookViewModel})">
             <summary>
             Initialize an instance of the <see cref="T:App1.Models.ApplicationPages.MainPageViewModel"/>
             </summary>

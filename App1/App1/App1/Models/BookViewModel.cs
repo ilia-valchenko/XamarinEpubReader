@@ -11,9 +11,19 @@ namespace App1.Models
 {
     public class BookViewModel
     {
+        /// <summary>
+        /// The book's cover image.
+        /// </summary>
         private readonly Image bookCoverImage;
+
+        /// <summary>
+        /// The collection of book's pages.
+        /// </summary>
         private readonly IList<BookPage> pages;
         
+        /// <summary>
+        /// Readonly property which returns the collection of book's page.
+        /// </summary>
         public IList<BookPage> Pages
         {
             get
@@ -22,12 +32,18 @@ namespace App1.Models
             }
         }
         
+        /// <summary>
+        /// The number of pages.
+        /// </summary>
         public int NumberOfPages {
             get {
                 return this.pages.Count;
             }
         }
 
+        /// <summary>
+        /// The book's cover image.
+        /// </summary>
         public Image BookCoverImage
         {
             get
@@ -44,6 +60,7 @@ namespace App1.Models
             // ------------------ Initialize book image cover --------------------
 
             // The picture may be missing. 
+            // Create default cover by using title of a book and name of the author. 
             byte[] byteImage = epubBook.Content.Images.FirstOrDefault().Value.Content;
 
             Image bookCoverImage = new Image
@@ -58,7 +75,6 @@ namespace App1.Models
             this.pages = new List<BookPage>();
 
             // set book cover image as the first page of a book
-
             BookContentPageViewModel contentPage = new BookContentPageViewModel(epubBook.Chapters);
             this.pages.Add(contentPage);
 

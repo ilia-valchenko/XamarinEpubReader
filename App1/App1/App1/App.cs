@@ -6,13 +6,17 @@ using App1.Infrastructure;
 using App1.Infrastructure.Directory;
 using Xamarin.Forms;
 using App1.Models.ApplicationPages;
+using App1.Models;
 
 namespace App1
 {
+    /// <summary>
+    /// The application class.
+    /// </summary>
     public class App : Application
     {
         /// <summary>
-        /// This string represents the name of the directory which contains electronic books.
+        /// The name of the directory which will contain eBooks.
         /// </summary>
         private const string bookDirectoryName = "Xamarin eBooks";
 
@@ -26,13 +30,17 @@ namespace App1
         /// </summary>
         private readonly IDirectory directory;
 
+        /// <summary>
+        /// Initialize the instance of <see cref="App"/> class.
+        /// </summary>
         public App()
         {
             this.filer = DependencyService.Get<IFiler>();
             this.directory = DependencyService.Get<IDirectory>();
 
             IEnumerable<string> filesPath = this.filer.GetFilesPaths(FileExtension.EPUB);
-            IEnumerable<EpubBook> books = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f));
+            IEnumerable<EpubBook> epubBooks = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f));
+            List<BookViewModel> books = epubBooks.Select(b => new BookViewModel(b)).ToList();
 
             MainPageViewModel mainPage = new MainPageViewModel(books);
             NavigationPage rootPage = new NavigationPage(mainPage);
@@ -40,6 +48,9 @@ namespace App1
             this.MainPage = rootPage;
         }
 
+        /// <summary>
+        /// This method calls when the application starts. 
+        /// </summary>
         protected override void OnStart()
         {
             this.directory.CreateRootFolder(bookDirectoryName);

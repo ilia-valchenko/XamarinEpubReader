@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using App1.EpubReader.Entities;
 using Xamarin.Forms;
 using App1.Models.ApplicationPages.BookPages;
 
@@ -11,44 +10,71 @@ namespace App1.Models.ApplicationPages
     /// </summary>
     public class MainPageViewModel : ContentPage
     {
-        private readonly StackLayout panel;
+        /// <summary>
+        /// The grid layout panel.
+        /// </summary>
+        private readonly Grid panel;
 
         /// <summary>
         /// The collection of books.
         /// </summary>
-        private IEnumerable<EpubBook> books;
+        private readonly IList<BookViewModel> books;
 
         /// <summary>
         /// Initialize an instance of the <see cref="MainPageViewModel"/>
         /// </summary>
         /// <param name="books">The collection of books.</param>
-        public MainPageViewModel(IEnumerable<EpubBook> books)
+        public MainPageViewModel(IList<BookViewModel> books)
         {
-            this.Title = "Main page";
             this.books = books;
+            this.panel = new Grid();
             this.Padding = new Thickness(20, 20, 20, 20);
+            this.Title = "Main page";
+            
+            // take it from config or database
+            const int numberOfBooksPerRow = 3;
+            int numberOfBooks = this.books.Count;
+            int numberOfRows = (int)Math.Ceiling((double)numberOfBooks / numberOfBooksPerRow);
 
-            this.panel = new StackLayout
+            //this.panel = new Grid
+            //{
+            //    VerticalOptions = LayoutOptions.FillAndExpand,
+            //    HorizontalOptions = LayoutOptions.FillAndExpand,
+            //    ColumnSpacing = 5,
+            //    RowSpacing = 5
+            //};
+
+            // configure grid layout
+            for (int i = 0; i < numberOfRows; i++)
             {
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                Orientation = StackOrientation.Vertical,
-                Spacing = 15
-            };
+                this.panel.RowDefinitions.Add(new RowDefinition { Height = new GridLength(200) });
+            }
 
-            foreach (EpubBook epubBook in this.books)
+            for (int i = 0; i < numberOfBooksPerRow; i++)
             {
-                BookViewModel bookViewModel = new BookViewModel(epubBook);
+                this.panel.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            }
 
-                var bookCoverImageTap = new TapGestureRecognizer();
+            for (int i = 0, bookNumber = 0; i < numberOfRows; i++)
+            {
+                for (int j = 0; j < numberOfBooksPerRow && bookNumber < numberOfBooks; j++, bookNumber++)
+                {
+                    this.panel.Children.Add(books[bookNumber].BookCoverImage, j, i);
+                }
+            }
+
+            // set tap recognizer 
+            foreach (BookViewModel book in this.books)
+            {
+                TapGestureRecognizer bookCoverImageTap = new TapGestureRecognizer();
                 bookCoverImageTap.Tapped += (object sender, EventArgs e) =>
                 {
                     CarouselPage carouselPage = new CarouselPage
                     {
-                        Title = "Main page"
+                        Title = "Go to Main page"
                     };
 
-                    foreach(BookPage bookPage in bookViewModel.Pages)
+                    foreach (BookPage bookPage in book.Pages)
                     {
                         carouselPage.Children.Add(bookPage);
                     }
@@ -56,9 +82,7 @@ namespace App1.Models.ApplicationPages
                     this.Navigation.PushAsync(carouselPage);
                 };
 
-                bookViewModel.BookCoverImage.GestureRecognizers.Add(bookCoverImageTap);
-
-                this.panel.Children.Add(bookViewModel.BookCoverImage);
+                book.BookCoverImage.GestureRecognizers.Add(bookCoverImageTap);
             }
 
             this.Content = new ScrollView

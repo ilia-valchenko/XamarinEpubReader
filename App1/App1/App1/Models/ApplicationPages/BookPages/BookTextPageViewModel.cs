@@ -16,7 +16,20 @@ namespace App1.Models.ApplicationPages.BookPages
         {
             string htmlText = chapter.HtmlContent.Replace(@"\", string.Empty);
             HtmlWebViewSource source = new HtmlWebViewSource { Html = htmlText };
+
+            string[] words = htmlText.Split(' ');
+            Rectangle rect = new Rectangle();
+
+
             this.Content = new WebView { Source = source };
+
+            // ---------------
+            WebView webView = new WebView
+            {
+                Source = source
+            };
+            
         }
+
     }
 }
