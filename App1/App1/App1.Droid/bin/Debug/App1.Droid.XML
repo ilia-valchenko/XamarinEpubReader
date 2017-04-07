@@ -22,5 +22,25 @@
             <param name="path">The full path of a directory.</param>
             <returns>Returns true if directory exists.</returns>
         </member>
+        <member name="T:App1.Droid.DroidScreenHelper">
+            <summary>
+            This class detects the screen size of a device, in density-independent pixels.
+            </summary>
+        </member>
+        <member name="P:App1.Droid.DroidScreenHelper.ScreenWidth">
+            <summary>
+            The screen width in density-independent pixels.
+            </summary>
+        </member>
+        <member name="P:App1.Droid.DroidScreenHelper.ScreenHeight">
+            <summary>
+            The screen height in density-independent pixels.
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidScreenHelper.#ctor">
+            <summary>
+            Initialize the new instance of <see cref="T:App1.Droid.DroidScreenHelper"/>
+            </summary>
+        </member>
     </members>
 </doc>

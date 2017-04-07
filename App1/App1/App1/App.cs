@@ -38,8 +38,12 @@ namespace App1
             this.filer = DependencyService.Get<IFiler>();
             this.directory = DependencyService.Get<IDirectory>();
 
+            //IScreenHelper screenHelper = DependencyService.Get<IScreenHelper>();
+            //int width = screenHelper.ScreenWidth;
+            //int height = screenHelper.ScreenHeight;
+
             IEnumerable<string> filesPath = this.filer.GetFilesPaths(FileExtension.EPUB);
-            IEnumerable<EpubBook> epubBooks = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f));
+            IEnumerable<EpubBook> epubBooks = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f)).ToList();
             List<BookViewModel> books = epubBooks.Select(b => new BookViewModel(b)).ToList();
 
             MainPageViewModel mainPage = new MainPageViewModel(books);

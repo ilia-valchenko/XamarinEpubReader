@@ -33,9 +33,15 @@ D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Threa
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Xml.XDocument.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.IO.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\HtmlAgilityPack.dll
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.InteropServices.dll
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Text.Encoding.dll
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Net.Primitives.dll
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Net.Http.dll
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Text.RegularExpressions.dll
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.Extensions.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Linq.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Globalization.dll
-D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.Extensions.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.ObjectModel.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.ComponentModel.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Reflection.dll
@@ -43,9 +49,6 @@ D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Linq.
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Dynamic.Runtime.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Threading.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Reflection.Extensions.dll
-D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Net.Http.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.Serialization.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll
-D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Text.RegularExpressions.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Collections.Concurrent.dll
-D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.InteropServices.dll

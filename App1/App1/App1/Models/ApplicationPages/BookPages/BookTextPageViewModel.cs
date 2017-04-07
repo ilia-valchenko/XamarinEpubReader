@@ -1,5 +1,10 @@
-﻿using Xamarin.Forms;
+﻿using System.Linq;
+using System.Text;
+using Xamarin.Forms;
 using App1.EpubReader.Entities;
+
+using HtmlAgilityPack;
+using Java.Lang;
 
 namespace App1.Models.ApplicationPages.BookPages
 {
@@ -15,15 +20,44 @@ namespace App1.Models.ApplicationPages.BookPages
         public BookTextPageViewModel(EpubChapter chapter)
         {
             string htmlText = chapter.HtmlContent.Replace(@"\", string.Empty);
-            HtmlWebViewSource source = new HtmlWebViewSource { Html = htmlText };
 
-            string[] words = htmlText.Split(' ');
-            Rectangle rect = new Rectangle();
+            // ---------------- test ------------------------------
+            // get content of the body
+            HtmlDocument document = new HtmlDocument();
+            document.LoadHtml(htmlText);
+            var bodyOuterHtml =
+                document.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+                    .ChildNodes.FirstOrDefault(f => f.Name == "body").OuterHtml;
 
+            //HtmlDocument newDocument = new HtmlDocument();
+
+            System.Text.StringBuilder bookHtmlPage = new System.Text.StringBuilder();
+            bookHtmlPage.Append("<!DOCTYPE html");
+            bookHtmlPage.Append("<html>");
+            bookHtmlPage.Append("<head>");
+            bookHtmlPage.Append("<meta charset='utf-8'>");
+
+            string styleTag = "<style>h1, h2, h3, h4, h5, h6 { text-align: center; }</style>";
+            bookHtmlPage.Append(styleTag);
+
+            bookHtmlPage.Append("</head>");
+            bookHtmlPage.Append(bodyOuterHtml);
+            bookHtmlPage.Append("</html>");
+
+            //HtmlNode htmlNode = HtmlNode.CreateNode(bookHtmlPage.ToString());
+            //newDocument.DocumentNode.AppendChild(htmlNode);
+            //var outherHtml = newDocument.DocumentNode.OuterHtml;
+
+
+
+
+            // ------------------ end of test ----------------------------
+
+            //HtmlWebViewSource source = new HtmlWebViewSource { Html = htmlText };
+            HtmlWebViewSource source = new HtmlWebViewSource { Html = bookHtmlPage.ToString() };
 
             this.Content = new WebView { Source = source };
 
-            // ---------------
             WebView webView = new WebView
             {
                 Source = source

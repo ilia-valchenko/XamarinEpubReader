@@ -40,6 +40,7 @@
     <Compile Include="Infrastructure\Buttons\OpenBookChapterButton.cs" />
     <Compile Include="Infrastructure\FileExtension.cs" />
     <Compile Include="Infrastructure\Directory\IDirectory.cs" />
+    <Compile Include="Infrastructure\IScreenHelper.cs" />
     <Compile Include="Infrastructure\PageSplitter.cs" />
     <Compile Include="Models\BookViewModel.cs" />
     <Compile Include="Models\ApplicationPages\BookPages\BookContentPageViewModel.cs" />
@@ -113,6 +114,10 @@
   <ItemGroup>
     <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9.5\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Android">

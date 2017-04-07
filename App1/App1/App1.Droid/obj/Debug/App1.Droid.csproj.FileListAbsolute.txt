@@ -157,5 +157,9 @@ D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Xml.L
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\HtmlAgilityPack.dll
+D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\HtmlAgilityPack.pdb
+D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\HtmlAgilityPack.dll.mdb
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\HtmlAgilityPack.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb

@@ -50,6 +50,46 @@
             </summary>
             <returns>Returns true is directory exists.</returns>
         </member>
+        <member name="T:App1.Infrastructure.IScreenHelper">
+            <summary>
+            This interface should helps to detect the width and the height of user's device screen. 
+            </summary>
+        </member>
+        <member name="P:App1.Infrastructure.IScreenHelper.ScreenWidth">
+            <summary>
+            The screen width in density-independent pixels.
+            </summary>
+        </member>
+        <member name="P:App1.Infrastructure.IScreenHelper.ScreenHeight">
+            <summary>
+            The screen height in density-independent pixels.
+            </summary>
+        </member>
+        <member name="F:App1.Models.BookViewModel.bookCoverImage">
+            <summary>
+            The book's cover image.
+            </summary>
+        </member>
+        <member name="F:App1.Models.BookViewModel.pages">
+            <summary>
+            The collection of book's pages.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookViewModel.Pages">
+            <summary>
+            Readonly property which returns the collection of book's page.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookViewModel.NumberOfPages">
+            <summary>
+            The number of pages.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookViewModel.BookCoverImage">
+            <summary>
+            The book's cover image.
+            </summary>
+        </member>
         <member name="M:App1.Models.BookViewModel.#ctor(App1.EpubReader.Entities.EpubBook)">
             <summary>
             Initializes the instance of <see cref="T:App1.Models.BookViewModel"/>
