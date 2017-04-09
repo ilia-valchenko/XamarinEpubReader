@@ -1,10 +1,8 @@
 ﻿using System.Linq;
-using System.Text;
-using Xamarin.Forms;
-using App1.EpubReader.Entities;
 
+using App1.EpubReader.Entities;
 using HtmlAgilityPack;
-using Java.Lang;
+using Xamarin.Forms;
 
 namespace App1.Models.ApplicationPages.BookPages
 {

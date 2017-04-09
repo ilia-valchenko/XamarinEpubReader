@@ -42,5 +42,22 @@
             Initialize the new instance of <see cref="T:App1.Droid.DroidScreenHelper"/>
             </summary>
         </member>
+        <member name="T:App1.Droid.DroidSQLite">
+            <summary>
+            This is the implementation of the ISQLite interface for Android project.
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidSQLite.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:App1.Droid.DroidSQLite"/>
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidSQLite.GetLocalDatabaseFilePath(System.String)">
+            <summary>
+            Returns path to the platform-specific local database file.
+            </summary>
+            <param name="sqlFilename">The name of a database file.</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

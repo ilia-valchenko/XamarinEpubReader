@@ -1,9 +1,9 @@
 {
-  "locked": false,
-  "version": 1,
+  "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
       "Xamarin.Forms/2.0.0.6482": {
+        "type": "package",
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -15,11 +15,18 @@
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
+        },
+        "build": {
+          "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.targets": {}
         }
+      },
+      "App1/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-arm": {
       "Xamarin.Forms/2.0.0.6482": {
+        "type": "package",
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -31,11 +38,18 @@
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
+        },
+        "build": {
+          "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.targets": {}
         }
+      },
+      "App1/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
       "Xamarin.Forms/2.0.0.6482": {
+        "type": "package",
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -47,11 +61,18 @@
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
+        },
+        "build": {
+          "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.targets": {}
         }
+      },
+      "App1/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-x64": {
       "Xamarin.Forms/2.0.0.6482": {
+        "type": "package",
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -63,11 +84,18 @@
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
+        },
+        "build": {
+          "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.targets": {}
         }
+      },
+      "App1/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
       "Xamarin.Forms/2.0.0.6482": {
+        "type": "package",
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -79,11 +107,18 @@
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
+        },
+        "build": {
+          "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.targets": {}
         }
+      },
+      "App1/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-x86": {
       "Xamarin.Forms/2.0.0.6482": {
+        "type": "package",
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -95,11 +130,18 @@
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
+        },
+        "build": {
+          "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.targets": {}
         }
+      },
+      "App1/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
       "Xamarin.Forms/2.0.0.6482": {
+        "type": "package",
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -111,7 +153,13 @@
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.dll": {},
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
+        },
+        "build": {
+          "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.targets": {}
         }
+      },
+      "App1/1.0.0": {
+        "type": "project"
       }
     }
   },
@@ -119,9 +167,8 @@
     "Xamarin.Forms/2.0.0.6482": {
       "sha512": "ZE9oH3uZY1gUwFiBB4Wr9y2CD73nWgJTHkSx2EZC9MrchSevV5SKTeP4UG4iy3NyuAPtXzBFgXfKCtRIN7ZR/g==",
       "type": "package",
+      "path": "xamarin.forms/2.0.0.6482",
       "files": [
-        "Xamarin.Forms.2.0.0.6482.nupkg.sha512",
-        "Xamarin.Forms.nuspec",
         "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/ICSharpCode.Decompiler.dll",
         "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/ICSharpCode.NRefactory.CSharp.dll",
         "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/ICSharpCode.NRefactory.Cecil.dll",
@@ -212,8 +259,15 @@
         "lib/wpa81/Xamarin.Forms.Xaml.xml",
         "tools/Xamarin.Forms.Core.Design.dll",
         "tools/Xamarin.Forms.Xaml.Design.dll",
-        "tools/init.ps1"
+        "tools/init.ps1",
+        "xamarin.forms.2.0.0.6482.nupkg.sha512",
+        "xamarin.forms.nuspec"
       ]
+    },
+    "App1/1.0.0": {
+      "type": "project",
+      "path": "../App1/App1.csproj",
+      "msbuildProject": "../App1/App1.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -221,5 +275,52 @@
       "Xamarin.Forms >= 2.0.0.6482"
     ],
     "UAP,Version=v10.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Ilya_Valchanka\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "D:\\git\\xamarin-reader\\App1\\App1\\App1.UWP\\App1.UWP.csproj",
+      "projectName": "App1.UWP",
+      "projectPath": "D:\\git\\xamarin-reader\\App1\\App1\\App1.UWP\\App1.UWP.csproj",
+      "projectJsonPath": "D:\\git\\xamarin-reader\\App1\\App1\\App1.UWP\\project.json",
+      "projectStyle": "ProjectJson",
+      "frameworks": {
+        "uap10.0": {
+          "projectReferences": {
+            "D:\\git\\xamarin-reader\\App1\\App1\\App1\\App1.csproj": {
+              "projectPath": "D:\\git\\xamarin-reader\\App1\\App1\\App1\\App1.csproj"
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "Xamarin.Forms": "2.0.0.6482"
+    },
+    "frameworks": {
+      "uap10.0": {}
+    },
+    "runtimes": {
+      "win10-arm": {
+        "#import": []
+      },
+      "win10-arm-aot": {
+        "#import": []
+      },
+      "win10-x64": {
+        "#import": []
+      },
+      "win10-x64-aot": {
+        "#import": []
+      },
+      "win10-x86": {
+        "#import": []
+      },
+      "win10-x86-aot": {
+        "#import": []
+      }
+    }
   }
 }

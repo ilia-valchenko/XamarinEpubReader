@@ -50,6 +50,18 @@
             </summary>
             <returns>Returns true is directory exists.</returns>
         </member>
+        <member name="T:App1.Infrastructure.ISQLite">
+            <summary>
+            This interface is to determine the location of the database file.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.ISQLite.GetLocalDatabaseFilePath(System.String)">
+            <summary>
+            Returns path to the platform-specific local database file.
+            </summary>
+            <param name="sqlFilename">The name of a database file.</param>
+            <returns></returns>
+        </member>
         <member name="T:App1.Infrastructure.IScreenHelper">
             <summary>
             This interface should helps to detect the width and the height of user's device screen. 
@@ -116,7 +128,12 @@
             The home page of the application.
             </summary>
         </member>
-        <member name="F:App1.Models.ApplicationPages.MainPageViewModel.panel">
+        <member name="F:App1.Models.ApplicationPages.MainPageViewModel.stackLayout">
+            <summary>
+            The stacklayout panel. 
+            </summary>
+        </member>
+        <member name="F:App1.Models.ApplicationPages.MainPageViewModel.gridLayout">
             <summary>
             The grid layout panel.
             </summary>

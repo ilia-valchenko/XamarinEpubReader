@@ -81,11 +81,5 @@ namespace App1.Droid
             IEnumerable<string> filesPaths = files.Select(f => f.DirectoryName + "/" + f.Name);
             return filesPaths;
         }
-
-        //private string GetApplicationFolderDirectory()
-        //{
-        //    string applicationFolderDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-        //    return applicationFolderDirectory;
-        //}
     }
 }

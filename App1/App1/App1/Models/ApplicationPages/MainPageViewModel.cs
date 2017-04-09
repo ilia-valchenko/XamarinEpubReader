@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using App1.Models.ApplicationPages.BookPages;
+using 
 
 namespace App1.Models.ApplicationPages
 {
@@ -11,9 +12,14 @@ namespace App1.Models.ApplicationPages
     public class MainPageViewModel : ContentPage
     {
         /// <summary>
+        /// The stacklayout panel. 
+        /// </summary>
+        private readonly StackLayout stackLayout;
+
+        /// <summary>
         /// The grid layout panel.
         /// </summary>
-        private readonly Grid panel;
+        private readonly Grid gridLayout;
 
         /// <summary>
         /// The collection of books.
@@ -24,13 +30,17 @@ namespace App1.Models.ApplicationPages
         /// Initialize an instance of the <see cref="MainPageViewModel"/>
         /// </summary>
         /// <param name="books">The collection of books.</param>
-        public MainPageViewModel(IList<BookViewModel> books)
+        public MainPageViewModel(/*IList<BookViewModel> books*/ )
         {
             this.books = books;
-            this.panel = new Grid();
+            this.stackLayout = new StackLayout();
+            this.gridLayout = new Grid();
             this.Padding = new Thickness(20, 20, 20, 20);
             this.Title = "Main page";
-            
+
+            const string backgroundImage = "lightWood.png";
+            this.BackgroundImage = backgroundImage;
+
             // take it from config or database
             const int numberOfBooksPerRow = 3;
             int numberOfBooks = this.books.Count;
@@ -47,19 +57,19 @@ namespace App1.Models.ApplicationPages
             // configure grid layout
             for (int i = 0; i < numberOfRows; i++)
             {
-                this.panel.RowDefinitions.Add(new RowDefinition { Height = new GridLength(200) });
+                this.gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(200) });
             }
 
             for (int i = 0; i < numberOfBooksPerRow; i++)
             {
-                this.panel.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                this.gridLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             }
 
             for (int i = 0, bookNumber = 0; i < numberOfRows; i++)
             {
                 for (int j = 0; j < numberOfBooksPerRow && bookNumber < numberOfBooks; j++, bookNumber++)
                 {
-                    this.panel.Children.Add(books[bookNumber].BookCoverImage, j, i);
+                    this.gridLayout.Children.Add(books[bookNumber].BookCoverImage, j, i);
                 }
             }
 
@@ -85,11 +95,28 @@ namespace App1.Models.ApplicationPages
                 book.BookCoverImage.GestureRecognizers.Add(bookCoverImageTap);
             }
 
+            // ------------- add looking for books button ------------------
+            this.stackLayout.Children.Add(this.gridLayout);
+            Button searchBooksButton = new Button
+            {
+                Text = "Search books"
+            };
+            searchBooksButton.Clicked += OnClickSearchBooksButton;
+            this.stackLayout.Children.Add(searchBooksButton);
+            // ---------------- end of ------------------------------------
+
             this.Content = new ScrollView
             {
-                Content = this.panel,
+                Content = this.stackLayout,
                 Orientation = ScrollOrientation.Vertical
             };
+        }
+
+        private void OnClickSearchBooksButton(object sender, EventArgs args)
+        {
+            // add functionality here
+            // add info to database
+            DisplayAlert("Message", "Clicked to search books button", "Cancel");
         }
     }
 }

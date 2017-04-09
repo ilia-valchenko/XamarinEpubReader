@@ -7,6 +7,7 @@ using App1.Infrastructure.Directory;
 using Xamarin.Forms;
 using App1.Models.ApplicationPages;
 using App1.Models;
+using App1.DAL.Repositories;
 
 namespace App1
 {
@@ -31,6 +32,13 @@ namespace App1
         private readonly IDirectory directory;
 
         /// <summary>
+        /// The name of the database file.
+        /// </summary>
+        private const string DATABASE_NAME = "books.db";
+
+
+
+        /// <summary>
         /// Initialize the instance of <see cref="App"/> class.
         /// </summary>
         public App()
@@ -46,8 +54,22 @@ namespace App1
             IEnumerable<EpubBook> epubBooks = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f)).ToList();
             List<BookViewModel> books = epubBooks.Select(b => new BookViewModel(b)).ToList();
 
-            MainPageViewModel mainPage = new MainPageViewModel(books);
+            MainPageViewModel mainPage = new MainPageViewModel(/*books*/ BookRepository bookRepository);
             NavigationPage rootPage = new NavigationPage(mainPage);
+
+            rootPage.BarTextColor = Color.White;
+            rootPage.BarBackgroundColor = Color.FromHex("#246A50");
+
+            // ------------ try to set icon for main page -----------------
+            //rootPage.Icon = new FileImageSource
+            //{
+            //    File = "icon.png"
+            //};
+
+            //rootPage.Icon = string.Format("{0}{1}.png", Device.OnPlatform("Icons/", "", "Assets/Resources/draeable/"), "icon.png");
+
+            //NavigationPage.SetTitleIcon(mainPage, "icon.png");
+            // --------------- end of ------------------------------
 
             this.MainPage = rootPage;
         }
