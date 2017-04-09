@@ -12,7 +12,7 @@ namespace App1.DAL.Interfaces
         /// Gets all books entities.
         /// </summary>
         /// <returns></returns>
-        List<BookEntity> GetAll();
+        IEnumerable<BookEntity> GetAll();
         /// <summary>
         /// Get book entity by id. 
         /// </summary>

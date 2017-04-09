@@ -36,8 +36,6 @@ namespace App1
         /// </summary>
         private const string DATABASE_NAME = "books.db";
 
-
-
         /// <summary>
         /// Initialize the instance of <see cref="App"/> class.
         /// </summary>
@@ -54,7 +52,9 @@ namespace App1
             IEnumerable<EpubBook> epubBooks = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f)).ToList();
             List<BookViewModel> books = epubBooks.Select(b => new BookViewModel(b)).ToList();
 
-            MainPageViewModel mainPage = new MainPageViewModel(/*books*/ BookRepository bookRepository);
+            BookRepository bookRepository = new BookRepository(DATABASE_NAME);
+
+            MainPageViewModel mainPage = new MainPageViewModel(/*books*/ bookRepository);
             NavigationPage rootPage = new NavigationPage(mainPage);
 
             rootPage.BarTextColor = Color.White;

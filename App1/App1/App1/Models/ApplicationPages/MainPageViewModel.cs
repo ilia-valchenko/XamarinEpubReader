@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using App1.Models.ApplicationPages.BookPages;
-using 
+using App1.DAL.Interfaces;
+using App1.DAL.Entities;
+using App1.Infrastructure.Mappers;
 
 namespace App1.Models.ApplicationPages
 {
@@ -24,15 +26,31 @@ namespace App1.Models.ApplicationPages
         /// <summary>
         /// The collection of books.
         /// </summary>
-        private readonly IList<BookViewModel> books;
+        private readonly IList<BookInfoViewModel> books;
+
+        /// <summary>
+        /// The book repository.
+        /// </summary>
+        private readonly IBookRepository bookRepository;
 
         /// <summary>
         /// Initialize an instance of the <see cref="MainPageViewModel"/>
         /// </summary>
         /// <param name="books">The collection of books.</param>
-        public MainPageViewModel(/*IList<BookViewModel> books*/ )
+        public MainPageViewModel(/*IList<BookViewModel> books*/ IBookRepository bookRepository)
         {
-            this.books = books;
+            this.bookRepository = bookRepository;
+            IEnumerable<BookEntity> booksEntities = this.bookRepository.GetAll();
+
+            // convert book entity to book info model with automapper
+            this.books = new List<BookInfoViewModel>();
+
+            foreach(BookEntity entity in booksEntities)
+            {
+                BookInfoViewModel bookModel = entity.ToBookInfoModelMapper();
+                this.books.Add(bookModel);
+            }
+
             this.stackLayout = new StackLayout();
             this.gridLayout = new Grid();
             this.Padding = new Thickness(20, 20, 20, 20);

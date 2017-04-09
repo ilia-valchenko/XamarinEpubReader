@@ -5,13 +5,14 @@ using SQLite;
 using Xamarin.Forms;
 using App1.Infrastructure;
 using App1.DAL.Entities;
+using App1.DAL.Interfaces;
 
 namespace App1.DAL.Repositories
 {
     /// <summary>
     /// The book repository.
     /// </summary>
-    class BookRepository
+    public class BookRepository : IBookRepository
     {
         /// <summary>
         /// The database database.
@@ -44,7 +45,7 @@ namespace App1.DAL.Repositories
         /// Gets all books from the repository.
         /// </summary>
         /// <returns></returns>
-        public List<BookEntity> GetAll()
+        public IEnumerable<BookEntity> GetAll()
         {
             List<BookEntity> books;
 
