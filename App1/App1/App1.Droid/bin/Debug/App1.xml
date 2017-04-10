@@ -24,6 +24,11 @@
             The directory class.
             </summary>
         </member>
+        <member name="F:App1.App.DATABASE_NAME">
+            <summary>
+            The name of the database file.
+            </summary>
+        </member>
         <member name="M:App1.App.#ctor">
             <summary>
             Initialize the instance of <see cref="T:App1.App"/> class.
@@ -34,6 +39,121 @@
             This method calls when the application starts. 
             </summary>
         </member>
+        <member name="T:App1.DAL.Entities.BookEntity">
+            <summary>
+            This class represents the book entity which stores in the database.
+            </summary>
+        </member>
+        <member name="P:App1.DAL.Entities.BookEntity.Id">
+            <summary>
+            The identifier.
+            </summary>
+        </member>
+        <member name="P:App1.DAL.Entities.BookEntity.Cover">
+            <summary>
+            The book's cover image.
+            </summary>
+        </member>
+        <member name="P:App1.DAL.Entities.BookEntity.Title">
+            <summary>
+            The book's title.
+            </summary>
+        </member>
+        <member name="P:App1.DAL.Entities.BookEntity.Author">
+            <summary>
+            The name of the author of a book.
+            </summary>
+        </member>
+        <member name="P:App1.DAL.Entities.BookEntity.FilePath">
+            <summary>
+            The path to the file.
+            </summary>
+        </member>
+        <member name="T:App1.DAL.Interfaces.IBookRepository">
+            <summary>
+            This inteface provides basic books operations. 
+            </summary>
+        </member>
+        <member name="M:App1.DAL.Interfaces.IBookRepository.GetAll">
+            <summary>
+            Gets all books entities.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:App1.DAL.Interfaces.IBookRepository.GetById(System.String)">
+            <summary>
+            Get book entity by id. 
+            </summary>
+            <param name="id">The book identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.DAL.Interfaces.IBookRepository.DeleteById(System.String)">
+            <summary>
+            Deletes book by identifier. 
+            </summary>
+            <param name="id">The book identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.DAL.Interfaces.IBookRepository.Add(App1.DAL.Entities.BookEntity)">
+            <summary>
+            Ads book to the database. 
+            </summary>
+            <param name="book">The book entity.</param>
+            <returns></returns>
+        </member>
+        <member name="T:App1.DAL.Repositories.BookRepository">
+            <summary>
+            The book repository.
+            </summary>
+        </member>
+        <member name="F:App1.DAL.Repositories.BookRepository.database">
+            <summary>
+            The database database.
+            </summary>
+        </member>
+        <member name="F:App1.DAL.Repositories.BookRepository.sqlLite">
+            <summary>
+            The SQLite helper.
+            </summary>
+        </member>
+        <member name="F:App1.DAL.Repositories.BookRepository.locker">
+            <summary>
+            The multithreading locker.
+            </summary>
+        </member>
+        <member name="M:App1.DAL.Repositories.BookRepository.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of the <see cref="T:App1.DAL.Repositories.BookRepository"/>
+            </summary>
+            <param name="filename">The name of the local database file.</param>
+        </member>
+        <member name="M:App1.DAL.Repositories.BookRepository.GetAll">
+            <summary>
+            Gets all books from the repository.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:App1.DAL.Repositories.BookRepository.GetById(System.String)">
+            <summary>
+            Gets book by identifier.
+            </summary>
+            <param name="id">The book's identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.DAL.Repositories.BookRepository.DeleteById(System.String)">
+            <summary>
+            This method deletes book by id.
+            </summary>
+            <param name="id">The book's identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.DAL.Repositories.BookRepository.Add(App1.DAL.Entities.BookEntity)">
+            <summary>
+            This methos saves a book entity into the database.
+            </summary>
+            <param name="book">The book entity.</param>
+            <returns></returns>
+        </member>
         <member name="T:App1.Infrastructure.Directory.IDirectory">
             <summary>
             This interface exposes methods for creating, moving, and enumerating through directories and subdirectories.
@@ -43,12 +163,25 @@
             <summary>
             This method creates a folder in a root directory.
             </summary>
+            <returns>Returns the path to the new folder.</returns>
         </member>
         <member name="M:App1.Infrastructure.Directory.IDirectory.DoesDirectoryExist(System.String)">
             <summary>
             This method determines does the directory exist.
             </summary>
             <returns>Returns true is directory exists.</returns>
+        </member>
+        <member name="T:App1.Infrastructure.GuidHelper">
+            <summary>
+            Thic class helps to convert Guid value to non dashed string.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.GuidHelper.ToNonDashedString(System.Guid)">
+            <summary>
+            This method returns non dashed string representation of the guid value. 
+            </summary>
+            <param name="guid">The Guid value.</param>
+            <returns></returns>
         </member>
         <member name="T:App1.Infrastructure.ISQLite">
             <summary>
@@ -75,6 +208,30 @@
         <member name="P:App1.Infrastructure.IScreenHelper.ScreenHeight">
             <summary>
             The screen height in density-independent pixels.
+            </summary>
+        </member>
+        <member name="T:App1.Infrastructure.Mappers.BookEntityToBookInfoModelMapper">
+            <summary>
+            This class represent the static mapper which maps book entity to the book info view model and vise versa. 
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Mappers.BookEntityToBookInfoModelMapper.ToBookInfoModelMapper(App1.DAL.Entities.BookEntity)">
+            <summary>
+            Convert book entity to the book info view model.
+            </summary>
+            <param name="entity">The book entity.</param>
+            <returns>Book info view model.</returns>
+        </member>
+        <member name="M:App1.Infrastructure.Mappers.BookEntityToBookInfoModelMapper.ToListOfBookInfoViewModel(System.Collections.Generic.IEnumerable{App1.DAL.Entities.BookEntity})">
+            <summary>
+            Converts a collection of book entities to a collection of book info view models.
+            </summary>
+            <param name="booksEntities">A collection of book entities.</param>
+            <returns>A collection of book info view models.</returns>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.Cover">
+            <summary>
+            The book's cover image.
             </summary>
         </member>
         <member name="F:App1.Models.BookViewModel.bookCoverImage">
@@ -143,11 +300,16 @@
             The collection of books.
             </summary>
         </member>
-        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.#ctor(System.Collections.Generic.IList{App1.Models.BookViewModel})">
+        <member name="F:App1.Models.ApplicationPages.MainPageViewModel.bookRepository">
+            <summary>
+            The book repository.
+            </summary>
+        </member>
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.#ctor(App1.DAL.Interfaces.IBookRepository)">
             <summary>
             Initialize an instance of the <see cref="T:App1.Models.ApplicationPages.MainPageViewModel"/>
             </summary>
-            <param name="books">The collection of books.</param>
+            <param name="bookRepository">The book repository.</param>
         </member>
         <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
             <summary>

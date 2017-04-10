@@ -14,10 +14,13 @@ namespace App1.Droid
         /// Creates a folder in a root directory.
         /// </summary>
         /// <param name="folderName">The name of a new folder.</param>
-        public void CreateRootFolder(string folderName)
+        /// <returns>Returns the path to the new folder.</returns>
+        public string CreateRootFolder(string folderName)
         {
-            string path = $"/storage/sdcard0/{folderName}";
-            Directory.CreateDirectory(path);
+            string externalStorageDirectory = Android.OS.Environment.ExternalStorageDirectory.Path;
+            string path = Path.Combine(externalStorageDirectory, folderName);
+            DirectoryInfo info = Directory.CreateDirectory(path);
+            return path;
         }
 
         /// <summary>

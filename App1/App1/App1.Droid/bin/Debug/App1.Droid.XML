@@ -14,6 +14,7 @@
             Creates a folder in a root directory.
             </summary>
             <param name="folderName">The name of a new folder.</param>
+            <returns>Returns the path to the new folder.</returns>
         </member>
         <member name="M:App1.Droid.DroidDirectory.DoesDirectoryExist(System.String)">
             <summary>
