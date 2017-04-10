@@ -8,7 +8,8 @@
         /// <summary>
         /// This method creates a folder in a root directory.
         /// </summary>
-        void CreateRootFolder(string path);
+        /// <returns>Returns the path to the new folder.</returns>
+        string CreateRootFolder(string path);
         /// <summary>
         /// This method determines does the directory exist.
         /// </summary>

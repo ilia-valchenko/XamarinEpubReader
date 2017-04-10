@@ -1,12 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using App1.EpubReader.Entities;
-using App1.EpubReader.Interfaces;
-using App1.Infrastructure;
+﻿using App1.EpubReader.Interfaces;
 using App1.Infrastructure.Directory;
 using Xamarin.Forms;
 using App1.Models.ApplicationPages;
-using App1.Models;
 using App1.DAL.Repositories;
 
 namespace App1
@@ -48,13 +43,8 @@ namespace App1
             //int width = screenHelper.ScreenWidth;
             //int height = screenHelper.ScreenHeight;
 
-            IEnumerable<string> filesPath = this.filer.GetFilesPaths(FileExtension.EPUB);
-            IEnumerable<EpubBook> epubBooks = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f)).ToList();
-            List<BookViewModel> books = epubBooks.Select(b => new BookViewModel(b)).ToList();
-
             BookRepository bookRepository = new BookRepository(DATABASE_NAME);
-
-            MainPageViewModel mainPage = new MainPageViewModel(/*books*/ bookRepository);
+            MainPageViewModel mainPage = new MainPageViewModel(bookRepository);
             NavigationPage rootPage = new NavigationPage(mainPage);
 
             rootPage.BarTextColor = Color.White;

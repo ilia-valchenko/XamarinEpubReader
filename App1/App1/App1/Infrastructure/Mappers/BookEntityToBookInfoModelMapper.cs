@@ -47,5 +47,15 @@ namespace App1.Infrastructure.Mappers
 
             return models;
         }
+
+        ///// <summary>
+        ///// This is an extension method which converts the 
+        ///// </summary>
+        ///// <param name="entities"></param>
+        ///// <returns></returns>
+        //public static List<BookInfoViewModel> ToListOfBookInfoViewModel(this List<BookEntity> entities)
+        //{
+
+        //}
     }
 }
