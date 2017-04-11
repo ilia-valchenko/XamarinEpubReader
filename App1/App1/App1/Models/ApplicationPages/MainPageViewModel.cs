@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
-using Xamarin.Forms;
+using System.Collections.ObjectModel;
+
 using App1.DAL.Interfaces;
 using App1.DAL.Entities;
 using App1.Infrastructure.Mappers;
 using App1.EpubReader.Interfaces;
 using App1.Infrastructure;
 using App1.EpubReader.Entities;
-using System.Linq;
+
+using Xamarin.Forms;
 
 namespace App1.Models.ApplicationPages
 {
@@ -24,12 +27,18 @@ namespace App1.Models.ApplicationPages
         /// <summary>
         /// The grid layout panel.
         /// </summary>
-        private readonly Grid gridLayout;
+        private Grid gridLayout;
 
         /// <summary>
         /// The collection of books.
         /// </summary>
         private readonly IList<BookInfoViewModel> books;
+
+        // remove
+        ///// <summary>
+        ///// The collection of books.
+        ///// </summary>
+        //private readonly ObservableCollection<BookInfoViewModel> books;
 
         /// <summary>
         /// The book repository.
@@ -42,8 +51,22 @@ namespace App1.Models.ApplicationPages
         /// <param name="bookRepository">The book repository.</param>
         public MainPageViewModel(IBookRepository bookRepository)
         {
+            // remove
+            // test
+            //this.BindingContext = this;
+
             this.bookRepository = bookRepository;
             this.books = this.bookRepository.GetAll().ToListOfBookInfoViewModel();
+
+            // remove
+            //this.books = new ObservableCollection<BookInfoViewModel>();
+            //IEnumerable<BookEntity> bookEntities = this.bookRepository.GetAll();
+            //foreach (BookEntity entity in bookEntities)
+            //{
+            //    BookInfoViewModel model = entity.ToBookInfoModelMapper();
+            //    this.books.Add(model);
+            //}
+
             this.stackLayout = new StackLayout();
             this.gridLayout = new Grid();
             this.Padding = new Thickness(20, 20, 20, 20);
@@ -130,28 +153,87 @@ namespace App1.Models.ApplicationPages
             IEnumerable<string> filesPath = filer.GetFilesPaths(FileExtension.EPUB);
             IEnumerable<EpubBook> epubBooks = filesPath.Select(f => EpubReader.EpubReader.ReadBook(f));
 
-            // try to read not all book information
+            this.gridLayout = new Grid();
+
             foreach(EpubBook epubBook in epubBooks)
             {
-                BookEntity entity = new BookEntity
+                if(this.books.All(b => b.FilePath != epubBook.FilePath))
                 {
-                    Title = epubBook.Title,
-                    Author = epubBook.Author,
-                    // change it
-                    // the image might be missed
-                    Cover = epubBook.Content.Images.FirstOrDefault().Value.Content,
-                    FilePath = epubBook.FilePath
-                };
+                    BookEntity entity = new BookEntity
+                    {
+                        Title = epubBook.Title,
+                        Author = epubBook.Author,
+                        // change it
+                        // the image might be missed
+                        Cover = epubBook.Content.Images.FirstOrDefault().Value.Content,
+                        FilePath = epubBook.FilePath
+                    };
 
-                int statusCode = this.bookRepository.Add(entity);
-
-                // 0 is SQLITE_OK 
-                if (statusCode == 0)
-                {
                     BookInfoViewModel model = entity.ToBookInfoModelMapper();
+
                     this.books.Add(model);
                 }
             }
+
+            const int numberOfBooksPerRow = 3;
+            int numberOfBooks = this.books.Count;
+            int numberOfRows = (int)Math.Ceiling((double)numberOfBooks / numberOfBooksPerRow);
+
+            // configure grid layout
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                this.gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(200) });
+            }
+
+            for (int i = 0; i < numberOfBooksPerRow; i++)
+            {
+                this.gridLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            }
+
+            for (int i = 0, bookNumber = 0; i < numberOfRows; i++)
+            {
+                for (int j = 0; j < numberOfBooksPerRow && bookNumber < numberOfBooks; j++, bookNumber++)
+                {
+                    this.gridLayout.Children.Add(books[bookNumber].Cover, j, i);
+                }
+            }
+
+            //// Try to read not all book information.
+            //// I need to read only necessary information.
+            //foreach (EpubBook epubBook in epubBooks)
+            //{
+            //    // If the book entity does not exist.
+            //    if (this.books.All(b => b.FilePath != epubBook.FilePath))
+            //    {
+            //        BookEntity entity = new BookEntity
+            //        {
+            //            Title = epubBook.Title,
+            //            Author = epubBook.Author,
+            //            // change it
+            //            // the image might be missed
+            //            Cover = epubBook.Content.Images.FirstOrDefault().Value.Content,
+            //            FilePath = epubBook.FilePath
+            //        };
+
+            //        int statusCode = this.bookRepository.Add(entity);
+
+            //        // 0 is SQLITE_OK 
+            //        if (statusCode == 0)
+            //        {
+            //            BookInfoViewModel model = entity.ToBookInfoModelMapper();
+            //            this.books.Add(model);
+
+            //            // test refresh main page
+            //            Label label = new Label
+            //            {
+            //                 Text = "New book added",
+            //                 TextColor = Color.Maroon
+            //            };
+
+            //            this.stackLayout.Children.Add(label);
+            //        }
+            //    }
+        
         }
     }
 }

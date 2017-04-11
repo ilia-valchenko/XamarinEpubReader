@@ -78,28 +78,28 @@
             <summary>
             Gets all books entities.
             </summary>
-            <returns></returns>
+            <returns>Returns a collection of books entities.</returns>
         </member>
         <member name="M:App1.DAL.Interfaces.IBookRepository.GetById(System.String)">
             <summary>
             Get book entity by id. 
             </summary>
             <param name="id">The book identifier.</param>
-            <returns></returns>
+            <returns>Returns a book entity.</returns>
         </member>
         <member name="M:App1.DAL.Interfaces.IBookRepository.DeleteById(System.String)">
             <summary>
             Deletes book by identifier. 
             </summary>
             <param name="id">The book identifier.</param>
-            <returns></returns>
+            <returns>Returns status code of the executed operation.</returns>
         </member>
         <member name="M:App1.DAL.Interfaces.IBookRepository.Add(App1.DAL.Entities.BookEntity)">
             <summary>
             Ads book to the database. 
             </summary>
             <param name="book">The book entity.</param>
-            <returns></returns>
+            <returns>Returns status code of the executed operation.</returns>
         </member>
         <member name="T:App1.DAL.Repositories.BookRepository">
             <summary>
@@ -111,11 +111,6 @@
             The database database.
             </summary>
         </member>
-        <member name="F:App1.DAL.Repositories.BookRepository.sqlLite">
-            <summary>
-            The SQLite helper.
-            </summary>
-        </member>
         <member name="F:App1.DAL.Repositories.BookRepository.locker">
             <summary>
             The multithreading locker.
@@ -125,34 +120,34 @@
             <summary>
             Initialize a new instance of the <see cref="T:App1.DAL.Repositories.BookRepository"/>
             </summary>
-            <param name="filename">The name of the local database file.</param>
+            <param name="databaseFilename">The name of the local database file.</param>
         </member>
         <member name="M:App1.DAL.Repositories.BookRepository.GetAll">
             <summary>
             Gets all books from the repository.
             </summary>
-            <returns></returns>
+            <returns>Returns a collection of books entities.</returns>
         </member>
         <member name="M:App1.DAL.Repositories.BookRepository.GetById(System.String)">
             <summary>
             Gets book by identifier.
             </summary>
             <param name="id">The book's identifier.</param>
-            <returns></returns>
+            <returns>Returns a book entity.</returns>
         </member>
         <member name="M:App1.DAL.Repositories.BookRepository.DeleteById(System.String)">
             <summary>
             This method deletes book by id.
             </summary>
             <param name="id">The book's identifier.</param>
-            <returns></returns>
+            <returns>Returns status code of the executed operation.</returns>
         </member>
         <member name="M:App1.DAL.Repositories.BookRepository.Add(App1.DAL.Entities.BookEntity)">
             <summary>
             This methos saves a book entity into the database.
             </summary>
             <param name="book">The book entity.</param>
-            <returns></returns>
+            <returns>Returns status code of the executed operation.</returns>
         </member>
         <member name="T:App1.Infrastructure.Directory.IDirectory">
             <summary>
@@ -364,6 +359,20 @@
             </summary>
             <param name="fileExtensions">The extension of the file.</param>
             <returns>Returns names of the files with their extensions.</returns>
+        </member>
+        <member name="T:App1.EpubReader.Interfaces.IXPather">
+            <summary>
+            This interface provides some operations from the XPath. 
+            </summary>
+        </member>
+        <member name="M:App1.EpubReader.Interfaces.IXPather.SelectElement(System.Xml.Linq.XDocument,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            
+            </summary>
+            <param name="containerDocument"></param>
+            <param name="rule"></param>
+            <param name="manager"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

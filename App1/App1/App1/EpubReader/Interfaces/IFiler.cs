@@ -14,12 +14,14 @@ namespace App1.EpubReader.Interfaces
         /// <param name="filepath">The path for a file.</param>
         /// <returns>Returns true is a file exists.</returns>
         bool DoesFileExist(string filepath);
+
         /// <summary>
         /// This method returns the full path of the file.
         /// </summary>
         /// <param name="filename">The name of the file with extension.</param>
         /// <returns>Returns string which represents the full path of the file.</returns>
         string GetFilePath(string filename);
+
         /// <summary>
         /// This method returns names of the files which have a given extension.
         /// </summary>

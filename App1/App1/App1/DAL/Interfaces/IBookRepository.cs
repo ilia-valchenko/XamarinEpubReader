@@ -11,25 +11,30 @@ namespace App1.DAL.Interfaces
         /// <summary>
         /// Gets all books entities.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns a collection of books entities.</returns>
         IEnumerable<BookEntity> GetAll();
+
         /// <summary>
         /// Get book entity by id. 
         /// </summary>
         /// <param name="id">The book identifier.</param>
-        /// <returns></returns>
+        /// <returns>Returns a book entity.</returns>
         BookEntity GetById(string id);
+
         /// <summary>
         /// Deletes book by identifier. 
         /// </summary>
         /// <param name="id">The book identifier.</param>
-        /// <returns></returns>
+        /// <returns>Returns status code of the executed operation.</returns>
         int DeleteById(string id);
+
         /// <summary>
         /// Ads book to the database. 
         /// </summary>
         /// <param name="book">The book entity.</param>
-        /// <returns></returns>
+        /// <returns>Returns status code of the executed operation.</returns>
         int Add(BookEntity book);
+
+        void DeleteAll();
     }
 }

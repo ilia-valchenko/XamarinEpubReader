@@ -48,11 +48,6 @@
             This is the implementation of the ISQLite interface for Android project.
             </summary>
         </member>
-        <member name="M:App1.Droid.DroidSQLite.#ctor">
-            <summary>
-            Initialize a new instance of the <see cref="T:App1.Droid.DroidSQLite"/>
-            </summary>
-        </member>
         <member name="M:App1.Droid.DroidSQLite.GetLocalDatabaseFilePath(System.String)">
             <summary>
             Returns path to the platform-specific local database file.

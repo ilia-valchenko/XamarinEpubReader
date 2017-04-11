@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 using App1.Infrastructure;
 using App1.Droid;
@@ -12,11 +11,6 @@ namespace App1.Droid
     /// </summary>
     public class DroidSQLite : ISQLite
     {
-        /// <summary>
-        /// Initialize a new instance of the <see cref="DroidSQLite"/>
-        /// </summary>
-        public DroidSQLite() { }
-
         /// <summary>
         /// Returns path to the platform-specific local database file.
         /// </summary>

@@ -6,7 +6,6 @@ using Xamarin.Forms;
 using App1.Infrastructure;
 using App1.DAL.Entities;
 using App1.DAL.Interfaces;
-using App1.Infrastructure.Directory;
 
 namespace App1.DAL.Repositories
 {
@@ -21,11 +20,6 @@ namespace App1.DAL.Repositories
         private readonly SQLiteConnection database;
 
         /// <summary>
-        /// The SQLite helper.
-        /// </summary>
-        private readonly ISQLite sqlLite;
-
-        /// <summary>
         /// The multithreading locker.
         /// </summary>
         private static object locker = new object();
@@ -33,25 +27,19 @@ namespace App1.DAL.Repositories
         /// <summary>
         /// Initialize a new instance of the <see cref="BookRepository"/>
         /// </summary>
-        /// <param name="filename">The name of the local database file.</param>
-        public BookRepository(string filename)
+        /// <param name="databaseFilename">The name of the local database file.</param>
+        public BookRepository(string databaseFilename)
         {
-            this.sqlLite = DependencyService.Get<ISQLite>();
-            string databasePath = this.sqlLite.GetLocalDatabaseFilePath(filename);
-
-            //IDirectory directory = DependencyService.Get<IDirectory>();
-            //string databaseFolderName = "TestFolder";
-            //string databaseFolderPath = directory.CreateRootFolder(databaseFolderName);
-            //string pathToDatabaseFile = databaseFolderPath + "/" + filename;
-
-            this.database = new SQLiteConnection(/*pathToDatabaseFile*/ databasePath);
+            ISQLite sqlLite = DependencyService.Get<ISQLite>();
+            string pathToDatabaseFile = sqlLite.GetLocalDatabaseFilePath(databaseFilename);
+            this.database = new SQLiteConnection(pathToDatabaseFile);
             int createTableStatusCode = database.CreateTable<BookEntity>();
         }
 
         /// <summary>
         /// Gets all books from the repository.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns a collection of books entities.</returns>
         public IEnumerable<BookEntity> GetAll()
         {
             List<BookEntity> books;
@@ -68,7 +56,7 @@ namespace App1.DAL.Repositories
         /// Gets book by identifier.
         /// </summary>
         /// <param name="id">The book's identifier.</param>
-        /// <returns></returns>
+        /// <returns>Returns a book entity.</returns>
         public BookEntity GetById(string id)
         {
             BookEntity book;
@@ -85,7 +73,7 @@ namespace App1.DAL.Repositories
         /// This method deletes book by id.
         /// </summary>
         /// <param name="id">The book's identifier.</param>
-        /// <returns></returns>
+        /// <returns>Returns status code of the executed operation.</returns>
         public int DeleteById(string id)
         {
             int result;
@@ -102,7 +90,7 @@ namespace App1.DAL.Repositories
         /// This methos saves a book entity into the database.
         /// </summary>
         /// <param name="book">The book entity.</param>
-        /// <returns></returns>
+        /// <returns>Returns status code of the executed operation.</returns>
         public int Add(BookEntity book)
         {
             int result; 
@@ -113,7 +101,7 @@ namespace App1.DAL.Repositories
                 string id = newGuid.ToNonDashedString();
                 book.Id = id;
 
-                lock(locker)
+                lock (locker)
                 {
                     result = database.Insert(book);
                 }
@@ -127,6 +115,11 @@ namespace App1.DAL.Repositories
             }
 
             return result;
+        }
+
+        public void DeleteAll()
+        {
+            this.database.Query<BookEntity>("DELETE FROM BOOKS", null);
         }
     }
 }
