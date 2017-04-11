@@ -35,6 +35,7 @@ namespace App1.DAL.Interfaces
         /// <returns>Returns status code of the executed operation.</returns>
         int Add(BookEntity book);
 
-        void DeleteAll();
+        // Test method
+        int DeleteAll();
     }
 }

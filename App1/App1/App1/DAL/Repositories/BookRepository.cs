@@ -117,9 +117,12 @@ namespace App1.DAL.Repositories
             return result;
         }
 
-        public void DeleteAll()
+        // Test method
+        public int DeleteAll()
         {
-            this.database.Query<BookEntity>("DELETE FROM BOOKS", null);
+            //this.database.Query<BookEntity>("DELETE FROM BOOKS", null);
+            int statusCode = this.database.Execute("DELETE FROM BOOKS");
+            return statusCode;
         }
     }
 }
