@@ -24,8 +24,6 @@ namespace App1.Droid
         /// <returns></returns>
         public string GetLocalDatabaseFilePath(string sqlFilename)
         {
-            var test = Android.OS.Environment.GetExternalStoragePublicDirectory("test");
-
             string path = @"/storage/sdcard0/Android/data/App1.Droid/files";
             path = Path.Combine(path, sqlFilename);
             return path;
