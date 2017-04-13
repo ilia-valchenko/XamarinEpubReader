@@ -45,17 +45,6 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Win
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Windows\obj\Debug\Xamarin.Forms.Platform.WinRT.pri.xml
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Windows\obj\Debug\Xamarin.Forms.Platform.WinRT.Tablet.pri.xml
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Windows\obj\Debug\ProjectArchitectures.txt
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App1.Windows.csprojResolveAssemblyReference.cache
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App.g.i.cs
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App.g.cs
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\MainPage.g.i.cs
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\MainPage.g.cs
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\XamlTypeInfo.g.cs
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App.xaml
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\MainPage.xaml
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App.xbf
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\MainPage.xbf
-D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\XamlSaveStateFile.xml
 D:\Git\xamarin-reader\App1\App1\App1.Windows\bin\Debug\App.xbf
 D:\Git\xamarin-reader\App1\App1\App1.Windows\bin\Debug\MainPage.xbf
 D:\Git\xamarin-reader\App1\App1\App1.Windows\bin\Debug\App1.Windows.xr.xml
@@ -82,6 +71,17 @@ D:\Git\xamarin-reader\App1\App1\App1.Windows\bin\Debug\Xamarin.Forms.Platform.Wi
 D:\Git\xamarin-reader\App1\App1\App1.Windows\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\Git\xamarin-reader\App1\App1\App1.Windows\bin\Debug\HtmlAgilityPack.pdb
 D:\Git\xamarin-reader\App1\App1\App1.Windows\bin\Debug\SQLite-net.xml
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App1.Windows.csprojResolveAssemblyReference.cache
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App.g.i.cs
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App.g.cs
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\MainPage.g.i.cs
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\MainPage.g.cs
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\XamlTypeInfo.g.cs
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App.xaml
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\MainPage.xaml
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App.xbf
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\MainPage.xbf
+D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\XamlSaveStateFile.xml
 D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App1.Windows.exe
 D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App1.Windows.pdb
 D:\Git\xamarin-reader\App1\App1\App1.Windows\obj\Debug\App1.Windows.csproj.GenerateResource.Cache

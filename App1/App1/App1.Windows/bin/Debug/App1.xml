@@ -306,6 +306,13 @@
             </summary>
             <param name="bookRepository">The book repository.</param>
         </member>
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.UpdateBookLibrary(System.Collections.Generic.IList{App1.Models.BookInfoViewModel})">
+            <summary>
+            This method adds books to the main page or deletes books
+            from the main page. It helps to hold actual data.
+            </summary>
+            <param name="books"></param>
+        </member>
         <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
             <summary>
             Opens the book synchronously without reading its content. Holds the handle to the EPUB file.

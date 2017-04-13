@@ -300,11 +300,42 @@
             The book repository.
             </summary>
         </member>
+        <member name="F:App1.Models.ApplicationPages.MainPageViewModel.numberOfBooksPerRow">
+            <summary>
+            The number of books per row.
+            </summary>
+        </member>
+        <member name="F:App1.Models.ApplicationPages.MainPageViewModel.backgroundImageFilename">
+            <summary>
+            The name of the file which represents the backgroung image of the main page.
+            </summary>
+        </member>
         <member name="M:App1.Models.ApplicationPages.MainPageViewModel.#ctor(App1.DAL.Interfaces.IBookRepository)">
             <summary>
             Initialize an instance of the <see cref="T:App1.Models.ApplicationPages.MainPageViewModel"/>
             </summary>
             <param name="bookRepository">The book repository.</param>
+        </member>
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.OnClickSearchBooksButton(System.Object,System.EventArgs)">
+            <summary>
+            This method is looking for a books, adds books to the main page if they are not contains in the database,
+            deletes books if they don't exist on the user's device. It helps to hold actual data.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">An object that contains the event data.</param>
+        </member>
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.UpdateBookLibrary(System.Collections.Generic.IList{App1.Models.BookInfoViewModel})">
+            <summary>
+            This method updates user's book library on the main page.
+            </summary>
+            <param name="books">The actual collection of a book info view models.</param>
+        </member>
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.OnClickBookCoverImage(System.Object,System.EventArgs)">
+            <summary>
+            This method opens a book when the book's cover image is clicked. 
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">An object that contains the event data.</param>
         </member>
         <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
             <summary>
