@@ -93,8 +93,7 @@ namespace App1.Models.ApplicationPages
                 if (answer)
                 {
                     this.bookRepository.DeleteAll();
-                    this.gridLayout.RowDefinitions.Clear();
-                    this.gridLayout.ColumnDefinitions.Clear();
+                    this.gridLayout.Children.Clear();
                 }
             };
 
