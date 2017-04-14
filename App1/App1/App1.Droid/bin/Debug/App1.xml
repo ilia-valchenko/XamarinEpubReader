@@ -295,6 +295,11 @@
             The collection of books.
             </summary>
         </member>
+        <member name="F:App1.Models.ApplicationPages.MainPageViewModel.bookEntities">
+            <summary>
+            A collection of book entities.
+            </summary>
+        </member>
         <member name="F:App1.Models.ApplicationPages.MainPageViewModel.bookRepository">
             <summary>
             The book repository.
@@ -330,12 +335,13 @@
             </summary>
             <param name="books">The actual collection of a book info view models.</param>
         </member>
-        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.OnClickBookCoverImage(System.Object,System.EventArgs)">
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.OnClickBookCoverImage(System.Object,System.EventArgs,App1.Models.BookInfoViewModel)">
             <summary>
             This method opens a book when the book's cover image is clicked. 
             </summary>
             <param name="sender">The source of the event.</param>
             <param name="args">An object that contains the event data.</param>
+            <param name="bookInfo">The book info view model.</param>
         </member>
         <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
             <summary>
