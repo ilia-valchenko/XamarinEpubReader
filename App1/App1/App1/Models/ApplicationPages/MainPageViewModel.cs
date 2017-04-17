@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using Windows.UI.Notifications;
-using Android.Content;
 using App1.DAL.Interfaces;
 using App1.DAL.Entities;
 using App1.Infrastructure.Mappers;
@@ -105,6 +103,15 @@ namespace App1.Models.ApplicationPages
 
             this.stackLayout.Children.Add(redButton);
 
+            Button showDeviceMeasurementButton = new Button
+            {
+                Text = "Device measurement"
+            };
+
+            showDeviceMeasurementButton.Clicked += this.OnClickShowDeviceMeasurementButtom;
+
+            this.stackLayout.Children.Add(showDeviceMeasurementButton);
+
             this.Content = new ScrollView
             {
                 Content = this.stackLayout,
@@ -121,7 +128,7 @@ namespace App1.Models.ApplicationPages
         private void OnClickSearchBooksButton(object sender, EventArgs args)
         {
             IFiler filer = DependencyService.Get<IFiler>();
-            IEnumerable<string> pathsOfFoundFiles = filer.GetFilesPaths(FileExtension.EPUB);
+            IEnumerable<string> pathsOfFoundFiles = filer.GetFilesPaths(FileExtension.EPUB).ToList();
             IEnumerable<EpubBook> epubBooks = pathsOfFoundFiles.Select(f => EpubReader.EpubReader.ReadBook(f));
             List<string> pathsOfExistingFiles = this.bookEntities.Select(entity => entity.FilePath).ToList();
 
@@ -184,42 +191,45 @@ namespace App1.Models.ApplicationPages
             this.gridLayout.RowDefinitions.Clear();
             this.gridLayout.ColumnDefinitions.Clear();
 
-            //this.panel = new Grid
-            //{
-            //    VerticalOptions = LayoutOptions.FillAndExpand,
-            //    HorizontalOptions = LayoutOptions.FillAndExpand,
-            //    ColumnSpacing = 5,
-            //    RowSpacing = 5
-            //};
-
-            int numberOfBooks = books.Count;
-            int numberOfRows = (int)Math.Ceiling((double)numberOfBooks / numberOfBooksPerRow);
-
-            // Configure the grid layout.
-            for (int i = 0; i < numberOfRows; i++)
+            if (books != null && books.Count > 0)
             {
-                this.gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(200) });
-            }
+                //this.panel = new Grid
+                //{
+                //    VerticalOptions = LayoutOptions.FillAndExpand,
+                //    HorizontalOptions = LayoutOptions.FillAndExpand,
+                //    ColumnSpacing = 5,
+                //    RowSpacing = 5
+                //};
 
-            for (int i = 0; i < numberOfBooksPerRow; i++)
-            {
-                this.gridLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-            }
+                int numberOfBooks = books.Count;
+                int numberOfRows = (int)Math.Ceiling((double)numberOfBooks / numberOfBooksPerRow);
 
-            for (int i = 0, bookNumber = 0; i < numberOfRows; i++)
-            {
-                for (int j = 0; j < numberOfBooksPerRow && bookNumber < numberOfBooks; j++, bookNumber++)
+                // Configure the grid layout.
+                for (int i = 0; i < numberOfRows; i++)
                 {
-                    this.gridLayout.Children.Add(books[bookNumber].Cover, j, i);
+                    this.gridLayout.RowDefinitions.Add(new RowDefinition { Height = new GridLength(200) });
                 }
-            }
 
-            // Set the tap recognizer.
-            foreach (BookInfoViewModel book in books)
-            {
-                TapGestureRecognizer bookCoverImageTap = new TapGestureRecognizer();
-                bookCoverImageTap.Tapped += (sender, args) =>  this.OnClickBookCoverImage(sender, args, book);
-                book.Cover.GestureRecognizers.Add(bookCoverImageTap);
+                for (int i = 0; i < numberOfBooksPerRow; i++)
+                {
+                    this.gridLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                }
+
+                for (int i = 0, bookNumber = 0; i < numberOfRows; i++)
+                {
+                    for (int j = 0; j < numberOfBooksPerRow && bookNumber < numberOfBooks; j++, bookNumber++)
+                    {
+                        this.gridLayout.Children.Add(books[bookNumber].Cover, j, i);
+                    }
+                }
+
+                // Set the tap recognizer.
+                foreach (BookInfoViewModel book in books)
+                {
+                    TapGestureRecognizer bookCoverImageTap = new TapGestureRecognizer();
+                    bookCoverImageTap.Tapped += (sender, args) => this.OnClickBookCoverImage(sender, args, book);
+                    book.Cover.GestureRecognizers.Add(bookCoverImageTap);
+                }
             }
         }
 
@@ -262,6 +272,17 @@ namespace App1.Models.ApplicationPages
                     }
                 }
             }  
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnClickShowDeviceMeasurementButtom(object sender, EventArgs args)
+        {
+            TestPageDeviceMeasurementViewModel measurementPage = new TestPageDeviceMeasurementViewModel();
+            this.Navigation.PushAsync(measurementPage);
         }
     }
 }

@@ -57,8 +57,6 @@ namespace App1.Models
         /// </summary>
         public BookViewModel(EpubBook epubBook)
         {
-            // ------------------ Initialize book image cover --------------------
-
             // The picture may be missing. 
             // Create default cover by using title of a book and name of the author. 
             byte[] byteImage = epubBook.Content.Images.FirstOrDefault().Value.Content;
@@ -69,12 +67,13 @@ namespace App1.Models
             };
 
             this.bookCoverImage = bookCoverImage;
-
-            // ---------------------- Initialize book Pages ----------------------- 
-
             this.pages = new List<BookPage>();
 
-            // set book cover image as the first page of a book
+            // Set book cover image as the first page of a book
+            BookCoverPageViewModel coverPage = new BookCoverPageViewModel(bookCoverImage);
+            this.pages.Add(coverPage);
+
+            // Set contents as the second page of a book.
             BookContentPageViewModel contentPage = new BookContentPageViewModel(epubBook.Chapters);
             this.pages.Add(contentPage);
 

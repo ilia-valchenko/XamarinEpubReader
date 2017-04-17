@@ -224,40 +224,31 @@
             <param name="booksEntities">A collection of book entities.</param>
             <returns>A collection of book info view models.</returns>
         </member>
-        <member name="P:App1.Models.BookInfoViewModel.Cover">
+        <member name="T:App1.Models.ApplicationPages.BookPages.BookCoverPageViewModel">
             <summary>
-            The book's cover image.
+            This class represents the first page of a book which contains a cover image of a book.
             </summary>
         </member>
-        <member name="F:App1.Models.BookViewModel.bookCoverImage">
+        <member name="M:App1.Models.ApplicationPages.BookPages.BookCoverPageViewModel.#ctor(Xamarin.Forms.Image)">
             <summary>
-            The book's cover image.
+            Initialize a new instance of the <see cref="T:App1.Models.ApplicationPages.BookPages.BookCoverPageViewModel"/> class.
             </summary>
         </member>
-        <member name="F:App1.Models.BookViewModel.pages">
+        <member name="T:App1.Models.ApplicationPages.BookPages.BookContentPageViewModel">
             <summary>
-            The collection of book's pages.
+            This class represents a book page with contents.
             </summary>
         </member>
-        <member name="P:App1.Models.BookViewModel.Pages">
+        <member name="F:App1.Models.ApplicationPages.BookPages.BookContentPageViewModel.panel">
             <summary>
-            Readonly property which returns the collection of book's page.
+            The stack layout panel.
             </summary>
         </member>
-        <member name="P:App1.Models.BookViewModel.NumberOfPages">
+        <member name="M:App1.Models.ApplicationPages.BookPages.BookContentPageViewModel.#ctor(System.Collections.Generic.List{App1.EpubReader.Entities.EpubChapter})">
             <summary>
-            The number of pages.
+            Initialize a new instance of the <see cref="T:App1.Models.ApplicationPages.BookPages.BookContentPageViewModel"/>.
             </summary>
-        </member>
-        <member name="P:App1.Models.BookViewModel.BookCoverImage">
-            <summary>
-            The book's cover image.
-            </summary>
-        </member>
-        <member name="M:App1.Models.BookViewModel.#ctor(App1.EpubReader.Entities.EpubBook)">
-            <summary>
-            Initializes the instance of <see cref="T:App1.Models.BookViewModel"/>
-            </summary>
+            <param name="chapters"></param>
         </member>
         <member name="T:App1.Models.ApplicationPages.BookPages.BookPage">
             <summary>
@@ -342,6 +333,70 @@
             <param name="sender">The source of the event.</param>
             <param name="args">An object that contains the event data.</param>
             <param name="bookInfo">The book info view model.</param>
+        </member>
+        <member name="T:App1.Models.BookInfoViewModel">
+            <summary>
+            This page represents a main part of book which is stored in a database.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.Title">
+            <summary>
+            The title of a book.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.Author">
+            <summary>
+            The author of a book.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.Cover">
+            <summary>
+            The book's cover image.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.FilePath">
+            <summary>
+            The path to the book file.
+            </summary>
+        </member>
+        <member name="M:App1.Models.BookInfoViewModel.#ctor(System.String,System.String,System.Byte[],System.String)">
+            <summary>
+            Initialize a new instance of the <see cref="T:App1.Models.BookInfoViewModel"/>.
+            </summary>
+            <param name="title">The book title.</param>
+            <param name="author">The author of a book.</param>
+            <param name="bytesImage">Array of bytes which represent a book cover image.</param>
+            <param name="filepath">The path to the book file.</param>
+        </member>
+        <member name="F:App1.Models.BookViewModel.bookCoverImage">
+            <summary>
+            The book's cover image.
+            </summary>
+        </member>
+        <member name="F:App1.Models.BookViewModel.pages">
+            <summary>
+            The collection of book's pages.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookViewModel.Pages">
+            <summary>
+            Readonly property which returns the collection of book's page.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookViewModel.NumberOfPages">
+            <summary>
+            The number of pages.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookViewModel.BookCoverImage">
+            <summary>
+            The book's cover image.
+            </summary>
+        </member>
+        <member name="M:App1.Models.BookViewModel.#ctor(App1.EpubReader.Entities.EpubBook)">
+            <summary>
+            Initializes the instance of <see cref="T:App1.Models.BookViewModel"/>
+            </summary>
         </member>
         <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
             <summary>

@@ -7,10 +7,20 @@ using Xamarin.Forms;
 
 namespace App1.Models.ApplicationPages.BookPages
 {
+    /// <summary>
+    /// This class represents a book page with contents.
+    /// </summary>
     public class BookContentPageViewModel : BookPage
     {
+        /// <summary>
+        /// The stack layout panel.
+        /// </summary>
         private readonly StackLayout panel;
 
+        /// <summary>
+        /// Initialize a new instance of the <see cref="BookContentPageViewModel"/>.
+        /// </summary>
+        /// <param name="chapters"></param>
         public BookContentPageViewModel(List<EpubChapter> chapters)
         {
             this.Title = "Content page";
@@ -60,18 +70,9 @@ namespace App1.Models.ApplicationPages.BookPages
 
         private void OnClickOpenBookChapterButton(object sender, EventArgs args)
         {
-            CarouselPage carouselPage = new CarouselPage();
-
-            for (int i = 0; i < 10; i++)
-            {
-                carouselPage.Children.Add(new TestPageDeviceMeasurementViewModel());
-            }
-
-            //OpenBookChapterButton button = (OpenBookChapterButton) sender;
-            //BookTextPage bookTextPage = new BookTextPage(button.Chapter);
-            //this.Navigation.PushAsync(bookTextPage);
-
-            this.Navigation.PushAsync(carouselPage);
+            // Change the current page.
+            // User selects a chapter to read. 
+            // Navigate to page from the chapter is started.
         }
     }
 }

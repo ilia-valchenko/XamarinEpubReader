@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-
 using App1.EpubReader.Entities;
 using HtmlAgilityPack;
 using Xamarin.Forms;
@@ -21,8 +20,11 @@ namespace App1.Models.ApplicationPages.BookPages
 
             // ---------------- test ------------------------------
             // get content of the body
+
             HtmlDocument document = new HtmlDocument();
+
             document.LoadHtml(htmlText);
+
             var bodyOuterHtml =
                 document.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
                     .ChildNodes.FirstOrDefault(f => f.Name == "body").OuterHtml;
@@ -42,26 +44,22 @@ namespace App1.Models.ApplicationPages.BookPages
             bookHtmlPage.Append(bodyOuterHtml);
             bookHtmlPage.Append("</html>");
 
-            //HtmlNode htmlNode = HtmlNode.CreateNode(bookHtmlPage.ToString());
-            //newDocument.DocumentNode.AppendChild(htmlNode);
-            //var outherHtml = newDocument.DocumentNode.OuterHtml;
-
-
-
-
             // ------------------ end of test ----------------------------
 
             //HtmlWebViewSource source = new HtmlWebViewSource { Html = htmlText };
+
             HtmlWebViewSource source = new HtmlWebViewSource { Html = bookHtmlPage.ToString() };
+            WebView webView = new WebView { Source = source };
 
-            this.Content = new WebView { Source = source };
+            //ScrollView scrollView = new ScrollView
+            //{
+            //    Content = webView,
+            //};
 
-            WebView webView = new WebView
-            {
-                Source = source
-            };
-            
+            //scrollView.ScrollToAsync(200, 0, true);
+            //this.Content = scrollView;
+
+            this.Content = webView;
         }
-
     }
 }
