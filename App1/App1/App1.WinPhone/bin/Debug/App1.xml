@@ -149,6 +149,81 @@
             <param name="book">The book entity.</param>
             <returns>Returns status code of the executed operation.</returns>
         </member>
+        <member name="T:App1.EpubReader.Interfaces.IFiler">
+            <summary>
+            This interface represent the level of abstraction which provides basic file operations. 
+            </summary>
+        </member>
+        <member name="M:App1.EpubReader.Interfaces.IFiler.DoesFileExist(System.String)">
+            <summary>
+            This method checks if the file exists.
+            </summary>
+            <param name="filepath">The path for a file.</param>
+            <returns>Returns true is a file exists.</returns>
+        </member>
+        <member name="M:App1.EpubReader.Interfaces.IFiler.GetFilePath(System.String)">
+            <summary>
+            This method returns the full path of the file.
+            </summary>
+            <param name="filename">The name of the file with extension.</param>
+            <returns>Returns string which represents the full path of the file.</returns>
+        </member>
+        <member name="M:App1.EpubReader.Interfaces.IFiler.GetFilesPaths(App1.Infrastructure.FileExtension)">
+            <summary>
+            This method returns names of the files which have a given extension.
+            </summary>
+            <param name="fileExtensions">The extension of the file.</param>
+            <returns>Returns names of the files with their extensions.</returns>
+        </member>
+        <member name="M:App1.EpubReader.Interfaces.IFiler.GetResourceFileStream(System.String)">
+            <summary>
+            This method returns a stream of file which is situated into resource folder of each platform specific project.
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="T:App1.EpubReader.Interfaces.IXPather">
+            <summary>
+            This interface provides some operations from the XPath. 
+            </summary>
+        </member>
+        <member name="M:App1.EpubReader.Interfaces.IXPather.SelectElement(System.Xml.Linq.XDocument,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            
+            </summary>
+            <param name="containerDocument"></param>
+            <param name="rule"></param>
+            <param name="manager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
+            <summary>
+            Opens the book synchronously without reading its content. Holds the handle to the EPUB file.
+            </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.EpubReader.EpubReader.OpenBookAsync(System.String)">
+            <summary>
+            Opens the book asynchronously without reading its content. Holds the handle to the EPUB file.
+            </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.EpubReader.EpubReader.ReadBook(System.String)">
+            <summary>
+            Opens the book synchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
+            </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
+        </member>
+        <member name="M:App1.EpubReader.EpubReader.ReadBookAsync(System.String)">
+            <summary>
+            Opens the book asynchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
+            </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
+        </member>
         <member name="T:App1.Infrastructure.Directory.IDirectory">
             <summary>
             This interface exposes methods for creating, moving, and enumerating through directories and subdirectories.
@@ -259,12 +334,6 @@
             <summary>
             This class represents a default book page which contains text content.
             </summary>
-        </member>
-        <member name="M:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.#ctor(App1.EpubReader.Entities.EpubChapter)">
-            <summary>
-            Initialize an instance of <see cref="T:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel"/>
-            </summary>
-            <param name="chapter">The book's chapter.</param>
         </member>
         <member name="T:App1.Models.ApplicationPages.MainPageViewModel">
             <summary>
@@ -397,74 +466,6 @@
             <summary>
             Initializes the instance of <see cref="T:App1.Models.BookViewModel"/>
             </summary>
-        </member>
-        <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
-            <summary>
-            Opens the book synchronously without reading its content. Holds the handle to the EPUB file.
-            </summary>
-            <param name="filePath">path to the EPUB file</param>
-            <returns></returns>
-        </member>
-        <member name="M:App1.EpubReader.EpubReader.OpenBookAsync(System.String)">
-            <summary>
-            Opens the book asynchronously without reading its content. Holds the handle to the EPUB file.
-            </summary>
-            <param name="filePath">path to the EPUB file</param>
-            <returns></returns>
-        </member>
-        <member name="M:App1.EpubReader.EpubReader.ReadBook(System.String)">
-            <summary>
-            Opens the book synchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
-            </summary>
-            <param name="filePath">path to the EPUB file</param>
-            <returns></returns>
-        </member>
-        <member name="M:App1.EpubReader.EpubReader.ReadBookAsync(System.String)">
-            <summary>
-            Opens the book asynchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
-            </summary>
-            <param name="filePath">path to the EPUB file</param>
-            <returns></returns>
-        </member>
-        <member name="T:App1.EpubReader.Interfaces.IFiler">
-            <summary>
-            This interface represent the level of abstraction which provides basic file operations. 
-            </summary>
-        </member>
-        <member name="M:App1.EpubReader.Interfaces.IFiler.DoesFileExist(System.String)">
-            <summary>
-            This method checks if the file exists.
-            </summary>
-            <param name="filepath">The path for a file.</param>
-            <returns>Returns true is a file exists.</returns>
-        </member>
-        <member name="M:App1.EpubReader.Interfaces.IFiler.GetFilePath(System.String)">
-            <summary>
-            This method returns the full path of the file.
-            </summary>
-            <param name="filename">The name of the file with extension.</param>
-            <returns>Returns string which represents the full path of the file.</returns>
-        </member>
-        <member name="M:App1.EpubReader.Interfaces.IFiler.GetFilesPaths(App1.Infrastructure.FileExtension)">
-            <summary>
-            This method returns names of the files which have a given extension.
-            </summary>
-            <param name="fileExtensions">The extension of the file.</param>
-            <returns>Returns names of the files with their extensions.</returns>
-        </member>
-        <member name="T:App1.EpubReader.Interfaces.IXPather">
-            <summary>
-            This interface provides some operations from the XPath. 
-            </summary>
-        </member>
-        <member name="M:App1.EpubReader.Interfaces.IXPather.SelectElement(System.Xml.Linq.XDocument,System.String,System.Xml.XmlNamespaceManager)">
-            <summary>
-            
-            </summary>
-            <param name="containerDocument"></param>
-            <param name="rule"></param>
-            <param name="manager"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>

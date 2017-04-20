@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XLabs.Serialization.JsonNET</name>
+    </assembly>
+    <members>
+        <member name="T:XLabs.Serialization.JsonNET.ContractResolverDelegate">
+            <summary>
+            Contract resolver delegate.
+            </summary>
+        </member>
+        <member name="M:XLabs.Serialization.JsonNET.ContractResolverDelegate.#ctor(System.Func{System.Type,System.Boolean},System.Func{System.Type,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:XLabs.Serialization.JsonNET.ContractResolverDelegate"/> class.
+            </summary>
+            <param name="canCreate">Can create function delegate.</param>
+            <param name="creator">Creator function delegate.</param>
+        </member>
+        <member name="M:XLabs.Serialization.JsonNET.ContractResolverDelegate.CreateObjectContract(System.Type)">
+            <summary>
+            Creates a <see cref="T:Newtonsoft.Json.Serialization.JsonObjectContract" /> for the given type.
+            </summary>
+            <param name="objectType">Type of the object.</param>
+            <returns>A <see cref="T:Newtonsoft.Json.Serialization.JsonObjectContract" /> for the given type.</returns>
+        </member>
+        <member name="T:XLabs.Serialization.JsonNET.JsonSerializer">
+            <summary>
+            JSON serializer using Newtonsoft.Json library.
+            </summary>
+            <remarks>
+            
+            Newtonsoft.Json copyright information.
+            
+            The MIT License (MIT)
+            Copyright (c) 2007 James Newton-King
+            
+            https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+            
+            </remarks>
+        </member>
+        <member name="M:XLabs.Serialization.JsonNET.JsonSerializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XLabs.Serialization.JsonNET.JsonSerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:XLabs.Serialization.JsonNET.JsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XLabs.Serialization.JsonNET.JsonSerializer"/> class.
+            </summary>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:XLabs.Serialization.JsonNET.JsonSerializer.#ctor(Newtonsoft.Json.TypeNameHandling,Newtonsoft.Json.ReferenceLoopHandling,System.Boolean,Newtonsoft.Json.Serialization.IContractResolver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XLabs.Serialization.JsonNET.JsonSerializer"/> class.
+            </summary>
+            <param name="typeNameHandling">The type name handling.</param>
+            <param name="referenceLoopHandling">The reference loop handling.</param>
+            <param name="ignoreNulls">if set to <c>true</c> [ignore nulls].</param>
+            <param name="contractResolver">The contract resolver.</param>
+        </member>
+        <member name="M:XLabs.Serialization.JsonNET.JsonSerializer.Flush">
+            <summary>
+            Cleans memory.
+            </summary>
+        </member>
+        <member name="M:XLabs.Serialization.JsonNET.JsonSerializer.Serialize``1(``0)">
+            <summary>
+            Serializes object to a string.
+            </summary>
+            <typeparam name="T">Type of object to serialize.</typeparam>
+            <param name="obj">Object to serialize.</param>
+            <returns>Serialized string of the object.</returns>
+        </member>
+        <member name="M:XLabs.Serialization.JsonNET.JsonSerializer.Deserialize``1(System.String)">
+            <summary>
+            Deserializes string into an object.
+            </summary>
+            <typeparam name="T">Type of object to deserialize to.</typeparam>
+            <param name="data">Serialized object.</param>
+            <returns>Object of type T.</returns>
+        </member>
+        <member name="M:XLabs.Serialization.JsonNET.JsonSerializer.Deserialize(System.String,System.Type)">
+            <summary>
+            Deserializes the specified data.
+            </summary>
+            <param name="data">The data.</param>
+            <param name="type">The type.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="P:XLabs.Serialization.JsonNET.JsonSerializer.Settings">
+            <summary>
+            Gets or sets the settings.
+            </summary>
+            <value>The settings.</value>
+        </member>
+        <member name="P:XLabs.Serialization.JsonNET.JsonSerializer.Format">
+            <summary>
+            Gets the serialization format.
+            </summary>
+            <value>Serialization format.</value>
+        </member>
+    </members>
+</doc>

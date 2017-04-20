@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using Android.Content;
 using App1.Droid;
 using App1.EpubReader.Interfaces;
 using App1.Infrastructure;
@@ -80,6 +77,31 @@ namespace App1.Droid
             
             IEnumerable<string> filesPaths = files.Select(f => f.DirectoryName + "/" + f.Name);
             return filesPaths;
+        }
+
+        public Stream GetResourceFileStream(string filename)
+        {
+            if (string.IsNullOrEmpty(filename))
+            {
+                throw new ArgumentException("The filename can't be null or empty.");
+            }
+
+            Stream stream;
+
+            try
+            {
+                stream = Android.App.Application.Context.Assets.Open(filename);
+            }
+            catch (FileNotFoundException fileNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception exception)
+            {
+                throw;
+            }
+
+            return stream;
         }
     }
 }

@@ -1,5 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
 using App1.EpubReader.Entities;
+using App1.EpubReader.Interfaces;
 using HtmlAgilityPack;
 using Xamarin.Forms;
 
@@ -10,56 +14,79 @@ namespace App1.Models.ApplicationPages.BookPages
     /// </summary>
     public class BookTextPageViewModel : BookPage
     {
-        /// <summary>
-        /// Initialize an instance of <see cref="BookTextPageViewModel"/>
-        /// </summary>
-        /// <param name="chapter">The book's chapter.</param>
+        private readonly WebView webView;
+
         public BookTextPageViewModel(EpubChapter chapter)
         {
             string htmlText = chapter.HtmlContent.Replace(@"\", string.Empty);
-
-            // ---------------- test ------------------------------
-            // get content of the body
 
             HtmlDocument document = new HtmlDocument();
 
             document.LoadHtml(htmlText);
 
-            var bodyOuterHtml =
+            var bodyOriginal =
                 document.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
-                    .ChildNodes.FirstOrDefault(f => f.Name == "body").OuterHtml;
+                    .ChildNodes.FirstOrDefault(f => f.Name == "body");
 
-            //HtmlDocument newDocument = new HtmlDocument();
+            //IFiler filer = DependencyService.Get<IFiler>();
+            //HtmlDocument pageTemplate = new HtmlDocument();
+            //Stream stream = filer.GetResourceFileStream("index.html");
+            //pageTemplate.Load(stream);
 
-            System.Text.StringBuilder bookHtmlPage = new System.Text.StringBuilder();
-            bookHtmlPage.Append("<!DOCTYPE html");
-            bookHtmlPage.Append("<html>");
-            bookHtmlPage.Append("<head>");
-            bookHtmlPage.Append("<meta charset='utf-8'>");
+            //var textContainer = pageTemplate.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+            //    .ChildNodes.FirstOrDefault(f => f.Name == "body")
+            //    .ChildNodes.FirstOrDefault(d => d.Id == "text-container");
 
-            string styleTag = "<style>h1, h2, h3, h4, h5, h6 { text-align: center; }</style>";
-            bookHtmlPage.Append(styleTag);
+            ////textContainer.ChildNodes.Add(bodyOriginal);
 
-            bookHtmlPage.Append("</head>");
-            bookHtmlPage.Append(bodyOuterHtml);
-            bookHtmlPage.Append("</html>");
-
-            // ------------------ end of test ----------------------------
-
-            //HtmlWebViewSource source = new HtmlWebViewSource { Html = htmlText };
-
-            HtmlWebViewSource source = new HtmlWebViewSource { Html = bookHtmlPage.ToString() };
-            WebView webView = new WebView { Source = source };
-
-            //ScrollView scrollView = new ScrollView
+            //foreach (var child in bodyOriginal.ChildNodes)
             //{
-            //    Content = webView,
+            //    textContainer.ChildNodes.Add(child);
+            //}
+
+            //webView = new WebView
+            //{
+            //    HorizontalOptions = LayoutOptions.FillAndExpand,
+            //    VerticalOptions = LayoutOptions.FillAndExpand
             //};
 
-            //scrollView.ScrollToAsync(200, 0, true);
-            //this.Content = scrollView;
+            //IHtmlHelper htmlHelper = DependencyService.Get<IHtmlHelper>();
+            //string cssText = htmlHelper.GetCssText("style.css");
 
+            webView.Source = new HtmlWebViewSource
+            {
+                //Html = htmlText/*pageTemplate.DocumentNode.OuterHtml*/ /*bookHtmlPage.ToString()*/,
+                BaseUrl = string.Format("file:///android_asset/Content/{0}", "index.html")
+            };
             this.Content = webView;
+
+            #region Test scroll to last position
+
+            this.Appearing += this.ScrollToLastPosition;
+
+            // test
+            //bookPage.Appearing += (osender, oargs) =>
+            //{
+            //    //DisplayAlert("Topic", "Hello creator", "Cancel");
+            //    bool isTextPage = osender is BookTextPageViewModel;
+            //    if (isTextPage)
+            //    {
+            //        BookTextPageViewModel textPage = osender as BookTextPageViewModel;
+            //        textPage.webView.Eval(string.Format("window.scrollTo(0, 1000)"));
+            //    }
+            //}; 
+
+            #endregion
+        }
+
+        private void ScrollToLastPosition(object sender, EventArgs args)
+        {
+            
+        }
+
+        private void ShowAnimationWhilePageIsScrolling()
+        {
+
         }
     }
 }

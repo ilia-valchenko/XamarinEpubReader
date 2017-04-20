@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.IO;
+using System.Collections.Generic;
 using App1.Infrastructure;
 
 namespace App1.EpubReader.Interfaces
@@ -28,5 +29,12 @@ namespace App1.EpubReader.Interfaces
         /// <param name="fileExtensions">The extension of the file.</param>
         /// <returns>Returns names of the files with their extensions.</returns>
         IEnumerable<string> GetFilesPaths(FileExtension fileExtensions);
+
+        /// <summary>
+        /// This method returns a stream of file which is situated into resource folder of each platform specific project.
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        Stream GetResourceFileStream(string filename);
     }
 }

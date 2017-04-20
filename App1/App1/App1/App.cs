@@ -39,10 +39,6 @@ namespace App1
             this.filer = DependencyService.Get<IFiler>();
             this.directory = DependencyService.Get<IDirectory>();
 
-            //IScreenHelper screenHelper = DependencyService.Get<IScreenHelper>();
-            //int width = screenHelper.ScreenWidth;
-            //int height = screenHelper.ScreenHeight;
-
             BookRepository bookRepository = new BookRepository(DATABASE_NAME);
             MainPageViewModel mainPage = new MainPageViewModel(bookRepository);
             NavigationPage rootPage = new NavigationPage(mainPage);

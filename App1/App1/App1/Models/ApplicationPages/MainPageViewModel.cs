@@ -83,6 +83,8 @@ namespace App1.Models.ApplicationPages
             searchBooksButton.Clicked += OnClickSearchBooksButton;
             this.stackLayout.Children.Add(searchBooksButton);
 
+            #region Test RED BUTTON - Delete all
+
             Button redButton = new Button
             {
                 Text = "Delete All",
@@ -90,27 +92,55 @@ namespace App1.Models.ApplicationPages
                 BackgroundColor = Color.Red,
             };
 
-            redButton.Clicked += async (object sender, EventArgs args) => 
-            {
-                bool answer = await DisplayAlert("Question", "Do you really want to delete all books from the database?", "Yes", "No");
-
-                if (answer)
+            redButton.Clicked += async (object sender, EventArgs args) =>
                 {
-                    this.bookRepository.DeleteAll();
-                    this.gridLayout.Children.Clear();
-                }
-            };
+                    bool answer = await DisplayAlert("Question", "Do you really want to delete all books from the database?", "Yes", "No");
+
+                    if (answer)
+                    {
+                        this.bookRepository.DeleteAll();
+                        this.gridLayout.Children.Clear();
+                    }
+                };
 
             this.stackLayout.Children.Add(redButton);
+             
+            #endregion
+
+            #region Test device measurement
 
             Button showDeviceMeasurementButton = new Button
             {
                 Text = "Device measurement"
             };
 
-            showDeviceMeasurementButton.Clicked += this.OnClickShowDeviceMeasurementButtom;
+            showDeviceMeasurementButton.Clicked += (sender, args) =>
+            {
+                TestPageDeviceMeasurementViewModel measurementPage = new TestPageDeviceMeasurementViewModel();
+                this.Navigation.PushAsync(measurementPage);
+            };
 
             this.stackLayout.Children.Add(showDeviceMeasurementButton);
+
+            #endregion
+
+            #region Test Hybrid web view
+
+            Button goToHybridButton = new Button
+            {
+                Text = "Go to Hybrid"
+            };
+
+            goToHybridButton.Clicked += (sender, args) =>
+            {
+                EpubBook book = EpubReader.EpubReader.ReadBook(this.books.First().FilePath);
+                TestHybridWebViewPage page = new TestHybridWebViewPage(book.Chapters.First());
+                this.Navigation.PushAsync(page);
+            }; 
+
+            this.stackLayout.Children.Add(goToHybridButton);
+
+            #endregion
 
             this.Content = new ScrollView
             {
@@ -272,17 +302,6 @@ namespace App1.Models.ApplicationPages
                     }
                 }
             }  
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void OnClickShowDeviceMeasurementButtom(object sender, EventArgs args)
-        {
-            TestPageDeviceMeasurementViewModel measurementPage = new TestPageDeviceMeasurementViewModel();
-            this.Navigation.PushAsync(measurementPage);
         }
     }
 }

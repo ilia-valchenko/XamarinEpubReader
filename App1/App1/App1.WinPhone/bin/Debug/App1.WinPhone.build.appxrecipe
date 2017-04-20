@@ -46,17 +46,41 @@
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\packages\Xamarin.Forms.2.2.0.45\lib\wpa81\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Forms.dll">
+      <PackagePath>XLabs.Forms.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Serialization.JsonNET.dll">
+      <PackagePath>XLabs.Serialization.JsonNET.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\HtmlAgilityPack.dll">
       <PackagePath>HtmlAgilityPack.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\SQLite-net.dll">
       <PackagePath>SQLite-net.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Serialization.dll">
+      <PackagePath>XLabs.Serialization.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Core.dll">
+      <PackagePath>XLabs.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Platform.dll">
+      <PackagePath>XLabs.Platform.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Ioc.dll">
+      <PackagePath>XLabs.Ioc.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCLRaw.core.dll">
       <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCLRaw.batteries_v2.dll">
       <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1\bin\Debug\ExifLib.dll">
+      <PackagePath>ExifLib.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Git\xamarin-reader\App1\App1\App1.WinPhone\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>

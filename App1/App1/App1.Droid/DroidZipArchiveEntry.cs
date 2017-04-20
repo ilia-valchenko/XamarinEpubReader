@@ -1,5 +1,6 @@
 using System.IO;
 using System.IO.Compression;
+using Android.Content.Res;
 using App1.Droid;
 using App1.EpubReader.Interfaces;
 

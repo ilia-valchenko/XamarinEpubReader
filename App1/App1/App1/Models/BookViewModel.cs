@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.IO;
-
+using Android.Content;
 using App1.EpubReader.Entities;
 using App1.Models.ApplicationPages.BookPages;
 
