@@ -14,11 +14,6 @@
             The name of the directory which will contain eBooks.
             </summary>
         </member>
-        <member name="F:App1.App.filer">
-            <summary>
-            The filer class. 
-            </summary>
-        </member>
         <member name="F:App1.App.directory">
             <summary>
             The directory class.
@@ -334,6 +329,17 @@
             <summary>
             This class represents a default book page which contains text content.
             </summary>
+        </member>
+        <member name="F:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.webView">
+            <summary>
+            The web view. 
+            </summary>
+        </member>
+        <member name="M:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.#ctor(App1.EpubReader.Entities.EpubChapter)">
+            <summary>
+            Initialize a new instance of <see cref="T:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel"/> class.
+            </summary>
+            <param name="chapter"></param>
         </member>
         <member name="T:App1.Models.ApplicationPages.MainPageViewModel">
             <summary>

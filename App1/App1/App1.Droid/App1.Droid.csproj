@@ -143,6 +143,7 @@
     <Compile Include="DroidHtmlHelper.cs" />
     <Compile Include="DroidDirectory.cs" />
     <Compile Include="DroidFiler.cs" />
+    <Compile Include="NavigationPageRenderer.cs" />
     <Compile Include="DroidScreenHelper.cs" />
     <Compile Include="DroidSQLite.cs" />
     <Compile Include="DroidTextMeter.cs" />
@@ -190,13 +191,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <AndroidAsset Include="Assets\Content\index.html" />
+    <AndroidAsset Include="Assets\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Content\style.css" />
+    <AndroidAsset Include="Assets\style.css" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Content\scroll-animation.js" />
+    <AndroidAsset Include="Assets\scroll-animation.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

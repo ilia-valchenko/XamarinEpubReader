@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+
 using App1.EpubReader.Entities;
 using App1.Infrastructure.Buttons;
+
 using Xamarin.Forms;
 
 namespace App1.Models.ApplicationPages.BookPages

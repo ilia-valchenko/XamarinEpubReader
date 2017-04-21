@@ -1,8 +1,8 @@
-﻿using App1.EpubReader.Interfaces;
+﻿using App1.DAL.Repositories;
 using App1.Infrastructure.Directory;
-using Xamarin.Forms;
 using App1.Models.ApplicationPages;
-using App1.DAL.Repositories;
+
+using Xamarin.Forms;
 
 namespace App1
 {
@@ -15,11 +15,6 @@ namespace App1
         /// The name of the directory which will contain eBooks.
         /// </summary>
         private const string bookDirectoryName = "Xamarin eBooks";
-
-        /// <summary>
-        /// The filer class. 
-        /// </summary>
-        private readonly IFiler filer;
 
         /// <summary>
         /// The directory class.
@@ -36,11 +31,10 @@ namespace App1
         /// </summary>
         public App()
         {
-            this.filer = DependencyService.Get<IFiler>();
             this.directory = DependencyService.Get<IDirectory>();
 
             BookRepository bookRepository = new BookRepository(DATABASE_NAME);
-            MainPageViewModel mainPage = new MainPageViewModel(bookRepository);
+            MainPageViewModel mainPage = new MainPageViewModel(bookRepository);;
             NavigationPage rootPage = new NavigationPage(mainPage);
 
             rootPage.BarTextColor = Color.White;
