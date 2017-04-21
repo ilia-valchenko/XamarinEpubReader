@@ -50,6 +50,7 @@
     <Compile Include="Infrastructure\Mappers\BookEntityToBookInfoModelMapper.cs" />
     <Compile Include="Infrastructure\PageSplitter.cs" />
     <Compile Include="Models\ApplicationPages\BookPages\BookCoverPageViewModel.cs" />
+    <Compile Include="Models\ApplicationPages\HelloView.cs" />
     <Compile Include="Models\ApplicationPages\TestHybridWebViewPage.cs" />
     <Compile Include="Models\BookInfoViewModel.cs" />
     <Compile Include="Models\BookViewModel.cs" />

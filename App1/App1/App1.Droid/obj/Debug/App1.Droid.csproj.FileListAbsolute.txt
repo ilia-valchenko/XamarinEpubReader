@@ -75,8 +75,9 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Dro
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
-D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.config
 D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.XML
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.csprojResolveAssemblyReference.cache
+D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.config
 D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.pdb
 D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.apk
@@ -134,7 +135,6 @@ D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Core.xml
 D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Platform.xml
 D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Ioc.xml
 D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\Newtonsoft.Json.xml
-D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.csprojResolveAssemblyReference.cache
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.pdb
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\bin\App1.Droid.apk
@@ -187,5 +187,7 @@ D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Xml.L
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\res\drawable\house.png
+D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\res\drawable\small.png
 D:\Git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
 D:\Git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb

@@ -34,11 +34,21 @@ namespace App1
             this.directory = DependencyService.Get<IDirectory>();
 
             BookRepository bookRepository = new BookRepository(DATABASE_NAME);
-            MainPageViewModel mainPage = new MainPageViewModel(bookRepository);;
-            NavigationPage rootPage = new NavigationPage(mainPage);
+            MainPageViewModel mainPage = new MainPageViewModel(bookRepository)
+            {
+                Icon = Device.OnPlatform("Menu", "icon.png", "Assets/Icons/reload.png")
+            };
+            NavigationPage rootPage = new NavigationPage(mainPage)
+            {
+                Icon = Device.OnPlatform("Menu", "icon.png", "Assets/Icons/reload.png")
+            };
 
             rootPage.BarTextColor = Color.White;
             rootPage.BarBackgroundColor = Color.FromHex("#246A50");
+
+            #region Test set page icon
+
+            //NavigationPage.SetTitleIcon(mainPage, "icon.png");
 
             // ------------ try to set icon for main page -----------------
             //rootPage.Icon = new FileImageSource
@@ -49,7 +59,8 @@ namespace App1
             //rootPage.Icon = string.Format("{0}{1}.png", Device.OnPlatform("Icons/", "", "Assets/Resources/draeable/"), "icon.png");
 
             //NavigationPage.SetTitleIcon(mainPage, "icon.png");
-            // --------------- end of ------------------------------
+            // --------------- end of ------------------------------ 
+            #endregion
 
             this.MainPage = rootPage;
         }
