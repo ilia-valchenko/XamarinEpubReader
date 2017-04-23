@@ -10,6 +10,10 @@ using App1.EpubReader.Entities;
 using App1.Models.ApplicationPages.BookPages;
 using Xamarin.Forms;
 
+using XLabs.Forms;
+using XLabs.Forms.Controls;
+using XLabs.Forms.Behaviors;
+
 namespace App1.Models.ApplicationPages
 {
     /// <summary>
@@ -253,13 +257,26 @@ namespace App1.Models.ApplicationPages
                     }
                 }
 
-                // Set the tap recognizer.
-                foreach (BookInfoViewModel book in books)
-                {
-                    TapGestureRecognizer bookCoverImageTap = new TapGestureRecognizer();
-                    bookCoverImageTap.Tapped += (sender, args) => this.OnClickBookCoverImage(sender, args, book);
-                    book.Cover.GestureRecognizers.Add(bookCoverImageTap);
-                }
+                //// Set the tap recognizer for each book.
+                //foreach (BookInfoViewModel book in books)
+                //{
+                //    TapGestureRecognizer bookCoverImageTap = new TapGestureRecognizer();
+                //    bookCoverImageTap.Tapped += (sender, args) => this.OnClickBookCoverImage(sender, args, book);
+                //    book.Cover.GestureRecognizers.Add(bookCoverImageTap);
+
+                //    bookCoverImageTap.NumberOfTapsRequired = 2;
+
+                //    var dumpParam = new RelayGesture((g, x) => DisplayAlert("Title", "Hello Ilia", "Cancel"));
+
+                //    book.Cover.SetValue(Gestures.InterestsProperty, new GestureCollection() {
+                //        new GestureInterest
+                //        {
+                //            GestureType = GestureType.LongPress
+                //            GestureCommand =
+                //            GestureParameter = dumpParam
+                //        }
+                //    });
+                //}
             }
         }
 

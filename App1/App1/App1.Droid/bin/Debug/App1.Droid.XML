@@ -23,6 +23,11 @@
             <param name="path">The full path of a directory.</param>
             <returns>Returns true if directory exists.</returns>
         </member>
+        <member name="T:App1.Droid.DroidRenderers.DroidNavigationPageRenderer">
+            <summary>
+            Custom renderer of navigation page for Anfroid project.
+            </summary>
+        </member>
         <member name="T:App1.Droid.DroidScreenHelper">
             <summary>
             This class detects the screen size of a device, in density-independent pixels.

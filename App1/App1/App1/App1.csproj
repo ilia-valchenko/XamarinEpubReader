@@ -41,6 +41,7 @@
     <Compile Include="DAL\Interfaces\IBookRepository.cs" />
     <Compile Include="EpubReader\Interfaces\IHtmlHelper.cs" />
     <Compile Include="Infrastructure\Buttons\OpenBookChapterButton.cs" />
+    <Compile Include="Infrastructure\Controls\ImageWithLongPressGesture.cs" />
     <Compile Include="Infrastructure\FileExtension.cs" />
     <Compile Include="Infrastructure\Directory\IDirectory.cs" />
     <Compile Include="Infrastructure\GuidHelper.cs" />

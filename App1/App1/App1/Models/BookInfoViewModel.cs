@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Xamarin.Forms;
+using App1.Infrastructure.Controls;
 
 namespace App1.Models
 {
@@ -41,7 +42,12 @@ namespace App1.Models
             this.Author = author;
             this.FilePath = filepath;
 
-            this.Cover = new Image
+            //this.Cover = new Image
+            //{
+            //    Source = ImageSource.FromStream(() => new MemoryStream(bytesImage))
+            //};
+
+            this.Cover = new ImageWithLongPressGesture
             {
                 Source = ImageSource.FromStream(() => new MemoryStream(bytesImage))
             };
