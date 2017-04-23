@@ -13,7 +13,6 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.dll.mdb
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\bin\Debug\App1.dll.mdb
-D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.config
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.XML
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll
@@ -52,7 +51,5 @@ D:\git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Serialization.xml
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Serialization.JsonNET.xml
 D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll
 D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.pdb
-D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll.mdb
-D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.mdb
 D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll.mdb
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.mdb

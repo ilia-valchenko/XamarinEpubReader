@@ -9,10 +9,7 @@ using App1.Infrastructure;
 using App1.EpubReader.Entities;
 using App1.Models.ApplicationPages.BookPages;
 using Xamarin.Forms;
-
-using XLabs.Forms;
-using XLabs.Forms.Controls;
-using XLabs.Forms.Behaviors;
+using App1.Infrastructure.Controls;
 
 namespace App1.Models.ApplicationPages
 {
@@ -257,27 +254,25 @@ namespace App1.Models.ApplicationPages
                     }
                 }
 
-                //// Set the tap recognizer for each book.
-                //foreach (BookInfoViewModel book in books)
-                //{
-                //    TapGestureRecognizer bookCoverImageTap = new TapGestureRecognizer();
-                //    bookCoverImageTap.Tapped += (sender, args) => this.OnClickBookCoverImage(sender, args, book);
-                //    book.Cover.GestureRecognizers.Add(bookCoverImageTap);
+                // Set the tap recognizer for each book.
+                foreach (BookInfoViewModel book in books)
+                {
+                    TapGestureRecognizer bookCoverImageTap = new TapGestureRecognizer();
+                    bookCoverImageTap.Tapped += (sender, args) => this.OnClickBookCoverImage(sender, args, book);
+                    book.Cover.GestureRecognizers.Add(bookCoverImageTap);
 
-                //    bookCoverImageTap.NumberOfTapsRequired = 2;
-
-                //    var dumpParam = new RelayGesture((g, x) => DisplayAlert("Title", "Hello Ilia", "Cancel"));
-
-                //    book.Cover.SetValue(Gestures.InterestsProperty, new GestureCollection() {
-                //        new GestureInterest
-                //        {
-                //            GestureType = GestureType.LongPress
-                //            GestureCommand =
-                //            GestureParameter = dumpParam
-                //        }
-                //    });
-                //}
+                    // Test long press recognizer
+                    book.Cover.longPressAction = () =>
+                    {
+                        DisplayAlert("Message", "Hello creator. You did it.", "Cancel");
+                    };
+                }
             }
+        }
+
+        private void LongPressOnBookCoverImage(string title, string message, string cancel)
+        {
+            DisplayAlert(title, message, cancel);
         }
 
         /// <summary>

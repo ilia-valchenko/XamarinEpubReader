@@ -22,7 +22,7 @@ namespace App1.Models
         /// <summary>
         /// The book's cover image.
         /// </summary>
-        public Image Cover { get; }
+        public ImageWithLongPressGesture Cover { get; }
 
         /// <summary>
         /// The path to the book file.
@@ -42,14 +42,9 @@ namespace App1.Models
             this.Author = author;
             this.FilePath = filepath;
 
-            //this.Cover = new Image
-            //{
-            //    Source = ImageSource.FromStream(() => new MemoryStream(bytesImage))
-            //};
-
             this.Cover = new ImageWithLongPressGesture
             {
-                Source = ImageSource.FromStream(() => new MemoryStream(bytesImage))
+                Source = ImageSource.FromStream(() => new MemoryStream(bytesImage)),
             };
         }
     }

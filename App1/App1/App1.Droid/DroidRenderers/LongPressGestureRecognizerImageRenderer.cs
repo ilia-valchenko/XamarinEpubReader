@@ -1,4 +1,5 @@
-﻿using Android.Widget;
+﻿using Android.App;
+using Android.Widget;
 using App1.Droid.DroidRenderers;
 using App1.Infrastructure.Controls;
 using Xamarin.Forms;
@@ -11,13 +12,6 @@ namespace App1.Droid.DroidRenderers
     {
         ImageWithLongPressGesture view;
 
-        public LongPressGestureRecognizerImageRenderer()
-        {
-            this.LongClick += (sender, args) => {
-                Toast.MakeText(this.Context, "Your blood type is not A", ToastLength.Short).Show();
-            };
-        }
-
         protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
         {
             base.OnElementChanged(e);
@@ -25,6 +19,7 @@ namespace App1.Droid.DroidRenderers
             if(e.NewElement != null)
             {
                 view = e.NewElement as ImageWithLongPressGesture;
+                this.LongClick += this.view.HandleLongPress;
             }
         }
     }
