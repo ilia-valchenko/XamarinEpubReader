@@ -45,10 +45,6 @@ D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Resou
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Diagnostics.Debug.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.IO.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Collections.dll
-D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\XLabs.Serialization.JsonNET.dll
-D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\Newtonsoft.Json.dll
-D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.Serialization.dll
-D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Threading.Tasks.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\HtmlAgilityPack.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.InteropServices.dll
@@ -67,6 +63,8 @@ D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Refle
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.ObjectModel.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.ComponentModel.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Dynamic.Runtime.dll
+D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.Serialization.dll
+D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.Serialization.Xml.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Collections.Concurrent.dll

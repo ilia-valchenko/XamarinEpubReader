@@ -2,6 +2,10 @@ App1.Droid.MainActivity, App1.Droid;md50170a25da682dd459b9251c65ebe3a7a.MainActi
 App1.Droid.MainActivity, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50170a25da682dd459b9251c65ebe3a7a.MainActivity
 App1.Droid.MainActivity;md50170a25da682dd459b9251c65ebe3a7a.MainActivity
 app1.droid.MainActivity;md50170a25da682dd459b9251c65ebe3a7a.MainActivity
+App1.Droid.Listeners.GestureImageListener, App1.Droid;md50a303b86131d0533879405f1bc0332bd.GestureImageListener
+App1.Droid.Listeners.GestureImageListener, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50a303b86131d0533879405f1bc0332bd.GestureImageListener
+App1.Droid.Listeners.GestureImageListener;md50a303b86131d0533879405f1bc0332bd.GestureImageListener
+app1.droid.listeners.GestureImageListener;md50a303b86131d0533879405f1bc0332bd.GestureImageListener
 App1.Droid.DroidRenderers.HelloViewRenderer, App1.Droid;md5644ed5ae02023d5a7d2d398fc86f232e.HelloViewRenderer
 App1.Droid.DroidRenderers.HelloViewRenderer, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5644ed5ae02023d5a7d2d398fc86f232e.HelloViewRenderer
 App1.Droid.DroidRenderers.HelloViewRenderer;md5644ed5ae02023d5a7d2d398fc86f232e.HelloViewRenderer

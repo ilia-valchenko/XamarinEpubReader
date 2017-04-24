@@ -401,17 +401,26 @@
             </summary>
             <param name="books">The actual collection of a book info view models.</param>
         </member>
-        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.OnClickBookCoverImage(System.Object,System.EventArgs,App1.Models.BookInfoViewModel)">
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.OnLongPressBookCoverImage(App1.Models.BookInfoViewModel)">
+            <summary>
+            This method represents a handle for the long press action.
+            </summary>
+            <param name="bookInfo">The book info view model.</param>
+        </member>
+        <member name="M:App1.Models.ApplicationPages.MainPageViewModel.OnClickBookCoverImage(App1.Models.BookInfoViewModel)">
             <summary>
             This method opens a book when the book's cover image is clicked. 
             </summary>
-            <param name="sender">The source of the event.</param>
-            <param name="args">An object that contains the event data.</param>
             <param name="bookInfo">The book info view model.</param>
         </member>
         <member name="T:App1.Models.BookInfoViewModel">
             <summary>
             This page represents a main part of book which is stored in a database.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.Id">
+            <summary>
+            The book's identifier.
             </summary>
         </member>
         <member name="P:App1.Models.BookInfoViewModel.Title">
@@ -434,10 +443,11 @@
             The path to the book file.
             </summary>
         </member>
-        <member name="M:App1.Models.BookInfoViewModel.#ctor(System.String,System.String,System.Byte[],System.String)">
+        <member name="M:App1.Models.BookInfoViewModel.#ctor(System.String,System.String,System.String,System.Byte[],System.String)">
             <summary>
             Initialize a new instance of the <see cref="T:App1.Models.BookInfoViewModel"/>.
             </summary>
+            <param name="id">The book identifier.</param>
             <param name="title">The book title.</param>
             <param name="author">The author of a book.</param>
             <param name="bytesImage">Array of bytes which represent a book cover image.</param>

@@ -10,6 +10,7 @@ using App1.EpubReader.Entities;
 using App1.Models.ApplicationPages.BookPages;
 using Xamarin.Forms;
 using App1.Infrastructure.Controls;
+using System.Threading.Tasks;
 
 namespace App1.Models.ApplicationPages
 {
@@ -125,24 +126,6 @@ namespace App1.Models.ApplicationPages
 
             #endregion
 
-            #region Test Hybrid web view
-
-            Button goToHybridButton = new Button
-            {
-                Text = "Go to Hybrid"
-            };
-
-            goToHybridButton.Clicked += (sender, args) =>
-            {
-                EpubBook book = EpubReader.EpubReader.ReadBook(this.books.First().FilePath);
-                TestHybridWebViewPage page = new TestHybridWebViewPage(book.Chapters.First());
-                this.Navigation.PushAsync(page);
-            }; 
-
-            this.stackLayout.Children.Add(goToHybridButton);
-
-            #endregion
-
             this.Content = new ScrollView
             {
                 Content = this.stackLayout,
@@ -254,48 +237,61 @@ namespace App1.Models.ApplicationPages
                     }
                 }
 
-                // Set the tap recognizer for each book.
+                // Set click and long press event handlers
                 foreach (BookInfoViewModel book in books)
                 {
-                    TapGestureRecognizer bookCoverImageTap = new TapGestureRecognizer();
-                    bookCoverImageTap.Tapped += (sender, args) => this.OnClickBookCoverImage(sender, args, book);
-                    book.Cover.GestureRecognizers.Add(bookCoverImageTap);
-
-                    // Test long press recognizer
-                    book.Cover.longPressAction = () =>
-                    {
-                        DisplayAlert("Message", "Hello creator. You did it.", "Cancel");
-                    };
+                    book.Cover.longPressAction = () => this.OnLongPressBookCoverImage(book);
+                    book.Cover.click = () => this.OnClickBookCoverImage(book);
                 }
             }
         }
 
-        private void LongPressOnBookCoverImage(string title, string message, string cancel)
+        /// <summary>
+        /// This method represents a handle for the long press action.
+        /// </summary>
+        /// <param name="bookInfo">The book info view model.</param>
+        private async void OnLongPressBookCoverImage(BookInfoViewModel bookInfo)
         {
-            DisplayAlert(title, message, cancel);
+            string action = await DisplayActionSheet(null, "Cancel", null, "Open", "Open in Hybrid", "Delete");
+
+            switch(action)
+            {
+                case ("Open"):
+                    this.OnClickBookCoverImage(bookInfo);
+                    break;
+
+                case ("Open in Hybrid"):
+                    EpubBook epubBook = await EpubReader.EpubReader.ReadBookAsync(bookInfo.FilePath);
+                    EpubChapter chapter = epubBook.Chapters[1];
+                    TestHybridWebViewPage hybridPage = new TestHybridWebViewPage(chapter);
+                    await this.Navigation.PushAsync(hybridPage);
+                    break;
+
+                case ("Delete"):
+                    this.bookRepository.DeleteById(bookInfo.Id);
+                    break;
+            }
         }
 
         /// <summary>
         /// This method opens a book when the book's cover image is clicked. 
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="args">An object that contains the event data.</param>
         /// <param name="bookInfo">The book info view model.</param>
-        private void OnClickBookCoverImage(object sender, EventArgs args, BookInfoViewModel bookInfo)
+        private async void OnClickBookCoverImage(BookInfoViewModel bookInfo)
         {
             if (bookInfo == null)
             {
-                DisplayAlert("Attention", "Something went wrong. I can't open this book. Please check does it exist yet?", "Cancel");
+                await DisplayAlert("Attention", "Something went wrong. I can't open this book. Please check does it exist yet?", "Cancel");
             }
             else
             {
                 if (string.IsNullOrEmpty(bookInfo.FilePath))
                 {
-                    DisplayAlert("Attention", "Something went wrong. The path to the book file is empty or it is invalid.", "Cancel");
+                    await DisplayAlert("Attention", "Something went wrong. The path to the book file is empty or it is invalid.", "Cancel");
                 }
                 else
                 {
-                    EpubBook epubBook = EpubReader.EpubReader.ReadBook(bookInfo.FilePath);
+                    EpubBook epubBook = await EpubReader.EpubReader.ReadBookAsync(bookInfo.FilePath);
                     BookViewModel book = new BookViewModel(epubBook);
                     CarouselPage carouselPage = new CarouselPage { Title = "Go to Main page" };
 
@@ -306,14 +302,14 @@ namespace App1.Models.ApplicationPages
                             carouselPage.Children.Add(bookPage);
                         }
 
-                        this.Navigation.PushAsync(carouselPage);
+                        await this.Navigation.PushAsync(carouselPage);
                     }
                     else
                     {
-                        DisplayAlert("Attention", "Something went wrong. It looks like the book doesn't has any pages.", "Cancel");
+                        await DisplayAlert("Attention", "Something went wrong. It looks like the book doesn't has any pages.", "Cancel");
                     }
                 }
-            }  
+            }
         }
     }
 }

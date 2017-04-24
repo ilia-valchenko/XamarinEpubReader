@@ -10,6 +10,11 @@ namespace App1.Models
     public class BookInfoViewModel
     {
         /// <summary>
+        /// The book's identifier.
+        /// </summary>
+        public string Id { get; }
+
+        /// <summary>
         /// The title of a book.
         /// </summary>
         public string Title { get; }
@@ -32,12 +37,14 @@ namespace App1.Models
         /// <summary>
         /// Initialize a new instance of the <see cref="BookInfoViewModel"/>.
         /// </summary>
+        /// <param name="id">The book identifier.</param>
         /// <param name="title">The book title.</param>
         /// <param name="author">The author of a book.</param>
         /// <param name="bytesImage">Array of bytes which represent a book cover image.</param>
         /// <param name="filepath">The path to the book file.</param>
-        public BookInfoViewModel(string title, string author, byte[] bytesImage, string filepath)
+        public BookInfoViewModel(string id, string title, string author, byte[] bytesImage, string filepath)
         {
+            this.Id = id;
             this.Title = title;
             this.Author = author;
             this.FilePath = filepath;

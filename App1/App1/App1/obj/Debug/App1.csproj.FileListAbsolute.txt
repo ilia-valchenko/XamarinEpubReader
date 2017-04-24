@@ -49,7 +49,10 @@ D:\git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Ioc.xml
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Platform.xml
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Serialization.xml
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\XLabs.Serialization.JsonNET.xml
+D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll
 D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.pdb
+D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll.mdb
+D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.mdb
 D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll.mdb
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.mdb

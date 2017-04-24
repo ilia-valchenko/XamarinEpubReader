@@ -21,7 +21,7 @@ namespace App1.Infrastructure.Mappers
                 return null;
             }
 
-            BookInfoViewModel model = new BookInfoViewModel(entity.Title, entity.Author, entity.Cover, entity.FilePath);
+            BookInfoViewModel model = new BookInfoViewModel(entity.Id, entity.Title, entity.Author, entity.Cover, entity.FilePath);
             return model;
         }
 

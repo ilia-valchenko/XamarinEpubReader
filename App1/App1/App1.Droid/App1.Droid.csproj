@@ -174,6 +174,7 @@
     <Compile Include="DroidZipArchive.cs" />
     <Compile Include="DroidZipArchiveEntry.cs" />
     <Compile Include="DroidZipFile.cs" />
+    <Compile Include="Listeners\GestureImageListener.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
