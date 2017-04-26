@@ -39,17 +39,6 @@
             </summary>
             <param name="e"></param>
         </member>
-        <member name="T:App1.Droid.DroidRenderers.DroidNavigationPageRenderer">
-            <summary>
-            Custom renderer of navigation page for Anfroid project.
-            </summary>
-        </member>
-        <member name="M:App1.Droid.DroidRenderers.DroidNavigationPageRenderer.OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs{Xamarin.Forms.NavigationPage})">
-            <summary>
-            Notified when an element chnage occurs.
-            </summary>
-            <param name="e"></param>
-        </member>
         <member name="T:App1.Droid.DroidScreenHelper">
             <summary>
             This class detects the screen size of a device, in density-independent pixels.

@@ -24,65 +24,71 @@ namespace App1.Models.ApplicationPages.BookPages
         /// <param name="chapter"></param>
         public BookTextPageViewModel(EpubChapter chapter)
         {
-            #region Body original
-
             string htmlText = chapter.HtmlContent.Replace(@"\", string.Empty);
 
-            HtmlDocument document = new HtmlDocument();
+            #region Create new HTML document
+            //HtmlDocument document = new HtmlDocument();
 
-            document.LoadHtml(htmlText);
+            //document.LoadHtml(htmlText);
 
-            var bodyOriginal =
-                document.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
-                    .ChildNodes.FirstOrDefault(f => f.Name == "body"); 
+            //var bodyOriginal =
+            //    document.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+            //        .ChildNodes.FirstOrDefault(f => f.Name == "body"); 
 
             #endregion
 
-            IFiler filer = DependencyService.Get<IFiler>();
-            HtmlDocument pageTemplate = new HtmlDocument();
-            Stream stream = filer.GetResourceFileStream("index.html");
-            pageTemplate.Load(stream);
+            #region Get HTML page as stream
+            //IFiler filer = DependencyService.Get<IFiler>();
+            //HtmlDocument pageTemplate = new HtmlDocument();
+            //Stream stream = filer.GetResourceFileStream("index.html");
+            //pageTemplate.Load(stream);
 
-            var textContainer = pageTemplate.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
-                .ChildNodes.FirstOrDefault(f => f.Name == "body")
-                .ChildNodes.FirstOrDefault(d => d.Id == "text-container");
+            //var textContainer = pageTemplate.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+            //    .ChildNodes.FirstOrDefault(f => f.Name == "body")
+            //    .ChildNodes.FirstOrDefault(d => d.Id == "text-container"); 
+            #endregion
 
-            foreach (var child in bodyOriginal.ChildNodes)
-            {
-                textContainer.ChildNodes.Add(child);
-            }
+            #region Add original body children to a new HTML document
+            //foreach (var child in bodyOriginal.ChildNodes)
+            //{
+            //    textContainer.ChildNodes.Add(child);
+            //} 
+            #endregion
 
             #region Add CCS custom CSS style
 
-            var head = pageTemplate.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
-                    .ChildNodes.FirstOrDefault(f => f.Name == "head");
+            //var head = pageTemplate.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+            //        .ChildNodes.FirstOrDefault(f => f.Name == "head");
 
-            IHtmlHelper htmlHelper = DependencyService.Get<IHtmlHelper>();
-            string cssText = htmlHelper.GetCssText("style.css");
+            //IHtmlHelper htmlHelper = DependencyService.Get<IHtmlHelper>();
+            //string cssText = htmlHelper.GetCssText("style.css");
 
-            HtmlNode style = HtmlNode.CreateNode("<style></style>");
-            style.InnerHtml = cssText;
+            //HtmlNode style = HtmlNode.CreateNode("<style></style>");
+            //style.InnerHtml = cssText;
 
-            head.ChildNodes.Add(style);
+            //head.ChildNodes.Add(style);
 
             #endregion
 
-            webView = new WebView
+            this.webView = new WebView
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 Source = new HtmlWebViewSource
                 {
-                    Html = pageTemplate.DocumentNode.OuterHtml
+                    Html = htmlText
                 }
             };
 
-            this.Content = webView;
+            this.Content = this.webView;
 
             #region Test scroll to last position
 
-            this.Appearing += this.ScrollToLastPosition;
-
+            this.Appearing += (sender, args) =>
+            {
+                webView.Eval(string.Format("alert('Hello Ilia')"));
+            };
+                
             //bookPage.Appearing += (osender, oargs) =>
             //{
             //    //DisplayAlert("Topic", "Hello creator", "Cancel");

@@ -366,11 +366,6 @@
             Gets the screens Y pixel density per inch
             </summary>
         </member>
-        <member name="P:XLabs.Platform.Device.IDisplay.Scale">
-            <summary>
-            Gets the scale value of the display.
-            </summary>
-        </member>
         <member name="T:XLabs.Platform.Device.IGyroscope">
             <summary>
             Interface IGyroscope
@@ -510,18 +505,6 @@
             </summary>
             <value>The application data directory</value>
         </member>
-        <member name="P:XLabs.Platform.Mvvm.IXFormsApp.Orientation">
-            <summary>
-            Gets the orientation.
-            </summary>
-            <value>The orientation.</value>
-        </member>
-        <member name="P:XLabs.Platform.Mvvm.IXFormsApp.BackPressDelegate">
-            <summary>
-            Gets or sets the back press delegate.
-            </summary>
-            <value>The back press delegate.</value>
-        </member>
         <member name="P:XLabs.Platform.Mvvm.IXFormsApp.Initialize">
             <summary>
             Gets or sets the initialize.
@@ -563,12 +546,6 @@
             Gets or sets the on rotation.
             </summary>
             <value>The on rotation.</value>
-        </member>
-        <member name="P:XLabs.Platform.Mvvm.IXFormsApp.BackPress">
-            <summary>
-            Gets or sets the back press.
-            </summary>
-            <value>The back press.</value>
         </member>
         <member name="T:XLabs.Platform.Mvvm.IXFormsApp`1">
             <summary>
@@ -1109,28 +1086,28 @@
             <param name="pageKey">The page key.</param>
             <param name="pageType">Type of the page.</param>
         </member>
-        <member name="M:XLabs.Platform.Services.INavigationService.NavigateTo(System.String,System.Boolean,System.Object[])">
+        <member name="M:XLabs.Platform.Services.INavigationService.NavigateTo(System.String,System.Object,System.Boolean)">
             <summary>
             Navigates to.
             </summary>
             <param name="pageKey">The page key.</param>
-            <param name="args">The arguments.</param>
+            <param name="parameter">The parameter.</param>
             <param name="animated">if set to <c>true</c> [animated].</param>
         </member>
-        <member name="M:XLabs.Platform.Services.INavigationService.NavigateTo(System.Type,System.Boolean,System.Object[])">
+        <member name="M:XLabs.Platform.Services.INavigationService.NavigateTo(System.Type,System.Object,System.Boolean)">
             <summary>
             Navigates to.
             </summary>
             <param name="pageType">Type of the page.</param>
-            <param name="args">The arguments.</param>
+            <param name="parameter">The parameter.</param>
             <param name="animated">if set to <c>true</c> [animated].</param>
         </member>
-        <member name="M:XLabs.Platform.Services.INavigationService.NavigateTo``1(System.Boolean,System.Object[])">
+        <member name="M:XLabs.Platform.Services.INavigationService.NavigateTo``1(System.Object,System.Boolean)">
             <summary>
             Navigates to.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="args">The arguments.</param>
+            <param name="parameter">The parameter.</param>
             <param name="animated">if set to <c>true</c> [animated].</param>
         </member>
         <member name="M:XLabs.Platform.Services.INavigationService.GoBack">
@@ -1219,7 +1196,7 @@
         </member>
         <member name="T:XLabs.Platform.Services.IO.IFileManager">
             <summary>
-            Interface IFileManager provides access to files located in Isolated Storage.
+            Interface IFileManager
             </summary>
         </member>
         <member name="M:XLabs.Platform.Services.IO.IFileManager.DirectoryExists(System.String)">
@@ -1337,8 +1314,7 @@
         </member>
         <member name="T:XLabs.Platform.Services.IO.FileShare">
             <summary>
-            Contains constants for controlling the kind of access other <see cref="T:XLabs.Platform.Services.IO.IFileManager"/>
-            objects can have to the same file.
+            Enum FileShare
             </summary>
         </member>
         <member name="F:XLabs.Platform.Services.IO.FileShare.None">
@@ -1381,13 +1357,6 @@
             Opens native dialog to dial the specified number.
             </summary>
             <param name="number">Number to dial.</param>
-        </member>
-        <member name="M:XLabs.Platform.Services.IPhoneService.SendSMS(System.String,System.String)">
-            <summary>
-            Sends the SMS.
-            </summary>
-            <param name="to">To.</param>
-            <param name="body">The body.</param>
         </member>
         <member name="P:XLabs.Platform.Services.IPhoneService.CellularProvider">
             <summary>

@@ -128,7 +128,6 @@ class MonoPackageManager_Resources {
 		"XLabs.Platform.dll",
 		"XLabs.Platform.Droid.dll",
 		"XLabs.Serialization.dll",
-		"HtmlAgilityPack.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

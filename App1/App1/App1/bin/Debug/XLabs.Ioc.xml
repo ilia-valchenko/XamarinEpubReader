@@ -128,12 +128,6 @@
             <param name="resolver">Instance of IResolver implementation.</param>
             <exception cref="T:System.InvalidOperationException">Instance can only be set once to prevent mix-ups.</exception>
         </member>
-        <member name="M:XLabs.Ioc.Resolver.ResetResolver(XLabs.Ioc.IResolver)">
-            <summary>
-            Resets the resolver instance.
-            </summary>
-            <param name="newInstance">New resolver instance.</param>
-        </member>
         <member name="M:XLabs.Ioc.Resolver.Resolve``1">
             <summary>
             Resolve a dependency.

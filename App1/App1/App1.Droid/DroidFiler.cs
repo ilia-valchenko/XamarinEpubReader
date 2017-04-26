@@ -6,6 +6,7 @@ using App1.Droid;
 using App1.EpubReader.Interfaces;
 using App1.Infrastructure;
 using Environment = Android.OS.Environment;
+using System.Text;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DroidFiler))]
 namespace App1.Droid

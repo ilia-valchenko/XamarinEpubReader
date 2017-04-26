@@ -176,7 +176,7 @@
             </Grid>
             ]]>
             </code>
-            To this:(where lb is the XLabs.Forms.Behavior namespace prefix
+            To this:(where lb is the Xamarin.Forms.Labs.Behavior namespace prefix
             
             <code>
             <![CDATA[
@@ -1852,16 +1852,6 @@
             The circle outline
             </summary>
         </member>
-        <member name="T:XLabs.Forms.Controls.CameraView">
-            <summary>
-            Class CameraView.
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.CameraView.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Forms.Controls.CameraView"/> class.
-            </summary>
-        </member>
         <member name="F:XLabs.Forms.Controls.CameraView.CameraProperty">
             <summary>
             The camera device to use.
@@ -1927,26 +1917,6 @@
             <summary>
             Property definition for the <see cref="P:XLabs.Forms.Controls.CarouselView`1.ShowTick"/>
             </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.CarouselView`1.ItemTemplateSelectorProperty">
-            <summary>
-            The item template selector property
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.CarouselView`1.OnDataTemplateSelectorChanged(Xamarin.Forms.BindableObject,XLabs.Forms.Controls.DataTemplateSelector,XLabs.Forms.Controls.DataTemplateSelector)">
-            <summary>
-            Called when [data template selector changed].
-            </summary>
-            <param name="bindable">The bindable.</param>
-            <param name="oldvalue">The oldvalue.</param>
-            <param name="newvalue">The newvalue.</param>
-        </member>
-        <member name="M:XLabs.Forms.Controls.CarouselView`1.OnDataTemplateSelectorChanged(XLabs.Forms.Controls.DataTemplateSelector,XLabs.Forms.Controls.DataTemplateSelector)">
-            <summary>
-            Called when [data template selector changed].
-            </summary>
-            <param name="oldValue">The old value.</param>
-            <param name="newValue">The new value.</param>
         </member>
         <member name="M:XLabs.Forms.Controls.CarouselView`1.OnBindingContextChanged">
             <summary>
@@ -2017,12 +1987,6 @@
             <param name="oldval">The oldval.</param>
             <param name="newval">The newval.</param>
             <exception cref="T:XLabs.Forms.Exceptions.InvalidBindableException"></exception>
-        </member>
-        <member name="P:XLabs.Forms.Controls.CarouselView`1.ItemTemplateSelector">
-            <summary>
-            Gets or sets the item template selector.
-            </summary>
-            <value>The item template selector.</value>
         </member>
         <member name="P:XLabs.Forms.Controls.CarouselView`1.ShowTick">
             <summary>
@@ -2133,12 +2097,6 @@
             Gets or sets the text.
             </summary>
         </member>
-        <member name="P:XLabs.Forms.Controls.CheckBox.TextColor">
-            <summary>
-            Gets or sets the color of the text.
-            </summary>
-            <value>The color of the text.</value>
-        </member>
         <member name="P:XLabs.Forms.Controls.CheckBox.FontSize">
             <summary>
             Gets or sets the size of the font.
@@ -2150,12 +2108,6 @@
             Gets or sets the name of the font.
             </summary>
             <value>The name of the font.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.CheckBox.Text">
-            <summary>
-            Gets the text.
-            </summary>
-            <value>The text.</value>
         </member>
         <member name="T:XLabs.Forms.Controls.CheckboxCell">
             <summary>
@@ -2223,11 +2175,11 @@
             <summary>
             Initializes a new instance of the <see cref="T:XLabs.Forms.Controls.CollectionChangedHandle`2"/> class.
             </summary>
-            <param name="target">The collection to be kept in sync with source</param>
+            <param name="target">The collection to be kept in sync with <see cref="!:source"/>source</param>
             <param name="source">The original collection</param>
             <param name="projector">A function that returns {TSyncType} for a {T}</param>
             <param name="postadd">A functino called right after insertion into the synced collection</param>
-            <param name="cleanup">A function that performs any needed cleanup when {TSyncType} is removed from the target</param>
+            <param name="cleanup">A function that performs any needed cleanup when {TSyncType} is removed from the <see cref="!:target"/></param>
         </member>
         <member name="M:XLabs.Forms.Controls.CollectionChangedHandle`2.Dispose">
             <summary>
@@ -2250,57 +2202,9 @@
             <see cref="P:Xamarin.Forms.BindableObject.BindingContext"/> on this element or use an inhereted one, then set a display.
             </summary>
         </member>
-        <member name="F:XLabs.Forms.Controls.ContentControl.ContentTemplateProperty">
-            <summary>
-            The content template property
-            </summary>
-        </member>
         <member name="P:XLabs.Forms.Controls.ContentControl.ContentTemplate">
             <summary>
             A <see cref="T:Xamarin.Forms.DataTemplate"/> used to render the view. This property is bindable.
-            </summary>
-        </member>
-        <member name="T:XLabs.Forms.Controls.DataTemplateSelector">
-            <summary>
-            Class DataTemplateSelector.
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.DataTemplateSelector.SelectTemplate(System.Object,Xamarin.Forms.BindableObject)">
-            <summary>
-            Selects the template.
-            </summary>
-            <param name="item">The item.</param>
-            <param name="container">The container.</param>
-            <returns>DataTemplate.</returns>
-        </member>
-        <member name="T:XLabs.Forms.Controls.DataTemplateSelectorExtensions">
-            <summary>
-            Class DataTemplateSelectorExtensions.
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.DataTemplateSelectorExtensions.CellFor(Xamarin.Forms.BindableObject,System.Object,XLabs.Forms.Controls.DataTemplateSelector)">
-            <summary>
-            Cells for.
-            </summary>
-            <param name="This">The this.</param>
-            <param name="item">The item.</param>
-            <param name="selector">The selector.</param>
-            <returns>Cell.</returns>
-            <exception cref="T:System.InvalidOperationException">DataTemplate must be either a Cell or a View</exception>
-        </member>
-        <member name="M:XLabs.Forms.Controls.DataTemplateSelectorExtensions.ViewFor(Xamarin.Forms.BindableObject,System.Object,XLabs.Forms.Controls.DataTemplateSelector)">
-            <summary>
-            Views for.
-            </summary>
-            <param name="This">The this.</param>
-            <param name="item">The item.</param>
-            <param name="selector">The selector.</param>
-            <returns>View.</returns>
-            <exception cref="T:System.InvalidOperationException">DataTemplate must be a View</exception>
-        </member>
-        <member name="T:XLabs.Forms.Controls.DragContentView">
-            <summary>
-            Class DragContentView.
             </summary>
         </member>
         <member name="T:XLabs.Forms.Controls.DynamicListView`1">
@@ -2469,11 +2373,6 @@
             </summary>
             <value>The height request in inches.</value>
         </member>
-        <member name="T:XLabs.Forms.Controls.ExtendedDatePicker">
-            <summary>
-            Class ExtendedDatePicker.
-            </summary>
-        </member>
         <member name="F:XLabs.Forms.Controls.ExtendedDatePicker.HasBorderProperty">
             <summary>
             The HasBorder property
@@ -2559,16 +2458,6 @@
             The MaxLength property
             </summary>
         </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedEntry.LeftSwipe">
-            <summary>
-            The left swipe
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedEntry.RightSwipe">
-            <summary>
-            The right swipe
-            </summary>
-        </member>
         <member name="P:XLabs.Forms.Controls.ExtendedEntry.MaxLength">
             <summary>
             Gets or sets the MaxLength
@@ -2617,6 +2506,11 @@
         <member name="M:XLabs.Forms.Controls.ExtendedLabel.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:XLabs.Forms.Controls.ExtendedLabel"/> class.
+            </summary>
+        </member>
+        <member name="F:XLabs.Forms.Controls.ExtendedLabel.FontSizeProperty">
+            <summary>
+            The font size property
             </summary>
         </member>
         <member name="F:XLabs.Forms.Controls.ExtendedLabel.FontNameAndroidProperty">
@@ -2670,6 +2564,12 @@
             The formatted placeholder property.
             </summary>
         </member>
+        <member name="P:XLabs.Forms.Controls.ExtendedLabel.FontSize">
+            <summary>
+            Gets or sets the size of the font.
+            </summary>
+            <value>The size of the font.</value>
+        </member>
         <member name="P:XLabs.Forms.Controls.ExtendedLabel.FontNameAndroid">
             <summary>
             Gets or sets the font name android.
@@ -2707,18 +2607,6 @@
             </summary>
             <value>A <see cref="T:System.Boolean"/> indicating if the text in the label should be underlined.</value>
         </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedLabel.IsDropShadow">
-            <summary>
-            Gets or sets a value indicating whether this instance is drop shadow.
-            </summary>
-            <value><c>true</c> if this instance is drop shadow; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedLabel.DropShadowColor">
-            <summary>
-            Gets or sets the color of the drop shadow.
-            </summary>
-            <value>The color of the drop shadow.</value>
-        </member>
         <member name="P:XLabs.Forms.Controls.ExtendedLabel.Placeholder">
             <summary>
             Gets or sets the string value that is used when the label's Text property is empty.
@@ -2730,45 +2618,6 @@
             Gets or sets the FormattedString value that is used when the label's Text property is empty.
             </summary>
             <value>The placeholder FormattedString.</value>
-        </member>
-        <member name="T:XLabs.Forms.Controls.ExtendedListView">
-            <summary>
-            Class ExtendedListView.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedListView.ItemTemplateSelectorProperty">
-            <summary>
-            The item template selector property
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.ExtendedListView.OnDataTemplateSelectorChanged(Xamarin.Forms.BindableObject,XLabs.Forms.Controls.DataTemplateSelector,XLabs.Forms.Controls.DataTemplateSelector)">
-            <summary>
-            Called when [data template selector changed].
-            </summary>
-            <param name="bindable">The bindable.</param>
-            <param name="oldvalue">The oldvalue.</param>
-            <param name="newvalue">The newvalue.</param>
-        </member>
-        <member name="M:XLabs.Forms.Controls.ExtendedListView.OnDataTemplateSelectorChanged(XLabs.Forms.Controls.DataTemplateSelector,XLabs.Forms.Controls.DataTemplateSelector)">
-            <summary>
-            Called when [data template selector changed].
-            </summary>
-            <param name="oldValue">The old value.</param>
-            <param name="newValue">The new value.</param>
-            <exception cref="T:System.ArgumentException">Cannot set both ItemTemplate and ItemTemplateSelector;ItemTemplateSelector</exception>
-        </member>
-        <member name="M:XLabs.Forms.Controls.ExtendedListView.CreateDefault(System.Object)">
-            <summary>
-            Creates the default.
-            </summary>
-            <param name="item">The item.</param>
-            <returns>Cell.</returns>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedListView.ItemTemplateSelector">
-            <summary>
-            Gets or sets the item template selector.
-            </summary>
-            <value>The item template selector.</value>
         </member>
         <member name="T:XLabs.Forms.Controls.ExtendedScrollView">
             <summary>
@@ -2859,7 +2708,7 @@
         </member>
         <member name="T:XLabs.Forms.Controls.CurrentPageChangedEventHandler">
             <summary>
-            Delegate CurrentPageChangedEventHandler.
+                Delegate CurrentPageChangedEventHandler.
             </summary>
         </member>
         <member name="T:XLabs.Forms.Controls.SwipeLeftEventHandler">
@@ -2876,44 +2725,6 @@
             <summary>
                 Class ExtendedTabbedPage.
             </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedTabbedPage.TintColorProperty">
-            <summary>
-            The tint color property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedTabbedPage.BarTintColorProperty">
-            <summary>
-            The bar tint color property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedTabbedPage.BadgesProperty">
-            <summary>
-            The badges property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedTabbedPage.TabBarSelectedImageProperty">
-            <summary>
-            The tab bar selected image property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedTabbedPage.TabBarBackgroundImageProperty">
-            <summary>
-            The tab bar background image property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedTabbedPage.ItemTemplateSelectorProperty">
-            <summary>
-            The item template selector property
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.ExtendedTabbedPage.OnDataTemplateSelectorChanged(XLabs.Forms.Controls.DataTemplateSelector,XLabs.Forms.Controls.DataTemplateSelector)">
-            <summary>
-            Called when [data template selector changed].
-            </summary>
-            <param name="oldValue">The old value.</param>
-            <param name="newValue">The new value.</param>
-            <exception cref="T:System.ArgumentException">Cannot set both ItemTemplate and ItemTemplateSelector;ItemTemplateSelector</exception>
         </member>
         <member name="M:XLabs.Forms.Controls.ExtendedTabbedPage.#ctor">
             <summary>
@@ -2936,10 +2747,10 @@
         </member>
         <member name="M:XLabs.Forms.Controls.ExtendedTabbedPage.OnPropertyChanging(System.Object,Xamarin.Forms.PropertyChangingEventArgs)">
             <summary>
-            Handles the <see cref="E:PropertyChanging"/> event.
+                Handles the <see cref="E:PropertyChanging"/> event.
             </summary>
             <param name="sender">The sender.</param>
-            <param name="e">The <see cref="T:Xamarin.Forms.PropertyChangingEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="!:System.ComponentModel.PropertyChangingEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:XLabs.Forms.Controls.ExtendedTabbedPage.OnPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
             <summary>
@@ -2986,55 +2797,6 @@
             the last page in the list
             </summary>
         </member>
-        <member name="M:XLabs.Forms.Controls.ExtendedTabbedPage.CreateDefault(System.Object)">
-            <summary>
-            Creates the default.
-            </summary>
-            <param name="item">The item.</param>
-            <returns>Page.</returns>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedTabbedPage.ItemTemplateSelector">
-            <summary>
-            Gets or sets the item template selector.
-            </summary>
-            <value>The item template selector.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedTabbedPage.TintColor">
-            <summary>
-            Gets or sets the color of the tint.
-            </summary>
-            <value>The color of the tint.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedTabbedPage.BarTintColor">
-            <summary>
-            Gets or sets the color of the bar tint.
-            </summary>
-            <value>The color of the bar tint.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedTabbedPage.Badges">
-            <summary>
-            Gets or sets the badges.
-            </summary>
-            <value>The badges.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedTabbedPage.TabBarSelectedImage">
-            <summary>
-            Gets or sets the tab bar selected image.
-            </summary>
-            <value>The tab bar selected image.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedTabbedPage.TabBarBackgroundImage">
-            <summary>
-            Gets or sets the tab bar background image.
-            </summary>
-            <value>The tab bar background image.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedTabbedPage.SwipeEnabled">
-            <summary>
-            Gets or sets a value indicating whether [swipe enabled].
-            </summary>
-            <value><c>true</c> if [swipe enabled]; otherwise, <c>false</c>.</value>
-        </member>
         <member name="E:XLabs.Forms.Controls.ExtendedTabbedPage.CurrentPageChanging">
             <summary>
                 Occurs when [current page changing].
@@ -3042,7 +2804,7 @@
         </member>
         <member name="E:XLabs.Forms.Controls.ExtendedTabbedPage.CurrentPageChanged">
             <summary>
-            Occurs when [current page changed].
+                Occurs when [current page changed].
             </summary>
         </member>
         <member name="E:XLabs.Forms.Controls.ExtendedTabbedPage.OnSwipeRight">
@@ -3198,7 +2960,7 @@
         </member>
         <member name="M:XLabs.Forms.Controls.GesturesContentView.ProcessGesture(XLabs.Forms.Behaviors.GestureResult)">
             <summary>
-            Used by <see cref="T:XLabs.Forms.Controls.GesturesContentView"/>.
+            Used by the Xamarin.Forms.Labs.Droid.Controls.GesturesContentView
             </summary>
             <param name="gesture">The resulting gesture<see cref="T:XLabs.Forms.Behaviors.GestureResult"/></param>
             <returns>True if the gesture was handled,false otherwise</returns>
@@ -3361,60 +3123,6 @@
         <member name="F:XLabs.Forms.Controls.GestureType.Down">
             <summary>
             All down events send this geture.  It can be ignored except for when you want to detect when the user start touching the screen.
-            </summary>
-        </member>
-        <member name="T:XLabs.Forms.Controls.GradientOrientation">
-            <summary>
-            Enum GradientOrientation
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.GradientOrientation.Vertical">
-            <summary>
-            The vertical
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.GradientOrientation.Horizontal">
-            <summary>
-            The horizontal
-            </summary>
-        </member>
-        <member name="T:XLabs.Forms.Controls.GradientContentView">
-            <summary>
-            ContentView that allows you to have a Gradient for
-            the background. Let there be Gradients!
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.GradientContentView.OrientationProperty">
-            <summary>
-            The orientation property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.GradientContentView.StartColorProperty">
-            <summary>
-            Using a BindableProperty as the backing store for StartColor.  This enables animation, styling, binding, etc...
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.GradientContentView.EndColorProperty">
-            <summary>
-            Using a BindableProperty as the backing store for EndColor.  This enables animation, styling, binding, etc...
-            </summary>
-        </member>
-        <member name="P:XLabs.Forms.Controls.GradientContentView.Orientation">
-            <summary>
-            Start color of the gradient
-            Defaults to White
-            </summary>
-        </member>
-        <member name="P:XLabs.Forms.Controls.GradientContentView.StartColor">
-            <summary>
-            Start color of the gradient
-            Defaults to White
-            </summary>
-        </member>
-        <member name="P:XLabs.Forms.Controls.GradientContentView.EndColor">
-            <summary>
-            End color of the gradient
-            Defaults to Black
             </summary>
         </member>
         <member name="T:XLabs.Forms.Controls.GridView">
@@ -3629,19 +3337,17 @@
             <param name="name">The name of the callback.</param>
             <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         </member>
-        <member name="M:XLabs.Forms.Controls.HybridWebView.LoadFromContent(System.String,System.String)">
+        <member name="M:XLabs.Forms.Controls.HybridWebView.LoadFromContent(System.String)">
             <summary>
-            Loads from file.
+            Loads from content.
             </summary>
             <param name="contentFullName">Full name of the content.</param>
-            <param name="baseUri">Optional base Uri to use for resources.</param>
         </member>
-        <member name="M:XLabs.Forms.Controls.HybridWebView.LoadContent(System.String,System.String)">
+        <member name="M:XLabs.Forms.Controls.HybridWebView.LoadContent(System.String)">
             <summary>
-            Loads the content from string content.
+            Loads the content.
             </summary>
             <param name="content">The content.</param>
-            <param name="baseUri">Optional base Uri to use for resources.</param>
         </member>
         <member name="M:XLabs.Forms.Controls.HybridWebView.InjectJavaScript(System.String)">
             <summary>
@@ -3729,16 +3435,6 @@
             </summary>
             <value>The source.</value>
         </member>
-        <member name="P:XLabs.Forms.Controls.HybridWebView.CleanupCalled">
-            <summary>
-            Gets or sets the cleanup called flag.
-            </summary>
-        </member>
-        <member name="T:XLabs.Forms.Controls.HybridWebView.Message">
-            <summary>
-            Message class for transporting JSON objects.
-            </summary>
-        </member>
         <member name="T:XLabs.Forms.Controls.HyperLinkLabel">
             <summary>
             Class HyperLinkLabel.
@@ -3812,11 +3508,6 @@
             The icon can be on the left, above, on the right or below the text.
             </summary>
         </member>
-        <member name="F:XLabs.Forms.Controls.IconButton.TextAlignementProperty">
-            <summary>
-            Backing field for the orientation property.
-            </summary>
-        </member>
         <member name="F:XLabs.Forms.Controls.IconButton.OrientationProperty">
             <summary>
             Backing field for the orientation property.
@@ -3825,11 +3516,6 @@
         <member name="F:XLabs.Forms.Controls.IconButton.IconProperty">
             <summary>
             Backing field for the icon property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.IconButton.ShowIconSeparatorProperty">
-            <summary>
-            Backing field for the ShowIconSeparator property
             </summary>
         </member>
         <member name="F:XLabs.Forms.Controls.IconButton.IconColorProperty">
@@ -3847,21 +3533,10 @@
             Backing field for the icon font name property
             </summary>
         </member>
-        <member name="P:XLabs.Forms.Controls.IconButton.TextAlignement">
-            <summary>
-            Gets or sets The TextAlignment of both icon and text relative to container.
-            </summary> 
-            <value>
-            The Orientation property gets/sets the value of the backing field, OrientationProperty.
-            </value> 
-        </member>
         <member name="P:XLabs.Forms.Controls.IconButton.Orientation">
             <summary>
             Gets or sets The orientation of the image relative to the text.
             </summary> 
-            <remarks>
-            On iOS only left and right are supported
-            </remarks>
             <value>
             The Orientation property gets/sets the value of the backing field, OrientationProperty.
             </value> 
@@ -3871,19 +3546,8 @@
             Gets or sets the icon. A set of FontAwesome icons have been included in <see cref="T:XLabs.Icons"/>, and
             more can be added from the FontAwesome cheatsheet (http://fortawesome.github.io/Font-Awesome/cheatsheet/)
             </summary>
-            <remarks>
-            The icon string should be this form : "\uf242"
-            </remarks>
             <value>
             The Icon property gets/sets the value of the backing field, IconProperty
-            </value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.IconButton.ShowIconSeparator">
-            <summary>
-            Indicate if | separator must be place between the icon and the text
-            </summary>
-            <value>
-            
             </value>
         </member>
         <member name="P:XLabs.Forms.Controls.IconButton.IconColor">
@@ -3903,115 +3567,6 @@
             </value>
         </member>
         <member name="P:XLabs.Forms.Controls.IconButton.IconFontName">
-            <summary>
-            Gets or set's the font name for the icon - currently this will default to using the FontAwesome font (http://fortawesome.github.io/Font-Awesome/cheatsheet/).
-            Be sure that the fontawesome-webfont.ttf is in your iOS project's Resources folder, and that the build action for it is set to Bundle Resource and Copy Always to Output.
-            Also, an entry to your iOS's info.plist must be made. If you are using Visual Studio 2013, this can be done manually by editing the info.plist as XML. Simply add an entry
-            like this inside of the <dict></dict> element:
-            
-            <key>UIAppFonts</key>
-            <array>
-                <string>Fonts/Roboto-Light.ttf</string> <!-- Inside the Resources/Fonts folder -->
-                <string>Fonts/fontawesome-webfont.ttf</string> <!-- Inside the Resources/Fonts folder -->
-                <string>AnotherFont.ttf</string> <!-- Inside the Resources folder -->
-            </array>
-            
-            </summary>
-            <value>
-            The IconFontName property gets/sets the value of the backing field, IconFontNameProperty
-            </value>
-        </member>
-        <member name="F:XLabs.Forms.Controls.IconLabel.TextAlignementProperty">
-            <summary>
-            Backing field for the orientation property.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.IconLabel.OrientationProperty">
-            <summary>
-            Backing field for the orientation property.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.IconLabel.IconProperty">
-            <summary>
-            Backing field for the icon property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.IconLabel.ShowIconSeparatorProperty">
-            <summary>
-            Backing field for the ShowIconSeparator property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.IconLabel.IconColorProperty">
-            <summary>
-            Backing field for the icon color property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.IconLabel.IconSizeProperty">
-            <summary>
-            Backing field for the icon size property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.IconLabel.IconFontNameProperty">
-            <summary>
-            Backing field for the icon font name property
-            </summary>
-        </member>
-        <member name="P:XLabs.Forms.Controls.IconLabel.TextAlignement">
-            <summary>
-            Gets or sets The TextAlignment of both icon and text relative to container.
-            </summary> 
-            <value>
-            The TextAlignment property gets/sets the value of the backing field, OrientationProperty.
-            </value> 
-        </member>
-        <member name="P:XLabs.Forms.Controls.IconLabel.Orientation">
-            <summary>
-            Gets or sets The orientation of the icon relative to the text.
-            </summary> 
-            <remarks>
-            On iOS only left and right are supported
-            </remarks>
-            <value>
-            The Orientation property gets/sets the value of the backing field, OrientationProperty.
-            </value> 
-        </member>
-        <member name="P:XLabs.Forms.Controls.IconLabel.Icon">
-            <summary>
-            Gets or sets the icon. A set of FontAwesome icons have been included in <see cref="T:XLabs.Icons"/>, and
-            more can be added from the FontAwesome cheatsheet (http://fortawesome.github.io/Font-Awesome/cheatsheet/)
-            </summary>
-            <remarks>
-            The icon string should be this form : "\uf242"
-            </remarks>
-            <value>
-            The Icon property gets/sets the value of the backing field, IconProperty
-            </value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.IconLabel.ShowIconSeparator">
-            <summary>
-            Indicate if | separator must be place between the icon and the text
-            </summary>
-            <value>
-            
-            </value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.IconLabel.IconColor">
-            <summary>
-            Gets or sets the icon's color
-            </summary>
-            <value>
-            The IconColor property gets/sets the value of the backing field, IconColorProperty
-            </value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.IconLabel.IconSize">
-            <summary>
-            Gets or set's the font size of the icon
-            </summary>
-            <value>
-            The IconSize property gets/sets the value of the backing field, IconSizeProperty
-            </value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.IconLabel.IconFontName">
             <summary>
             Gets or set's the font name for the icon - currently this will default to using the FontAwesome font (http://fortawesome.github.io/Font-Awesome/cheatsheet/).
             Be sure that the fontawesome-webfont.ttf is in your iOS project's Resources folder, and that the build action for it is set to Bundle Resource and Copy Always to Output.
@@ -4061,16 +3616,6 @@
             Backing field for the orientation property.
             </summary>
         </member>
-        <member name="F:XLabs.Forms.Controls.ImageButton.ImageTintColorProperty">
-            <summary>
-            Backing field for the tint color property.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ImageButton.DisabledImageTintColorProperty">
-            <summary>
-            Backing field for the disbaled tint color property.
-            </summary>
-        </member>
         <member name="P:XLabs.Forms.Controls.ImageButton.Source">
             <summary>
             Gets or sets the ImageSource to use with the control.
@@ -4111,22 +3656,6 @@
             </summary>
             <value>
             The ImageHeightRequest property gets/sets the value of the backing field, ImageHeightRequestProperty.
-            </value> 
-        </member>
-        <member name="P:XLabs.Forms.Controls.ImageButton.ImageTintColor">
-            <summary>
-            Gets or sets the tint color of the image 
-            </summary>
-            <value>
-            The ImageTintColor property gets/sets the value of the backing field, ImageTintColorProperty.
-            </value> 
-        </member>
-        <member name="P:XLabs.Forms.Controls.ImageButton.DisabledImageTintColor">
-            <summary>
-            Gets or sets the tint color of the image when the button is disabled
-            </summary>
-            <value>
-            The DisabledImageTintColor property gets/sets the value of the backing field, DisabledImageTintColorProperty.
             </value> 
         </member>
         <member name="T:XLabs.Forms.Controls.ImageSourceConverter">
@@ -4197,11 +3726,6 @@
             The popup
             </summary>
         </member>
-        <member name="M:XLabs.Forms.Controls.PopupLayout.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Forms.Controls.PopupLayout"/> class.
-            </summary>
-        </member>
         <member name="M:XLabs.Forms.Controls.PopupLayout.ShowPopup(Xamarin.Forms.View)">
             <summary>
             Shows the popup centered to the parent view.
@@ -4260,36 +3784,6 @@
                 Will show popup below of the specified view
             </summary>
         </member>
-        <member name="T:XLabs.Forms.Controls.BindableRadioGroup">
-            <summary>
-            Class BindableRadioGroup.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.BindableRadioGroup.Items">
-            <summary>
-            The items
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.BindableRadioGroup.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Forms.Controls.BindableRadioGroup"/> class.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.BindableRadioGroup.ItemsSourceProperty">
-            <summary>
-            The items source property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.BindableRadioGroup.SelectedIndexProperty">
-            <summary>
-            The selected index property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.BindableRadioGroup.TextColorProperty">
-            <summary>
-            The text color property
-            </summary>
-        </member>
         <member name="F:XLabs.Forms.Controls.BindableRadioGroup.FontSizeProperty">
             <summary>
             The font size property
@@ -4299,24 +3793,6 @@
             <summary>
             The font name property.
             </summary>
-        </member>
-        <member name="P:XLabs.Forms.Controls.BindableRadioGroup.ItemsSource">
-            <summary>
-            Gets or sets the items source.
-            </summary>
-            <value>The items source.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.BindableRadioGroup.SelectedIndex">
-            <summary>
-            Gets or sets the index of the selected.
-            </summary>
-            <value>The index of the selected.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.BindableRadioGroup.TextColor">
-            <summary>
-            Gets or sets the color of the text.
-            </summary>
-            <value>The color of the text.</value>
         </member>
         <member name="P:XLabs.Forms.Controls.BindableRadioGroup.FontSize">
             <summary>
@@ -4329,21 +3805,6 @@
             Gets or sets the name of the font.
             </summary>
             <value>The name of the font.</value>
-        </member>
-        <member name="E:XLabs.Forms.Controls.BindableRadioGroup.CheckedChanged">
-            <summary>
-            Occurs when [checked changed].
-            </summary>
-        </member>
-        <member name="T:XLabs.Forms.Controls.CustomRadioButton">
-            <summary>
-            Class CustomRadioButton.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.CustomRadioButton.CheckedProperty">
-            <summary>
-            The checked property
-            </summary>
         </member>
         <member name="F:XLabs.Forms.Controls.CustomRadioButton.TextProperty">
             <summary>
@@ -4376,18 +3837,6 @@
             </summary>
             <value>The checked state.</value>
         </member>
-        <member name="P:XLabs.Forms.Controls.CustomRadioButton.Text">
-            <summary>
-            Gets or sets the text.
-            </summary>
-            <value>The text.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.CustomRadioButton.TextColor">
-            <summary>
-            Gets or sets the color of the text.
-            </summary>
-            <value>The color of the text.</value>
-        </member>
         <member name="P:XLabs.Forms.Controls.CustomRadioButton.FontSize">
             <summary>
             Gets or sets the size of the font.
@@ -4399,12 +3848,6 @@
             Gets or sets the name of the font.
             </summary>
             <value>The name of the font.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.CustomRadioButton.Id">
-            <summary>
-            Gets or sets the identifier.
-            </summary>
-            <value>The identifier.</value>
         </member>
         <member name="T:XLabs.Forms.Controls.RepeaterView`1">
             <summary>
@@ -4435,19 +3878,6 @@
             Definition for <see cref="P:XLabs.Forms.Controls.RepeaterView`1.TemplateSelector"/>
             </summary>
             Element created at 15/11/2014,3:12 PM by Charles
-        </member>
-        <member name="F:XLabs.Forms.Controls.RepeaterView`1.ItemTemplateSelectorProperty">
-            <summary>
-            The item template selector property
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.RepeaterView`1.OnDataTemplateSelectorChanged(XLabs.Forms.Controls.DataTemplateSelector,XLabs.Forms.Controls.DataTemplateSelector)">
-            <summary>
-            Called when [data template selector changed].
-            </summary>
-            <param name="oldValue">The old value.</param>
-            <param name="newValue">The new value.</param>
-            <exception cref="T:System.ArgumentException">Cannot set both ItemTemplate and ItemTemplateSelector;ItemTemplateSelector</exception>
         </member>
         <member name="F:XLabs.Forms.Controls.RepeaterView`1._collectionChangedHandle">
             <summary>
@@ -4488,7 +3918,7 @@
             
              </summary>
              <param name="item"></param>
-             <returns>A <see cref="T:Xamarin.Forms.View"/> item as it's BindingContext</returns>
+             <returns>A View that has been initialized with <see cref="!:item"/> as it's BindingContext</returns>
              <exception cref="T:XLabs.Exceptions.InvalidVisualObjectException"></exception>Thrown when the matched datatemplate inflates to an object not derived from either
              <see cref="T:Xamarin.Forms.View"/> or <see cref="T:Xamarin.Forms.ViewCell"/>
         </member>
@@ -4501,12 +3931,6 @@
             <param name="bindable">The control</param>
             <param name="oldValue">Previous bound collection</param>
             <param name="newValue">New bound collection</param>
-        </member>
-        <member name="P:XLabs.Forms.Controls.RepeaterView`1.ItemTemplateSelector">
-            <summary>
-            Gets or sets the item template selector.
-            </summary>
-            <value>The item template selector.</value>
         </member>
         <member name="E:XLabs.Forms.Controls.RepeaterView`1.ItemCreated">
             <summary>Occurs when a view has been created.</summary>
@@ -4941,12 +4365,6 @@
             </summary>
             <value>The type of the stroke.</value>
         </member>
-        <member name="T:XLabs.Forms.Controls.TemplateContentView`1">
-            <summary>
-            Class TemplateContentView.
-            </summary>
-            <typeparam name="T"></typeparam>
-        </member>
         <member name="F:XLabs.Forms.Controls.TemplateContentView`1.TemplateSelectorProperty">
             <summary>
             Property definition for the <see cref="P:XLabs.Forms.Controls.TemplateContentView`1.TemplateSelector"/> Property
@@ -4956,18 +4374,6 @@
             <summary>
             Property definition for the <see cref="P:XLabs.Forms.Controls.TemplateContentView`1.ViewModel"/> Property
             </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.TemplateContentView`1.ItemTemplateSelectorProperty">
-            <summary>
-            The item template selector property
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.TemplateContentView`1.OnDataTemplateSelectorChanged(XLabs.Forms.Controls.DataTemplateSelector,XLabs.Forms.Controls.DataTemplateSelector)">
-            <summary>
-            Called when [data template selector changed].
-            </summary>
-            <param name="oldValue">The old value.</param>
-            <param name="newValue">The new value.</param>
         </member>
         <member name="M:XLabs.Forms.Controls.TemplateContentView`1.ViewModelChanged(Xamarin.Forms.BindableObject,`0,`0)">
             <summary>
@@ -4986,12 +4392,6 @@
             </summary>
             <param name="newvalue"></param>
         </member>
-        <member name="P:XLabs.Forms.Controls.TemplateContentView`1.ItemTemplateSelector">
-            <summary>
-            Gets or sets the item template selector.
-            </summary>
-            <value>The item template selector.</value>
-        </member>
         <member name="P:XLabs.Forms.Controls.TemplateContentView`1.TemplateSelector">
             <summary>
             Used to match a type with a datatemplate
@@ -5005,11 +4405,6 @@
             T allows the use of marker interfaces to enable
             things like Ux Widgets while maintaining 
             some typesafety
-            </summary>
-        </member>
-        <member name="T:XLabs.Forms.Controls.TemplateSelector">
-            <summary>
-            Class TemplateSelector.
             </summary>
         </member>
         <member name="F:XLabs.Forms.Controls.TemplateSelector.TemplatesProperty">
@@ -5117,24 +4512,6 @@
             typesafe instances of DataTemplateWrapper
             </summary>
         </member>
-        <member name="P:XLabs.Forms.Controls.IDataTemplateWrapper.IsDefault">
-            <summary>
-            Gets or sets a value indicating whether this instance is default.
-            </summary>
-            <value><c>true</c> if this instance is default; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.IDataTemplateWrapper.WrappedTemplate">
-            <summary>
-            Gets or sets the wrapped template.
-            </summary>
-            <value>The wrapped template.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.IDataTemplateWrapper.Type">
-            <summary>
-            Gets the type.
-            </summary>
-            <value>The type.</value>
-        </member>
         <member name="T:XLabs.Forms.Controls.DataTemplateWrapper`1">
             <summary>
             Wrapper for a DataTemplate.
@@ -5143,53 +4520,10 @@
             </summary>
             <typeparam name="T">The object type that this DataTemplateWrapper matches</typeparam>
         </member>
-        <member name="F:XLabs.Forms.Controls.DataTemplateWrapper`1.WrappedTemplateProperty">
-            <summary>
-            The wrapped template property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.DataTemplateWrapper`1.IsDefaultProperty">
-            <summary>
-            The is default property
-            </summary>
-        </member>
-        <member name="P:XLabs.Forms.Controls.DataTemplateWrapper`1.IsDefault">
-            <summary>
-            Gets or sets a value indicating whether this instance is default.
-            </summary>
-            <value><c>true</c> if this instance is default; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.DataTemplateWrapper`1.WrappedTemplate">
-            <summary>
-            Gets or sets the wrapped template.
-            </summary>
-            <value>The wrapped template.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.DataTemplateWrapper`1.Type">
-            <summary>
-            Gets the type.
-            </summary>
-            <value>The type.</value>
-        </member>
         <member name="T:XLabs.Forms.Controls.DataTemplateCollection">
             <summary>
             Collection class of IDataTemplateWrapper
             Enables xaml definitions of collections.
-            </summary>
-        </member>
-        <member name="T:XLabs.Forms.Controls.WebImage">
-            <summary>
-            Class WebImage.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.WebImage.ImageUrlProperty">
-            <summary>
-            The image URL property
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.WebImage.DefaultImageProperty">
-            <summary>
-            The default image property
             </summary>
         </member>
         <member name="P:XLabs.Forms.Controls.WebImage.ImageUrl">
@@ -5395,7 +4729,7 @@
             <param name="targetType">boolean</param>
             <param name="parameter">not used</param>
             <param name="culture">not used</param>
-            <returns>True if the <see cref="T:System.Object"/> is not null, false otherwise</returns>
+            <returns>True if the <see cref="!:value"/> is not null, false otherwise</returns>
             Element created at 05/11/2014,9:09 AM by Charles
             <remarks>To be added.</remarks>
         </member>
@@ -5507,35 +4841,6 @@
             <summary>The Generic list type List(T)</summary>
             Element created at 09/11/2014,9:32 AM by Charles
         </member>
-        <member name="T:XLabs.Forms.OnPlatformList`1">
-            <summary>
-            Class OnPlatformList.
-            </summary>
-            <typeparam name="T"></typeparam>
-        </member>
-        <member name="M:XLabs.Forms.OnPlatformList`1.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Forms.OnPlatformList`1"/> class.
-            </summary>
-        </member>
-        <member name="P:XLabs.Forms.OnPlatformList`1.iOS">
-            <summary>
-            Gets the i os.
-            </summary>
-            <value>The i os.</value>
-        </member>
-        <member name="P:XLabs.Forms.OnPlatformList`1.Android">
-            <summary>
-            Gets the android.
-            </summary>
-            <value>The android.</value>
-        </member>
-        <member name="P:XLabs.Forms.OnPlatformList`1.WinPhone">
-            <summary>
-            Gets the win phone.
-            </summary>
-            <value>The win phone.</value>
-        </member>
         <member name="T:XLabs.Forms.ViewExtensions">
             <summary>
             Class ViewExtensions.
@@ -5625,11 +4930,6 @@
             <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
-        <member name="T:XLabs.Forms.Mvvm.BaseView">
-            <summary>
-            Class BaseView.
-            </summary>
-        </member>
         <member name="M:XLabs.Forms.Mvvm.BaseView.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:XLabs.Forms.Mvvm.BaseView"/> class.
@@ -5644,11 +4944,6 @@
         <member name="M:XLabs.Forms.Mvvm.BaseView.OnDisappearing">
             <summary>
             Passes the event of the view disappearing through to the view model.
-            </summary>
-        </member>
-        <member name="T:XLabs.Forms.Mvvm.INavigationAware">
-            <summary>
-            Interface INavigationAware
             </summary>
         </member>
         <member name="M:XLabs.Forms.Mvvm.INavigationAware.OnNavigatingTo(Xamarin.Forms.Page)">
@@ -5687,28 +4982,11 @@
             </summary>
             <param name="nextPage">The next page.</param>
         </member>
-        <member name="M:XLabs.Forms.Mvvm.IPage.ToNativePage">
-            <summary>
-            To the native page.
-            </summary>
-            <returns>System.Object.</returns>
-        </member>
         <member name="P:XLabs.Forms.Mvvm.IPage.Navigation">
             <summary>
             Gets or sets the navigation.
             </summary>
             <value>The navigation.</value>
-        </member>
-        <member name="P:XLabs.Forms.Mvvm.IPage.BindingContext">
-            <summary>
-            Gets or sets the binding context.
-            </summary>
-            <value>The binding context.</value>
-        </member>
-        <member name="T:XLabs.Forms.Mvvm.IViewModel">
-            <summary>
-            Interface IViewModel
-            </summary>
         </member>
         <member name="P:XLabs.Forms.Mvvm.IViewModel.NavigationService">
             <summary>
@@ -5729,11 +5007,6 @@
             <value>
               <c>true</c> if this instance is busy; otherwise, <c>false</c>.
             </value>
-        </member>
-        <member name="T:XLabs.Forms.Mvvm.NavigationAwareViewModel">
-            <summary>
-            Class NavigationAwareViewModel.
-            </summary>
         </member>
         <member name="T:XLabs.Forms.Mvvm.ViewModel">
             <summary>
@@ -5916,24 +5189,22 @@
             <typeparam name="TViewModel">The type of the t view model.</typeparam>
             <param name="func">Function which returns an instance of the t view model.</param>
         </member>
-        <member name="M:XLabs.Forms.Mvvm.ViewFactory.CreatePage(System.Type,System.Action{System.Object,System.Object},System.Object[])">
+        <member name="M:XLabs.Forms.Mvvm.ViewFactory.CreatePage(System.Type,System.Action{System.Object,System.Object})">
             <summary>
             Creates the page.
             </summary>
             <param name="viewModelType">Type of the view model.</param>
             <param name="initialiser">The initialiser.</param>
-            <param name="args">The arguments.</param>
             <returns>System.Object.</returns>
             <exception cref="T:System.InvalidOperationException">Unknown View for ViewModel</exception>
         </member>
-        <member name="M:XLabs.Forms.Mvvm.ViewFactory.CreatePage``2(System.Action{``0,``1},System.Object[])">
+        <member name="M:XLabs.Forms.Mvvm.ViewFactory.CreatePage``2(System.Action{``0,``1})">
             <summary>
             Creates the page.
             </summary>
             <typeparam name="TViewModel">The type of the view model.</typeparam>
             <typeparam name="TPage">The type of the t page.</typeparam>
             <param name="initialiser">The create action.</param>
-            <param name="args">The arguments.</param>
             <returns>Page for the ViewModel.</returns>
             <exception cref="T:System.InvalidOperationException">Unknown View for ViewModel.</exception>
         </member>
@@ -6139,11 +5410,6 @@
             <value>An implmentation of IModalHost</value>
             Element created at 06/11/2014,10:37 PM by Charles
         </member>
-        <member name="T:XLabs.Forms.Services.IFontManager">
-            <summary>
-            Interface IFontManager
-            </summary>
-        </member>
         <member name="M:XLabs.Forms.Services.IFontManager.GetHeight(Xamarin.Forms.Font)">
             <summary>
             Gets height for the font.
@@ -6193,31 +5459,31 @@
             <param name="pageType">Type of the page.</param>
             <exception cref="T:System.ArgumentException">That pagekey is already registered;pageKey</exception>
         </member>
-        <member name="M:XLabs.Forms.Services.NavigationService.NavigateTo(System.String,System.Boolean,System.Object[])">
+        <member name="M:XLabs.Forms.Services.NavigationService.NavigateTo(System.String,System.Object,System.Boolean)">
             <summary>
             Navigates to.
             </summary>
             <param name="pageKey">The page key.</param>
+            <param name="parameter">The parameter.</param>
             <param name="animated">if set to <c>true</c> [animated].</param>
-            <param name="args">The arguments.</param>
             <exception cref="T:System.ArgumentException">That pagekey is not registered;pageKey</exception>
         </member>
-        <member name="M:XLabs.Forms.Services.NavigationService.NavigateTo(System.Type,System.Boolean,System.Object[])">
+        <member name="M:XLabs.Forms.Services.NavigationService.NavigateTo(System.Type,System.Object,System.Boolean)">
             <summary>
             Navigates to.
             </summary>
             <param name="pageType">Type of the page.</param>
+            <param name="parameter">The parameter.</param>
             <param name="animated">if set to <c>true</c> [animated].</param>
-            <param name="args">The arguments.</param>
             <exception cref="T:System.ArgumentException">Argument must be derived from type Xamarin.Forms.Page;pageType</exception>
         </member>
-        <member name="M:XLabs.Forms.Services.NavigationService.NavigateTo``1(System.Boolean,System.Object[])">
+        <member name="M:XLabs.Forms.Services.NavigationService.NavigateTo``1(System.Object,System.Boolean)">
             <summary>
             Navigates to.
             </summary>
             <typeparam name="T"></typeparam>
+            <param name="parameter">The parameter.</param>
             <param name="animated">if set to <c>true</c> [animated].</param>
-            <param name="args">The arguments.</param>
             <exception cref="T:System.ArgumentException">Page Type must be based on Xamarin.Forms.Page</exception>
         </member>
         <member name="M:XLabs.Forms.Services.NavigationService.GoBack">
@@ -6237,10 +5503,7 @@
             </summary>
             Element created at 07/11/2014,4:03 AM by Charles
         </member>
-        <member name="F:XLabs.Forms.Validation.Action.SettersProperty">
-            <summary>Definition for <see cref="P:XLabs.Forms.Validation.Action.Setters"/></summary>
-            Element created at 08/11/2014,4:01 PM by Charles
-        </member>
+        <!-- Badly formed XML comment ignored for member "F:XLabs.Forms.Validation.Action.SettersProperty" -->
         <member name="F:XLabs.Forms.Validation.Action.ElementProperty">
             <summary>Property Definition for <see cref="P:XLabs.Forms.Validation.Action.Element"/></summary>
             Element created at 07/11/2014,6:15 AM by Charles
@@ -6301,7 +5564,7 @@
             <summary>Gets the property information.</summary>
             <value>The property information.</value>
             Element created at 07/11/2014,6:18 AM by Charles
-            <exception cref="T:XLabs.Exceptions.PropertyNotFoundException"></exception>
+            <exception cref="!:Xamarin.Forms.Labs.Exceptions.PropertyNotFoundException"></exception>
         </member>
         <member name="T:XLabs.Forms.Validation.Actions">
             <summary>
@@ -7012,55 +6275,6 @@
         <member name="F:XLabs.Forms.Validation.Validators.UserSupplied">
             <summary>A user created Validator</summary>
             Element created at 08/11/2014,2:44 PM by Charles
-        </member>
-        <member name="T:XLabs.Forms.Controls.ExtendedPicker">
-            <summary>
-            Extends the Picker Class to add additional features not supported out of the box by Xamarin.
-            Features Add:
-            DataBinding
-            </summary>
-        </member>
-        <member name="M:XLabs.Forms.Controls.ExtendedPicker.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedPicker.SelectedItemProperty">
-            <summary>
-            Identifies the <see cref="P:XLabs.Forms.Controls.ExtendedPicker.SelectedItem" /> property.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedPicker.ItemsSourceProperty">
-            <summary>
-            Identifies the <see cref="P:XLabs.Forms.Controls.ExtendedPicker.ItemSource" /> property.
-            </summary>
-        </member>
-        <member name="F:XLabs.Forms.Controls.ExtendedPicker.DisplayPropertyProperty">
-            <summary>
-            Identifies the <see cref="P:XLabs.Forms.Controls.ExtendedPicker.DisplayProperty" /> property.
-            </summary>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedPicker.ItemsSource">
-            <summary>
-            Accepts an <see cref="T:System.Collections.IList"/> which is used to populate the picker with data. 
-            By default the <see cref="M:System.Object.ToString"/> is displayed.
-            </summary>
-            <value>The items source.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedPicker.SelectedItem">
-            <summary>
-            Sets the item currently displayed in the UI. 
-            This works by finding the index of the item in the backing data and then updateing <see cref="P:Xamarin.Forms.Picker.SelectedIndex" />  
-            so the two object need the same ref. 
-            </summary>
-            <value>The selected item.</value>
-        </member>
-        <member name="P:XLabs.Forms.Controls.ExtendedPicker.DisplayProperty">
-            <summary>
-            A string used in reflection to identify the property to use as the display property of the object. 
-            If this is not specified the <see cref="M:System.Object.ToString"/> is used.
-            </summary>
-            <value>The display property.</value>
         </member>
     </members>
 </doc>

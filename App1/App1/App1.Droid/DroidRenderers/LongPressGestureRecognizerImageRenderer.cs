@@ -15,8 +15,6 @@ namespace App1.Droid.DroidRenderers
     /// </summary>
     public class LongPressGestureRecognizerImageRenderer : ImageRenderer
     {
-        //private readonly GestureDetector detector;
-        //private readonly GestureImageListener listener;
         private ImageWithLongPressGesture view;
 
         /// <summary>
@@ -24,8 +22,7 @@ namespace App1.Droid.DroidRenderers
         /// </summary>
         public LongPressGestureRecognizerImageRenderer()
         {
-            //this.listener = new GestureImageListener();
-            //this.detector = new GestureDetector(this.listener);
+
         }
 
         /// <summary>

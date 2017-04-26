@@ -240,6 +240,7 @@ namespace App1.Models.ApplicationPages
                 // Set click and long press event handlers
                 foreach (BookInfoViewModel book in books)
                 {
+                    
                     book.Cover.longPressAction = () => this.OnLongPressBookCoverImage(book);
                     book.Cover.click = () => this.OnClickBookCoverImage(book);
                 }
@@ -262,9 +263,22 @@ namespace App1.Models.ApplicationPages
 
                 case ("Open in Hybrid"):
                     EpubBook epubBook = await EpubReader.EpubReader.ReadBookAsync(bookInfo.FilePath);
-                    EpubChapter chapter = epubBook.Chapters[1];
-                    TestHybridWebViewPage hybridPage = new TestHybridWebViewPage(chapter);
-                    await this.Navigation.PushAsync(hybridPage);
+
+                    // Fix it
+                    BookHybridViewModel book = new BookHybridViewModel(epubBook);
+                    CarouselPage carouselPage = new CarouselPage { Title = "Leave Hybrid page" };
+
+                    if (book.Pages != null)
+                    {
+                        foreach (BookPage bookPage in book.Pages)
+                        {
+                            carouselPage.Children.Add(bookPage);
+                        }
+
+                        await this.Navigation.PushAsync(carouselPage);
+                    }
+                    // end of test part
+
                     break;
 
                 case ("Delete"):

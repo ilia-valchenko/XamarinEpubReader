@@ -219,6 +219,326 @@
             <param name="filePath">path to the EPUB file</param>
             <returns></returns>
         </member>
+        <member name="T:App1.Infrastructure.Controls.ImageWithLongPressGesture">
+            <summary>
+            The image control I need the gestures on. 
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.ImageWithLongPressGesture.HandleLongPress(System.Object,System.EventArgs)">
+            <summary>
+            A handler for long press action.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.ImageWithLongPressGesture.HandleClick(System.Object,System.EventArgs)">
+            <summary>
+            A handler for single click action.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:App1.Infrastructure.Controls.SystemJsonSerializer">
+            <summary>
+            The system JSON serializer.
+            </summary>
+        </member>
+        <member name="P:App1.Infrastructure.Controls.SystemJsonSerializer.Format">
+            <summary>
+            Gets the format.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.SystemJsonSerializer.Flush">
+            <summary>
+            Cleans memory.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.SystemJsonSerializer.Serialize``1(``0,System.IO.Stream)">
+            <summary>
+            Serializes object to a stream.
+            </summary>
+            <param name="obj">Object to serialize.</param>
+            <param name="stream">Stream to serialize to.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.SystemJsonSerializer.Deserialize``1(System.IO.Stream)">
+            <summary>
+            Deserializes stream into an object.
+            </summary>
+            <typeparam name="T">Type of object to serialize to.</typeparam>
+            <param name="stream">Stream to deserialize from.</param>
+            <returns>Object of type T.</returns>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.SystemJsonSerializer.Deserialize(System.IO.Stream,System.Type)">
+            <summary>
+            Deserializes stream into an object.
+            </summary>
+            <param name="stream">Stream to deserialize from.</param>
+            <param name="type">Type of object to deserialize.</param>
+            <returns>Deserialized object.</returns>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.SystemJsonSerializer.Deserialize``1(System.String)">
+            <summary>
+            Deserializes string into an object.
+            </summary>
+            <typeparam name="T">Type of object to serialize to.</typeparam>
+            <param name="data">Serialized object.</param>
+            <returns>Object of type T.</returns>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.SystemJsonSerializer.Serialize``1(``0)">
+            <summary>
+            Serializes object to a string.
+            </summary>
+            <typeparam name="T">Type of object to serialize.</typeparam>
+            <param name="obj">Object to serialize.</param>
+            <returns>Serialized string of the object.</returns>
+        </member>
+        <member name="T:App1.Infrastructure.Controls.HybridWebView">
+            <summary>
+            The hybrid web view.
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.UriProperty">
+            <summary>
+            The uri property.
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.SourceProperty">
+            <summary>
+            The source property.
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.CleanupProperty">
+            <summary>
+            Boolean to indicate cleanup has been called.
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.AndroidHardwareRenderingProperty">
+            <summary>
+            Enable/Disable android hardware webpage rendering.
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.AndroidAdditionalTouchCallbackProperty">
+            <summary>
+            Enable/Disable additional android touch callback.
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.JavaScriptLoadRequested">
+            <summary>
+            The java script load requested
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.LoadFromContentRequested">
+            <summary>
+            The load from content requested
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.LoadContentRequested">
+            <summary>
+            The load content requested
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.LeftSwipe">
+            <summary>
+            The left swipe
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.LoadFinished">
+            <summary>
+            The load finished
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.Navigating">
+            <summary>
+            The navigating
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.RightSwipe">
+            <summary>
+            The right swipe
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.injectLock">
+            <summary>
+            The inject lock.
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.jsonSerializer">
+            <summary>
+            The JSON serializer.
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.registeredActions">
+            <summary>
+            The registered actions.
+            </summary>
+        </member>
+        <member name="F:App1.Infrastructure.Controls.HybridWebView.registeredFunctions">
+            <summary>
+            The registered actions.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:App1.Infrastructure.Controls.HybridWebView" /> class.
+            </summary>
+            <remarks>HybridWebView will use <see cref="T:XLabs.Serialization.IJsonSerializer" /> configured
+            with <see cref="T:XLabs.Ioc.Resolver"/> or <see cref="T:Xamarin.Forms.DependencyService"/>. 
+            If neither one resolves it then <see cref="T:App1.Infrastructure.Controls.SystemJsonSerializer"/> will be used.</remarks>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.#ctor(XLabs.Serialization.IJsonSerializer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:App1.Infrastructure.Controls.HybridWebView" /> class.
+            </summary>
+            <param name="jsonSerializer">The JSON serializer.</param>
+        </member>
+        <member name="P:App1.Infrastructure.Controls.HybridWebView.Uri">
+            <summary>
+            Gets or sets the uri.
+            </summary>
+            <value>The URI.</value>
+        </member>
+        <member name="P:App1.Infrastructure.Controls.HybridWebView.Source">
+            <summary>
+            Gets or sets the source.
+            </summary>
+            <value>The source.</value>
+        </member>
+        <member name="P:App1.Infrastructure.Controls.HybridWebView.CleanupCalled">
+            <summary>
+            Gets or sets the cleanup called flag.
+            </summary>
+        </member>
+        <member name="P:App1.Infrastructure.Controls.HybridWebView.AndroidHardwareRendering">
+            <summary>
+            Gets or sets android hardware rendering flag.
+            </summary>
+        </member>
+        <member name="P:App1.Infrastructure.Controls.HybridWebView.AndroidAdditionalTouchCallback">
+            <summary>
+            Gets or sets android additional touch callback. 
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.RegisterCallback(System.String,System.Action{System.String})">
+            <summary>
+            Registers a native callback.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.RemoveCallback(System.String)">
+            <summary>
+            Removes a native callback.
+            </summary>
+            <param name="name">The name of the callback.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.RegisterNativeFunction(System.String,System.Func{System.String,System.Object[]})">
+            <summary>
+            Registers a native callback and returns data to closure.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="func">The function.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.RemoveNativeFunction(System.String)">
+            <summary>
+            Removes a native callback function.
+            </summary>
+            <param name="name">The name of the callback.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.LoadFromContent(System.String,System.String)">
+            <summary>
+            Loads from file.
+            </summary>
+            <param name="contentFullName">Full name of the content.</param>
+            <param name="baseUri">Optional base Uri to use for resources.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.LoadContent(System.String,System.String)">
+            <summary>
+            Loads the content from string content.
+            </summary>
+            <param name="content">The content.</param>
+            <param name="baseUri">Optional base Uri to use for resources.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.InjectJavaScript(System.String)">
+            <summary>
+            Injects the java script.
+            </summary>
+            <param name="script">The script.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.CallJsFunction(System.String,System.Object[])">
+            <summary>
+            Calls the js function.
+            </summary>
+            <param name="funcName">Name of the function.</param>
+            <param name="parameters">The parameters.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.TryGetAction(System.String,System.Action{System.String}@)">
+            <summary>
+            Tries the get action.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="action">The action.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.TryGetFunc(System.String,System.Func{System.String,System.Object[]}@)">
+            <summary>
+            Tries the get function.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="func">The function.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.OnLoadFinished(System.Object,System.EventArgs)">
+            <summary>
+            Handles the <see cref="E:LoadFinished" /> event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.OnLeftSwipe(System.Object,System.EventArgs)">
+            <summary>
+            Handles the <see cref="E:LeftSwipe" /> event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.OnRightSwipe(System.Object,System.EventArgs)">
+            <summary>
+            Handles the <see cref="E:RightSwipe" /> event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.OnNavigating(System.Uri)">
+            <summary>
+            Called when [navigating].
+            </summary>
+            <param name="uri">The URI.</param>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.RemoveAllCallbacks">
+            <summary>
+            Remove all Callbacks from this view
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.RemoveAllFunctions">
+            <summary>
+            Remove all Functions from this view
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Controls.HybridWebView.Cleanup">
+            <summary>
+             Called to immediately free the native web view and
+            disconnect all callbacks
+            Note that this web view object will no longer be usable
+            after this call!
+            </summary>
+        </member>
+        <member name="T:App1.Infrastructure.Controls.HybridWebView.Message">
+            <summary>
+            Message class for transporting JSON objects.
+            </summary>
+        </member>
         <member name="T:App1.Infrastructure.Directory.IDirectory">
             <summary>
             This interface exposes methods for creating, moving, and enumerating through directories and subdirectories.
@@ -341,6 +661,12 @@
             </summary>
             <param name="chapter"></param>
         </member>
+        <member name="M:App1.Models.ApplicationPages.TestHybridWebViewPage.#ctor(App1.EpubReader.Entities.EpubChapter)">
+            <summary>
+            Initialize a new instance of the <see cref="T:App1.Models.ApplicationPages.TestHybridWebViewPage"/> class.
+            </summary>
+            <param name="chapter">The epub book chapter.</param>
+        </member>
         <member name="T:App1.Models.ApplicationPages.MainPageViewModel">
             <summary>
             The home page of the application.
@@ -412,6 +738,36 @@
             This method opens a book when the book's cover image is clicked. 
             </summary>
             <param name="bookInfo">The book info view model.</param>
+        </member>
+        <member name="F:App1.Models.BookHybridViewModel.bookCoverImage">
+            <summary>
+            The book's cover image.
+            </summary>
+        </member>
+        <member name="F:App1.Models.BookHybridViewModel.pages">
+            <summary>
+            The collection of book's pages.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookHybridViewModel.Pages">
+            <summary>
+            Readonly property which returns the collection of book's page.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookHybridViewModel.NumberOfPages">
+            <summary>
+            The number of pages.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookHybridViewModel.BookCoverImage">
+            <summary>
+            The book's cover image.
+            </summary>
+        </member>
+        <member name="M:App1.Models.BookHybridViewModel.#ctor(App1.EpubReader.Entities.EpubBook)">
+            <summary>
+            Initializes the instance of <see cref="T:App1.Models.BookViewModel"/>
+            </summary>
         </member>
         <member name="T:App1.Models.BookInfoViewModel">
             <summary>

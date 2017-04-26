@@ -144,16 +144,6 @@
             Enum TextCellDetailLocation
             </summary>
         </member>
-        <member name="F:XLabs.Enums.TextCellDetailLocation.Below">
-            <summary>
-            Set detail Below
-            </summary>
-        </member>
-        <member name="F:XLabs.Enums.TextCellDetailLocation.Right">
-            <summary>
-            Set detail Right
-            </summary>
-        </member>
         <member name="T:XLabs.Exceptions.InvalidNestingException">
             <summary>
             Thrown when an element or attached property is not withing the 
@@ -317,56 +307,6 @@
             <value>The available properties.</value>
             Element created at 07/11/2014,3:37 AM by Charles
         </member>
-        <member name="T:XLabs.DateTimeExtensions">
-            <summary>
-            Class DateTimeExtensions.
-            </summary>
-        </member>
-        <member name="F:XLabs.DateTimeExtensions.UnixTime">
-            <summary>
-            The unix time
-            </summary>
-        </member>
-        <member name="M:XLabs.DateTimeExtensions.SinceUnixTime(System.DateTime)">
-            <summary>
-            Sinces the unix time.
-            </summary>
-            <param name="time">The time.</param>
-            <returns>TimeSpan.</returns>
-        </member>
-        <member name="M:XLabs.DateTimeExtensions.SinceUnixTime(System.DateTimeOffset)">
-            <summary>
-            Sinces the unix time.
-            </summary>
-            <param name="time">The time.</param>
-            <returns>TimeSpan.</returns>
-        </member>
-        <member name="M:XLabs.DateTimeExtensions.SinceUnixTime(System.Nullable{System.DateTime})">
-            <summary>
-            Sinces the unix time.
-            </summary>
-            <param name="time">The time.</param>
-            <returns>System.Nullable&lt;TimeSpan&gt;.</returns>
-        </member>
-        <member name="M:XLabs.DateTimeExtensions.SinceUnixTime(System.Nullable{System.DateTimeOffset})">
-            <summary>
-            Sinces the unix time.
-            </summary>
-            <param name="time">The time.</param>
-            <returns>System.Nullable&lt;TimeSpan&gt;.</returns>
-        </member>
-        <member name="M:XLabs.DateTimeExtensions.FullMilliseconds(System.Nullable{System.TimeSpan})">
-            <summary>
-            Fulls the milliseconds.
-            </summary>
-            <param name="timeSpan">The time span.</param>
-            <returns>System.Nullable&lt;System.Int64&gt;.</returns>
-        </member>
-        <member name="T:XLabs.IEnumerableExtensions">
-            <summary>
-            Class IEnumerableExtensions.
-            </summary>
-        </member>
         <member name="M:XLabs.IEnumerableExtensions.ToReadOnlyCollection``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Converts <see cref="T:System.Collections.Generic.IEnumerable`1"/> to a <see cref="T:System.Collections.Generic.IReadOnlyCollection`1"/>
@@ -374,15 +314,6 @@
             <param name="enumerable">Enumerable object.</param>
             <typeparam name="T">Type of item.</typeparam>
             <returns>IReadOnlyCollection{T}</returns>
-        </member>
-        <member name="M:XLabs.IEnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
-            <summary>
-            Fors the each.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="enumerable">The enumerable.</param>
-            <param name="action">The action.</param>
-            <returns>IEnumerable&lt;T&gt;.</returns>
         </member>
         <member name="T:XLabs.NumericExtensions">
             <summary>
@@ -406,85 +337,6 @@
             <param name="min">The minimum.</param>
             <param name="max">The maximum.</param>
             <returns>System.Int32.</returns>
-        </member>
-        <member name="T:XLabs.BigEndianReader">
-            <summary>
-            Class BigEndianReader.
-            </summary>
-        </member>
-        <member name="M:XLabs.BigEndianReader.#ctor(System.IO.Stream,System.Boolean)">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.BigEndianReader"/> class.
-            </summary>
-            <param name="stream">The stream.</param>
-            <param name="leaveOpen">if set to <c>true</c> [leave open].</param>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadDecimal">
-            <summary>
-            Reads the decimal.
-            </summary>
-            <returns>System.Decimal.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadDouble">
-            <summary>
-            Reads the double.
-            </summary>
-            <returns>System.Double.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadSingle">
-            <summary>
-            Reads the single.
-            </summary>
-            <returns>System.Single.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadInt64">
-            <summary>
-            Reads the int64.
-            </summary>
-            <returns>System.Int64.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadUInt64">
-            <summary>
-            Reads the u int64.
-            </summary>
-            <returns>System.UInt64.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadInt32">
-            <summary>
-            Reads the int32.
-            </summary>
-            <returns>System.Int32.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadUInt32">
-            <summary>
-            Reads the u int32.
-            </summary>
-            <returns>System.UInt32.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadInt16">
-            <summary>
-            Reads the int16.
-            </summary>
-            <returns>System.Int16.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadUInt16">
-            <summary>
-            Reads the u int16.
-            </summary>
-            <returns>System.UInt16.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.ReadChar">
-            <summary>
-            Reads the character.
-            </summary>
-            <returns>System.Char.</returns>
-        </member>
-        <member name="M:XLabs.BigEndianReader.GetReversedBytes(System.Int32)">
-            <summary>
-            Gets the reversed bytes.
-            </summary>
-            <param name="count">The count.</param>
-            <returns>System.Byte[].</returns>
         </member>
         <member name="T:XLabs.EventArgs`1">
             <summary>
@@ -517,235 +369,10 @@
             <param name="value">Argument value.</param>
             <typeparam name="T">The value type.</typeparam>
         </member>
-        <member name="M:XLabs.EventExtensions.TryInvoke``1(System.EventHandler{``0},System.Object,``0)">
-            <summary>
-            Tries the invoke.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="handler">The handler.</param>
-            <param name="sender">The sender.</param>
-            <param name="args">The arguments.</param>
-            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        </member>
-        <member name="T:XLabs.Helpers.GroupedListSource`2">
-            <summary>
-            Observable collection 
-            </summary>
-            <typeparam name="TKey"></typeparam>
-            <typeparam name="T"></typeparam>
-        </member>
-        <member name="M:XLabs.Helpers.GroupedListSource`2.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Helpers.GroupedListSource`2"/> class.
-            </summary>
-        </member>
-        <member name="M:XLabs.Helpers.GroupedListSource`2.#ctor(System.Collections.Generic.IEnumerable{XLabs.Helpers.ListGroup{`0,`1}})">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Helpers.GroupedListSource`2"/> class that contains elements copied from the specified collection.
-            </summary>
-            <param name="items">The collection from which the elements are copied.</param>
-        </member>
         <member name="T:XLabs.Icons">
             <summary>
             Font Awesome icons
             Get all the icons at http://fortawesome.github.io/Font-Awesome/cheatsheet/
-            </summary>
-        </member>
-        <member name="P:XLabs.Icons.Anchor">
-            <summary>
-            Gets the anchor.
-            </summary>
-            <value>The anchor.</value>
-        </member>
-        <member name="P:XLabs.Icons.Check">
-            <summary>
-            Gets the check.
-            </summary>
-            <value>The check.</value>
-        </member>
-        <member name="P:XLabs.Icons.Car">
-            <summary>
-            Gets the car.
-            </summary>
-            <value>The car.</value>
-        </member>
-        <member name="P:XLabs.Icons.Cloud">
-            <summary>
-            Gets the cloud.
-            </summary>
-            <value>The cloud.</value>
-        </member>
-        <member name="P:XLabs.Icons.Download">
-            <summary>
-            Gets the download.
-            </summary>
-            <value>The download.</value>
-        </member>
-        <member name="P:XLabs.Icons.Envelope">
-            <summary>
-            Gets the envelope.
-            </summary>
-            <value>The envelope.</value>
-        </member>
-        <member name="P:XLabs.Icons.ExternalLink">
-            <summary>
-            Gets the external link.
-            </summary>
-            <value>The external link.</value>
-        </member>
-        <member name="P:XLabs.Icons.SignOut">
-            <summary>
-            Gets the sign out.
-            </summary>
-            <value>The sign out.</value>
-        </member>
-        <member name="P:XLabs.Icons.Send">
-            <summary>
-            Gets the send.
-            </summary>
-            <value>The send.</value>
-        </member>
-        <member name="P:XLabs.Icons.TrashCan">
-            <summary>
-            Gets the trash can.
-            </summary>
-            <value>The trash can.</value>
-        </member>
-        <member name="P:XLabs.Icons.Undo">
-            <summary>
-            Gets the undo.
-            </summary>
-            <value>The undo.</value>
-        </member>
-        <member name="P:XLabs.Icons.User">
-            <summary>
-            Gets the user.
-            </summary>
-            <value>The user.</value>
-        </member>
-        <member name="P:XLabs.Icons.Warning">
-            <summary>
-            Gets the warning.
-            </summary>
-            <value>The warning.</value>
-        </member>
-        <member name="P:XLabs.Icons.Pencil">
-            <summary>
-            Gets the pencil.
-            </summary>
-            <value>The pencil.</value>
-        </member>
-        <member name="P:XLabs.Icons.Lock">
-            <summary>
-            Gets the lock.
-            </summary>
-            <value>The lock.</value>
-        </member>
-        <member name="P:XLabs.Icons.Unlock">
-            <summary>
-            Gets the unlock.
-            </summary>
-            <value>The unlock.</value>
-        </member>
-        <member name="P:XLabs.Icons.Save">
-            <summary>
-            Gets the save.
-            </summary>
-            <value>The save.</value>
-        </member>
-        <member name="P:XLabs.Icons.Twitter">
-            <summary>
-            Gets the twitter.
-            </summary>
-            <value>The twitter.</value>
-        </member>
-        <member name="P:XLabs.Icons.FacebookSquare">
-            <summary>
-            Gets the facebook square.
-            </summary>
-            <value>The facebook square.</value>
-        </member>
-        <member name="P:XLabs.Icons.Facebook">
-            <summary>
-            Gets the facebook.
-            </summary>
-            <value>The facebook.</value>
-        </member>
-        <member name="P:XLabs.Icons.Github">
-            <summary>
-            Gets the github.
-            </summary>
-            <value>The github.</value>
-        </member>
-        <member name="P:XLabs.Icons.Google">
-            <summary>
-            Gets the google.
-            </summary>
-            <value>The google.</value>
-        </member>
-        <member name="P:XLabs.Icons.GooglePlus">
-            <summary>
-            Gets the google plus.
-            </summary>
-            <value>The google plus.</value>
-        </member>
-        <member name="P:XLabs.Icons.Gears">
-            <summary>
-            Gets the gears.
-            </summary>
-            <value>The gears.</value>
-        </member>
-        <member name="P:XLabs.Icons.Ticket">
-            <summary>
-            Gets the ticket.
-            </summary>
-            <value>The ticket.</value>
-        </member>
-        <member name="P:XLabs.Icons.Windows">
-            <summary>
-            Gets the windows.
-            </summary>
-            <value>The windows.</value>
-        </member>
-        <member name="P:XLabs.Icons.Trello">
-            <summary>
-            Gets the trello.
-            </summary>
-            <value>The trello.</value>
-        </member>
-        <member name="T:XLabs.Helpers.ListGroup`2">
-            <summary>
-            Observable collection grouped by a key.
-            </summary>
-            <typeparam name="TKey">Key value type.</typeparam>
-            <typeparam name="T">Group value type.</typeparam>
-        </member>
-        <member name="M:XLabs.Helpers.ListGroup`2.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Helpers.ListGroup`2"/> class.
-            </summary>
-        </member>
-        <member name="M:XLabs.Helpers.ListGroup`2.#ctor(System.Collections.Generic.IEnumerable{`1})">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Helpers.ListGroup`2"/> class.
-            </summary>
-            <param name="items">The collection from which the elements are copied.</param>
-        </member>
-        <member name="M:XLabs.Helpers.ListGroup`2.#ctor(`0,System.Collections.Generic.IEnumerable{`1})">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Helpers.ListGroup`2"/> class.
-            </summary>
-            <param name="key">Key value.</param>
-            <param name="items">The collection from which the elements are copied.</param>
-        </member>
-        <member name="P:XLabs.Helpers.ListGroup`2.Key">
-            <summary>
-            Gets or sets the key for the group.
-            </summary>
-        </member>
-        <member name="T:XLabs.TaskUtils">
-            <summary>
-            Class TaskUtils.
             </summary>
         </member>
         <member name="M:XLabs.TaskUtils.TaskFromResult``1(``0)">
@@ -755,42 +382,6 @@
             <typeparam name="T"></typeparam>
             <param name="result">The result.</param>
             <returns>Task&lt;T&gt;.</returns>
-        </member>
-        <member name="T:XLabs.Vector3">
-            <summary>
-            Class Vector3.
-            </summary>
-        </member>
-        <member name="M:XLabs.Vector3.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Vector3"/> class.
-            </summary>
-        </member>
-        <member name="M:XLabs.Vector3.#ctor(System.Double,System.Double,System.Double)">
-            <summary>
-            Initializes a new instance of the <see cref="T:XLabs.Vector3"/> class.
-            </summary>
-            <param name="x">The x.</param>
-            <param name="y">The y.</param>
-            <param name="z">The z.</param>
-        </member>
-        <member name="P:XLabs.Vector3.X">
-            <summary>
-            Gets or sets the x.
-            </summary>
-            <value>The x.</value>
-        </member>
-        <member name="P:XLabs.Vector3.Y">
-            <summary>
-            Gets or sets the y.
-            </summary>
-            <value>The y.</value>
-        </member>
-        <member name="P:XLabs.Vector3.Z">
-            <summary>
-            Gets or sets the z.
-            </summary>
-            <value>The z.</value>
         </member>
         <member name="T:XLabs.RelayCommand">
             <summary>
@@ -852,16 +443,6 @@
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="F:XLabs.RelayCommand`1.execute">
-            <summary>
-            The execute
-            </summary>
-        </member>
-        <member name="F:XLabs.RelayCommand`1.canExecute">
-            <summary>
-            The can execute
-            </summary>
-        </member>
         <member name="M:XLabs.RelayCommand`1.#ctor(System.Action{`0})">
             <summary>
             Initializes a new instance of the <see cref="T:XLabs.RelayCommand`1"/> class.
@@ -881,19 +462,6 @@
             <summary>
             Raise <see cref="E:XLabs.RelayCommand`1.CanExecuteChanged"/> event.
             </summary>
-        </member>
-        <member name="M:XLabs.RelayCommand`1.CanExecute(System.Object)">
-            <summary>
-            Determines whether this instance can execute the specified parameter.
-            </summary>
-            <param name="parameter">The parameter.</param>
-            <returns><c>true</c> if this instance can execute the specified parameter; otherwise, <c>false</c>.</returns>
-        </member>
-        <member name="M:XLabs.RelayCommand`1.Execute(System.Object)">
-            <summary>
-            Executes the specified parameter.
-            </summary>
-            <param name="parameter">The parameter.</param>
         </member>
         <member name="E:XLabs.RelayCommand`1.CanExecuteChanged">
             <summary>
@@ -915,45 +483,6 @@
             Report an exception.
             </summary>
             <param name="exception">Exception that happened.</param>
-        </member>
-        <member name="M:XLabs.Reporting.DebugReport.Exception(System.Exception)">
-            <summary>
-            Report an exception.
-            </summary>
-            <param name="exception">Exception that happened.</param>
-        </member>
-        <member name="T:XLabs.Reporting.Report">
-            <summary>
-            Static Report class.
-            </summary>
-        </member>
-        <member name="F:XLabs.Reporting.Report.Reporters">
-            <summary>
-            The reporters
-            </summary>
-        </member>
-        <member name="M:XLabs.Reporting.Report.#cctor">
-            <summary>
-            Initializes static members of the <see cref="T:XLabs.Reporting.Report"/> class.
-            </summary>
-        </member>
-        <member name="M:XLabs.Reporting.Report.Add(XLabs.Reporting.IReport)">
-            <summary>
-            Adds the specified report.
-            </summary>
-            <param name="report">The report.</param>
-        </member>
-        <member name="M:XLabs.Reporting.Report.Remove(XLabs.Reporting.IReport)">
-            <summary>
-            Removes the specified report.
-            </summary>
-            <param name="report">The report.</param>
-        </member>
-        <member name="M:XLabs.Reporting.Report.Exception(System.Exception)">
-            <summary>
-            Exceptions the specified exception.
-            </summary>
-            <param name="exception">The exception.</param>
         </member>
         <member name="T:XLabs.Utilities.TtfFileInfo">
             <summary>

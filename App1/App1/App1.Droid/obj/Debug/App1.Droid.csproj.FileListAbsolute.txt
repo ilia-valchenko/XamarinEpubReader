@@ -110,7 +110,6 @@ D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Ioc.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Platform.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Platform.Droid.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Serialization.dll
-D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\HtmlAgilityPack.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.pdb
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.xml
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.dll.config
@@ -134,7 +133,6 @@ D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Ioc.xml
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Platform.xml
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Platform.Droid.xml
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\XLabs.Serialization.xml
-D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\HtmlAgilityPack.pdb
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.csprojResolveAssemblyReference.cache
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.pdb
