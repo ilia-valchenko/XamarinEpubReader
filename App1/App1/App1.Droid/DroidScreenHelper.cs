@@ -1,7 +1,7 @@
 using Android.Content.Res;
 using Android.Util;
 using App1.Droid;
-using App1.Infrastructure;
+using App1.Infrastructure.Interfaces;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DroidScreenHelper))]
 namespace App1.Droid

@@ -1,7 +1,6 @@
 ﻿using System.IO;
-
-using App1.Infrastructure;
 using App1.Droid;
+using App1.Infrastructure.Interfaces;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DroidSQLite))]
 namespace App1.Droid

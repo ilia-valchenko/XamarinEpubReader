@@ -2,9 +2,9 @@
 using System.IO;
 using System.Linq;
 using App1.EpubReader.Entities;
-using App1.EpubReader.Interfaces;
 using HtmlAgilityPack;
 using Xamarin.Forms;
+using App1.Infrastructure.Interfaces;
 
 namespace App1.Models.ApplicationPages.BookPages
 {
@@ -21,86 +21,47 @@ namespace App1.Models.ApplicationPages.BookPages
         /// <summary>
         /// Initialize a new instance of <see cref="BookTextPageViewModel"/> class.
         /// </summary>
-        /// <param name="chapter"></param>
-        public BookTextPageViewModel(EpubChapter chapter)
+        /// <param name="book">EPUB book.</param>
+        public BookTextPageViewModel(EpubBook book)
         {
-            string htmlText = chapter.HtmlContent.Replace(@"\", string.Empty);
+            IFiler filer = DependencyService.Get<IFiler>();
+            HtmlDocument template = new HtmlDocument();
+            Stream stream = filer.GetResourceFileStream("index.html");
+            template.Load(stream);
 
-            #region Create new HTML document
-            //HtmlDocument document = new HtmlDocument();
+            var textContainer = template.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+                .ChildNodes.FirstOrDefault(f => f.Name == "body")
+                .ChildNodes.FirstOrDefault(d => d.Id == "page");
 
-            //document.LoadHtml(htmlText);
+            foreach (var html in book.Content.Html)
+            {
+                HtmlDocument document = new HtmlDocument();
+                string htmlString = html.Value.Content.Replace(@"\", string.Empty);
+                document.LoadHtml(htmlString);
 
-            //var bodyOriginal =
-            //    document.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
-            //        .ChildNodes.FirstOrDefault(f => f.Name == "body"); 
+                var body =
+                document.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+                    .ChildNodes.FirstOrDefault(f => f.Name == "body");
 
-            #endregion
+                foreach (var child in body.ChildNodes)
+                {
+                    textContainer.ChildNodes.Add(child);
+                }
+            }
 
-            #region Get HTML page as stream
-            //IFiler filer = DependencyService.Get<IFiler>();
-            //HtmlDocument pageTemplate = new HtmlDocument();
-            //Stream stream = filer.GetResourceFileStream("index.html");
-            //pageTemplate.Load(stream);
-
-            //var textContainer = pageTemplate.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
-            //    .ChildNodes.FirstOrDefault(f => f.Name == "body")
-            //    .ChildNodes.FirstOrDefault(d => d.Id == "text-container"); 
-            #endregion
-
-            #region Add original body children to a new HTML document
-            //foreach (var child in bodyOriginal.ChildNodes)
-            //{
-            //    textContainer.ChildNodes.Add(child);
-            //} 
-            #endregion
-
-            #region Add CCS custom CSS style
-
-            //var head = pageTemplate.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
-            //        .ChildNodes.FirstOrDefault(f => f.Name == "head");
-
-            //IHtmlHelper htmlHelper = DependencyService.Get<IHtmlHelper>();
-            //string cssText = htmlHelper.GetCssText("style.css");
-
-            //HtmlNode style = HtmlNode.CreateNode("<style></style>");
-            //style.InnerHtml = cssText;
-
-            //head.ChildNodes.Add(style);
-
-            #endregion
+            string text = template.DocumentNode.OuterHtml.Replace(@"\", string.Empty);
 
             this.webView = new WebView
             {
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
                 Source = new HtmlWebViewSource
                 {
-                    Html = htmlText
-                }
+                    Html = text
+                },
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
             this.Content = this.webView;
-
-            #region Test scroll to last position
-
-            this.Appearing += (sender, args) =>
-            {
-                webView.Eval(string.Format("alert('Hello Ilia')"));
-            };
-                
-            //bookPage.Appearing += (osender, oargs) =>
-            //{
-            //    //DisplayAlert("Topic", "Hello creator", "Cancel");
-            //    bool isTextPage = osender is BookTextPageViewModel;
-            //    if (isTextPage)
-            //    {
-            //        BookTextPageViewModel textPage = osender as BookTextPageViewModel;
-            //        textPage.webView.Eval(string.Format("window.scrollTo(0, 1000)"));
-            //    }
-            //}; 
-
-            #endregion
         }
 
         private void ScrollToLastPosition(object sender, EventArgs args)

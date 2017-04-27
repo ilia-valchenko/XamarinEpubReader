@@ -1,8 +1,7 @@
 using System.IO;
 using System.IO.Compression;
-using Android.Content.Res;
 using App1.Droid;
-using App1.EpubReader.Interfaces;
+using App1.Infrastructure.Interfaces;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DroidZipArchiveEntry))]
 namespace App1.Droid

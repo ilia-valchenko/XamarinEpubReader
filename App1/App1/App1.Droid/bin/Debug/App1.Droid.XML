@@ -71,16 +71,5 @@
             <param name="sqlFilename">The name of a database file.</param>
             <returns></returns>
         </member>
-        <member name="T:App1.Droid.Listeners.GestureImageListener">
-            <summary>
-            A specific gesture listener which is responsible to handle the events.
-            </summary>
-        </member>
-        <member name="M:App1.Droid.Listeners.GestureImageListener.OnLongPress(Android.Views.MotionEvent)">
-            <summary>
-            Notified when a long press occurs with the initial on down MotionEvent that trigged it.
-            </summary>
-            <param name="e">Object used to report movement (mouse, pen, finger, trackball) events.</param>
-        </member>
     </members>
 </doc>

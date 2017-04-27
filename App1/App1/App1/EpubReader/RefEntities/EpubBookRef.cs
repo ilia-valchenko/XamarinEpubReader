@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using App1.EpubReader.Entities;
-using App1.EpubReader.Interfaces;
 using App1.EpubReader.Readers;
 using Xamarin.Forms;
+using App1.Infrastructure.Interfaces;
 
 namespace App1.EpubReader.RefEntities
 {

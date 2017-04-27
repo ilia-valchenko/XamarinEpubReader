@@ -1,13 +1,64 @@
-﻿<!DOCTYPE html>
-<html>
-	<head>	
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css">
-		<script src="scroll-animation.js"></script>
-	</head>
-	
-	<body> 
-            <div id="scroll-animation-container"></div>
-            <div id="text-container"></div>
-	</body>	
-</html> 
+﻿<html>
+<head>
+
+    <style id="webmakerstyle">
+        body {
+            margin: 0;
+            padding: 15px;
+        }
+        #page {
+            height: 430px;
+            -webkit-column-width: 320px;
+            -webkit-column-gap: 10px;
+            background-color: #8fe2e8;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="page"></div>
+
+    <!--
+    <script>
+                var viewPortWidth = document.body.clientWidth;
+
+                var Page = document.getElementById('page');
+
+                Page.style.columnWidth = '200px';
+                Page.style.columnGap = '48px'; // подобрал random number чтобы не ехали страницы
+
+                var ignoreScroll = false;
+                var prevScroll = 0;
+
+                document.addEventListener('scroll', function() {
+                    if (ignoreScroll) { // при выставлении scrollLeft тригерится scroll event, но его нужно отлавливать лишь единожды
+                        ignoreScroll = false;
+                        return;
+                    }
+
+                    var currentScroll = document.body.scrollLeft;
+                    var diff = currentScroll - prevScroll;
+
+                    if (diff > 0) { return scrollRight(); }
+
+                    if (diff < 0) { return scrollLeft(); }
+                });
+
+                function scrollRight() {
+                    var pages = Math.floor(document.body.scrollLeft / viewPortWidth);
+                    ignoreScroll = true;
+                    document.body.scrollLeft = (pages + 1) * viewPortWidth;
+                    prevScroll = document.body.scrollLeft;
+                }
+
+                function scrollLeft() {
+                    var pages = Math.ceil(document.body.scrollLeft / viewPortWidth);
+                    ignoreScroll = true;
+                    document.body.scrollLeft = (pages - 1) * viewPortWidth;
+                    prevScroll = document.body.scrollLeft;
+                }
+    </script>
+        -->
+</body>
+</html>

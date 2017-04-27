@@ -1,8 +1,4 @@
-﻿using Android.App;
-using Android.Views;
-using Android.Widget;
-using App1.Droid.DroidRenderers;
-using App1.Droid.Listeners;
+﻿using App1.Droid.DroidRenderers;
 using App1.Infrastructure.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -20,10 +16,7 @@ namespace App1.Droid.DroidRenderers
         /// <summary>
         /// Initialize a new instance of <see cref="LongPressGestureRecognizerImageRenderer"/> class.
         /// </summary>
-        public LongPressGestureRecognizerImageRenderer()
-        {
-
-        }
+        public LongPressGestureRecognizerImageRenderer() {}
 
         /// <summary>
         /// Notified when an element chnage occurs.

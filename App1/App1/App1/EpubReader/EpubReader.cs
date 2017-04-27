@@ -4,10 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using App1.EpubReader.Entities;
-using App1.EpubReader.Interfaces;
 using App1.EpubReader.Readers;
 using App1.EpubReader.RefEntities;
 using Xamarin.Forms;
+using App1.Infrastructure.Interfaces;
 
 namespace App1.EpubReader
 {

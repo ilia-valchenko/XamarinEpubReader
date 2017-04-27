@@ -8,7 +8,7 @@ using System.Xml.Linq;
 using App1.EpubReader.Schema.Navigation;
 using App1.EpubReader.Schema.Opf;
 using App1.EpubReader.Utils;
-using App1.EpubReader.Interfaces;
+using App1.Infrastructure.Interfaces;
 
 namespace App1.EpubReader.Readers
 {

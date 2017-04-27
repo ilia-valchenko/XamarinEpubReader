@@ -2,7 +2,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using App1.Droid;
-using App1.EpubReader.Interfaces;
+using App1.Infrastructure.Interfaces;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DroidXPather))]
 namespace App1.Droid
