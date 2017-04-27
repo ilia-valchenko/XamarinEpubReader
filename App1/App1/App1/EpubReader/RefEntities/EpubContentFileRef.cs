@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using App1.EpubReader.Entities;
 using App1.EpubReader.Utils;
-using App1.EpubReader.Interfaces;
+using App1.Infrastructure.Interfaces;
 
 namespace App1.EpubReader.RefEntities
 {

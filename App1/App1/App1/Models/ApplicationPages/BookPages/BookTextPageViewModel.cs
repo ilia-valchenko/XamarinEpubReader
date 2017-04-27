@@ -2,9 +2,9 @@
 using System.IO;
 using System.Linq;
 using App1.EpubReader.Entities;
-using App1.EpubReader.Interfaces;
 using HtmlAgilityPack;
 using Xamarin.Forms;
+using App1.Infrastructure.Interfaces;
 
 namespace App1.Models.ApplicationPages.BookPages
 {
@@ -21,80 +21,47 @@ namespace App1.Models.ApplicationPages.BookPages
         /// <summary>
         /// Initialize a new instance of <see cref="BookTextPageViewModel"/> class.
         /// </summary>
-        /// <param name="chapter"></param>
-        public BookTextPageViewModel(EpubChapter chapter)
+        /// <param name="book">EPUB book.</param>
+        public BookTextPageViewModel(EpubBook book)
         {
-            #region Body original
-
-            string htmlText = chapter.HtmlContent.Replace(@"\", string.Empty);
-
-            HtmlDocument document = new HtmlDocument();
-
-            document.LoadHtml(htmlText);
-
-            var bodyOriginal =
-                document.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
-                    .ChildNodes.FirstOrDefault(f => f.Name == "body"); 
-
-            #endregion
-
             IFiler filer = DependencyService.Get<IFiler>();
-            HtmlDocument pageTemplate = new HtmlDocument();
+            HtmlDocument template = new HtmlDocument();
             Stream stream = filer.GetResourceFileStream("index.html");
-            pageTemplate.Load(stream);
+            template.Load(stream);
 
-            var textContainer = pageTemplate.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+            var textContainer = template.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
                 .ChildNodes.FirstOrDefault(f => f.Name == "body")
-                .ChildNodes.FirstOrDefault(d => d.Id == "text-container");
+                .ChildNodes.FirstOrDefault(d => d.Id == "page");
 
-            foreach (var child in bodyOriginal.ChildNodes)
+            foreach (var html in book.Content.Html)
             {
-                textContainer.ChildNodes.Add(child);
+                HtmlDocument document = new HtmlDocument();
+                string htmlString = html.Value.Content.Replace(@"\", string.Empty);
+                document.LoadHtml(htmlString);
+
+                var body =
+                document.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+                    .ChildNodes.FirstOrDefault(f => f.Name == "body");
+
+                foreach (var child in body.ChildNodes)
+                {
+                    textContainer.ChildNodes.Add(child);
+                }
             }
 
-            #region Add CCS custom CSS style
+            string text = template.DocumentNode.OuterHtml.Replace(@"\", string.Empty);
 
-            var head = pageTemplate.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
-                    .ChildNodes.FirstOrDefault(f => f.Name == "head");
-
-            IHtmlHelper htmlHelper = DependencyService.Get<IHtmlHelper>();
-            string cssText = htmlHelper.GetCssText("style.css");
-
-            HtmlNode style = HtmlNode.CreateNode("<style></style>");
-            style.InnerHtml = cssText;
-
-            head.ChildNodes.Add(style);
-
-            #endregion
-
-            webView = new WebView
+            this.webView = new WebView
             {
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
                 Source = new HtmlWebViewSource
                 {
-                    Html = pageTemplate.DocumentNode.OuterHtml
-                }
+                    Html = text
+                },
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
-            this.Content = webView;
-
-            #region Test scroll to last position
-
-            this.Appearing += this.ScrollToLastPosition;
-
-            //bookPage.Appearing += (osender, oargs) =>
-            //{
-            //    //DisplayAlert("Topic", "Hello creator", "Cancel");
-            //    bool isTextPage = osender is BookTextPageViewModel;
-            //    if (isTextPage)
-            //    {
-            //        BookTextPageViewModel textPage = osender as BookTextPageViewModel;
-            //        textPage.webView.Eval(string.Format("window.scrollTo(0, 1000)"));
-            //    }
-            //}; 
-
-            #endregion
+            this.Content = this.webView;
         }
 
         private void ScrollToLastPosition(object sender, EventArgs args)

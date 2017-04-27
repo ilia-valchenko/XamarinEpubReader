@@ -1,8 +1,4 @@
-﻿using Android.App;
-using Android.Views;
-using Android.Widget;
-using App1.Droid.DroidRenderers;
-using App1.Droid.Listeners;
+﻿using App1.Droid.DroidRenderers;
 using App1.Infrastructure.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -15,18 +11,12 @@ namespace App1.Droid.DroidRenderers
     /// </summary>
     public class LongPressGestureRecognizerImageRenderer : ImageRenderer
     {
-        //private readonly GestureDetector detector;
-        //private readonly GestureImageListener listener;
         private ImageWithLongPressGesture view;
 
         /// <summary>
         /// Initialize a new instance of <see cref="LongPressGestureRecognizerImageRenderer"/> class.
         /// </summary>
-        public LongPressGestureRecognizerImageRenderer()
-        {
-            //this.listener = new GestureImageListener();
-            //this.detector = new GestureDetector(this.listener);
-        }
+        public LongPressGestureRecognizerImageRenderer() {}
 
         /// <summary>
         /// Notified when an element chnage occurs.

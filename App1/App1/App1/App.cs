@@ -1,5 +1,5 @@
 ﻿using App1.DAL.Repositories;
-using App1.Infrastructure.Directory;
+using App1.Infrastructure.Interfaces;
 using App1.Models.ApplicationPages;
 
 using Xamarin.Forms;

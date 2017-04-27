@@ -144,45 +144,89 @@
             <param name="book">The book entity.</param>
             <returns>Returns status code of the executed operation.</returns>
         </member>
-        <member name="T:App1.EpubReader.Interfaces.IFiler">
+        <member name="T:App1.Infrastructure.Interfaces.IDirectory">
+            <summary>
+            This interface exposes methods for creating, moving, and enumerating through directories and subdirectories.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Interfaces.IDirectory.CreateRootFolder(System.String)">
+            <summary>
+            This method creates a folder in a root directory.
+            </summary>
+            <returns>Returns the path to the new folder.</returns>
+        </member>
+        <member name="M:App1.Infrastructure.Interfaces.IDirectory.DoesDirectoryExist(System.String)">
+            <summary>
+            This method determines does the directory exist.
+            </summary>
+            <returns>Returns true is directory exists.</returns>
+        </member>
+        <member name="T:App1.Infrastructure.Interfaces.ISQLite">
+            <summary>
+            This interface is to determine the location of the database file.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Interfaces.ISQLite.GetLocalDatabaseFilePath(System.String)">
+            <summary>
+            Returns path to the platform-specific local database file.
+            </summary>
+            <param name="sqlFilename">The name of a database file.</param>
+            <returns></returns>
+        </member>
+        <member name="T:App1.Infrastructure.Interfaces.IScreenHelper">
+            <summary>
+            This interface should helps to detect the width and the height of user's device screen. 
+            </summary>
+        </member>
+        <member name="P:App1.Infrastructure.Interfaces.IScreenHelper.ScreenWidth">
+            <summary>
+            The screen width in density-independent pixels.
+            </summary>
+        </member>
+        <member name="P:App1.Infrastructure.Interfaces.IScreenHelper.ScreenHeight">
+            <summary>
+            The screen height in density-independent pixels.
+            </summary>
+        </member>
+        <member name="T:App1.Infrastructure.Interfaces.IFiler">
             <summary>
             This interface represent the level of abstraction which provides basic file operations. 
             </summary>
         </member>
-        <member name="M:App1.EpubReader.Interfaces.IFiler.DoesFileExist(System.String)">
+        <member name="M:App1.Infrastructure.Interfaces.IFiler.DoesFileExist(System.String)">
             <summary>
             This method checks if the file exists.
             </summary>
             <param name="filepath">The path for a file.</param>
             <returns>Returns true is a file exists.</returns>
         </member>
-        <member name="M:App1.EpubReader.Interfaces.IFiler.GetFilePath(System.String)">
+        <member name="M:App1.Infrastructure.Interfaces.IFiler.GetFilePath(System.String)">
             <summary>
             This method returns the full path of the file.
             </summary>
             <param name="filename">The name of the file with extension.</param>
             <returns>Returns string which represents the full path of the file.</returns>
         </member>
-        <member name="M:App1.EpubReader.Interfaces.IFiler.GetFilesPaths(App1.Infrastructure.FileExtension)">
+        <member name="M:App1.Infrastructure.Interfaces.IFiler.GetFilesPaths(App1.Infrastructure.FileExtension)">
             <summary>
             This method returns names of the files which have a given extension.
             </summary>
             <param name="fileExtensions">The extension of the file.</param>
             <returns>Returns names of the files with their extensions.</returns>
         </member>
-        <member name="M:App1.EpubReader.Interfaces.IFiler.GetResourceFileStream(System.String)">
+        <member name="M:App1.Infrastructure.Interfaces.IFiler.GetResourceFileStream(System.String)">
             <summary>
             This method returns a stream of file which is situated into resource folder of each platform specific project.
             </summary>
             <param name="filename"></param>
             <returns></returns>
         </member>
-        <member name="T:App1.EpubReader.Interfaces.IXPather">
+        <member name="T:App1.Infrastructure.Interfaces.IXPather">
             <summary>
             This interface provides some operations from the XPath. 
             </summary>
         </member>
-        <member name="M:App1.EpubReader.Interfaces.IXPather.SelectElement(System.Xml.Linq.XDocument,System.String,System.Xml.XmlNamespaceManager)">
+        <member name="M:App1.Infrastructure.Interfaces.IXPather.SelectElement(System.Xml.Linq.XDocument,System.String,System.Xml.XmlNamespaceManager)">
             <summary>
             
             </summary>
@@ -191,50 +235,24 @@
             <param name="manager"></param>
             <returns></returns>
         </member>
-        <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
+        <member name="T:App1.Infrastructure.Controls.ImageWithLongPressGesture">
             <summary>
-            Opens the book synchronously without reading its content. Holds the handle to the EPUB file.
-            </summary>
-            <param name="filePath">path to the EPUB file</param>
-            <returns></returns>
-        </member>
-        <member name="M:App1.EpubReader.EpubReader.OpenBookAsync(System.String)">
-            <summary>
-            Opens the book asynchronously without reading its content. Holds the handle to the EPUB file.
-            </summary>
-            <param name="filePath">path to the EPUB file</param>
-            <returns></returns>
-        </member>
-        <member name="M:App1.EpubReader.EpubReader.ReadBook(System.String)">
-            <summary>
-            Opens the book synchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
-            </summary>
-            <param name="filePath">path to the EPUB file</param>
-            <returns></returns>
-        </member>
-        <member name="M:App1.EpubReader.EpubReader.ReadBookAsync(System.String)">
-            <summary>
-            Opens the book asynchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
-            </summary>
-            <param name="filePath">path to the EPUB file</param>
-            <returns></returns>
-        </member>
-        <member name="T:App1.Infrastructure.Directory.IDirectory">
-            <summary>
-            This interface exposes methods for creating, moving, and enumerating through directories and subdirectories.
+            The image control I need the gestures on. 
             </summary>
         </member>
-        <member name="M:App1.Infrastructure.Directory.IDirectory.CreateRootFolder(System.String)">
+        <member name="M:App1.Infrastructure.Controls.ImageWithLongPressGesture.HandleLongPress(System.Object,System.EventArgs)">
             <summary>
-            This method creates a folder in a root directory.
+            A handler for long press action.
             </summary>
-            <returns>Returns the path to the new folder.</returns>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
-        <member name="M:App1.Infrastructure.Directory.IDirectory.DoesDirectoryExist(System.String)">
+        <member name="M:App1.Infrastructure.Controls.ImageWithLongPressGesture.HandleClick(System.Object,System.EventArgs)">
             <summary>
-            This method determines does the directory exist.
+            A handler for single click action.
             </summary>
-            <returns>Returns true is directory exists.</returns>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="T:App1.Infrastructure.GuidHelper">
             <summary>
@@ -247,33 +265,6 @@
             </summary>
             <param name="guid">The Guid value.</param>
             <returns></returns>
-        </member>
-        <member name="T:App1.Infrastructure.ISQLite">
-            <summary>
-            This interface is to determine the location of the database file.
-            </summary>
-        </member>
-        <member name="M:App1.Infrastructure.ISQLite.GetLocalDatabaseFilePath(System.String)">
-            <summary>
-            Returns path to the platform-specific local database file.
-            </summary>
-            <param name="sqlFilename">The name of a database file.</param>
-            <returns></returns>
-        </member>
-        <member name="T:App1.Infrastructure.IScreenHelper">
-            <summary>
-            This interface should helps to detect the width and the height of user's device screen. 
-            </summary>
-        </member>
-        <member name="P:App1.Infrastructure.IScreenHelper.ScreenWidth">
-            <summary>
-            The screen width in density-independent pixels.
-            </summary>
-        </member>
-        <member name="P:App1.Infrastructure.IScreenHelper.ScreenHeight">
-            <summary>
-            The screen height in density-independent pixels.
-            </summary>
         </member>
         <member name="T:App1.Infrastructure.Mappers.BookEntityToBookInfoModelMapper">
             <summary>
@@ -294,15 +285,45 @@
             <param name="booksEntities">A collection of book entities.</param>
             <returns>A collection of book info view models.</returns>
         </member>
-        <member name="T:App1.Models.ApplicationPages.BookPages.BookCoverPageViewModel">
+        <member name="T:App1.Models.BookInfoViewModel">
             <summary>
-            This class represents the first page of a book which contains a cover image of a book.
+            This page represents a main part of book which is stored in a database.
             </summary>
         </member>
-        <member name="M:App1.Models.ApplicationPages.BookPages.BookCoverPageViewModel.#ctor(Xamarin.Forms.Image)">
+        <member name="P:App1.Models.BookInfoViewModel.Id">
             <summary>
-            Initialize a new instance of the <see cref="T:App1.Models.ApplicationPages.BookPages.BookCoverPageViewModel"/> class.
+            The book's identifier.
             </summary>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.Title">
+            <summary>
+            The title of a book.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.Author">
+            <summary>
+            The author of a book.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.Cover">
+            <summary>
+            The book's cover image.
+            </summary>
+        </member>
+        <member name="P:App1.Models.BookInfoViewModel.FilePath">
+            <summary>
+            The path to the book file.
+            </summary>
+        </member>
+        <member name="M:App1.Models.BookInfoViewModel.#ctor(System.String,System.String,System.String,System.Byte[],System.String)">
+            <summary>
+            Initialize a new instance of the <see cref="T:App1.Models.BookInfoViewModel"/>.
+            </summary>
+            <param name="id">The book identifier.</param>
+            <param name="title">The book title.</param>
+            <param name="author">The author of a book.</param>
+            <param name="bytesImage">Array of bytes which represent a book cover image.</param>
+            <param name="filepath">The path to the book file.</param>
         </member>
         <member name="T:App1.Models.ApplicationPages.BookPages.BookContentPageViewModel">
             <summary>
@@ -335,11 +356,11 @@
             The web view. 
             </summary>
         </member>
-        <member name="M:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.#ctor(App1.EpubReader.Entities.EpubChapter)">
+        <member name="M:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.#ctor(App1.EpubReader.Entities.EpubBook)">
             <summary>
             Initialize a new instance of <see cref="T:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel"/> class.
             </summary>
-            <param name="chapter"></param>
+            <param name="book">EPUB book.</param>
         </member>
         <member name="T:App1.Models.ApplicationPages.MainPageViewModel">
             <summary>
@@ -413,75 +434,33 @@
             </summary>
             <param name="bookInfo">The book info view model.</param>
         </member>
-        <member name="T:App1.Models.BookInfoViewModel">
+        <member name="M:App1.EpubReader.EpubReader.OpenBook(System.String)">
             <summary>
-            This page represents a main part of book which is stored in a database.
+            Opens the book synchronously without reading its content. Holds the handle to the EPUB file.
             </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
         </member>
-        <member name="P:App1.Models.BookInfoViewModel.Id">
+        <member name="M:App1.EpubReader.EpubReader.OpenBookAsync(System.String)">
             <summary>
-            The book's identifier.
+            Opens the book asynchronously without reading its content. Holds the handle to the EPUB file.
             </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
         </member>
-        <member name="P:App1.Models.BookInfoViewModel.Title">
+        <member name="M:App1.EpubReader.EpubReader.ReadBook(System.String)">
             <summary>
-            The title of a book.
+            Opens the book synchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
             </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
         </member>
-        <member name="P:App1.Models.BookInfoViewModel.Author">
+        <member name="M:App1.EpubReader.EpubReader.ReadBookAsync(System.String)">
             <summary>
-            The author of a book.
+            Opens the book asynchronously and reads all of its content into the memory. Does not hold the handle to the EPUB file.
             </summary>
-        </member>
-        <member name="P:App1.Models.BookInfoViewModel.Cover">
-            <summary>
-            The book's cover image.
-            </summary>
-        </member>
-        <member name="P:App1.Models.BookInfoViewModel.FilePath">
-            <summary>
-            The path to the book file.
-            </summary>
-        </member>
-        <member name="M:App1.Models.BookInfoViewModel.#ctor(System.String,System.String,System.String,System.Byte[],System.String)">
-            <summary>
-            Initialize a new instance of the <see cref="T:App1.Models.BookInfoViewModel"/>.
-            </summary>
-            <param name="id">The book identifier.</param>
-            <param name="title">The book title.</param>
-            <param name="author">The author of a book.</param>
-            <param name="bytesImage">Array of bytes which represent a book cover image.</param>
-            <param name="filepath">The path to the book file.</param>
-        </member>
-        <member name="F:App1.Models.BookViewModel.bookCoverImage">
-            <summary>
-            The book's cover image.
-            </summary>
-        </member>
-        <member name="F:App1.Models.BookViewModel.pages">
-            <summary>
-            The collection of book's pages.
-            </summary>
-        </member>
-        <member name="P:App1.Models.BookViewModel.Pages">
-            <summary>
-            Readonly property which returns the collection of book's page.
-            </summary>
-        </member>
-        <member name="P:App1.Models.BookViewModel.NumberOfPages">
-            <summary>
-            The number of pages.
-            </summary>
-        </member>
-        <member name="P:App1.Models.BookViewModel.BookCoverImage">
-            <summary>
-            The book's cover image.
-            </summary>
-        </member>
-        <member name="M:App1.Models.BookViewModel.#ctor(App1.EpubReader.Entities.EpubBook)">
-            <summary>
-            Initializes the instance of <see cref="T:App1.Models.BookViewModel"/>
-            </summary>
+            <param name="filePath">path to the EPUB file</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

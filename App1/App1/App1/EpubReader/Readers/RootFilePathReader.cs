@@ -4,9 +4,9 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
-using App1.EpubReader.Interfaces;
 using App1.EpubReader.Utils;
 using Xamarin.Forms;
+using App1.Infrastructure.Interfaces;
 
 namespace App1.EpubReader.Readers
 {

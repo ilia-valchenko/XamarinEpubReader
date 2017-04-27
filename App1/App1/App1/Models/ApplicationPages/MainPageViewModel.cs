@@ -1,16 +1,14 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
+﻿using App1.DAL.Entities;
 using App1.DAL.Interfaces;
-using App1.DAL.Entities;
-using App1.Infrastructure.Mappers;
-using App1.EpubReader.Interfaces;
-using App1.Infrastructure;
 using App1.EpubReader.Entities;
+using App1.Infrastructure;
+using App1.Infrastructure.Interfaces;
+using App1.Infrastructure.Mappers;
 using App1.Models.ApplicationPages.BookPages;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
-using App1.Infrastructure.Controls;
-using System.Threading.Tasks;
 
 namespace App1.Models.ApplicationPages
 {
@@ -60,8 +58,6 @@ namespace App1.Models.ApplicationPages
         /// <param name="bookRepository">The book repository.</param>
         public MainPageViewModel(IBookRepository bookRepository)
         {
-            //this.BindingContext = this;
-
             this.stackLayout = new StackLayout();
             this.gridLayout = new Grid();
             this.Padding = new Thickness(20, 20, 20, 20);
@@ -125,6 +121,19 @@ namespace App1.Models.ApplicationPages
             this.stackLayout.Children.Add(showDeviceMeasurementButton);
 
             #endregion
+
+            Button test = new Button
+            {
+                Text = "Show html from assert"
+            };
+
+            test.Clicked += (sender, args) =>
+            {
+                BookTextPageViewModel page = new BookTextPageViewModel(null);
+                this.Navigation.PushAsync(page);
+            };
+
+            this.stackLayout.Children.Add(test);
 
             this.Content = new ScrollView
             {
@@ -240,6 +249,7 @@ namespace App1.Models.ApplicationPages
                 // Set click and long press event handlers
                 foreach (BookInfoViewModel book in books)
                 {
+                    
                     book.Cover.longPressAction = () => this.OnLongPressBookCoverImage(book);
                     book.Cover.click = () => this.OnClickBookCoverImage(book);
                 }
@@ -261,10 +271,7 @@ namespace App1.Models.ApplicationPages
                     break;
 
                 case ("Open in Hybrid"):
-                    EpubBook epubBook = await EpubReader.EpubReader.ReadBookAsync(bookInfo.FilePath);
-                    EpubChapter chapter = epubBook.Chapters[1];
-                    TestHybridWebViewPage hybridPage = new TestHybridWebViewPage(chapter);
-                    await this.Navigation.PushAsync(hybridPage);
+                    await DisplayAlert("Alert", "This part was deleted.", "Cancel");
                     break;
 
                 case ("Delete"):
@@ -292,22 +299,9 @@ namespace App1.Models.ApplicationPages
                 else
                 {
                     EpubBook epubBook = await EpubReader.EpubReader.ReadBookAsync(bookInfo.FilePath);
-                    BookViewModel book = new BookViewModel(epubBook);
-                    CarouselPage carouselPage = new CarouselPage { Title = "Go to Main page" };
+                    BookTextPageViewModel page = new BookTextPageViewModel(epubBook) { Title = "Go to Main page" };
 
-                    if (book.Pages != null)
-                    {
-                        foreach (BookPage bookPage in book.Pages)
-                        {
-                            carouselPage.Children.Add(bookPage);
-                        }
-
-                        await this.Navigation.PushAsync(carouselPage);
-                    }
-                    else
-                    {
-                        await DisplayAlert("Attention", "Something went wrong. It looks like the book doesn't has any pages.", "Cancel");
-                    }
+                    await this.Navigation.PushAsync(page);
                 }
             }
         }

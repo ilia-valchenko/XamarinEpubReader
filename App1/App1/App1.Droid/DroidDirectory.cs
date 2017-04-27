@@ -1,6 +1,6 @@
 using System.IO;
 using App1.Droid;
-using App1.Infrastructure.Directory;
+using App1.Infrastructure.Interfaces;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DroidDirectory))]
 namespace App1.Droid
@@ -32,6 +32,11 @@ namespace App1.Droid
         {
             bool doesDirectoryExist = Directory.Exists(path);
             return doesDirectoryExist;
+        }
+
+        public string GetCurrentDirectory()
+        {
+            return System.Environment.CurrentDirectory;
         }
     }
 }

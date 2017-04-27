@@ -39,22 +39,16 @@
     <Compile Include="App.cs" />
     <Compile Include="DAL\Entities\BookEntity.cs" />
     <Compile Include="DAL\Interfaces\IBookRepository.cs" />
-    <Compile Include="EpubReader\Interfaces\IHtmlHelper.cs" />
+    <Compile Include="Infrastructure\Interfaces\IHtmlHelper.cs" />
     <Compile Include="Infrastructure\Buttons\OpenBookChapterButton.cs" />
     <Compile Include="Infrastructure\Controls\ImageWithLongPressGesture.cs" />
     <Compile Include="Infrastructure\FileExtension.cs" />
-    <Compile Include="Infrastructure\Directory\IDirectory.cs" />
+    <Compile Include="Infrastructure\Interfaces\IDirectory.cs" />
     <Compile Include="Infrastructure\GuidHelper.cs" />
-    <Compile Include="Infrastructure\ISQLite.cs" />
-    <Compile Include="Infrastructure\IScreenHelper.cs" />
-    <Compile Include="Infrastructure\ITextMeter.cs" />
+    <Compile Include="Infrastructure\Interfaces\ISQLite.cs" />
+    <Compile Include="Infrastructure\Interfaces\IScreenHelper.cs" />
     <Compile Include="Infrastructure\Mappers\BookEntityToBookInfoModelMapper.cs" />
-    <Compile Include="Infrastructure\PageSplitter.cs" />
-    <Compile Include="Models\ApplicationPages\BookPages\BookCoverPageViewModel.cs" />
-    <Compile Include="Models\ApplicationPages\HelloView.cs" />
-    <Compile Include="Models\ApplicationPages\TestHybridWebViewPage.cs" />
     <Compile Include="Models\BookInfoViewModel.cs" />
-    <Compile Include="Models\BookViewModel.cs" />
     <Compile Include="Models\ApplicationPages\BookPages\BookContentPageViewModel.cs" />
     <Compile Include="Models\ApplicationPages\BookPages\BookPage.cs" />
     <Compile Include="Models\ApplicationPages\BookPages\BookTextPageViewModel.cs" />
@@ -67,11 +61,11 @@
     <Compile Include="EpubReader\Entities\EpubSchema.cs" />
     <Compile Include="EpubReader\Entities\EpubTextContentFile.cs" />
     <Compile Include="EpubReader\EpubReader.cs" />
-    <Compile Include="EpubReader\Interfaces\IFiler.cs" />
-    <Compile Include="EpubReader\Interfaces\IXPather.cs" />
-    <Compile Include="EpubReader\Interfaces\IZipArchive.cs" />
-    <Compile Include="EpubReader\Interfaces\IZipArchiveEntry.cs" />
-    <Compile Include="EpubReader\Interfaces\IZipFile.cs" />
+    <Compile Include="Infrastructure\Interfaces\IFiler.cs" />
+    <Compile Include="Infrastructure\Interfaces\IXPather.cs" />
+    <Compile Include="Infrastructure\Interfaces\IZipArchive.cs" />
+    <Compile Include="Infrastructure\Interfaces\IZipArchiveEntry.cs" />
+    <Compile Include="Infrastructure\Interfaces\IZipFile.cs" />
     <Compile Include="EpubReader\Readers\BookCoverReader.cs" />
     <Compile Include="EpubReader\Readers\ChapterReader.cs" />
     <Compile Include="EpubReader\Readers\ContentReader.cs" />
@@ -140,10 +134,6 @@
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SkiaSharp, Version=1.57.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SkiaSharp.1.57.0\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\sqlite-net-pcl.1.3.1\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
     </Reference>
@@ -160,49 +150,25 @@
       <HintPath>C:\Program Files (x86)\Windows Phone Kits\8.1\References\CommonConfiguration\Neutral\Windows.winmd</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.231\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.231\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Core, Version=2.0.5782.12218, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Core.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Forms, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Forms.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Forms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Ioc, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.IoC.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\XLabs.Ioc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Platform, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Platform.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Platform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Serialization, Version=2.0.5782.15703, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Serialization.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Serialization.JsonNET, Version=2.0.5782.12228, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Serialization.JSON.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.JsonNET.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.231\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
   </Target>
 </Project>
