@@ -1,68 +1,96 @@
 ﻿<html>
 <head>
-
     <style id="webmakerstyle">
         body {
             margin: 0;
-            padding: 15px;
+            padding: 10px 10px 10px 10px;
         }
         #page {
-            height: 430px;
-            -webkit-column-width: 320px;
-            -webkit-column-gap: 10px;
-            background-color: #8fe2e8;
+            height: 400px;
+            -webkit-column-width: 290px;
+            -webkit-column-gap: 30px;
         }
     </style>
-
 </head>
 <body>
 
-    <div id="page"></div>
+<div id="page"></div>
 
-    <script>
-        alert('View port width: ' + document.body.clientWidth + ' View port height: ' + document.body.clientHeight);
-    </script>
+<script>
+    
+    // unbind 
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, true);
 
-    <!--
-    <script>
-                var viewPortWidth = document.body.clientWidth;
+    var viewPortWidth = document.body.clientWidth;
+    var viewPortHeight = document.body.clientHeight;
+    var initialLeftPadding = 10;
+    var initialRightPadding = 10;
+    var columnGap = 30;
+    var columnWidth = viewPortWidth - (initialLeftPadding + (columnGap / 2));
+    var numberOfPages = Math.ceil(document.width / viewPortWidth);
+    var currentPage = 1;
+    var pivot = viewPortWidth / 2;
+    var shift = viewPortWidth + 10;
 
-                var Page = document.getElementById('page');
+    function printMousePos(event) {
 
-                Page.style.columnWidth = '200px';
-                Page.style.columnGap = '48px'; // подобрал random number чтобы не ехали страницы
+        var clientX = event.clientX;
 
-                var ignoreScroll = false;
-                var prevScroll = 0;
+        if (clientX > pivot) {
+            //if ((document.body.scrollLeft + pivot + clientX) < (document.body.width - viewPortWidth)) {
+            currentPage++;
+            document.body.scrollLeft += shift;
+            return;
+            //}
+        }
+        else {
+            if ((document.body.scrollLeft + pivot) > viewPortWidth) {
+                currentPage--;
+                document.body.scrollLeft -= shift;
+                return;
+            }
+        }
+    }
 
-                document.addEventListener('scroll', function() {
-                    if (ignoreScroll) { // при выставлении scrollLeft тригерится scroll event, но его нужно отлавливать лишь единожды
-                        ignoreScroll = false;
-                        return;
-                    }
+    document.addEventListener("click", printMousePos);
 
-                    var currentScroll = document.body.scrollLeft;
-                    var diff = currentScroll - prevScroll;
+    //var Page = document.getElementById('page');
 
-                    if (diff > 0) { return scrollRight(); }
+    //Page.style.columnWidth = '200px';
+    //Page.style.columnGap = '48px'; // подобрал random number чтобы не ехали страницы
 
-                    if (diff < 0) { return scrollLeft(); }
-                });
+    /*var ignoreScroll = false;
+    var prevScroll = 0;
 
-                function scrollRight() {
-                    var pages = Math.floor(document.body.scrollLeft / viewPortWidth);
-                    ignoreScroll = true;
-                    document.body.scrollLeft = (pages + 1) * viewPortWidth;
-                    prevScroll = document.body.scrollLeft;
-                }
+    document.addEventListener('scroll', function() {
+        if (ignoreScroll) { // при выставлении scrollLeft тригерится scroll event, но его нужно отлавливать лишь единожды
+            ignoreScroll = false;
+            return;
+        }
 
-                function scrollLeft() {
-                    var pages = Math.ceil(document.body.scrollLeft / viewPortWidth);
-                    ignoreScroll = true;
-                    document.body.scrollLeft = (pages - 1) * viewPortWidth;
-                    prevScroll = document.body.scrollLeft;
-                }
-    </script>
--->
+        var currentScroll = document.body.scrollLeft;
+        var diff = currentScroll - prevScroll;
+
+        if (diff > 0) { return scrollRight(); }
+
+        if (diff < 0) { return scrollLeft(); }
+    });
+
+    function scrollRight() {
+        var pages = Math.floor(document.body.scrollLeft / viewPortWidth);
+        ignoreScroll = true;
+        document.body.scrollLeft = (pages + 1) * viewPortWidth;
+        prevScroll = document.body.scrollLeft;
+    }
+
+    function scrollLeft() {
+        var pages = Math.ceil(document.body.scrollLeft / viewPortWidth);
+        ignoreScroll = true;
+        document.body.scrollLeft = (pages - 1) * viewPortWidth;
+        prevScroll = document.body.scrollLeft;
+    }
+    */
+</script>
+
 </body>
 </html>
