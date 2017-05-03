@@ -26,10 +26,6 @@
 <div id="page"></div>
 
 <script>
-    
-    // Unbind.
-    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, true);
-
     var viewPortWidth = document.body.clientWidth;
     var viewPortHeight = document.body.clientHeight;
     var initialLeftPadding = 10;
@@ -37,16 +33,17 @@
     var columnGap = 30;
     var columnWidth = viewPortWidth - (initialLeftPadding + (columnGap / 2));
     var numberOfPages = Math.ceil(document.width / viewPortWidth);
-    // Take it from C# part.
-    var currentPage = 1;
+    var currentPage = lastPageNumber;
     var pivot = viewPortWidth / 2;
     var shift = viewPortWidth + 10;
-    // Set initial current page and total number of pages.
     var currentPageContainer = document.getElementById('current-page');
     var totalPagesContainer = document.getElementById('total-pages');
 
     totalPagesContainer.innerHTML = numberOfPages;
-    updateCurrentPage(currentPage);
+    updateCurrentPage(lastPageNumber);
+    moveToPage(lastPageNumber);
+    // Unbind.
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, true);
 
     function clickHandler(event) {
 
@@ -72,6 +69,11 @@
 
     document.addEventListener("click", clickHandler);
 
+    function moveToPage(pageNumber) {
+        document.body.scrollLeft = shift * pageNumber;
+        updateCurrentPage(pageNumber);
+    }
+
     function updateCurrentPage(currentPageNumber) {
         currentPageContainer.innerHTML = currentPageNumber;
     }
@@ -79,43 +81,6 @@
     function callSaveToDatabaseMethod(lastPageNumber) {
         window.location.href = 'http://index.html?cmdName=SaveLastPageNumber&lastPageNumber=' + lastPageNumber;
     }
-
-    //var Page = document.getElementById('page');
-
-    //Page.style.columnWidth = '200px';
-    //Page.style.columnGap = '48px'; // подобрал random number чтобы не ехали страницы
-
-    /*var ignoreScroll = false;
-    var prevScroll = 0;
-
-    document.addEventListener('scroll', function() {
-        if (ignoreScroll) { // при выставлении scrollLeft тригерится scroll event, но его нужно отлавливать лишь единожды
-            ignoreScroll = false;
-            return;
-        }
-
-        var currentScroll = document.body.scrollLeft;
-        var diff = currentScroll - prevScroll;
-
-        if (diff > 0) { return scrollRight(); }
-
-        if (diff < 0) { return scrollLeft(); }
-    });
-
-    function scrollRight() {
-        var pages = Math.floor(document.body.scrollLeft / viewPortWidth);
-        ignoreScroll = true;
-        document.body.scrollLeft = (pages + 1) * viewPortWidth;
-        prevScroll = document.body.scrollLeft;
-    }
-
-    function scrollLeft() {
-        var pages = Math.ceil(document.body.scrollLeft / viewPortWidth);
-        ignoreScroll = true;
-        document.body.scrollLeft = (pages - 1) * viewPortWidth;
-        prevScroll = document.body.scrollLeft;
-    }
-    */
 </script>
 
 </body>

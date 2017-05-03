@@ -115,7 +115,6 @@
     <Compile Include="EpubReader\Utils\XmlUtils.cs" />
     <Compile Include="EpubReader\Utils\ZipPathUtils.cs" />
     <Compile Include="Models\ApplicationPages\MainPageViewModel.cs" />
-    <Compile Include="Models\ApplicationPages\TestPageDeviceMeasurementViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAL\Repositories\BookRepository.cs" />
   </ItemGroup>

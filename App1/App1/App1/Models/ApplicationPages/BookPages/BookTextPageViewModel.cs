@@ -45,10 +45,19 @@ namespace App1.Models.ApplicationPages.BookPages
             IFiler filer = DependencyService.Get<IFiler>();
 
             #region Custom HTML template
+
             HtmlDocument template = new HtmlDocument();
             // Hardcode filename
             Stream stream = filer.GetResourceFileStream("index.html");
             template.Load(stream);
+
+            var script = "<script>var lastPageNumber = " + this.settings.LastPage + "</script>";
+            HtmlNode scriptNode = HtmlNode.CreateNode(script);
+
+            var head = template.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
+                .ChildNodes.FirstOrDefault(f => f.Name == "head");
+
+            head.ChildNodes.Add(scriptNode);
 
             var textContainer = template.DocumentNode.ChildNodes.FirstOrDefault(c => c.Name == "html")
                 .ChildNodes.FirstOrDefault(f => f.Name == "body")
@@ -69,36 +78,34 @@ namespace App1.Models.ApplicationPages.BookPages
                     textContainer.ChildNodes.Add(child);
                 }
             } 
+
             #endregion
 
-            string text = template.DocumentNode.OuterHtml.Replace(@"\", string.Empty);
+            string htmlText = template.DocumentNode.OuterHtml.Replace(@"\", string.Empty);
 
             this.webView = new WebView
             {
-                Source = new HtmlWebViewSource
-                {
-                    Html = text
-                },
+                Source = new HtmlWebViewSource { Html = htmlText },
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
-            // test
-            this.webView.Navigating += (sender, args) =>
-            {
-                var url = args.Url;
-                var parsedValues = HttpUtility.ParseQueryString(url);
-                args.Cancel = true;
-
-                IReflectionHelper reflectionHelper = DependencyService.Get<IReflectionHelper>();
-                Type thisType = this.GetType();
-                string methodName = parsedValues.First().Value;
-                string lastPageNumber = parsedValues.GetValues("lastPageNumber").First();
-                MethodInfo method = reflectionHelper.GetMethodInfo(thisType, methodName);
-                method.Invoke(this, new object[] { lastPageNumber });
-            };
-
+            this.webView.Navigating += this.NavigatingHandler;
             this.Content = this.webView;
+        }
+
+        private void NavigatingHandler(object sender, WebNavigatingEventArgs args)
+        {
+            string url = args.Url;
+            var parsedValues = HttpUtility.ParseQueryString(url);
+            args.Cancel = true;
+
+            IReflectionHelper reflectionHelper = DependencyService.Get<IReflectionHelper>();
+            Type thisType = this.GetType();
+            string methodName = parsedValues.First().Value;
+            string lastPageNumber = parsedValues.GetValues("lastPageNumber").First();
+            MethodInfo method = reflectionHelper.GetMethodInfo(thisType, methodName);
+            method.Invoke(this, new object[] { lastPageNumber });
         }
 
         private void ScrollToLastPosition(object sender, EventArgs args)
@@ -121,7 +128,6 @@ namespace App1.Models.ApplicationPages.BookPages
             int number = 1;
             Int32.TryParse(lastPageNumber, out number);
             this.settings.LastPage = number;
-
             int statusCode = this.settingsRepository.Update(this.settings);
         }
     }
