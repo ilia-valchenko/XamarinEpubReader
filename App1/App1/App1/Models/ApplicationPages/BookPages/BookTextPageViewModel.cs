@@ -1,10 +1,12 @@
-﻿using System;
+﻿using App1.DAL.Entities;
+using App1.EpubReader.Entities;
+using App1.Infrastructure.Interfaces;
+using HtmlAgilityPack;
+using System;
 using System.IO;
 using System.Linq;
-using App1.EpubReader.Entities;
-using HtmlAgilityPack;
+using App1.Infrastructure.Utilities;
 using Xamarin.Forms;
-using App1.Infrastructure.Interfaces;
 
 namespace App1.Models.ApplicationPages.BookPages
 {
@@ -22,10 +24,11 @@ namespace App1.Models.ApplicationPages.BookPages
         /// Initialize a new instance of <see cref="BookTextPageViewModel"/> class.
         /// </summary>
         /// <param name="book">EPUB book.</param>
-        public BookTextPageViewModel(EpubBook book)
+        public BookTextPageViewModel(EpubBook book, SettingsEntity settings)
         {
             IFiler filer = DependencyService.Get<IFiler>();
             HtmlDocument template = new HtmlDocument();
+            // Hardcode filename
             Stream stream = filer.GetResourceFileStream("index.html");
             template.Load(stream);
 
@@ -61,6 +64,20 @@ namespace App1.Models.ApplicationPages.BookPages
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
+            // test
+            this.webView.Navigating += (sender, args) =>
+            {
+                var url = args.Url;
+                //var encodedUrl = System.Net.WebUtility.UrlEncode(url);
+                //var decodeUrl = System.Net.WebUtility.UrlDecode(url);
+
+                HttpUtility httpUtility = new HttpUtility();
+
+                var parsedValues = HttpUtility.ParseQueryString(url);
+
+                args.Cancel = true;
+            };
+
             this.Content = this.webView;
         }
 
@@ -72,6 +89,11 @@ namespace App1.Models.ApplicationPages.BookPages
         private void ShowAnimationWhilePageIsScrolling()
         {
 
+        }
+
+        private void PredefineMethod(int number)
+        {
+            DisplayAlert("Title", $"Number is: {number}", "Cancel");
         }
     }
 }

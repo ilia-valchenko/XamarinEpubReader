@@ -1,4 +1,5 @@
-﻿using App1.DAL.Repositories;
+﻿using System;
+using App1.DAL.Repositories;
 using App1.Infrastructure.Interfaces;
 using App1.Models.ApplicationPages;
 
@@ -33,18 +34,29 @@ namespace App1
         {
             this.directory = DependencyService.Get<IDirectory>();
 
-            BookRepository bookRepository = new BookRepository(DATABASE_NAME);
-            MainPageViewModel mainPage = new MainPageViewModel(bookRepository)
+            BookRepository bookRepository = null;
+            SettingsRepository settingsRepository = null;
+
+            try
             {
-                Icon = Device.OnPlatform("Menu", "icon.png", "Assets/Icons/reload.png")
-            };
+                bookRepository = new BookRepository(DATABASE_NAME);
+                settingsRepository = new SettingsRepository(DATABASE_NAME);
+            }
+            catch (SQLite.SQLiteException sqLiteException)
+            {
+                throw sqLiteException;
+            }
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+            
+            MainPageViewModel mainPage = new MainPageViewModel(bookRepository, settingsRepository);
             NavigationPage rootPage = new NavigationPage(mainPage)
             {
-                Icon = Device.OnPlatform("Menu", "icon.png", "Assets/Icons/reload.png")
+                BarTextColor = Color.White,
+                BarBackgroundColor = Color.FromHex("#246A50")
             };
-
-            rootPage.BarTextColor = Color.White;
-            rootPage.BarBackgroundColor = Color.FromHex("#246A50");
 
             #region Test set page icon
 

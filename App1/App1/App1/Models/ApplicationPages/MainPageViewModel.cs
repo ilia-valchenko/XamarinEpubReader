@@ -43,6 +43,11 @@ namespace App1.Models.ApplicationPages
         private readonly IBookRepository bookRepository;
 
         /// <summary>
+        /// The settings repository.
+        /// </summary>
+        private readonly ISettingsRepository settingsRepository;
+
+        /// <summary>
         /// The number of books per row.
         /// </summary>
         private int numberOfBooksPerRow;
@@ -56,13 +61,15 @@ namespace App1.Models.ApplicationPages
         /// Initialize an instance of the <see cref="MainPageViewModel"/>
         /// </summary>
         /// <param name="bookRepository">The book repository.</param>
-        public MainPageViewModel(IBookRepository bookRepository)
+        /// <param name="settingsRepository">The settings repository.</param>
+        public MainPageViewModel(IBookRepository bookRepository, ISettingsRepository settingsRepository)
         {
             this.stackLayout = new StackLayout();
             this.gridLayout = new Grid();
             this.Padding = new Thickness(20, 20, 20, 20);
             this.Title = "Japet Reader";
             this.bookRepository = bookRepository;
+            this.settingsRepository = settingsRepository;
             this.bookEntities = this.bookRepository.GetAll().ToList();
             this.books = bookEntities.ToListOfBookInfoViewModel();
 
@@ -105,36 +112,6 @@ namespace App1.Models.ApplicationPages
              
             #endregion
 
-            #region Test device measurement
-
-            Button showDeviceMeasurementButton = new Button
-            {
-                Text = "Device measurement"
-            };
-
-            showDeviceMeasurementButton.Clicked += (sender, args) =>
-            {
-                TestPageDeviceMeasurementViewModel measurementPage = new TestPageDeviceMeasurementViewModel();
-                this.Navigation.PushAsync(measurementPage);
-            };
-
-            this.stackLayout.Children.Add(showDeviceMeasurementButton);
-
-            #endregion
-
-            Button test = new Button
-            {
-                Text = "Show html from assert"
-            };
-
-            test.Clicked += (sender, args) =>
-            {
-                BookTextPageViewModel page = new BookTextPageViewModel(null);
-                this.Navigation.PushAsync(page);
-            };
-
-            this.stackLayout.Children.Add(test);
-
             this.Content = new ScrollView
             {
                 Content = this.stackLayout,
@@ -163,8 +140,9 @@ namespace App1.Models.ApplicationPages
                 // Add a new book info to the main page.
                 if (pathsOfExistingFiles.Contains(epubBook.FilePath) == false)
                 {
-                    BookEntity entity = new BookEntity
+                    BookEntity bookEntity = new BookEntity
                     {
+                        Id = Guid.NewGuid().ToNonDashedString(),
                         Title = epubBook.Title,
                         Author = epubBook.Author,
                         // It should be changed.
@@ -173,14 +151,22 @@ namespace App1.Models.ApplicationPages
                         FilePath = epubBook.FilePath
                     };
 
-                    int statusCode = this.bookRepository.Add(entity);
+                    SettingsEntity settingsEntity = new SettingsEntity
+                    {
+                        BookId = bookEntity.Id,
+                        LastPage = 1,
+                        FontSize = 14
+                    };
+
+                    int bookInsertStatusCode = this.bookRepository.Add(bookEntity);
+                    int settingsInsertStatusCode = this.settingsRepository.Add(settingsEntity);
 
                     // 0 is SQLITE_OK 
                     // But returns 1 and entity is successfully saved into database.
-                    if (statusCode == 1)
+                    if (bookInsertStatusCode == 1)
                     {
-                        this.bookEntities.Add(entity);
-                        BookInfoViewModel model = entity.ToBookInfoModelMapper();
+                        this.bookEntities.Add(bookEntity);
+                        BookInfoViewModel model = bookEntity.ToBookInfoModelMapper();
                         this.books.Add(model);
                     }
                 }
@@ -249,7 +235,6 @@ namespace App1.Models.ApplicationPages
                 // Set click and long press event handlers
                 foreach (BookInfoViewModel book in books)
                 {
-                    
                     book.Cover.longPressAction = () => this.OnLongPressBookCoverImage(book);
                     book.Cover.click = () => this.OnClickBookCoverImage(book);
                 }
@@ -275,7 +260,10 @@ namespace App1.Models.ApplicationPages
                     break;
 
                 case ("Delete"):
-                    this.bookRepository.DeleteById(bookInfo.Id);
+                    int statusCode = this.bookRepository.DeleteById(bookInfo.Id);
+                    // is statusCode == 1 OK
+                    this.books.Remove(bookInfo);
+                    this.UpdateBookLibrary(this.books);
                     break;
             }
         }
@@ -299,7 +287,8 @@ namespace App1.Models.ApplicationPages
                 else
                 {
                     EpubBook epubBook = await EpubReader.EpubReader.ReadBookAsync(bookInfo.FilePath);
-                    BookTextPageViewModel page = new BookTextPageViewModel(epubBook) { Title = "Go to Main page" };
+                    SettingsEntity settings = this.settingsRepository.GetById(bookInfo.Id);
+                    BookTextPageViewModel page = new BookTextPageViewModel(epubBook, settings) { Title = "Go to Main page" };
 
                     await this.Navigation.PushAsync(page);
                 }

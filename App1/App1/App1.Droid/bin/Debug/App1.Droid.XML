@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>App1.Droid</name>
+    </assembly>
+    <members>
+        <member name="T:App1.Droid.DroidDirectory">
+            <summary>
+            This class represents an implementation of IDirectory interface by using methods from System.IO.Directory class.
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidDirectory.CreateRootFolder(System.String)">
+            <summary>
+            Creates a folder in a root directory.
+            </summary>
+            <param name="folderName">The name of a new folder.</param>
+            <returns>Returns the path to the new folder.</returns>
+        </member>
+        <member name="M:App1.Droid.DroidDirectory.DoesDirectoryExist(System.String)">
+            <summary>
+            Gets a value indicating whether the directory exists.
+            </summary>
+            <param name="path">The full path of a directory.</param>
+            <returns>Returns true if directory exists.</returns>
+        </member>
+        <member name="T:App1.Droid.DroidRenderers.LongPressGestureRecognizerImageRenderer">
+            <summary>
+            An image with long press renderer for Anfroid platform. 
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidRenderers.LongPressGestureRecognizerImageRenderer.#ctor">
+            <summary>
+            Initialize a new instance of <see cref="T:App1.Droid.DroidRenderers.LongPressGestureRecognizerImageRenderer"/> class.
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidRenderers.LongPressGestureRecognizerImageRenderer.OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs{Xamarin.Forms.Image})">
+            <summary>
+            Notified when an element chnage occurs.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:App1.Droid.DroidScreenHelper">
+            <summary>
+            This class detects the screen size of a device, in density-independent pixels.
+            </summary>
+        </member>
+        <member name="P:App1.Droid.DroidScreenHelper.ScreenWidth">
+            <summary>
+            The screen width in density-independent pixels.
+            </summary>
+        </member>
+        <member name="P:App1.Droid.DroidScreenHelper.ScreenHeight">
+            <summary>
+            The screen height in density-independent pixels.
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidScreenHelper.#ctor">
+            <summary>
+            Initialize the new instance of <see cref="T:App1.Droid.DroidScreenHelper"/>
+            </summary>
+        </member>
+        <member name="T:App1.Droid.DroidSQLite">
+            <summary>
+            This is the implementation of the ISQLite interface for Android project.
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidSQLite.GetLocalDatabaseFilePath(System.String)">
+            <summary>
+            Returns path to the platform-specific local database file.
+            </summary>
+            <param name="sqlFilename">The name of a database file.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -38,7 +38,10 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="DAL\Entities\BookEntity.cs" />
+    <Compile Include="DAL\Entities\SettingsEntity.cs" />
     <Compile Include="DAL\Interfaces\IBookRepository.cs" />
+    <Compile Include="DAL\Interfaces\ISettingsRepository.cs" />
+    <Compile Include="DAL\Repositories\SettingsRepository.cs" />
     <Compile Include="Infrastructure\Interfaces\IHtmlHelper.cs" />
     <Compile Include="Infrastructure\Buttons\OpenBookChapterButton.cs" />
     <Compile Include="Infrastructure\Controls\ImageWithLongPressGesture.cs" />
@@ -48,6 +51,7 @@
     <Compile Include="Infrastructure\Interfaces\ISQLite.cs" />
     <Compile Include="Infrastructure\Interfaces\IScreenHelper.cs" />
     <Compile Include="Infrastructure\Mappers\BookEntityToBookInfoModelMapper.cs" />
+    <Compile Include="Infrastructure\Utilities\HttpUtility.cs" />
     <Compile Include="Models\BookInfoViewModel.cs" />
     <Compile Include="Models\ApplicationPages\BookPages\BookContentPageViewModel.cs" />
     <Compile Include="Models\ApplicationPages\BookPages\BookPage.cs" />

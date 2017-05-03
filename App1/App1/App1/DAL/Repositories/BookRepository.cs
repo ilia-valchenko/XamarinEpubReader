@@ -98,21 +98,12 @@ namespace App1.DAL.Repositories
 
             if(string.IsNullOrEmpty(book.Id))
             {
-                Guid newGuid = Guid.NewGuid();
-                string id = newGuid.ToNonDashedString();
-                book.Id = id;
-
-                lock (locker)
-                {
-                    result = database.Insert(book);
-                }
+                throw new ArgumentException("Book identifier can't be null or empty.");
             }
-            else
+
+            lock (locker)
             {
-                lock(locker)
-                {
-                    result = database.Update(book);
-                }
+                result = database.Insert(book);
             }
 
             return result;
