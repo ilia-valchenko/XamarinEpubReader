@@ -139,6 +139,7 @@
     <Compile Include="DroidHtmlHelper.cs" />
     <Compile Include="DroidDirectory.cs" />
     <Compile Include="DroidFiler.cs" />
+    <Compile Include="DroidReflectionHelper.cs" />
     <Compile Include="DroidRenderers\LongPressGestureRecognizerImageRenderer.cs" />
     <Compile Include="DroidScreenHelper.cs" />
     <Compile Include="DroidSQLite.cs" />

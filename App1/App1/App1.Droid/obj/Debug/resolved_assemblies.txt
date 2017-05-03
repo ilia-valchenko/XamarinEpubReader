@@ -46,10 +46,10 @@ D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Text.
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Net.Primitives.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Text.RegularExpressions.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.Extensions.dll
+D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Reflection.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Globalization.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Linq.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Threading.dll
-D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Reflection.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Linq.Expressions.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.Reflection.Extensions.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\assets\System.ObjectModel.dll

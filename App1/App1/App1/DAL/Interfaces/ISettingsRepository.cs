@@ -34,5 +34,12 @@ namespace App1.DAL.Interfaces
         /// <param name="settings">The settings entity.</param>
         /// <returns>Returns status code of the executed operation.</returns>
         int Add(SettingsEntity settings);
+
+        /// <summary>
+        /// Updates a settings entity.
+        /// </summary>
+        /// <param name="settings">The settings entity.</param>
+        /// <returns>Returns a status code of the operation.</returns>
+        int Update(SettingsEntity settings);
     }
 }

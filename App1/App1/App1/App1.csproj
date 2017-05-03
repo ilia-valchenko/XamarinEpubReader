@@ -48,6 +48,7 @@
     <Compile Include="Infrastructure\FileExtension.cs" />
     <Compile Include="Infrastructure\Interfaces\IDirectory.cs" />
     <Compile Include="Infrastructure\GuidHelper.cs" />
+    <Compile Include="Infrastructure\Interfaces\IReflectionHelper.cs" />
     <Compile Include="Infrastructure\Interfaces\ISQLite.cs" />
     <Compile Include="Infrastructure\Interfaces\IScreenHelper.cs" />
     <Compile Include="Infrastructure\Mappers\BookEntityToBookInfoModelMapper.cs" />

@@ -109,5 +109,29 @@ namespace App1.DAL.Repositories
 
             return statusCode;
         }
+
+        /// <summary>
+        /// Updates a settings entity.
+        /// </summary>
+        /// <param name="settings">The settings entity.</param>
+        /// <returns>Returns a status code of the operation.</returns>
+        public int Update(SettingsEntity settings)
+        {
+            int statusCode;
+
+            if (string.IsNullOrEmpty(settings.BookId))
+            {
+                throw new ArgumentException("Book identifier of the settings entity is null or empty.");
+            }
+            else
+            {
+                lock (locker)
+                {
+                    statusCode = database.Update(settings);
+                }
+            }
+
+            return statusCode;
+        }
     }
 }

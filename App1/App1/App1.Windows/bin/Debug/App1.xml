@@ -148,6 +148,13 @@
             <param name="settings">The settings entity.</param>
             <returns>Returns status code of the executed operation.</returns>
         </member>
+        <member name="M:App1.DAL.Interfaces.ISettingsRepository.Update(App1.DAL.Entities.SettingsEntity)">
+            <summary>
+            Updates a settings entity.
+            </summary>
+            <param name="settings">The settings entity.</param>
+            <returns>Returns a status code of the operation.</returns>
+        </member>
         <member name="T:App1.DAL.Repositories.SettingsRepository">
             <summary>
             The settings repository.
@@ -195,6 +202,13 @@
             </summary>
             <param name="settings">The settings entity.</param>
             <returns>Returns status code of the operation.</returns>
+        </member>
+        <member name="M:App1.DAL.Repositories.SettingsRepository.Update(App1.DAL.Entities.SettingsEntity)">
+            <summary>
+            Updates a settings entity.
+            </summary>
+            <param name="settings">The settings entity.</param>
+            <returns>Returns a status code of the operation.</returns>
         </member>
         <member name="T:App1.DAL.Repositories.BookRepository">
             <summary>
@@ -260,6 +274,19 @@
             This method determines does the directory exist.
             </summary>
             <returns>Returns true is directory exists.</returns>
+        </member>
+        <member name="T:App1.Infrastructure.Interfaces.IReflectionHelper">
+            <summary>
+            This interface provides some reflection methods which are not supported into PCL.
+            </summary>
+        </member>
+        <member name="M:App1.Infrastructure.Interfaces.IReflectionHelper.GetMethodInfo(System.Type,System.String)">
+            <summary>
+            Get <see cref="T:System.Reflection.MethodInfo"/> for the given type.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="methodName">The name of the method.</param>
+            <returns>Returns method info.</returns>
         </member>
         <member name="T:App1.Infrastructure.Interfaces.ISQLite">
             <summary>
@@ -461,11 +488,30 @@
             The web view. 
             </summary>
         </member>
-        <member name="M:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.#ctor(App1.EpubReader.Entities.EpubBook,App1.DAL.Entities.SettingsEntity)">
+        <member name="F:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.settings">
+            <summary>
+            The settings entity.
+            </summary>
+        </member>
+        <member name="F:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.settingsRepository">
+            <summary>
+            The settings repository.
+            </summary>
+        </member>
+        <member name="M:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.#ctor(App1.EpubReader.Entities.EpubBook,App1.DAL.Entities.SettingsEntity,App1.DAL.Interfaces.ISettingsRepository)">
             <summary>
             Initialize a new instance of <see cref="T:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel"/> class.
             </summary>
             <param name="book">EPUB book.</param>
+            <param name="settings">The settings entity.</param>
+            <param name="settingsRepository">The settings repository.</param>
+        </member>
+        <member name="M:App1.Models.ApplicationPages.BookPages.BookTextPageViewModel.SaveLastPageNumber(System.String)">
+            <summary>
+            This method will save the last page number in database. 
+            It will call every time when user will switch to a new page.
+            </summary>
+            <param name="lastPageNumber">The last page number.</param>
         </member>
         <member name="T:App1.Models.ApplicationPages.MainPageViewModel">
             <summary>

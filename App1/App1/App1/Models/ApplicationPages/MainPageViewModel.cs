@@ -288,7 +288,7 @@ namespace App1.Models.ApplicationPages
                 {
                     EpubBook epubBook = await EpubReader.EpubReader.ReadBookAsync(bookInfo.FilePath);
                     SettingsEntity settings = this.settingsRepository.GetById(bookInfo.Id);
-                    BookTextPageViewModel page = new BookTextPageViewModel(epubBook, settings) { Title = "Go to Main page" };
+                    BookTextPageViewModel page = new BookTextPageViewModel(epubBook, settings, this.settingsRepository) { Title = "Go to Main page" };
 
                     await this.Navigation.PushAsync(page);
                 }

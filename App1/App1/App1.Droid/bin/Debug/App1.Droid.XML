@@ -23,6 +23,19 @@
             <param name="path">The full path of a directory.</param>
             <returns>Returns true if directory exists.</returns>
         </member>
+        <member name="T:App1.Droid.DroidReflectionHelper">
+            <summary>
+            Implementation of the <see cref="T:App1.Infrastructure.Interfaces.IReflectionHelper"/> for Android platform.
+            </summary>
+        </member>
+        <member name="M:App1.Droid.DroidReflectionHelper.GetMethodInfo(System.Type,System.String)">
+            <summary>
+            Get <see cref="T:System.Reflection.MethodInfo"/> for the given type.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="methodName">The name of the method.</param>
+            <returns>Returns method info.</returns>
+        </member>
         <member name="T:App1.Droid.DroidRenderers.LongPressGestureRecognizerImageRenderer">
             <summary>
             An image with long press renderer for Anfroid platform. 

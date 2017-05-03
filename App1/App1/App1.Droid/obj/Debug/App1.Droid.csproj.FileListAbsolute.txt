@@ -75,7 +75,6 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Dro
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
-D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.csprojResolveAssemblyReference.cache
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.config
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.XML
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll
@@ -119,6 +118,7 @@ D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\Xamarin.Forms.Xaml.pdb
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\Xamarin.Forms.Xaml.dll.mdb
 D:\git\xamarin-reader\App1\App1\App1.Droid\bin\Debug\HtmlAgilityPack.pdb
+D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.csprojResolveAssemblyReference.cache
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\App1.Droid.pdb
 D:\git\xamarin-reader\App1\App1\App1.Droid\obj\Debug\android\bin\App1.Droid.apk

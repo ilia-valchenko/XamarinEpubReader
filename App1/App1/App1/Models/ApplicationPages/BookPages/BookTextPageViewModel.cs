@@ -1,11 +1,13 @@
 ﻿using App1.DAL.Entities;
 using App1.EpubReader.Entities;
 using App1.Infrastructure.Interfaces;
+using App1.Infrastructure.Utilities;
 using HtmlAgilityPack;
 using System;
 using System.IO;
 using System.Linq;
-using App1.Infrastructure.Utilities;
+using System.Reflection;
+using App1.DAL.Interfaces;
 using Xamarin.Forms;
 
 namespace App1.Models.ApplicationPages.BookPages
@@ -21,12 +23,28 @@ namespace App1.Models.ApplicationPages.BookPages
         private readonly WebView webView;
 
         /// <summary>
+        /// The settings entity.
+        /// </summary>
+        private readonly SettingsEntity settings;
+
+        /// <summary>
+        /// The settings repository.
+        /// </summary>
+        private readonly ISettingsRepository settingsRepository;
+
+        /// <summary>
         /// Initialize a new instance of <see cref="BookTextPageViewModel"/> class.
         /// </summary>
         /// <param name="book">EPUB book.</param>
-        public BookTextPageViewModel(EpubBook book, SettingsEntity settings)
+        /// <param name="settings">The settings entity.</param>
+        /// <param name="settingsRepository">The settings repository.</param>
+        public BookTextPageViewModel(EpubBook book, SettingsEntity settings, ISettingsRepository settingsRepository)
         {
+            this.settings = settings;
+            this.settingsRepository = settingsRepository;
             IFiler filer = DependencyService.Get<IFiler>();
+
+            #region Custom HTML template
             HtmlDocument template = new HtmlDocument();
             // Hardcode filename
             Stream stream = filer.GetResourceFileStream("index.html");
@@ -50,7 +68,8 @@ namespace App1.Models.ApplicationPages.BookPages
                 {
                     textContainer.ChildNodes.Add(child);
                 }
-            }
+            } 
+            #endregion
 
             string text = template.DocumentNode.OuterHtml.Replace(@"\", string.Empty);
 
@@ -68,14 +87,15 @@ namespace App1.Models.ApplicationPages.BookPages
             this.webView.Navigating += (sender, args) =>
             {
                 var url = args.Url;
-                //var encodedUrl = System.Net.WebUtility.UrlEncode(url);
-                //var decodeUrl = System.Net.WebUtility.UrlDecode(url);
-
-                HttpUtility httpUtility = new HttpUtility();
-
                 var parsedValues = HttpUtility.ParseQueryString(url);
-
                 args.Cancel = true;
+
+                IReflectionHelper reflectionHelper = DependencyService.Get<IReflectionHelper>();
+                Type thisType = this.GetType();
+                string methodName = parsedValues.First().Value;
+                string lastPageNumber = parsedValues.GetValues("lastPageNumber").First();
+                MethodInfo method = reflectionHelper.GetMethodInfo(thisType, methodName);
+                method.Invoke(this, new object[] { lastPageNumber });
             };
 
             this.Content = this.webView;
@@ -91,9 +111,18 @@ namespace App1.Models.ApplicationPages.BookPages
 
         }
 
-        private void PredefineMethod(int number)
+        /// <summary>
+        /// This method will save the last page number in database. 
+        /// It will call every time when user will switch to a new page.
+        /// </summary>
+        /// <param name="lastPageNumber">The last page number.</param>
+        private void SaveLastPageNumber(string lastPageNumber)
         {
-            DisplayAlert("Title", $"Number is: {number}", "Cancel");
+            int number = 1;
+            Int32.TryParse(lastPageNumber, out number);
+            this.settings.LastPage = number;
+
+            int statusCode = this.settingsRepository.Update(this.settings);
         }
     }
 }

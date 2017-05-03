@@ -56,6 +56,7 @@
             //if ((document.body.scrollLeft + pivot + clientX) < (document.body.width - viewPortWidth)) {
             document.body.scrollLeft += shift;
             updateCurrentPage(++currentPage);
+            callSaveToDatabaseMethod(currentPage);
             return;
             //}
         }
@@ -63,6 +64,7 @@
             if ((document.body.scrollLeft + pivot) > viewPortWidth) {
                 document.body.scrollLeft -= shift;
                 updateCurrentPage(--currentPage);
+                callSaveToDatabaseMethod(currentPage);
                 return;
             }
         }
@@ -74,11 +76,9 @@
         currentPageContainer.innerHTML = currentPageNumber;
     }
 
-    //window.location.href = 'http://index.html?cmdName=PredefineMethod&number=2778';
-
-    window.location.href = 'http://index.html?field1=value1&field2=value2&field3=value3';
-
-    
+    function callSaveToDatabaseMethod(lastPageNumber) {
+        window.location.href = 'http://index.html?cmdName=SaveLastPageNumber&lastPageNumber=' + lastPageNumber;
+    }
 
     //var Page = document.getElementById('page');
 
