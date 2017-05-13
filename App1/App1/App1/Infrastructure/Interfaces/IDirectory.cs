@@ -15,7 +15,5 @@
         /// </summary>
         /// <returns>Returns true is directory exists.</returns>
         bool DoesDirectoryExist(string path);
-
-        string GetCurrentDirectory();
     }
 }

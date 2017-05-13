@@ -33,10 +33,5 @@ namespace App1.Droid
             bool doesDirectoryExist = Directory.Exists(path);
             return doesDirectoryExist;
         }
-
-        public string GetCurrentDirectory()
-        {
-            return System.Environment.CurrentDirectory;
-        }
     }
 }

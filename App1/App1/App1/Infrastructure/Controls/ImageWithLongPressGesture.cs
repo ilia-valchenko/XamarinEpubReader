@@ -8,7 +8,6 @@ namespace App1.Infrastructure.Controls
     /// </summary>
     public class ImageWithLongPressGesture : Image
     {
-        public EventHandler longPressActivated;
         public Action longPressAction;
         public Action click;
 
@@ -19,7 +18,7 @@ namespace App1.Infrastructure.Controls
         /// <param name="e"></param>
         public void HandleLongPress(object sender, EventArgs e)
         {
-            longPressAction();
+            this.longPressAction();
         }
 
         /// <summary>

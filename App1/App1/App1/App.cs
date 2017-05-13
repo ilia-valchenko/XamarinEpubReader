@@ -2,7 +2,6 @@
 using App1.DAL.Repositories;
 using App1.Infrastructure.Interfaces;
 using App1.Models.ApplicationPages;
-
 using Xamarin.Forms;
 
 namespace App1
@@ -33,7 +32,7 @@ namespace App1
         public App()
         {
             this.directory = DependencyService.Get<IDirectory>();
-
+            string rootFolder = this.directory.CreateRootFolder(bookDirectoryName);
             BookRepository bookRepository = null;
             SettingsRepository settingsRepository = null;
 
@@ -58,22 +57,6 @@ namespace App1
                 BarBackgroundColor = Color.FromHex("#246A50")
             };
 
-            #region Test set page icon
-
-            //NavigationPage.SetTitleIcon(mainPage, "icon.png");
-
-            // ------------ try to set icon for main page -----------------
-            //rootPage.Icon = new FileImageSource
-            //{
-            //    File = "icon.png"
-            //};
-
-            //rootPage.Icon = string.Format("{0}{1}.png", Device.OnPlatform("Icons/", "", "Assets/Resources/draeable/"), "icon.png");
-
-            //NavigationPage.SetTitleIcon(mainPage, "icon.png");
-            // --------------- end of ------------------------------ 
-            #endregion
-
             this.MainPage = rootPage;
         }
 
@@ -82,7 +65,7 @@ namespace App1
         /// </summary>
         protected override void OnStart()
         {
-            this.directory.CreateRootFolder(bookDirectoryName);
+            // Handle when your app starts
         }
 
         protected override void OnSleep()
