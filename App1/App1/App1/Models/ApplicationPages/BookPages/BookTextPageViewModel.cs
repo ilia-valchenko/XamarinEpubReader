@@ -7,7 +7,6 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Android.Content;
 using App1.DAL.Interfaces;
 using Xamarin.Forms;
 

@@ -24,15 +24,15 @@ namespace App1.UWP.UWPRenderers
             {
                 ImageWithLongPressGesture view = e.NewElement as ImageWithLongPressGesture;
 
-                this.PointerPressed += (sender, args) =>
+                this.Tapped += (sender, args) =>
                 {
-                    // EventArgs is a stub
+                    // new EventArgs is a stub
                     view.HandleClick(sender, new EventArgs());
                 };
 
                 this.RightTapped += (sender, args) =>
                 {
-                    // EventArgs is a stub
+                    // new EventArgs is a stub
                     view.HandleLongPress(sender, new EventArgs());
                 };
             }

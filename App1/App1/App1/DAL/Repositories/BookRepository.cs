@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using SQLite;
 using Xamarin.Forms;
-using App1.Infrastructure;
 using App1.DAL.Entities;
 using App1.DAL.Interfaces;
 using App1.Infrastructure.Interfaces;
@@ -112,7 +111,6 @@ namespace App1.DAL.Repositories
         // Test method
         public int DeleteAll()
         {
-            //this.database.Query<BookEntity>("DELETE FROM BOOKS", null);
             int statusCode = this.database.Execute("DELETE FROM BOOKS");
             return statusCode;
         }

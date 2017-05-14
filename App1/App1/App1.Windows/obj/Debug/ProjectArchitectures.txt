@@ -1,0 +1,2 @@
+D:\git\xamarin-reader\App1\App1\App1.Windows\App1.Windows.csproj;neutral
+D:\git\xamarin-reader\App1\App1\App1\App1.csproj;neutral
