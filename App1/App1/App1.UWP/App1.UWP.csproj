@@ -101,8 +101,15 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UWPDirectory.cs" />
+    <Compile Include="UWPFiler.cs" />
+    <Compile Include="UWPHtmlHelper.cs" />
+    <Compile Include="UWPReflectionHelper.cs" />
     <Compile Include="UWPRenderers\LongPressGestureRecognizerImageRenderer.cs" />
     <Compile Include="UWPSQLite.cs" />
+    <Compile Include="UWPXPather.cs" />
+    <Compile Include="UWPZipArchive.cs" />
+    <Compile Include="UWPZipArchiveEntry.cs" />
+    <Compile Include="UWPZipFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

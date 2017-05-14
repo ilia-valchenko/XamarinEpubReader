@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Windows.Storage;
 using App1.Infrastructure.Interfaces;
 using App1.UWP;
 
@@ -17,10 +18,10 @@ namespace App1.UWP
         /// <returns>Returns the path to the new folder.</returns>
         public string CreateRootFolder(string folderName)
         {
-            var localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            string currentInstalledLocation = Windows.ApplicationModel.Package.Current.InstalledLocation.Path;
-            string path = Path.Combine(currentInstalledLocation, folderName);
+            StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            string path = Path.Combine(localFolder.Path, folderName);
             DirectoryInfo info = Directory.CreateDirectory(path);
+            
             return path;
         }
 

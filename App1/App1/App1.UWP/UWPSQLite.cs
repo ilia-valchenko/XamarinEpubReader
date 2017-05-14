@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Windows.Storage;
 using App1.Infrastructure.Interfaces;
 using App1.UWP;
 
@@ -17,8 +18,8 @@ namespace App1.UWP
         /// <returns></returns>
         public string GetLocalDatabaseFilePath(string sqlFilename)
         {
-            string path = Windows.ApplicationModel.Package.Current.InstalledLocation.Path;
-            path = Path.Combine(path, sqlFilename);
+            StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            string path = Path.Combine(localFolder.Path, sqlFilename);
             return path;
         }
     }

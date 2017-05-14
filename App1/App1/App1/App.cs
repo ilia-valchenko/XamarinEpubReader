@@ -32,6 +32,7 @@ namespace App1
         public App()
         {
             this.directory = DependencyService.Get<IDirectory>();
+            // TODO: Move it to OnStart method.
             string rootFolder = this.directory.CreateRootFolder(bookDirectoryName);
             BookRepository bookRepository = null;
             SettingsRepository settingsRepository = null;

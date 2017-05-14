@@ -28,13 +28,17 @@
     <AppXManifest Include="D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-13T08:48:35.153</Modified>
+      <Modified>2017-05-14T10:12:06.463</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App1.UWP.exe">
       <PackagePath>entrypoint\App1.UWP.exe</PackagePath>
-      <Modified>2017-05-13T08:48:32.918</Modified>
+      <Modified>2017-05-14T10:12:05.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\HtmlAgilityPack\1.4.9.5\lib\NetCore45\HtmlAgilityPack.dll">
+      <PackagePath>HtmlAgilityPack.dll</PackagePath>
+      <Modified>2016-07-14T08:01:16.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -92,113 +96,113 @@
       <PackagePath>Microsoft.VisualBasic.dll</PackagePath>
       <Modified>2016-06-11T20:13:10.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Collections\4.0.11\lib\netcore50\System.Collections.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Collections\4.3.0\lib\netcore50\System.Collections.dll">
       <PackagePath>System.Collections.dll</PackagePath>
-      <Modified>2016-06-11T20:13:24.000</Modified>
+      <Modified>2016-11-05T01:55:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Diagnostics.Tools\4.0.1\lib\netcore50\System.Diagnostics.Tools.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Diagnostics.Tools\4.3.0\lib\netcore50\System.Diagnostics.Tools.dll">
       <PackagePath>System.Diagnostics.Tools.dll</PackagePath>
-      <Modified>2016-06-11T20:13:32.000</Modified>
+      <Modified>2016-11-05T01:55:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Diagnostics.Tracing\4.1.0\lib\netcore50\System.Diagnostics.Tracing.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Diagnostics.Tracing\4.3.0\lib\netcore50\System.Diagnostics.Tracing.dll">
       <PackagePath>System.Diagnostics.Tracing.dll</PackagePath>
-      <Modified>2016-06-11T20:13:38.000</Modified>
+      <Modified>2016-11-05T01:55:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Globalization\4.0.11\lib\netcore50\System.Globalization.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Globalization\4.3.0\lib\netcore50\System.Globalization.dll">
       <PackagePath>System.Globalization.dll</PackagePath>
-      <Modified>2016-06-11T20:13:38.000</Modified>
+      <Modified>2016-11-05T01:56:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Globalization.Calendars\4.0.1\lib\netcore50\System.Globalization.Calendars.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Globalization.Calendars\4.3.0\lib\netcore50\System.Globalization.Calendars.dll">
       <PackagePath>System.Globalization.Calendars.dll</PackagePath>
-      <Modified>2016-06-11T20:13:38.000</Modified>
+      <Modified>2016-11-05T01:55:58.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.IO\4.1.0\lib\netcore50\System.IO.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.IO\4.3.0\lib\netcore50\System.IO.dll">
       <PackagePath>System.IO.dll</PackagePath>
-      <Modified>2016-06-11T20:13:50.000</Modified>
+      <Modified>2016-11-05T01:56:14.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Reflection\4.1.0\lib\netcore50\System.Reflection.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Reflection\4.3.0\lib\netcore50\System.Reflection.dll">
       <PackagePath>System.Reflection.dll</PackagePath>
-      <Modified>2016-06-11T20:14:16.000</Modified>
+      <Modified>2016-11-05T01:56:48.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Reflection.Extensions\4.0.1\lib\netcore50\System.Reflection.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Reflection.Extensions\4.3.0\lib\netcore50\System.Reflection.Extensions.dll">
       <PackagePath>System.Reflection.Extensions.dll</PackagePath>
-      <Modified>2016-06-11T20:14:14.000</Modified>
+      <Modified>2016-11-05T01:56:40.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Reflection.Primitives\4.0.1\lib\netcore50\System.Reflection.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Reflection.Primitives\4.3.0\lib\netcore50\System.Reflection.Primitives.dll">
       <PackagePath>System.Reflection.Primitives.dll</PackagePath>
-      <Modified>2016-06-11T20:14:18.000</Modified>
+      <Modified>2016-11-05T01:56:44.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Resources.ResourceManager\4.0.1\lib\netcore50\System.Resources.ResourceManager.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Resources.ResourceManager\4.3.0\lib\netcore50\System.Resources.ResourceManager.dll">
       <PackagePath>System.Resources.ResourceManager.dll</PackagePath>
-      <Modified>2016-06-11T20:14:20.000</Modified>
+      <Modified>2016-11-05T01:56:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Runtime\4.1.0\lib\netcore50\System.Runtime.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Runtime\4.3.0\lib\netcore50\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
-      <Modified>2016-06-11T20:14:32.000</Modified>
+      <Modified>2016-11-05T01:57:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Runtime.Handles\4.0.1\lib\netstandard1.3\System.Runtime.Handles.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Runtime.Handles\4.3.0\lib\netstandard1.3\System.Runtime.Handles.dll">
       <PackagePath>System.Runtime.Handles.dll</PackagePath>
-      <Modified>2016-06-11T20:14:24.000</Modified>
+      <Modified>2016-11-05T01:56:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Runtime.InteropServices\4.1.0\lib\netcore50\System.Runtime.InteropServices.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Runtime.InteropServices\4.3.0\lib\netcore50\System.Runtime.InteropServices.dll">
       <PackagePath>System.Runtime.InteropServices.dll</PackagePath>
-      <Modified>2016-06-11T20:14:22.000</Modified>
+      <Modified>2016-11-05T01:56:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Text.Encoding\4.0.11\lib\netcore50\System.Text.Encoding.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Text.Encoding\4.3.0\lib\netcore50\System.Text.Encoding.dll">
       <PackagePath>System.Text.Encoding.dll</PackagePath>
-      <Modified>2016-06-11T20:14:48.000</Modified>
+      <Modified>2016-11-05T01:57:22.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Text.Encoding.Extensions\4.0.11\lib\netcore50\System.Text.Encoding.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Text.Encoding.Extensions\4.3.0\lib\netcore50\System.Text.Encoding.Extensions.dll">
       <PackagePath>System.Text.Encoding.Extensions.dll</PackagePath>
-      <Modified>2016-06-11T20:14:50.000</Modified>
+      <Modified>2016-11-05T01:57:16.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Threading.Tasks\4.0.11\lib\netcore50\System.Threading.Tasks.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Threading.Tasks\4.3.0\lib\netcore50\System.Threading.Tasks.dll">
       <PackagePath>System.Threading.Tasks.dll</PackagePath>
-      <Modified>2016-06-11T20:14:54.000</Modified>
+      <Modified>2016-11-05T01:57:24.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Threading.Timer\4.0.1\lib\netcore50\System.Threading.Timer.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.any.System.Threading.Timer\4.3.0\lib\netcore50\System.Threading.Timer.dll">
       <PackagePath>System.Threading.Timer.dll</PackagePath>
-      <Modified>2016-06-11T20:14:58.000</Modified>
+      <Modified>2016-11-05T01:57:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.Microsoft.Win32.Primitives\4.0.1\runtimes\win\lib\netstandard1.3\Microsoft.Win32.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.Microsoft.Win32.Primitives\4.3.0\runtimes\win\lib\netstandard1.3\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
-      <Modified>2016-06-11T20:13:14.000</Modified>
+      <Modified>2016-11-05T01:55:32.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Console\4.0.0\runtimes\win\lib\netcore50\System.Console.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Console\4.3.0\runtimes\win\lib\netcore50\System.Console.dll">
       <PackagePath>System.Console.dll</PackagePath>
-      <Modified>2016-06-11T20:13:24.000</Modified>
+      <Modified>2016-11-05T01:55:46.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Diagnostics.Debug\4.0.11\runtimes\win\lib\netcore50\System.Diagnostics.Debug.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Diagnostics.Debug\4.3.0\runtimes\win\lib\netcore50\System.Diagnostics.Debug.dll">
       <PackagePath>System.Diagnostics.Debug.dll</PackagePath>
-      <Modified>2016-06-11T20:13:26.000</Modified>
+      <Modified>2016-11-05T01:55:48.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.IO.FileSystem\4.0.1\runtimes\win\lib\netcore50\System.IO.FileSystem.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.IO.FileSystem\4.3.0\runtimes\win\lib\netcore50\System.IO.FileSystem.dll">
       <PackagePath>System.IO.FileSystem.dll</PackagePath>
-      <Modified>2016-06-11T20:13:44.000</Modified>
+      <Modified>2016-11-05T01:56:06.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Net.Primitives\4.0.11\runtimes\win\lib\netcore50\System.Net.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Net.Primitives\4.3.0\runtimes\win\lib\netcore50\System.Net.Primitives.dll">
       <PackagePath>System.Net.Primitives.dll</PackagePath>
-      <Modified>2016-06-11T20:14:00.000</Modified>
+      <Modified>2016-11-05T01:56:24.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Net.Sockets\4.1.0\runtimes\win\lib\netcore50\System.Net.Sockets.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Net.Sockets\4.3.0\runtimes\win\lib\netcore50\System.Net.Sockets.dll">
       <PackagePath>System.Net.Sockets.dll</PackagePath>
-      <Modified>2016-06-11T20:14:04.000</Modified>
+      <Modified>2016-11-05T01:56:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Runtime.Extensions\4.1.0\runtimes\win\lib\netcore50\System.Runtime.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win.System.Runtime.Extensions\4.3.0\runtimes\win\lib\netcore50\System.Runtime.Extensions.dll">
       <PackagePath>System.Runtime.Extensions.dll</PackagePath>
-      <Modified>2016-06-11T20:14:20.000</Modified>
+      <Modified>2016-11-05T01:56:48.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win7-x86.Microsoft.NETCore.Jit\1.0.3\runtimes\win7-x86\native\clrjit.dll">
       <PackagePath>clrjit.dll</PackagePath>
       <Modified>2016-06-13T15:27:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win7-x86.runtime.native.System.IO.Compression\4.0.1\runtimes\win7-x86\native\clrcompression.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win7-x86.runtime.native.System.IO.Compression\4.3.0\runtimes\win7-x86\native\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
-      <Modified>2016-06-13T18:51:30.000</Modified>
+      <Modified>2016-11-05T01:34:10.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win7.System.Private.Uri\4.0.2\runtimes\win\lib\netcore50\System.Private.Uri.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\runtime.win7.System.Private.Uri\4.3.0\runtimes\win\lib\netcore50\System.Private.Uri.dll">
       <PackagePath>System.Private.Uri.dll</PackagePath>
-      <Modified>2016-07-01T12:48:12.000</Modified>
+      <Modified>2016-11-05T01:56:36.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\sqlite-net-pcl\1.3.1\lib\netstandard1.1\SQLite-net.dll">
       <PackagePath>SQLite-net.dll</PackagePath>
@@ -228,9 +232,9 @@
       <PackagePath>System.AppContext.dll</PackagePath>
       <Modified>2016-06-11T20:13:20.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Buffers\4.0.0\lib\netstandard1.1\System.Buffers.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Buffers\4.3.0\lib\netstandard1.1\System.Buffers.dll">
       <PackagePath>System.Buffers.dll</PackagePath>
-      <Modified>2016-06-11T20:13:14.000</Modified>
+      <Modified>2016-11-05T01:55:30.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Collections.Concurrent\4.0.12\lib\netcore50\System.Collections.Concurrent.dll">
       <PackagePath>System.Collections.Concurrent.dll</PackagePath>
@@ -292,9 +296,9 @@
       <PackagePath>System.IO.Compression.ZipFile.dll</PackagePath>
       <Modified>2016-06-11T20:13:42.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.IO.FileSystem.Primitives\4.0.1\lib\netstandard1.3\System.IO.FileSystem.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.IO.FileSystem.Primitives\4.3.0\lib\netstandard1.3\System.IO.FileSystem.Primitives.dll">
       <PackagePath>System.IO.FileSystem.Primitives.dll</PackagePath>
-      <Modified>2016-06-11T20:13:46.000</Modified>
+      <Modified>2016-11-05T01:56:08.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.IO.IsolatedStorage\4.0.1\lib\netcore50\System.IO.IsolatedStorage.dll">
       <PackagePath>System.IO.IsolatedStorage.dll</PackagePath>
@@ -304,9 +308,9 @@
       <PackagePath>System.IO.UnmanagedMemoryStream.dll</PackagePath>
       <Modified>2016-06-11T20:13:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Linq\4.1.0\lib\netcore50\System.Linq.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Linq\4.3.0\lib\netcore50\System.Linq.dll">
       <PackagePath>System.Linq.dll</PackagePath>
-      <Modified>2016-06-11T20:14:02.000</Modified>
+      <Modified>2016-11-05T01:56:20.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Linq.Expressions\4.1.0\lib\netcore50\System.Linq.Expressions.dll">
       <PackagePath>System.Linq.Expressions.dll</PackagePath>
@@ -328,9 +332,9 @@
       <PackagePath>System.Net.Http.Rtc.dll</PackagePath>
       <Modified>2016-06-11T20:13:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Net.NameResolution\4.0.0\runtimes\win\lib\netcore50\System.Net.NameResolution.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Net.NameResolution\4.3.0\runtimes\win\lib\netcore50\System.Net.NameResolution.dll">
       <PackagePath>System.Net.NameResolution.dll</PackagePath>
-      <Modified>2016-06-11T20:13:58.000</Modified>
+      <Modified>2016-11-05T01:56:26.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Net.NetworkInformation\4.1.0\runtimes\win\lib\netcore50\System.Net.NetworkInformation.dll">
       <PackagePath>System.Net.NetworkInformation.dll</PackagePath>
@@ -360,9 +364,9 @@
       <PackagePath>System.Numerics.Vectors.WindowsRuntime.dll</PackagePath>
       <Modified>2016-06-11T20:14:06.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.ObjectModel\4.0.12\lib\netcore50\System.ObjectModel.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.ObjectModel\4.3.0\lib\netcore50\System.ObjectModel.dll">
       <PackagePath>System.ObjectModel.dll</PackagePath>
-      <Modified>2016-06-11T20:14:10.000</Modified>
+      <Modified>2016-11-05T01:56:40.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Private.DataContractSerialization\4.1.2\lib\netstandard1.3\System.Private.DataContractSerialization.dll">
       <PackagePath>System.Private.DataContractSerialization.dll</PackagePath>
@@ -424,9 +428,9 @@
       <PackagePath>System.Runtime.Serialization.Xml.dll</PackagePath>
       <Modified>2017-02-09T10:26:02.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Runtime.WindowsRuntime\4.0.11\runtimes\win8\lib\netstandard1.3\System.Runtime.WindowsRuntime.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Runtime.WindowsRuntime\4.3.0\runtimes\win8\lib\netstandard1.3\System.Runtime.WindowsRuntime.dll">
       <PackagePath>System.Runtime.WindowsRuntime.dll</PackagePath>
-      <Modified>2016-06-11T20:14:36.000</Modified>
+      <Modified>2016-11-05T01:57:02.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Runtime.WindowsRuntime.UI.Xaml\4.0.1\runtimes\win8\lib\netstandard1.3\System.Runtime.WindowsRuntime.UI.Xaml.dll">
       <PackagePath>System.Runtime.WindowsRuntime.UI.Xaml.dll</PackagePath>
@@ -484,37 +488,37 @@
       <PackagePath>System.Text.Encoding.CodePages.dll</PackagePath>
       <Modified>2016-06-11T20:14:46.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Text.RegularExpressions\4.1.0\lib\netcore50\System.Text.RegularExpressions.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Text.RegularExpressions\4.3.0\lib\netcore50\System.Text.RegularExpressions.dll">
       <PackagePath>System.Text.RegularExpressions.dll</PackagePath>
-      <Modified>2016-06-11T20:14:52.000</Modified>
+      <Modified>2016-11-05T01:57:24.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Threading\4.0.11\lib\netcore50\System.Threading.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Threading\4.3.0\lib\netcore50\System.Threading.dll">
       <PackagePath>System.Threading.dll</PackagePath>
-      <Modified>2016-06-11T20:15:00.000</Modified>
+      <Modified>2016-11-05T01:57:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Threading.Overlapped\4.0.1\runtimes\win\lib\netcore50\System.Threading.Overlapped.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Threading.Overlapped\4.3.0\runtimes\win\lib\netcore50\System.Threading.Overlapped.dll">
       <PackagePath>System.Threading.Overlapped.dll</PackagePath>
-      <Modified>2016-06-11T20:14:54.000</Modified>
+      <Modified>2016-11-05T01:57:26.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Threading.Tasks.Dataflow\4.6.0\lib\netstandard1.1\System.Threading.Tasks.Dataflow.dll">
       <PackagePath>System.Threading.Tasks.Dataflow.dll</PackagePath>
       <Modified>2016-06-11T20:14:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Threading.Tasks.Extensions\4.0.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Threading.Tasks.Extensions\4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll">
       <PackagePath>System.Threading.Tasks.Extensions.dll</PackagePath>
-      <Modified>2016-06-11T20:14:52.000</Modified>
+      <Modified>2016-11-05T01:57:24.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Threading.Tasks.Parallel\4.0.1\lib\netcore50\System.Threading.Tasks.Parallel.dll">
       <PackagePath>System.Threading.Tasks.Parallel.dll</PackagePath>
       <Modified>2016-06-11T20:14:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Xml.ReaderWriter\4.0.11\lib\netcore50\System.Xml.ReaderWriter.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Xml.ReaderWriter\4.3.0\lib\netcore50\System.Xml.ReaderWriter.dll">
       <PackagePath>System.Xml.ReaderWriter.dll</PackagePath>
-      <Modified>2016-06-11T20:15:00.000</Modified>
+      <Modified>2016-11-05T01:57:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Xml.XDocument\4.0.11\lib\netcore50\System.Xml.XDocument.dll">
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Xml.XDocument\4.3.0\lib\netcore50\System.Xml.XDocument.dll">
       <PackagePath>System.Xml.XDocument.dll</PackagePath>
-      <Modified>2016-06-11T20:15:00.000</Modified>
+      <Modified>2016-11-05T01:57:34.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Xml.XmlDocument\4.0.1\lib\netstandard1.3\System.Xml.XmlDocument.dll">
       <PackagePath>System.Xml.XmlDocument.dll</PackagePath>
@@ -523,6 +527,14 @@
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Xml.XmlSerializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T20:15:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Xml.XPath\4.3.0\lib\netstandard1.3\System.Xml.XPath.dll">
+      <PackagePath>System.Xml.XPath.dll</PackagePath>
+      <Modified>2016-11-05T01:57:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\System.Xml.XPath.XDocument\4.3.0\lib\netstandard1.3\System.Xml.XPath.XDocument.dll">
+      <PackagePath>System.Xml.XPath.XDocument.dll</PackagePath>
+      <Modified>2016-11-05T01:57:34.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\Xamarin.Forms\2.0.0.6482\lib\uap10.0\Xamarin.Forms.Core.dll">
       <PackagePath>Xamarin.Forms.Core.dll</PackagePath>
@@ -542,11 +554,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll">
       <PackagePath>App1.dll</PackagePath>
-      <Modified>2017-05-05T11:09:40.128</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\HtmlAgilityPack.dll">
-      <PackagePath>HtmlAgilityPack.dll</PackagePath>
-      <Modified>2017-05-02T09:43:26.412</Modified>
+      <Modified>2017-05-14T10:12:00.187</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.UWP\Assets\index.html">
       <PackagePath>Assets\index.html</PackagePath>
@@ -613,11 +621,11 @@
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-05T10:53:39.917</Modified>
+      <Modified>2017-05-14T09:10:11.740</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Core\App1.UWP.exe">
       <PackagePath>App1.UWP.exe</PackagePath>
-      <Modified>2017-05-13T08:48:35.127</Modified>
+      <Modified>2017-05-14T10:12:06.458</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

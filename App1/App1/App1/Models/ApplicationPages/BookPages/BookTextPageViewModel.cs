@@ -7,6 +7,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Android.Content;
 using App1.DAL.Interfaces;
 using Xamarin.Forms;
 
@@ -89,7 +90,7 @@ namespace App1.Models.ApplicationPages.BookPages
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-
+            
             this.webView.Navigating += this.NavigatingHandler;
             this.Content = this.webView;
         }
@@ -106,16 +107,6 @@ namespace App1.Models.ApplicationPages.BookPages
             string lastPageNumber = parsedValues.GetValues("lastPageNumber").First();
             MethodInfo method = reflectionHelper.GetMethodInfo(thisType, methodName);
             method.Invoke(this, new object[] { lastPageNumber });
-        }
-
-        private void ScrollToLastPosition(object sender, EventArgs args)
-        {
-            
-        }
-
-        private void ShowAnimationWhilePageIsScrolling()
-        {
-
         }
 
         /// <summary>
