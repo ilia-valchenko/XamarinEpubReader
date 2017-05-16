@@ -28,13 +28,13 @@
     <AppXManifest Include="D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T16:01:40.913</Modified>
+      <Modified>2017-05-15T06:12:57.992</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App1.UWP.exe">
       <PackagePath>entrypoint\App1.UWP.exe</PackagePath>
-      <Modified>2017-05-14T16:01:40.186</Modified>
+      <Modified>2017-05-15T06:12:50.319</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ilya_Valchanka\.nuget\packages\HtmlAgilityPack\1.4.9.5\lib\NetCore45\HtmlAgilityPack.dll">
       <PackagePath>HtmlAgilityPack.dll</PackagePath>
@@ -554,7 +554,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll">
       <PackagePath>App1.dll</PackagePath>
-      <Modified>2017-05-14T15:26:44.104</Modified>
+      <Modified>2017-05-15T06:12:18.701</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.UWP\Assets\index.html">
       <PackagePath>Assets\index.html</PackagePath>
@@ -621,11 +621,11 @@
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T10:25:26.003</Modified>
+      <Modified>2017-05-15T06:12:57.215</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Core\App1.UWP.exe">
       <PackagePath>App1.UWP.exe</PackagePath>
-      <Modified>2017-05-14T16:01:40.908</Modified>
+      <Modified>2017-05-15T06:12:57.988</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

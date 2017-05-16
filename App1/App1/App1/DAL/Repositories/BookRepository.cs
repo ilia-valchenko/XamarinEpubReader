@@ -40,6 +40,7 @@ namespace App1.DAL.Repositories
         /// Gets all books from the repository.
         /// </summary>
         /// <returns>Returns a collection of books entities.</returns>
+        /// TODO: Make it async
         public IEnumerable<BookEntity> GetAll()
         {
             List<BookEntity> books;
@@ -57,6 +58,7 @@ namespace App1.DAL.Repositories
         /// </summary>
         /// <param name="id">The book's identifier.</param>
         /// <returns>Returns a book entity.</returns>
+        /// TODO: Make it async
         public BookEntity GetById(string id)
         {
             BookEntity book;
@@ -74,6 +76,7 @@ namespace App1.DAL.Repositories
         /// </summary>
         /// <param name="id">The book's identifier.</param>
         /// <returns>Returns status code of the executed operation.</returns>
+        /// TODO: Make it async
         public int DeleteById(string id)
         {
             int result;
@@ -91,6 +94,7 @@ namespace App1.DAL.Repositories
         /// </summary>
         /// <param name="book">The book entity.</param>
         /// <returns>Returns status code of the executed operation.</returns>
+        /// TODO: Make it async
         public int Add(BookEntity book)
         {
             int result; 
@@ -109,6 +113,7 @@ namespace App1.DAL.Repositories
         }
 
         // Test method
+        /// TODO: Make it async
         public int DeleteAll()
         {
             int statusCode = this.database.Execute("DELETE FROM BOOKS");

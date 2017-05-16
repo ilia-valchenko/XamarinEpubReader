@@ -9,10 +9,6 @@ namespace App1.UWP
 {
     public class UWPXPather : IXPather
     {
-        public UWPXPather()
-        {
-        }
-
         public XElement SelectElement(XDocument containerDocument, string rule, XmlNamespaceManager manager)
         {
             XElement element = containerDocument.XPathSelectElement(rule, manager);

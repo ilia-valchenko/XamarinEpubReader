@@ -40,6 +40,7 @@ namespace App1.DAL.Repositories
         /// Get all settings entities.
         /// </summary>
         /// <returns>Returns collection of settings entities.</returns>
+        /// TODO: Make it async
         public IEnumerable<SettingsEntity> GetAll()
         {
             List<SettingsEntity> settingsEntities;
@@ -57,6 +58,7 @@ namespace App1.DAL.Repositories
         /// </summary>
         /// <param name="id">The book identifier.</param>
         /// <returns>Returns settings entity with given identifier.</returns>
+        /// TODO: Make it async
         public SettingsEntity GetById(string id)
         {
             SettingsEntity settingsEntity;
@@ -74,6 +76,7 @@ namespace App1.DAL.Repositories
         /// </summary>
         /// <param name="id">The book identifier.</param>
         /// <returns>Returns status code of the operation.</returns>
+        /// TODO: Make it async
         public int DeleteById(string id)
         {
             int statusCode;
@@ -91,6 +94,7 @@ namespace App1.DAL.Repositories
         /// </summary>
         /// <param name="settings">The settings entity.</param>
         /// <returns>Returns status code of the operation.</returns>
+        /// TODO: Make it async
         public int Add(SettingsEntity settings)
         {
             int statusCode;
@@ -115,6 +119,7 @@ namespace App1.DAL.Repositories
         /// </summary>
         /// <param name="settings">The settings entity.</param>
         /// <returns>Returns a status code of the operation.</returns>
+        /// TODO: Make it async
         public int Update(SettingsEntity settings)
         {
             int statusCode;
