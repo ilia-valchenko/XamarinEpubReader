@@ -33,46 +33,32 @@ namespace App1
         {
             this.directory = DependencyService.Get<IDirectory>();
             //// TODO: Move it to OnStart method.
-            string rootFolder = this.directory.CreateRootFolder(bookDirectoryName);
-            //BookRepository bookRepository = null;
-            //SettingsRepository settingsRepository = null;
+            //string rootFolder = this.directory.CreateRootFolder(bookDirectoryName);
+            BookRepository bookRepository = null;
+            SettingsRepository settingsRepository = null;
 
-            //try
-            //{
-            //    bookRepository = new BookRepository(DATABASE_NAME);
-            //    settingsRepository = new SettingsRepository(DATABASE_NAME);
-            //}
-            //catch (SQLite.SQLiteException sqLiteException)
-            //{
-            //    throw sqLiteException;
-            //}
-            //catch (Exception exc)
-            //{
-            //    throw exc;
-            //}
-            
-            //MainPageViewModel mainPage = new MainPageViewModel(bookRepository, settingsRepository);
-            //NavigationPage rootPage = new NavigationPage(mainPage)
-            //{
-            //    BarTextColor = Color.White,
-            //    BarBackgroundColor = Color.FromHex("#246A50")
-            //};
-
-            //this.MainPage = rootPage;
-
-            this.MainPage = new ContentPage
+            try
             {
-                Content = new StackLayout
-                {
-                    Children =
-                    {
-                        new Label
-                        {
-                            Text = "Hello Ilia!"
-                        }
-                    }
-                }
+                bookRepository = new BookRepository(DATABASE_NAME);
+                settingsRepository = new SettingsRepository(DATABASE_NAME);
+            }
+            catch (SQLite.SQLiteException sqLiteException)
+            {
+                throw sqLiteException;
+            }
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+
+            MainPageViewModel mainPage = new MainPageViewModel(bookRepository, settingsRepository);
+            NavigationPage rootPage = new NavigationPage(mainPage)
+            {
+                BarTextColor = Color.White,
+                BarBackgroundColor = Color.FromHex("#246A50")
             };
+
+            this.MainPage = rootPage;
         }
 
         /// <summary>

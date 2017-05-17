@@ -49,10 +49,10 @@ namespace App1.WinPhone
             {
                 throw;
             }
-            catch (Exception exception)
-            {
-                throw;
-            }
+            //catch (Exception exception)
+            //{
+            //    throw;
+            //}
 
             StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             //string applicationFolderDirectory = Path.Combine(localFolder.Path, booksFolder);

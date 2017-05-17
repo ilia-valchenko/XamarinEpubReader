@@ -32,7 +32,8 @@ namespace App1.DAL.Repositories
         {
             ISQLite sqlLite = DependencyService.Get<ISQLite>();
             string pathToDatabaseFile = sqlLite.GetLocalDatabaseFilePath(databaseFilename);
-            this.database = new SQLiteConnection(pathToDatabaseFile);
+            //this.database = new SQLiteConnection(pathToDatabaseFile);
+            this.database = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), dbPath)
             int createTableStatusCode = this.database.CreateTable<BookEntity>();
         }
 

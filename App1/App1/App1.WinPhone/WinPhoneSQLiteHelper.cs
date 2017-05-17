@@ -15,9 +15,12 @@ namespace App1.WinPhone
         /// <returns></returns>
         public string GetLocalDatabaseFilePath(string sqlFilename)
         {
-            StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            string path = Path.Combine(localFolder.Path, sqlFilename);
-            return path;
+            //StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            //string path = Path.Combine(localFolder.Path, sqlFilename);
+            //return path;
+
+            const string pathToUWPDatabaseFile = @"C:\\Users\\Ilya_Valchanka\\AppData\\Local\\Packages\\7c217c80-0ce0-4ffb-a27a-a1742a159573_3pg3r5jdybh24\\LocalState\\books.db";
+            return pathToUWPDatabaseFile;
         }
     }
 }

@@ -20,7 +20,14 @@ namespace App1.WinPhone
         {
             //// TODO: Make async call
             StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            
+
+            // test
+            localFolder.CreateFileAsync("books.db").GetAwaiter().GetResult();
+            // end of test
+
             StorageFolder createdFolder = localFolder.CreateFolderAsync(folderName).GetAwaiter().GetResult();
+
             return createdFolder.Path;
         }
 
