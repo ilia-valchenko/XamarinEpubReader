@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using App1.DAL.Entities;
+using SQLitePCL;
 
 namespace App1.DAL.Interfaces
 {
@@ -12,7 +13,7 @@ namespace App1.DAL.Interfaces
         /// Gets all books entities.
         /// </summary>
         /// <returns>Returns a collection of books entities.</returns>
-        IEnumerable<BookEntity> GetAll();
+        IList<BookEntity> GetAll();
 
         /// <summary>
         /// Get book entity by id. 
@@ -26,16 +27,16 @@ namespace App1.DAL.Interfaces
         /// </summary>
         /// <param name="id">The book identifier.</param>
         /// <returns>Returns status code of the executed operation.</returns>
-        int DeleteById(string id);
+        SQLiteResult DeleteById(string id);
 
         /// <summary>
         /// Ads book to the database. 
         /// </summary>
         /// <param name="book">The book entity.</param>
         /// <returns>Returns status code of the executed operation.</returns>
-        int Add(BookEntity book);
+        SQLiteResult Add(BookEntity book);
 
         // Test method
-        int DeleteAll();
+        SQLiteResult DeleteAll();
     }
 }

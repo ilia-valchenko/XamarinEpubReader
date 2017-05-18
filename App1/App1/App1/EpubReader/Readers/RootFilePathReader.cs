@@ -36,7 +36,9 @@ namespace App1.EpubReader.Readers
             IXPather xPather = DependencyService.Get<IXPather>();
             XElement rootFileNode = xPather.SelectElement(containerDocument, "/cns:container/cns:rootfiles/cns:rootfile", xmlNamespaceManager);
 
-            return rootFileNode.Attribute("full-path").Value;
+            XAttribute attribute = rootFileNode.Attribute("full-path");
+            string rootFilePath = attribute.Value;
+            return rootFilePath;
         }
     }
 }

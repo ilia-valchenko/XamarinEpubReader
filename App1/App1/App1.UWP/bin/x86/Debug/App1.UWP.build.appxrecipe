@@ -415,6 +415,9 @@
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll">
       <PackagePath>App1.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCL.dll">
+      <PackagePath>SQLitePCL.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.UWP\Assets\index.html">
       <PackagePath>Assets\index.html</PackagePath>
     </AppxPackagedFile>

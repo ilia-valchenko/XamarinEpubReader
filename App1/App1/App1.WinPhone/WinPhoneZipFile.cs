@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.IO.Compression;
+using System.Threading.Tasks;
 using Windows.Storage.Streams;
 using App1.Infrastructure.Interfaces;
 using App1.WinPhone;
@@ -9,17 +11,13 @@ namespace App1.WinPhone
 {
     public class WinPhoneZipFile : IZipFile
     {
-        public IZipArchive OpenRead(string filePath)
+        public async Task<IZipArchive> OpenRead(string filePath)
         {
-            //ZipArchive zipArchive = ZipFile.OpenRead(filePath);
-            //WinPhoneZipArchive uwpZipArchive = new WinPhoneZipArchive(zipArchive);
-            //return uwpZipArchive;
-
             const string booksFolderName = "Xamarin eBooks";
-            const string zipFileName = "popitka-k-begstvy.epub";
             var localFolder = Windows.Storage.ApplicationData.Current.LocalFolder.GetFolderAsync(booksFolderName).GetResults();
-            var file = localFolder.GetFileAsync(zipFileName).GetResults();
-            IRandomAccessStreamWithContentType randomStream = file.OpenReadAsync().GetResults();
+            var file = await localFolder.GetFileAsync(filePath);
+
+            IRandomAccessStreamWithContentType randomStream = await file.OpenReadAsync();
             Stream stream = randomStream.AsStream();
             ZipArchive archive = new ZipArchive(stream);
             WinPhoneZipArchive winPhoneZipArchive = new WinPhoneZipArchive(archive);

@@ -48,7 +48,7 @@ namespace App1.Models.ApplicationPages.BookPages
 
             HtmlDocument template = new HtmlDocument();
             // Hardcode filename
-            Stream stream = filer.GetResourceFileStream("index.html");
+            Stream stream = filer.GetResourceFileStream("index.html").Result;
             template.Load(stream);
 
             var script = "<script>var lastPageNumber = " + this.settings.LastPage + "</script>";

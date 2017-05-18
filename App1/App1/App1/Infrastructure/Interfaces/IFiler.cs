@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using App1.Infrastructure;
 
 namespace App1.Infrastructure.Interfaces
@@ -28,13 +29,13 @@ namespace App1.Infrastructure.Interfaces
         /// </summary>
         /// <param name="fileExtensions">The extension of the file.</param>
         /// <returns>Returns names of the files with their extensions.</returns>
-        IEnumerable<string> GetFilesPaths(FileExtension fileExtensions);
+        Task<IEnumerable<string>> GetFilesPaths(FileExtension fileExtensions);
 
         /// <summary>
         /// This method returns a stream of file which is situated into resource folder of each platform specific project.
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
-        Stream GetResourceFileStream(string filename);
+        Task<Stream> GetResourceFileStream(string filename);
     }
 }

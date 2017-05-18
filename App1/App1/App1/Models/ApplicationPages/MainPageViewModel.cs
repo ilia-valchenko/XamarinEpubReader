@@ -8,6 +8,7 @@ using App1.Models.ApplicationPages.BookPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SQLitePCL;
 using Xamarin.Forms;
 
 namespace App1.Models.ApplicationPages
@@ -125,10 +126,10 @@ namespace App1.Models.ApplicationPages
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="args">An object that contains the event data.</param>
-        private void OnClickSearchBooksButton(object sender, EventArgs args)
+        private async void OnClickSearchBooksButton(object sender, EventArgs args)
         {
             IFiler filer = DependencyService.Get<IFiler>();
-            IEnumerable<string> pathsOfFoundFiles = filer.GetFilesPaths(FileExtension.EPUB).ToList();
+            IEnumerable<string> pathsOfFoundFiles = await filer.GetFilesPaths(FileExtension.EPUB);
             IEnumerable<EpubBook> epubBooks = pathsOfFoundFiles.Select(f => EpubReader.EpubReader.ReadBook(f));
             List<string> pathsOfExistingFiles = this.bookEntities.Select(entity => entity.FilePath).ToList();
 
@@ -158,17 +159,17 @@ namespace App1.Models.ApplicationPages
                         FontSize = 14
                     };
 
-                    int bookInsertStatusCode = this.bookRepository.Add(bookEntity);
+                    SQLiteResult result = this.bookRepository.Add(bookEntity);
                     int settingsInsertStatusCode = this.settingsRepository.Add(settingsEntity);
 
                     // 0 is SQLITE_OK 
                     // But returns 1 and entity is successfully saved into database.
-                    if (bookInsertStatusCode == 1)
-                    {
-                        this.bookEntities.Add(bookEntity);
-                        BookInfoViewModel model = bookEntity.ToBookInfoModelMapper();
-                        this.books.Add(model);
-                    }
+                    //if (bookInsertStatusCode == 1)
+                    //{
+                    //    this.bookEntities.Add(bookEntity);
+                    //    BookInfoViewModel model = bookEntity.ToBookInfoModelMapper();
+                    //    this.books.Add(model);
+                    //}
                 }
             }
 
@@ -260,7 +261,7 @@ namespace App1.Models.ApplicationPages
                     break;
 
                 case ("Delete"):
-                    int statusCode = this.bookRepository.DeleteById(bookInfo.Id);
+                    SQLiteResult result = this.bookRepository.DeleteById(bookInfo.Id);
                     // is statusCode == 1 OK
                     this.books.Remove(bookInfo);
                     this.UpdateBookLibrary(this.books);

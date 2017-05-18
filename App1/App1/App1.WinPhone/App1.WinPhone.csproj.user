@@ -3,4 +3,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DeviceId>A6BAF594-9315-40C3-AD16-F5B8A425A7AB</DeviceId>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DeviceId>A6BAF594-9315-40C3-AD16-F5B8A425A7AB</DeviceId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DeviceId>A6BAF594-9315-40C3-AD16-F5B8A425A7AB</DeviceId>
+  </PropertyGroup>
 </Project>

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using App1.DAL.Entities;
 using App1.DAL.Repositories;
 using App1.Infrastructure.Interfaces;
 using App1.Models.ApplicationPages;
@@ -40,12 +42,12 @@ namespace App1
             try
             {
                 bookRepository = new BookRepository(DATABASE_NAME);
-                settingsRepository = new SettingsRepository(DATABASE_NAME);
+                //settingsRepository = new SettingsRepository(DATABASE_NAME);
             }
-            catch (SQLite.SQLiteException sqLiteException)
-            {
-                throw sqLiteException;
-            }
+            //catch (SQLite.SQLiteException sqLiteException)
+            //{
+            //    throw sqLiteException;
+            //}
             catch (Exception exc)
             {
                 throw exc;

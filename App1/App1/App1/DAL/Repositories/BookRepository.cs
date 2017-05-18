@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using SQLite;
-using Xamarin.Forms;
+﻿using System.Collections.Generic;
 using App1.DAL.Entities;
 using App1.DAL.Interfaces;
-using App1.Infrastructure.Interfaces;
+using SQLitePCL;
 
 namespace App1.DAL.Repositories
 {
@@ -20,38 +16,59 @@ namespace App1.DAL.Repositories
         private readonly SQLiteConnection database;
 
         /// <summary>
-        /// The multithreading locker.
-        /// </summary>
-        private static object locker = new object();
-
-        /// <summary>
         /// Initialize a new instance of the <see cref="BookRepository"/>
         /// </summary>
         /// <param name="databaseFilename">The name of the local database file.</param>
         public BookRepository(string databaseFilename)
         {
-            ISQLite sqlLite = DependencyService.Get<ISQLite>();
-            string pathToDatabaseFile = sqlLite.GetLocalDatabaseFilePath(databaseFilename);
+            //ISQLite sqlLite = DependencyService.Get<ISQLite>();
+            //string pathToDatabaseFile = sqlLite.GetLocalDatabaseFilePath(databaseFilename);
             //this.database = new SQLiteConnection(pathToDatabaseFile);
-            this.database = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), dbPath)
-            int createTableStatusCode = this.database.CreateTable<BookEntity>();
+
+            this.database = new SQLiteConnection(databaseFilename);
+            SQLiteResult resultOfTableCreation = this.CreateTable();
+        }
+
+        // TODO: Make it async
+        private SQLiteResult CreateTable()
+        {
+            string sql = @"CREATE TABLE IF NOT EXISTS
+                                BOOKS (ID VARCHAR PRIMARY KEY NOT NULL, 
+                                       COVER BLOB,
+                                       TITLE VARCHAR,
+                                       AUTHOR VARCHAR,
+                                       FILEPATH VARCHAR);";
+
+            using (var statement = this.database.Prepare(sql))
+            {
+                SQLiteResult result = statement.Step();
+                return result;
+            }
         }
 
         /// <summary>
         /// Gets all books from the repository.
         /// </summary>
         /// <returns>Returns a collection of books entities.</returns>
-        /// TODO: Make it async
-        public IEnumerable<BookEntity> GetAll()
+        public IList<BookEntity> GetAll()
         {
-            List<BookEntity> books;
+            List<BookEntity> bookEntities = new List<BookEntity>();
 
-            lock (locker)
+            using (var statement = this.database.Prepare("SELECT ID, COVER, TITLE, AUTHOR, FILEPATH FROM BOOKS"))
             {
-                books = this.database.Table<BookEntity>().ToList();
-            }
+                while (statement.Step() == SQLiteResult.ROW)
+                {
+                    BookEntity bookEntity = new BookEntity();
+                    bookEntity.Id = (string)statement[0];
+                    bookEntity.Cover = (byte[])statement[1];
+                    bookEntity.Title = (string)statement[2];
+                    bookEntity.Author = (string)statement[3];
+                    bookEntity.FilePath = (string) statement[4];
 
-            return books;
+                    bookEntities.Add(bookEntity);
+                }
+            }
+            return bookEntities;
         }
 
         /// <summary>
@@ -59,17 +76,28 @@ namespace App1.DAL.Repositories
         /// </summary>
         /// <param name="id">The book's identifier.</param>
         /// <returns>Returns a book entity.</returns>
-        /// TODO: Make it async
         public BookEntity GetById(string id)
         {
-            BookEntity book;
+            BookEntity bookEntity = null;
 
-            lock(locker)
+            using (var statement = this.database.Prepare("SELECT ID, COVER, TITLE, AUTHOR, FILEPATH FROM BOOKS WHERE Id=?"))
             {
-                book = this.database.Get<BookEntity>(id);
+                statement.Bind(1, id);
+
+                if (statement.Step() == SQLiteResult.ROW)
+                {
+                    bookEntity = new BookEntity
+                    {
+                        Id = (string)statement[0],
+                        Cover = (byte[])statement[1],
+                        Title = (string)statement[2],
+                        Author = (string)statement[3],
+                        FilePath = (string)statement[4]
+                    };
+                }
             }
- 
-            return book;
+
+            return bookEntity;
         }
 
         /// <summary>
@@ -78,47 +106,46 @@ namespace App1.DAL.Repositories
         /// <param name="id">The book's identifier.</param>
         /// <returns>Returns status code of the executed operation.</returns>
         /// TODO: Make it async
-        public int DeleteById(string id)
+        public SQLiteResult DeleteById(string id)
         {
-            int result;
-
-            lock(locker)
+            using (var statement = this.database.Prepare("DELETE FROM BOOKS WHERE Id=?"))
             {
-                result = database.Delete<BookEntity>(id);
+                statement.Bind(1, id);
+                SQLiteResult result = statement.Step();
+                return result;
             }
-             
-            return result;
         }
 
         /// <summary>
         /// This methos saves a book entity into the database.
         /// </summary>
         /// <param name="book">The book entity.</param>
-        /// <returns>Returns status code of the executed operation.</returns>
+        /// <returns></returns>
         /// TODO: Make it async
-        public int Add(BookEntity book)
+        public SQLiteResult Add(BookEntity book)
         {
-            int result; 
-
-            if(string.IsNullOrEmpty(book.Id))
+            using (var statement = this.database.Prepare("INSERT INTO BOOKS(ID, COVER, TITLE, AUTHOR, FILEPATH) VALUES (?,?,?,?,?)"))
             {
-                throw new ArgumentException("Book identifier can't be null or empty.");
-            }
+                statement.Bind(1, book.Id);
+                statement.Bind(2, book.Cover);
+                statement.Bind(3, book.Title);
+                statement.Bind(4, book.Author);
+                statement.Bind(5, book.FilePath);
 
-            lock (locker)
-            {
-                result = database.Insert(book);
+                SQLiteResult result = statement.Step();
+                return result;
             }
-
-            return result;
         }
 
         // Test method
         /// TODO: Make it async
-        public int DeleteAll()
+        public SQLiteResult DeleteAll()
         {
-            int statusCode = this.database.Execute("DELETE FROM BOOKS");
-            return statusCode;
+            using (var statement = this.database.Prepare("DELETE FROM BOOKS"))
+            {
+                SQLiteResult result = statement.Step();
+                return result;
+            }
         }
     }
 }
