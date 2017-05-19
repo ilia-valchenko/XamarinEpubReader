@@ -13,9 +13,6 @@ namespace App1.WinPhone
         public XElement SelectElement(XDocument containerDocument, string rule, XmlNamespaceManager manager)
         {
             var descendats = containerDocument.Descendants().ToList();
-            var el = containerDocument.Element("name");
-            var root = containerDocument.Root;
-            var elements = containerDocument.Elements().ToList();
 
             //containerDocument.XPathSelectElement("exp");
             

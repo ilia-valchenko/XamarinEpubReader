@@ -15,11 +15,11 @@ namespace App1.WinPhone
     {
         private const string booksFolderName = "Xamarin eBooks";
 
-        public bool DoesFileExist(string filepath)
+        public async Task<bool> DoesFileExistAsync(string filepath)
         {
             StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            StorageFolder booksFolder = localFolder.GetFolderAsync(booksFolderName).GetAwaiter().GetResult();
-            bool doesFileExist = booksFolder.FileExists(filepath).GetAwaiter().GetResult();
+            StorageFolder booksFolder = await localFolder.GetFolderAsync(booksFolderName);
+            bool doesFileExist = await booksFolder.FileExists(filepath);
 
             return doesFileExist;
         }
@@ -31,18 +31,25 @@ namespace App1.WinPhone
             return filepath;
         }
 
-        public async Task<IEnumerable<string>> GetFilesPaths(FileExtension fileExtension)
+        public async Task<IEnumerable<string>> GetFilesPathsAsync(FileExtension fileExtension)
         {
-            //string extension = Enum.GetName(typeof(FileExtension), FileExtension.EPUB).ToLower();
+            ////string extension = Enum.GetName(typeof(FileExtension), FileExtension.EPUB).ToLower();
+            //StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            //StorageFolder booksFolder = localFolder.GetFolderAsync(booksFolderName).GetAwaiter().GetResult();
+            //IReadOnlyCollection<StorageFile> files = await booksFolder.GetFilesAsync();
+            //IEnumerable<string> filesPaths = files.Select(f => f.Name);
+
+            //return filesPaths;
+
             StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            StorageFolder booksFolder = localFolder.GetFolderAsync(booksFolderName).GetAwaiter().GetResult();
+            StorageFolder booksFolder = await localFolder.GetFolderAsync(booksFolderName);
             IReadOnlyCollection<StorageFile> files = await booksFolder.GetFilesAsync();
             IEnumerable<string> filesPaths = files.Select(f => f.Name);
 
             return filesPaths;
         }
 
-        public async Task<Stream> GetResourceFileStream(string filename)
+        public async Task<Stream> GetResourceFileStreamAsync(string filename)
         {
             if (string.IsNullOrEmpty(filename))
             {

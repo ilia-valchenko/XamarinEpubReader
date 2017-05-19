@@ -77,7 +77,7 @@ namespace App1.DAL.Repositories
         {
             SettingsEntity settingsEntity = null;
 
-            using (var statement = this.database.Prepare("SELECT BOOKID, LASTPAGE, FONTSIZE FROM SETTINGS WHERE Id=?"))
+            using (var statement = this.database.Prepare("SELECT BOOKID, LASTPAGE, FONTSIZE FROM SETTINGS WHERE BOOKID=?"))
             {
                 statement.Bind(1, id);
 
@@ -86,8 +86,8 @@ namespace App1.DAL.Repositories
                     settingsEntity = new SettingsEntity
                     {
                         BookId = (string)statement[0],
-                        LastPage = unchecked((int)statement[1]),
-                        FontSize = unchecked((int)statement[1])
+                        LastPage = (int)((long)statement[1]),
+                        FontSize = (int)((long)statement[2])
                     };
                 }
             }
@@ -103,7 +103,7 @@ namespace App1.DAL.Repositories
         /// TODO: Make it async
         public SQLiteResult DeleteById(string id)
         {
-            using (var statement = this.database.Prepare("DELETE FROM SETTINGS WHERE Id=?"))
+            using (var statement = this.database.Prepare("DELETE FROM SETTINGS WHERE BOOKID=?"))
             {
                 statement.Bind(1, id);
                 SQLiteResult result = statement.Step();

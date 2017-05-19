@@ -35,12 +35,12 @@ namespace App1.EpubReader
             IFiler filer = DependencyService.Get<IFiler>();
             IZipFile zipFile = DependencyService.Get<IZipFile>();
 
-            if (!filer.DoesFileExist(filePath))
+            if (! await filer.DoesFileExistAsync(filePath).ConfigureAwait(false))
             {
                 throw new FileNotFoundException("Specified epub file not found.", filePath);
             }
 
-            IZipArchive epubArchive = await zipFile.OpenRead(filePath);
+            IZipArchive epubArchive = await zipFile.OpenReadAsync(filePath).ConfigureAwait(false);
             EpubBookRef bookRef = new EpubBookRef(epubArchive);
 
             bookRef.FilePath = filePath;
@@ -59,18 +59,18 @@ namespace App1.EpubReader
         /// <returns></returns>
         public static EpubBook ReadBook(string filePath)
         {
-            Task<EpubBook> epubBook;
+            Task<EpubBook> taskBook;
 
             try
             {
-                epubBook = ReadBookAsync(filePath);
+                taskBook = ReadBookAsync(filePath);
             }
             catch (Exception exception)
             {
                 throw exception;
             }
 
-            return epubBook.Result;
+            return taskBook.GetAwaiter().GetResult();
         }
 
         /// <summary>

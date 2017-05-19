@@ -4,6 +4,6 @@ namespace App1.Infrastructure.Interfaces
 {
     public interface IZipFile
     {
-        Task<IZipArchive> OpenRead(string filePath);
+        Task<IZipArchive> OpenReadAsync(string filePath);
     }
 }

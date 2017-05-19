@@ -11,10 +11,11 @@ namespace App1.WinPhone
 {
     public class WinPhoneZipFile : IZipFile
     {
-        public async Task<IZipArchive> OpenRead(string filePath)
+        private const string booksFolderName = "Xamarin eBooks";
+
+        public async Task<IZipArchive> OpenReadAsync(string filePath)
         {
-            const string booksFolderName = "Xamarin eBooks";
-            var localFolder = Windows.Storage.ApplicationData.Current.LocalFolder.GetFolderAsync(booksFolderName).GetResults();
+            var localFolder = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFolderAsync(booksFolderName);
             var file = await localFolder.GetFileAsync(filePath);
 
             IRandomAccessStreamWithContentType randomStream = await file.OpenReadAsync();

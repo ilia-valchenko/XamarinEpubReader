@@ -18,10 +18,10 @@ namespace App1.WinPhone
         /// </summary>
         /// <param name="folderName">The name of a new folder.</param>
         /// <returns>Returns the path to the new folder.</returns>
-        public async Task<string> CreateRootFolder(string folderName)
+        public string CreateRootFolder(string folderName)
         {
             StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            StorageFolder createdFolder = await localFolder.CreateFolderAsync(folderName);
+            StorageFolder createdFolder = localFolder.CreateFolderAsync(folderName).GetAwaiter().GetResult();
 
             return createdFolder.Path;
         }
@@ -31,9 +31,9 @@ namespace App1.WinPhone
         /// </summary>
         /// <param name="path">The full path of a directory.</param>
         /// <returns>Returns true if directory exists.</returns>
-        public async Task<bool> DoesDirectoryExist(string path)
+        public bool DoesDirectoryExist(string path)
         {
-            StorageFolder folder = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFolderAsync(path);
+            StorageFolder folder = Windows.Storage.ApplicationData.Current.LocalFolder.GetFolderAsync(path).GetAwaiter().GetResult();
             return folder != null;
         }
     }

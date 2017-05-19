@@ -129,8 +129,15 @@ namespace App1.Models.ApplicationPages
         private async void OnClickSearchBooksButton(object sender, EventArgs args)
         {
             IFiler filer = DependencyService.Get<IFiler>();
-            IEnumerable<string> pathsOfFoundFiles = await filer.GetFilesPaths(FileExtension.EPUB);
-            IEnumerable<EpubBook> epubBooks = pathsOfFoundFiles.Select(f => EpubReader.EpubReader.ReadBook(f));
+            IEnumerable<string> pathsOfFoundFiles = await filer.GetFilesPathsAsync(FileExtension.EPUB).ConfigureAwait(false);
+            List<EpubBook> epubBooks = new List<EpubBook>();
+
+            foreach (var path in pathsOfFoundFiles)
+            {
+                EpubBook book = await EpubReader.EpubReader.ReadBookAsync(path).ConfigureAwait(false);
+                epubBooks.Add(book);
+            }
+
             List<string> pathsOfExistingFiles = this.bookEntities.Select(entity => entity.FilePath).ToList();
 
             // Try to read not all book information.
@@ -160,7 +167,7 @@ namespace App1.Models.ApplicationPages
                     };
 
                     SQLiteResult result = this.bookRepository.Add(bookEntity);
-                    int settingsInsertStatusCode = this.settingsRepository.Add(settingsEntity);
+                    SQLiteResult settingsInsertResult = this.settingsRepository.Add(settingsEntity);
 
                     // 0 is SQLITE_OK 
                     // But returns 1 and entity is successfully saved into database.
@@ -189,7 +196,7 @@ namespace App1.Models.ApplicationPages
                 }
             }
 
-            this.UpdateBookLibrary(this.books);
+            //this.UpdateBookLibrary(this.books);
         }
 
         /// <summary>
