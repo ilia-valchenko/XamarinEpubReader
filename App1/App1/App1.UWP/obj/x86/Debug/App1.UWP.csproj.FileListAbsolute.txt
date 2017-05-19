@@ -139,6 +139,7 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Xamarin.Forms.Platform.UA
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Xamarin.Forms.Platform.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Xamarin.Forms.Xaml.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App1.dll
+D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLitePCL.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App1.pdb
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App1.xml
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\App1.UWP.csprojResolveAssemblyReference.cache
@@ -221,6 +222,8 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Xml.Xm
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Xml.XmlSerializer.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Xml.XPath.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Xml.XPath.XDocument.SR.resw
+D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\SQLitePCL\en\SQLitePCL.Resources.resw
+D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\App1.UWP.csproj.GenerateResource.Cache
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\priconfig.xml
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\priconfig.xml.intermediate
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\layout.resfiles
@@ -232,6 +235,8 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\pri.resfiles.intermediate
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\qualifiers.txt
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\qualifiers.txt.intermediate
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\resources.en.resfiles
+D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\resources.en.resfiles.intermediate
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\HtmlAgilityPack.pri.xml
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\ProjectArchitectures.txt

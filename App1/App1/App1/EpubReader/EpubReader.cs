@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Threading;
 using App1.EpubReader.Entities;
 using App1.EpubReader.Readers;
 using App1.EpubReader.RefEntities;
 using Xamarin.Forms;
 using App1.Infrastructure.Interfaces;
+using Exception = System.Exception;
+using String = System.String;
 
 namespace App1.EpubReader
 {
@@ -33,12 +35,12 @@ namespace App1.EpubReader
             IFiler filer = DependencyService.Get<IFiler>();
             IZipFile zipFile = DependencyService.Get<IZipFile>();
 
-            if (!filer.DoesFileExist(filePath))
+            if (! await filer.DoesFileExistAsync(filePath).ConfigureAwait(false))
             {
                 throw new FileNotFoundException("Specified epub file not found.", filePath);
             }
 
-            IZipArchive epubArchive = zipFile.OpenRead(filePath);
+            IZipArchive epubArchive = await zipFile.OpenReadAsync(filePath).ConfigureAwait(false);
             EpubBookRef bookRef = new EpubBookRef(epubArchive);
 
             bookRef.FilePath = filePath;
@@ -68,7 +70,7 @@ namespace App1.EpubReader
                 throw exception;
             }
 
-            return taskBook.Result;
+            return taskBook.GetAwaiter().GetResult();
         }
 
         /// <summary>

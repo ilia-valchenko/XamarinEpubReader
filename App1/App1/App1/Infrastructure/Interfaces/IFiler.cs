@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Collections.Generic;
-using App1.Infrastructure;
+using System.Threading.Tasks;
 
 namespace App1.Infrastructure.Interfaces
 {
@@ -14,7 +14,7 @@ namespace App1.Infrastructure.Interfaces
         /// </summary>
         /// <param name="filepath">The path for a file.</param>
         /// <returns>Returns true is a file exists.</returns>
-        bool DoesFileExist(string filepath);
+        Task<bool> DoesFileExistAsync(string filepath);
 
         /// <summary>
         /// This method returns the full path of the file.
@@ -28,13 +28,13 @@ namespace App1.Infrastructure.Interfaces
         /// </summary>
         /// <param name="fileExtensions">The extension of the file.</param>
         /// <returns>Returns names of the files with their extensions.</returns>
-        IEnumerable<string> GetFilesPaths(FileExtension fileExtensions);
+        Task <IEnumerable<string>> GetFilesPathsAsync(FileExtension fileExtensions);
 
         /// <summary>
         /// This method returns a stream of file which is situated into resource folder of each platform specific project.
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
-        Stream GetResourceFileStream(string filename);
+        Task<Stream> GetResourceFileStreamAsync(string filename);
     }
 }

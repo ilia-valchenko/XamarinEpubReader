@@ -43,17 +43,11 @@
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\packages\Xamarin.Forms.2.2.0.45\lib\win81\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLite-net.dll">
-      <PackagePath>SQLite-net.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\HtmlAgilityPack.dll">
       <PackagePath>HtmlAgilityPack.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCLRaw.core.dll">
-      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCLRaw.batteries_v2.dll">
-      <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
+    <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCL.dll">
+      <PackagePath>SQLitePCL.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>

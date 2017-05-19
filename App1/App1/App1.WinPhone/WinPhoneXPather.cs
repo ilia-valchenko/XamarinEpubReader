@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 //using System.Xml.XPath;
 using App1.Infrastructure.Interfaces;
@@ -11,13 +12,17 @@ namespace App1.WinPhone
     {
         public XElement SelectElement(XDocument containerDocument, string rule, XmlNamespaceManager manager)
         {
-            var descendats = containerDocument.Descendants();
-            var el = containerDocument.Element("name");
+            var descendats = containerDocument.Descendants().ToList();
+
             //containerDocument.XPathSelectElement("exp");
             
             //XElement element = containerDocument.XPathSelectElement(rule, manager);
             //return element;
-            return null;
+
+            var first1 = descendats.First();
+            var first2 = first1.Descendants().First();
+
+            return first2.Descendants().First();
         }
     }
 }

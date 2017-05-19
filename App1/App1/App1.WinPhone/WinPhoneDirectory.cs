@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Windows.Foundation;
 using Windows.Storage;
 using App1.Infrastructure.Interfaces;
 using App1.WinPhone;
@@ -18,14 +20,7 @@ namespace App1.WinPhone
         /// <returns>Returns the path to the new folder.</returns>
         public string CreateRootFolder(string folderName)
         {
-            //// TODO: Make async call
             StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            
-
-            // test
-            localFolder.CreateFileAsync("books.db").GetAwaiter().GetResult();
-            // end of test
-
             StorageFolder createdFolder = localFolder.CreateFolderAsync(folderName).GetAwaiter().GetResult();
 
             return createdFolder.Path;
@@ -38,9 +33,8 @@ namespace App1.WinPhone
         /// <returns>Returns true if directory exists.</returns>
         public bool DoesDirectoryExist(string path)
         {
-            var folder = Windows.Storage.ApplicationData.Current.LocalFolder.GetFolderAsync(path).GetResults();
-            bool doesDirectoryExist = folder != null;
-            return doesDirectoryExist;
+            StorageFolder folder = Windows.Storage.ApplicationData.Current.LocalFolder.GetFolderAsync(path).GetAwaiter().GetResult();
+            return folder != null;
         }
     }
 }

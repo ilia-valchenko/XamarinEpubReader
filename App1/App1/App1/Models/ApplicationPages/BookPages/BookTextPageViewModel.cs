@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using App1.DAL.Interfaces;
 using Xamarin.Forms;
+using SQLitePCL;
 
 namespace App1.Models.ApplicationPages.BookPages
 {
@@ -48,7 +49,7 @@ namespace App1.Models.ApplicationPages.BookPages
 
             HtmlDocument template = new HtmlDocument();
             // Hardcode filename
-            Stream stream = filer.GetResourceFileStream("index.html");
+            Stream stream = filer.GetResourceFileStreamAsync("index.html").GetAwaiter().GetResult();
             template.Load(stream);
 
             var script = "<script>var lastPageNumber = " + this.settings.LastPage + "</script>";
@@ -115,10 +116,10 @@ namespace App1.Models.ApplicationPages.BookPages
         /// <param name="lastPageNumber">The last page number.</param>
         private void SaveLastPageNumber(string lastPageNumber)
         {
-            int number = 1;
+            int number;
             Int32.TryParse(lastPageNumber, out number);
             this.settings.LastPage = number;
-            int statusCode = this.settingsRepository.Update(this.settings);
+            SQLiteResult resultOfUpdateOperation = this.settingsRepository.Update(this.settings);
         }
     }
 }

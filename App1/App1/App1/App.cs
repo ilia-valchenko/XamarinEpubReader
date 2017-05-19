@@ -31,20 +31,16 @@ namespace App1
         /// </summary>
         public App()
         {
-            this.directory = DependencyService.Get<IDirectory>();
+            //this.directory = DependencyService.Get<IDirectory>();
             //// TODO: Move it to OnStart method.
             //string rootFolder = this.directory.CreateRootFolder(bookDirectoryName);
-            BookRepository bookRepository = null;
-            SettingsRepository settingsRepository = null;
+            BookRepository bookRepository;
+            SettingsRepository settingsRepository;
 
             try
             {
                 bookRepository = new BookRepository(DATABASE_NAME);
                 settingsRepository = new SettingsRepository(DATABASE_NAME);
-            }
-            catch (SQLite.SQLiteException sqLiteException)
-            {
-                throw sqLiteException;
             }
             catch (Exception exc)
             {

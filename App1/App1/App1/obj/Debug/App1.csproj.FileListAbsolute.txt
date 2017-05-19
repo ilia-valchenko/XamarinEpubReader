@@ -13,18 +13,16 @@ C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.dll.mdb
 C:\Users\Ilya_Valchanka\Documents\Visual Studio 2015\Projects\App1\App1\App1\bin\Debug\App1.dll.mdb
-D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.config
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.XML
+D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
+D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.config
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.pdb
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\ExifLib.dll
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\HtmlAgilityPack.dll
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Mono.Android.dll
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Newtonsoft.Json.dll
-D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLite-net.dll
-D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCLRaw.batteries_green.dll
-D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCLRaw.batteries_v2.dll
-D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCLRaw.core.dll
+D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLitePCL.dll
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Windows.winmd
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Core.Design.dll
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Core.dll
@@ -34,10 +32,7 @@ D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Xaml.dll
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\HtmlAgilityPack.pdb
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Mono.Android.xml
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Newtonsoft.Json.xml
-D:\git\xamarin-reader\App1\App1\App1\bin\Debug\SQLite-net.xml
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Core.xml
 D:\git\xamarin-reader\App1\App1\App1\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll
 D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.pdb
-D:\git\xamarin-reader\App1\App1\App1\obj\Debug\App1.dll.mdb
-D:\git\xamarin-reader\App1\App1\App1\bin\Debug\App1.dll.mdb
