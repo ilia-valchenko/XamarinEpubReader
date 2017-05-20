@@ -85,6 +85,9 @@
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.WinPhone\lightWood.png">
+      <PackagePath>lightWood.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\git\xamarin-reader\App1\App1\App1.WinPhone\bin\x86\Debug\App1.WinPhone.xr.xml">
       <PackagePath>App1.WinPhone.xr.xml</PackagePath>
     </AppxPackagedFile>

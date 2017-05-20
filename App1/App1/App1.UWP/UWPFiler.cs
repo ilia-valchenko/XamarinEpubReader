@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using App1.Infrastructure;
 using App1.Infrastructure.Interfaces;
 using App1.UWP;
@@ -14,98 +15,90 @@ namespace App1.UWP
     {
         private const string booksFolder = "Xamarin eBooks";
 
-        public UWPFiler()
+        public Task<bool> DoesFileExistAsync(string filepath)
         {
-        }
+            Task<bool> task = new Task<bool>(() =>
+            {
+                bool doesFileExist = File.Exists(filepath);
+                return doesFileExist;
+            });
 
-        public bool DoesFileExist(string filepath)
-        {
-            bool doesFileExist = File.Exists(filepath);
-            return doesFileExist;
+            task.Start();
+
+            return task;
         }
 
         public string GetFilePath(string filename)
-        {
+        { 
             StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             string filepath = Path.Combine(localFolder.Path, booksFolder, filename);
             return filepath;
         }
 
-        public IEnumerable<string> GetFilesPaths(FileExtension fileExtension)
+        public Task<IEnumerable<string>> GetFilesPathsAsync(FileExtension fileExtension)
         {
-            string extension;
+            Task<IEnumerable<string>> task = new Task<IEnumerable<string>>(() =>
+            {
+                string extension = Enum.GetName(typeof(FileExtension), FileExtension.EPUB).ToLower();
+                StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                string applicationFolderDirectory = Path.Combine(localFolder.Path, booksFolder);
 
-            try
-            {
-                extension = Enum.GetName(typeof(FileExtension), FileExtension.EPUB).ToLower();
-            }
-            catch (ArgumentNullException argumentNullException)
-            {
-                throw;
-            }
-            catch (ArgumentException argumentException)
-            {
-                throw;
-            }
-            catch (NullReferenceException nullReferenceException)
-            {
-                throw;
-            }
-            catch (Exception exception)
-            {
-                throw;
-            }
+                DirectoryInfo directoryInfo;
 
-            StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            string applicationFolderDirectory = Path.Combine(localFolder.Path, booksFolder);
+                try
+                {
+                    directoryInfo = new DirectoryInfo(applicationFolderDirectory);
+                }
+                catch (Exception exception)
+                {
+                    throw;
+                }
 
-            DirectoryInfo directoryInfo;
 
-            try
-            {
-                directoryInfo = new DirectoryInfo(applicationFolderDirectory);
-            }
-            catch (DirectoryNotFoundException directoryNotFoundException)
-            {
-                throw;
-            }
-            catch (Exception exception)
-            {
-                throw;
-            }
+                FileInfo[] files = directoryInfo.GetFiles($"*.{extension}");
 
-            FileInfo[] files = directoryInfo.GetFiles($"*.{extension}");
+                IEnumerable<string> filesPaths = files.Select(f => f.DirectoryName + "/" + f.Name);
+                return filesPaths;
+            });
 
-            IEnumerable<string> filesPaths = files.Select(f => f.DirectoryName + "/" + f.Name);
-            return filesPaths;
+            task.Start();
+
+            return task;
         }
 
-        public Stream GetResourceFileStream(string filename)
+        public Task<Stream> GetResourceFileStreamAsync(string filename)
         {
-            if (string.IsNullOrEmpty(filename))
+            Task<Stream> task = new Task<Stream>(() =>
             {
-                throw new ArgumentException("The filename can't be null or empty.");
-            }
+                if (string.IsNullOrEmpty(filename))
+                {
+                    throw new ArgumentException("The filename can't be null or empty.");
+                }
 
-            Stream stream;
+                Stream stream;
 
-            try
-            {
-                StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-                var file = localFolder.GetFileAsync(filename).GetAwaiter().GetResult();
-                var openReadResult = file.OpenReadAsync().GetAwaiter().GetResult();
-                stream = openReadResult.AsStream();
-            }
-            catch (FileNotFoundException fileNotFoundException)
-            {
-                throw;
-            }
-            catch (Exception exception)
-            {
-                throw;
-            }
+                try
+                {
+                    StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                    var file = localFolder.GetFileAsync(filename).GetAwaiter().GetResult();
+                    var openReadResult = file.OpenReadAsync().GetAwaiter().GetResult();
+                    stream = openReadResult.AsStream();
+                }
+                catch (FileNotFoundException fileNotFoundException)
+                {
+                    throw;
+                }
+                catch (Exception exception)
+                {
+                    throw;
+                }
 
-            return stream;
+                return stream;
+            });
+
+            task.Start();
+
+            return task;
         }
     }
 }

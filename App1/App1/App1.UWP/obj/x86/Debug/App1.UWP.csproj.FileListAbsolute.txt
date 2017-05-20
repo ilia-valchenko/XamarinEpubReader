@@ -1,4 +1,5 @@
-D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\e_sqlite3.dll
+D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLitePCL.Ext.dll
+D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLitePCL.Ext.pri
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App.xbf
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\MainPage.xbf
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App1.UWP.xr.xml
@@ -43,7 +44,6 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Text.Encoding.Exte
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Threading.Tasks.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Threading.Timer.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Microsoft.Win32.Primitives.dll
-D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Console.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Diagnostics.Debug.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.IO.FileSystem.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Net.Primitives.dll
@@ -52,11 +52,7 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Runtime.Extensions
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\clrjit.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\clrcompression.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Private.Uri.dll
-D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLite-net.dll
-D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLitePCLRaw.batteries_green.dll
-D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLitePCLRaw.batteries_v2.dll
-D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLitePCLRaw.core.dll
-D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLitePCL.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.AppContext.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Buffers.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Collections.Concurrent.dll
@@ -101,7 +97,6 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Reflection.Emit.IL
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Reflection.Emit.Lightweight.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Reflection.Metadata.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Reflection.TypeExtensions.dll
-D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Runtime.Numerics.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\System.Runtime.Serialization.Json.dll
@@ -139,7 +134,6 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Xamarin.Forms.Platform.UA
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Xamarin.Forms.Platform.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\Xamarin.Forms.Xaml.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App1.dll
-D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\SQLitePCL.dll
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App1.pdb
 D:\git\xamarin-reader\App1\App1\App1.UWP\bin\x86\Debug\App1.xml
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\App1.UWP.csprojResolveAssemblyReference.cache
@@ -161,7 +155,6 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.Microsoft.Vis
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Collections.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.IO.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Runtime.InteropServices.SR.resw
-D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Console.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Diagnostics.Debug.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.IO.FileSystem.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Net.Primitives.SR.resw
@@ -199,7 +192,6 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Privat
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Private.ServiceModel.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Reflection.DispatchProxy.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Reflection.Metadata.SR.resw
-D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Runtime.InteropServices.RuntimeInformation.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Runtime.Numerics.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Runtime.Serialization.Primitives.SR.resw
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\FxResources.System.Runtime.WindowsRuntime.SR.resw
@@ -239,4 +231,5 @@ D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\resources.en.resfiles
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\resources.en.resfiles.intermediate
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\HtmlAgilityPack.pri.xml
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
+D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\SQLitePCL.Ext.pri.xml
 D:\git\xamarin-reader\App1\App1\App1.UWP\obj\x86\Debug\ProjectArchitectures.txt

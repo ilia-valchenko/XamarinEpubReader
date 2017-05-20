@@ -42,6 +42,7 @@
     <Compile Include="DAL\Interfaces\IBookRepository.cs" />
     <Compile Include="DAL\Interfaces\ISettingsRepository.cs" />
     <Compile Include="DAL\Repositories\SettingsRepository.cs" />
+    <Compile Include="Infrastructure\Interfaces\IDispatcher.cs" />
     <Compile Include="Infrastructure\Interfaces\IHtmlHelper.cs" />
     <Compile Include="Infrastructure\Buttons\OpenBookChapterButton.cs" />
     <Compile Include="Infrastructure\Controls\ImageWithLongPressGesture.cs" />

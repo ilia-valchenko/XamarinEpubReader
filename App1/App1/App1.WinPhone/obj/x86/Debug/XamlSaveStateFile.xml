@@ -1,8 +1,8 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="d:\git\xamarin-reader\app1\app1\app1.winphone\obj\x86\debug\intermediatexaml\app1.winphone.exe" HashGuid="43a04de0-e8ae-68c8-e2a3-96188e6dbf8d" />
+    <LocalAssembly PathName="d:\git\xamarin-reader\app1\app1\app1.winphone\obj\x86\debug\intermediatexaml\app1.winphone.exe" HashGuid="cfd77ad6-4fdc-23b3-1fb1-c7890a1352e8" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.vclibs\12.0\references\commonconfiguration\neutral\platform.winmd" HashGuid="58b6b6d1-928e-9908-9804-eb460e5e101b" />
-    <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\app1\app1\bin\debug\app1.dll" HashGuid="ecf72c9d-f4f8-d84b-8093-90d03c9644df" />
+    <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\app1\app1\bin\debug\app1.dll" HashGuid="7ae0685d-cc53-2e03-85b6-83ef54c7f0db" />
     <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\packages\sqlitepcl.3.8.7.2\lib\wpa81\sqlitepcl.dll" HashGuid="a405761a-bd1d-dc16-54b5-36df2e9981c5" />
     <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\packages\system.runtime.interopservices.runtimeinformation.4.3.0\lib\wpa81\system.runtime.interopservices.runtimeinformation.dll" HashGuid="6560d00f-0bb0-0755-5423-c4e1bf779127" />
     <ReferenceAssembly PathName="d:\git\xamarin-reader\app1\packages\xamarin.forms.2.0.0.6484\lib\wpa81\xamarin.forms.core.dll" HashGuid="29ccb562-30b3-23f5-2fd7-cc3561eb1772" />

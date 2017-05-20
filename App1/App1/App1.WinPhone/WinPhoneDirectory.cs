@@ -4,6 +4,7 @@ using Windows.Foundation;
 using Windows.Storage;
 using App1.Infrastructure.Interfaces;
 using App1.WinPhone;
+using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Dependency(typeof(WinPhoneDirectory))]
 namespace App1.WinPhone

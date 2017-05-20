@@ -7,7 +7,9 @@ using App1.Infrastructure.Mappers;
 using App1.Models.ApplicationPages.BookPages;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using SQLitePCL;
 using Xamarin.Forms;
 
@@ -173,9 +175,9 @@ namespace App1.Models.ApplicationPages
                     // But returns 1 and entity is successfully saved into database.
                     //if (bookInsertStatusCode == 1)
                     //{
-                    //    this.bookEntities.Add(bookEntity);
-                    //    BookInfoViewModel model = bookEntity.ToBookInfoModelMapper();
-                    //    this.books.Add(model);
+                    this.bookEntities.Add(bookEntity);
+                    BookInfoViewModel model = bookEntity.ToBookInfoModelMapper();
+                    this.books.Add(model);
                     //}
                 }
             }
@@ -196,7 +198,7 @@ namespace App1.Models.ApplicationPages
                 }
             }
 
-            //this.UpdateBookLibrary(this.books);
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(() => this.UpdateBookLibrary(this.books));
         }
 
         /// <summary>
@@ -284,21 +286,30 @@ namespace App1.Models.ApplicationPages
         {
             if (bookInfo == null)
             {
-                await DisplayAlert("Attention", "Something went wrong. I can't open this book. Please check does it exist yet?", "Cancel");
+                await DisplayAlert("Attention",
+                    "Something went wrong. I can't open this book. Please check does it exist yet?", "Cancel");
+
+                throw new ArgumentNullException(nameof(bookInfo));
             }
             else
             {
                 if (string.IsNullOrEmpty(bookInfo.FilePath))
                 {
-                    await DisplayAlert("Attention", "Something went wrong. The path to the book file is empty or it is invalid.", "Cancel");
+                    await DisplayAlert("Attention",
+                        "Something went wrong. The path to the book file is empty or it is invalid.", "Cancel");
+
+                    throw new ArgumentException(nameof(bookInfo.FilePath));
                 }
                 else
                 {
-                    EpubBook epubBook = await EpubReader.EpubReader.ReadBookAsync(bookInfo.FilePath);
+                    EpubBook epubBook = await EpubReader.EpubReader.ReadBookAsync(bookInfo.FilePath).ConfigureAwait(false);
                     SettingsEntity settings = this.settingsRepository.GetById(bookInfo.Id);
-                    BookTextPageViewModel page = new BookTextPageViewModel(epubBook, settings, this.settingsRepository) { Title = "Go to Main page" };
+                    BookTextPageViewModel page = new BookTextPageViewModel(epubBook, settings, this.settingsRepository)
+                    {
+                        Title = "Go to Main page"
+                    };
 
-                    await this.Navigation.PushAsync(page);
+                    Xamarin.Forms.Device.BeginInvokeOnMainThread(() => this.Navigation.PushAsync(page));
                 }
             }
         }
